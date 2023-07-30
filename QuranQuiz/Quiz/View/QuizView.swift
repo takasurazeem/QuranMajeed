@@ -12,7 +12,7 @@ struct QuizView: View {
     @StateObject var viewModel: ViewModel
     @State private var searchText: String = ""
     var body: some View {
-//        NavigationStack {
+        NavigationStack {
             VStack {
                 List {
                     Picker("Surah", selection: $viewModel.selectedSurah) {
@@ -45,7 +45,7 @@ struct QuizView: View {
             .onChange(of: viewModel.selectedAyahNumber) { _ in
                 viewModel.setTextForSelectedAya()
             }
-//        }
+        }
     }
 }
 
