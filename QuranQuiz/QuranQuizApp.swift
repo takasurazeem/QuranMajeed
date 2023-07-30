@@ -11,7 +11,7 @@ import SwiftUI
 struct QuranQuizApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            QuizView(viewModel: QuizView.ViewModel())
         }
     }
 }

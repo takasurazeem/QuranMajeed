@@ -8,17 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		F9D60D012A76C69D00701635 /* QuranQuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D002A76C69D00701635 /* QuranQuizApp.swift */; };
-		F9D60D032A76C69D00701635 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D022A76C69D00701635 /* ContentView.swift */; };
 		F9D60D052A76C69E00701635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D042A76C69E00701635 /* Assets.xcassets */; };
 		F9D60D082A76C69E00701635 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D072A76C69E00701635 /* Preview Assets.xcassets */; };
+		F9D60D152A76C6AC00701635 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D102A76C6AC00701635 /* QuizViewModel.swift */; };
+		F9D60D162A76C6AC00701635 /* QuranModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D122A76C6AC00701635 /* QuranModel.swift */; };
+		F9D60D172A76C6AC00701635 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D142A76C6AC00701635 /* QuizView.swift */; };
+		F9D60D1A2A76C6CA00701635 /* Bundle+Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D192A76C6CA00701635 /* Bundle+Decode.swift */; };
+		F9D60D222A76C6DB00701635 /* Al-Fatihah.json in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D1E2A76C6DB00701635 /* Al-Fatihah.json */; };
+		F9D60D232A76C6DB00701635 /* Quran.json in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D1F2A76C6DB00701635 /* Quran.json */; };
+		F9D60D282A76C6EF00701635 /* pdms-saleem-quranfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D252A76C6EF00701635 /* pdms-saleem-quranfont.ttf */; };
+		F9D60D292A76C6EF00701635 /* diwani-bent.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D262A76C6EF00701635 /* diwani-bent.ttf */; };
+		F9D60D2A2A76C6EF00701635 /* UthmanTN1Ver10.otf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D272A76C6EF00701635 /* UthmanTN1Ver10.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F9D60CFD2A76C69D00701635 /* QuranQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuranQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D60D002A76C69D00701635 /* QuranQuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranQuizApp.swift; sourceTree = "<group>"; };
-		F9D60D022A76C69D00701635 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F9D60D042A76C69E00701635 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9D60D072A76C69E00701635 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F9D60D102A76C6AC00701635 /* QuizViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
+		F9D60D122A76C6AC00701635 /* QuranModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuranModel.swift; sourceTree = "<group>"; };
+		F9D60D142A76C6AC00701635 /* QuizView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		F9D60D192A76C6CA00701635 /* Bundle+Decode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Decode.swift"; sourceTree = "<group>"; };
+		F9D60D1E2A76C6DB00701635 /* Al-Fatihah.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Al-Fatihah.json"; sourceTree = "<group>"; };
+		F9D60D1F2A76C6DB00701635 /* Quran.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Quran.json; sourceTree = "<group>"; };
+		F9D60D252A76C6EF00701635 /* pdms-saleem-quranfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pdms-saleem-quranfont.ttf"; sourceTree = "<group>"; };
+		F9D60D262A76C6EF00701635 /* diwani-bent.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "diwani-bent.ttf"; sourceTree = "<group>"; };
+		F9D60D272A76C6EF00701635 /* UthmanTN1Ver10.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = UthmanTN1Ver10.otf; sourceTree = "<group>"; };
+		F9D60D2B2A76C6FE00701635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +68,12 @@
 		F9D60CFF2A76C69D00701635 /* QuranQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				F9D60D2B2A76C6FE00701635 /* Info.plist */,
 				F9D60D002A76C69D00701635 /* QuranQuizApp.swift */,
-				F9D60D022A76C69D00701635 /* ContentView.swift */,
+				F9D60D0E2A76C6AC00701635 /* Quiz */,
+				F9D60D182A76C6BA00701635 /* Extensions */,
+				F9D60D1B2A76C6DB00701635 /* JSON Files */,
+				F9D60D242A76C6EF00701635 /* fonts */,
 				F9D60D042A76C69E00701635 /* Assets.xcassets */,
 				F9D60D062A76C69E00701635 /* Preview Content */,
 			);
@@ -65,6 +86,67 @@
 				F9D60D072A76C69E00701635 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F9D60D0E2A76C6AC00701635 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				F9D60D0F2A76C6AC00701635 /* ViewModel */,
+				F9D60D112A76C6AC00701635 /* Model */,
+				F9D60D132A76C6AC00701635 /* View */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
+		F9D60D0F2A76C6AC00701635 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F9D60D102A76C6AC00701635 /* QuizViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F9D60D112A76C6AC00701635 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F9D60D122A76C6AC00701635 /* QuranModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F9D60D132A76C6AC00701635 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F9D60D142A76C6AC00701635 /* QuizView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F9D60D182A76C6BA00701635 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F9D60D192A76C6CA00701635 /* Bundle+Decode.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F9D60D1B2A76C6DB00701635 /* JSON Files */ = {
+			isa = PBXGroup;
+			children = (
+				F9D60D1E2A76C6DB00701635 /* Al-Fatihah.json */,
+				F9D60D1F2A76C6DB00701635 /* Quran.json */,
+			);
+			path = "JSON Files";
+			sourceTree = "<group>";
+		};
+		F9D60D242A76C6EF00701635 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F9D60D252A76C6EF00701635 /* pdms-saleem-quranfont.ttf */,
+				F9D60D262A76C6EF00701635 /* diwani-bent.ttf */,
+				F9D60D272A76C6EF00701635 /* UthmanTN1Ver10.otf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +208,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9D60D082A76C69E00701635 /* Preview Assets.xcassets in Resources */,
+				F9D60D232A76C6DB00701635 /* Quran.json in Resources */,
+				F9D60D2A2A76C6EF00701635 /* UthmanTN1Ver10.otf in Resources */,
+				F9D60D282A76C6EF00701635 /* pdms-saleem-quranfont.ttf in Resources */,
+				F9D60D292A76C6EF00701635 /* diwani-bent.ttf in Resources */,
+				F9D60D222A76C6DB00701635 /* Al-Fatihah.json in Resources */,
 				F9D60D052A76C69E00701635 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +224,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9D60D032A76C69D00701635 /* ContentView.swift in Sources */,
+				F9D60D1A2A76C6CA00701635 /* Bundle+Decode.swift in Sources */,
+				F9D60D152A76C6AC00701635 /* QuizViewModel.swift in Sources */,
+				F9D60D172A76C6AC00701635 /* QuizView.swift in Sources */,
 				F9D60D012A76C69D00701635 /* QuranQuizApp.swift in Sources */,
+				F9D60D162A76C6AC00701635 /* QuranModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +359,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"QuranQuiz/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuranQuiz/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -297,6 +388,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"QuranQuiz/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuranQuiz/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

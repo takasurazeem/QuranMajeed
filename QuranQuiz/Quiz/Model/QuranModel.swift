@@ -1,0 +1,50 @@
+//
+//  QuranModel.swift
+//  Quran
+//
+//  Created by Takasur Azeem on 30/07/2023.
+//  Copyright © 2023 Takasur Azeem. All rights reserved.
+//
+
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
+//
+//   let surahNames = try? JSONDecoder().decode(SurahNames.self, from: jsonData)
+
+import Foundation
+
+// MARK: - SurahElement
+struct SurahElement: Codable, Identifiable, Hashable {
+    static func == (lhs: SurahElement, rhs: SurahElement) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    var id: Int
+    let name, transliteration: String
+    let type: TypeEnum
+    let totalVerses: Int
+    let verses: [Verse]
+
+    enum CodingKeys: String, CodingKey {
+        case id, name, transliteration, type
+        case totalVerses = "total_verses"
+        case verses
+    }
+}
+
+enum TypeEnum: String, Codable {
+    case meccan = "meccan"
+    case medinan = "medinan"
+}
+
+// MARK: - Verse
+struct Verse: Codable, Identifiable {
+    var id: Int
+    let text: String
+}
+
+typealias Surahs = [SurahElement]
