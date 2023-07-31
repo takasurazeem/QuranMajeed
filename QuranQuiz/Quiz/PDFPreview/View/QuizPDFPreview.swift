@@ -12,11 +12,6 @@ struct QuizPDFPreview: View {
     var documentData: Data?
     var body: some View {
         VStack {
-            Image(systemName: "doc.viewfinder")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("PDF Viewer")
-                .foregroundColor(.accentColor)
             // Using the PDFKitView and passing the previously created pdfURL
             if let documentData {
                 PDFKitView(documentData: documentData)

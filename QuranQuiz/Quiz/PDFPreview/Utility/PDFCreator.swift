@@ -57,8 +57,8 @@ class PDFCreator {
         return data
     }
     
-    let title: String
-    let verses: [QuizVerse]
+    private let title: String
+    private let verses: [QuizVerse]
 }
 
 

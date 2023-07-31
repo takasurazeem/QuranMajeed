@@ -66,5 +66,7 @@ extension QuizView {
         @Published private(set) var selectedVerse: Verse
         
         @Published private(set) var selectedVerses: [QuizVerse] = []
+        
+        @Published var showingPDFPreview = false
     }
 }

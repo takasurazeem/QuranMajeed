@@ -104,9 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				F9D60D2C2A77DD7E00701635 /* PDFPreview */,
-				F9D60D0F2A76C6AC00701635 /* ViewModel */,
-				F9D60D112A76C6AC00701635 /* Model */,
-				F9D60D132A76C6AC00701635 /* View */,
+				F9D60D3B2A78550700701635 /* Main */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -194,6 +192,16 @@
 				F9D60D382A78534B00701635 /* PDFKitView+UIViewRepresentable.swift */,
 			);
 			path = UIViewRepresentable;
+			sourceTree = "<group>";
+		};
+		F9D60D3B2A78550700701635 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F9D60D0F2A76C6AC00701635 /* ViewModel */,
+				F9D60D112A76C6AC00701635 /* Model */,
+				F9D60D132A76C6AC00701635 /* View */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
