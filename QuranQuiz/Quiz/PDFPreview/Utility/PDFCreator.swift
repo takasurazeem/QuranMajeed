@@ -38,13 +38,20 @@ class PDFCreator {
         let data = renderer.pdfData { (context) in
             // 5
             context.beginPage()
+            let font = UIFont(name: "_PDMS_Saleem_QuranFont", size: 24) ?? .boldSystemFont(ofSize: 24)
             // 6
             let attributes = [
-                NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 72)
+                NSAttributedString.Key.font: font
             ]
-            let text = "I'm a PDF!"
-            text.draw(at: CGPoint(x: 0, y: 0), withAttributes: attributes)
-            
+            let text = "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ"
+            print(text.width(usingFont: font))
+            text.draw(
+                at: CGPoint(
+                    x: pageWidth / 2 - text.width(usingFont: font) / 2,
+                    y: 5
+                ),
+                withAttributes: attributes
+            )
         }
         
         return data
@@ -52,4 +59,25 @@ class PDFCreator {
     
     let title: String
     let verses: [QuizVerse]
+}
+
+
+extension String {
+
+    func width(usingFont font: UIFont) -> CGFloat {
+        let fontAttributes = [NSAttributedString.Key.font: font]
+        let size = self.size(withAttributes: fontAttributes)
+        return size.width
+    }
+
+    func heightOfString(usingFont font: UIFont) -> CGFloat {
+        let fontAttributes = [NSAttributedString.Key.font: font]
+        let size = self.size(withAttributes: fontAttributes)
+        return size.height
+    }
+
+    func sizeOfString(usingFont font: UIFont) -> CGSize {
+        let fontAttributes = [NSAttributedString.Key.font: font]
+        return self.size(withAttributes: fontAttributes)
+    }
 }

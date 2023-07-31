@@ -20,6 +20,9 @@ struct QuizPDFPreview: View {
             // Using the PDFKitView and passing the previously created pdfURL
             if let documentData {
                 PDFKitView(documentData: documentData)
+                if let document = PDFDocument(data: documentData) {
+                    ShareLink(item: document, preview: SharePreview("PDF"))
+                }
             }
         }
         .padding()
@@ -88,4 +91,25 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         QuizPDFPreview(documentData: PDFCreator(title: "Test", verses: []).createFlyer())
     }
+}
+
+extension PDFDocument: Transferable {
+    public static var transferRepresentation: some TransferRepresentation {
+        DataRepresentation(contentType: .pdf) { pdf in
+                if let data = pdf.dataRepresentation() {
+                    return data
+                } else {
+                    return Data()
+                }
+            } importing: { data in
+                if let pdf = PDFDocument(data: data) {
+                    return pdf
+                } else {
+                    return PDFDocument()
+                }
+            }
+        DataRepresentation(exportedContentType: .pdf) { pdf in
+            pdf.dataRepresentation() ?? Data()
+        }
+     }
 }
