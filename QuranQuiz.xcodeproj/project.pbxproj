@@ -19,6 +19,9 @@
 		F9D60D282A76C6EF00701635 /* pdms-saleem-quranfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D252A76C6EF00701635 /* pdms-saleem-quranfont.ttf */; };
 		F9D60D292A76C6EF00701635 /* diwani-bent.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D262A76C6EF00701635 /* diwani-bent.ttf */; };
 		F9D60D2A2A76C6EF00701635 /* UthmanTN1Ver10.otf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D272A76C6EF00701635 /* UthmanTN1Ver10.otf */; };
+		F9D60D2F2A77DD9600701635 /* QuizPDFPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D2E2A77DD9600701635 /* QuizPDFPreview.swift */; };
+		F9D60D312A77DE4800701635 /* Offers and Discounts.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D302A77DE4800701635 /* Offers and Discounts.pdf */; };
+		F9D60D332A77E01300701635 /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D322A77E01300701635 /* PDFCreator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		F9D60D262A76C6EF00701635 /* diwani-bent.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "diwani-bent.ttf"; sourceTree = "<group>"; };
 		F9D60D272A76C6EF00701635 /* UthmanTN1Ver10.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = UthmanTN1Ver10.otf; sourceTree = "<group>"; };
 		F9D60D2B2A76C6FE00701635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F9D60D2E2A77DD9600701635 /* QuizPDFPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPDFPreview.swift; sourceTree = "<group>"; };
+		F9D60D302A77DE4800701635 /* Offers and Discounts.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Offers and Discounts.pdf"; sourceTree = "<group>"; };
+		F9D60D322A77E01300701635 /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,7 @@
 				F9D60D182A76C6BA00701635 /* Extensions */,
 				F9D60D1B2A76C6DB00701635 /* JSON Files */,
 				F9D60D242A76C6EF00701635 /* fonts */,
+				F9D60D302A77DE4800701635 /* Offers and Discounts.pdf */,
 				F9D60D042A76C69E00701635 /* Assets.xcassets */,
 				F9D60D062A76C69E00701635 /* Preview Content */,
 			);
@@ -91,6 +98,7 @@
 		F9D60D0E2A76C6AC00701635 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				F9D60D2C2A77DD7E00701635 /* PDFPreview */,
 				F9D60D0F2A76C6AC00701635 /* ViewModel */,
 				F9D60D112A76C6AC00701635 /* Model */,
 				F9D60D132A76C6AC00701635 /* View */,
@@ -147,6 +155,31 @@
 				F9D60D272A76C6EF00701635 /* UthmanTN1Ver10.otf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		F9D60D2C2A77DD7E00701635 /* PDFPreview */ = {
+			isa = PBXGroup;
+			children = (
+				F9D60D342A77E01900701635 /* Utility */,
+				F9D60D2D2A77DD8900701635 /* View */,
+			);
+			path = PDFPreview;
+			sourceTree = "<group>";
+		};
+		F9D60D2D2A77DD8900701635 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F9D60D2E2A77DD9600701635 /* QuizPDFPreview.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F9D60D342A77E01900701635 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				F9D60D322A77E01300701635 /* PDFCreator.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +244,7 @@
 				F9D60D232A76C6DB00701635 /* Quran.json in Resources */,
 				F9D60D2A2A76C6EF00701635 /* UthmanTN1Ver10.otf in Resources */,
 				F9D60D282A76C6EF00701635 /* pdms-saleem-quranfont.ttf in Resources */,
+				F9D60D312A77DE4800701635 /* Offers and Discounts.pdf in Resources */,
 				F9D60D292A76C6EF00701635 /* diwani-bent.ttf in Resources */,
 				F9D60D222A76C6DB00701635 /* Al-Fatihah.json in Resources */,
 				F9D60D052A76C69E00701635 /* Assets.xcassets in Resources */,
@@ -224,8 +258,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9D60D2F2A77DD9600701635 /* QuizPDFPreview.swift in Sources */,
 				F9D60D1A2A76C6CA00701635 /* Bundle+Decode.swift in Sources */,
 				F9D60D152A76C6AC00701635 /* QuizViewModel.swift in Sources */,
+				F9D60D332A77E01300701635 /* PDFCreator.swift in Sources */,
 				F9D60D172A76C6AC00701635 /* QuizView.swift in Sources */,
 				F9D60D012A76C69D00701635 /* QuranQuizApp.swift in Sources */,
 				F9D60D162A76C6AC00701635 /* QuranModel.swift in Sources */,

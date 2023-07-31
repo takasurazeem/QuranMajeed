@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PDFKit
 
 extension QuizView {
     class ViewModel: ObservableObject {
@@ -50,6 +51,14 @@ extension QuizView {
         func delete(at offsets: IndexSet) {
             selectedVerses.remove(atOffsets: offsets)
         }
+        
+        func generatePDF() -> URL? {
+            _ = PDFCreator(title: "Test", verses: selectedVerses)
+            
+            
+            return nil
+        }
+        
         
         @Published var selectedAyahNumber: Int
         @Published var selectedSurah: SurahElement
