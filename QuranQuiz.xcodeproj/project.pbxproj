@@ -22,6 +22,8 @@
 		F9D60D2F2A77DD9600701635 /* QuizPDFPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D2E2A77DD9600701635 /* QuizPDFPreview.swift */; };
 		F9D60D312A77DE4800701635 /* Offers and Discounts.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D302A77DE4800701635 /* Offers and Discounts.pdf */; };
 		F9D60D332A77E01300701635 /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D322A77E01300701635 /* PDFCreator.swift */; };
+		F9D60D362A7852F400701635 /* PDFDocument+Transferable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D352A7852F400701635 /* PDFDocument+Transferable.swift */; };
+		F9D60D392A78534B00701635 /* PDFKitView+UIViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D382A78534B00701635 /* PDFKitView+UIViewRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		F9D60D2E2A77DD9600701635 /* QuizPDFPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPDFPreview.swift; sourceTree = "<group>"; };
 		F9D60D302A77DE4800701635 /* Offers and Discounts.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Offers and Discounts.pdf"; sourceTree = "<group>"; };
 		F9D60D322A77E01300701635 /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
+		F9D60D352A7852F400701635 /* PDFDocument+Transferable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFDocument+Transferable.swift"; sourceTree = "<group>"; };
+		F9D60D382A78534B00701635 /* PDFKitView+UIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFKitView+UIViewRepresentable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,11 +78,12 @@
 		F9D60CFF2A76C69D00701635 /* QuranQuiz */ = {
 			isa = PBXGroup;
 			children = (
-				F9D60D2B2A76C6FE00701635 /* Info.plist */,
-				F9D60D002A76C69D00701635 /* QuranQuizApp.swift */,
+				F9D60D372A78531600701635 /* UIViewRepresentable */,
 				F9D60D0E2A76C6AC00701635 /* Quiz */,
 				F9D60D182A76C6BA00701635 /* Extensions */,
 				F9D60D1B2A76C6DB00701635 /* JSON Files */,
+				F9D60D2B2A76C6FE00701635 /* Info.plist */,
+				F9D60D002A76C69D00701635 /* QuranQuizApp.swift */,
 				F9D60D242A76C6EF00701635 /* fonts */,
 				F9D60D302A77DE4800701635 /* Offers and Discounts.pdf */,
 				F9D60D042A76C69E00701635 /* Assets.xcassets */,
@@ -134,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				F9D60D192A76C6CA00701635 /* Bundle+Decode.swift */,
+				F9D60D352A7852F400701635 /* PDFDocument+Transferable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -180,6 +186,14 @@
 				F9D60D322A77E01300701635 /* PDFCreator.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		F9D60D372A78531600701635 /* UIViewRepresentable */ = {
+			isa = PBXGroup;
+			children = (
+				F9D60D382A78534B00701635 /* PDFKitView+UIViewRepresentable.swift */,
+			);
+			path = UIViewRepresentable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,12 +273,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9D60D2F2A77DD9600701635 /* QuizPDFPreview.swift in Sources */,
+				F9D60D362A7852F400701635 /* PDFDocument+Transferable.swift in Sources */,
 				F9D60D1A2A76C6CA00701635 /* Bundle+Decode.swift in Sources */,
 				F9D60D152A76C6AC00701635 /* QuizViewModel.swift in Sources */,
 				F9D60D332A77E01300701635 /* PDFCreator.swift in Sources */,
 				F9D60D172A76C6AC00701635 /* QuizView.swift in Sources */,
 				F9D60D012A76C69D00701635 /* QuranQuizApp.swift in Sources */,
 				F9D60D162A76C6AC00701635 /* QuranModel.swift in Sources */,
+				F9D60D392A78534B00701635 /* PDFKitView+UIViewRepresentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
