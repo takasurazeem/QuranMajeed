@@ -14,36 +14,55 @@ struct QuizView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                List {
-                    Picker("Surah", selection: $viewModel.selectedSurah) {
-                        ForEach(viewModel.surahs) { surah in
-                            Text("\(surah.name) {\(surah.id)}")
-                                .font(Font.custom("_PDMS_Saleem_QuranFont", size: 22.0))
-                                .tag(surah)
+                ScrollViewReader { proxy in
+                    List {
+                        Section("Select Surah and Verse") {
+                            Picker("Surah", selection: $viewModel.selectedSurah) {
+                                ForEach(viewModel.surahs) { surah in
+                                    Text("\(surah.name) {\(surah.id)}")
+                                        .font(Font.custom("_PDMS_Saleem_QuranFont", size: 22.0))
+                                        .tag(surah)
+                                }
+                            }
+                            Picker("Ayah", selection: $viewModel.selectedAyahNumber) {
+                                ForEach(1...viewModel.selectedSurah.verses.count, id: \.self) { aya in
+                                    Text("\(aya)")
+                                }
+                            }
+                            Text(viewModel.selectedVerse.text)
+                                .font(Font.custom("_PDMS_Saleem_QuranFont", size: 24.0))
+                                .multilineTextAlignment(.trailing)
+                                .frame(maxWidth: .infinity)
+                        }
+                        .deleteDisabled(true)
+                        Section("Selected Verses") {
+                            ForEach(viewModel.selectedVerses) { verse in
+                                Text(verse.text)
+                            }
+                            .onDelete(perform: viewModel.delete(at:))
                         }
                     }
-                    Picker("Ayah", selection: $viewModel.selectedAyahNumber) {
-                        ForEach(1...viewModel.selectedSurah.verses.count, id: \.self) { aya in
-                            Text("\(aya)")
+                    
+                    Button("Add") {
+                        viewModel.addSelectedVerseToQuiz()
+                        proxy.scrollTo(viewModel.selectedVerses.last, anchor: .bottom)
+                    }
+                    .buttonStyle(PrimaryButtonStyle())
+                }
+                .navigationTitle("Prepare Quiz")
+                .onChange(of: viewModel.selectedSurah) { _ in
+                    viewModel.setTextForSelectedAya()
+                }
+                .onChange(of: viewModel.selectedAyahNumber) { _ in
+                    viewModel.setTextForSelectedAya()
+                }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button("PDF Preview") {
+                            print("Pressed")
                         }
                     }
-                    Text(viewModel.selectedVerse)
-                        .font(Font.custom("_PDMS_Saleem_QuranFont", size: 24.0))
-                        .multilineTextAlignment(.trailing)
-                        .frame(maxWidth: .infinity)
                 }
-                
-                Button("Add") {
-
-                }
-                .buttonStyle(PrimaryButtonStyle())
-            }
-            .navigationTitle("Prepare Quiz")
-            .onChange(of: viewModel.selectedSurah) { _ in
-                viewModel.setTextForSelectedAya()
-            }
-            .onChange(of: viewModel.selectedAyahNumber) { _ in
-                viewModel.setTextForSelectedAya()
             }
         }
     }

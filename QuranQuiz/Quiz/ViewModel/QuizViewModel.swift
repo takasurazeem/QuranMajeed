@@ -14,9 +14,10 @@ extension QuizView {
         init() {
             selectedAyahNumber = 1
             surahs = []
-            selectedVerse = ""
+            selectedVerse = Verse(id: 1, text: "")
             selectedSurah = Bundle.main.decode(SurahElement.self, from: "Al-Fatihah.json")
             surahs = Bundle.main.decode(Surahs.self, from: "Quran.json")
+            selectedVerse = selectedSurah.verses.first!
             setTextForSelectedAya()
         }
         
@@ -25,16 +26,36 @@ extension QuizView {
                 if surah.id == selectedSurah.id {
                     for verse in selectedSurah.verses {
                         if verse.id == selectedAyahNumber {
-                            selectedVerse = verse.text
+                            selectedVerse = verse
                         }
                     }
                 }
             }
         }
+        
+        func addSelectedVerseToQuiz() {
+            if selectedVerses.contains(where: { verse in
+                (verse.surahId == selectedSurah.id && verse.ayahId == selectedVerse.id) || verse.text == selectedVerse.text
+            }) == false {
+                let verse = QuizVerse(
+                    surahId: selectedSurah.id,
+                    ayahId: selectedVerse.id,
+                    text: selectedVerse.text
+                )
+                print(verse)
+                selectedVerses.append(verse)
+            }
+        }
 
+        func delete(at offsets: IndexSet) {
+            selectedVerses.remove(atOffsets: offsets)
+        }
+        
         @Published var selectedAyahNumber: Int
         @Published var selectedSurah: SurahElement
         @Published var surahs: Surahs
-        @Published private(set) var selectedVerse: String
+        @Published private(set) var selectedVerse: Verse
+        
+        @Published private(set) var selectedVerses: [QuizVerse] = []
     }
 }

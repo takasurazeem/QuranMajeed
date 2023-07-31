@@ -48,3 +48,17 @@ struct Verse: Codable, Identifiable {
 }
 
 typealias Surahs = [SurahElement]
+
+struct QuizVerse: Identifiable, Hashable {
+    let id = UUID()
+    let surahId: Int
+    let ayahId: Int
+    let text: String
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(surahId)
+        hasher.combine(ayahId)
+        hasher.combine(text)
+    }
+}
