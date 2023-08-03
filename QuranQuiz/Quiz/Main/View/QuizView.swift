@@ -68,6 +68,7 @@ struct QuizView: View {
                                 .createFlyer()
                             )
                             .navigationTitle("PDF Preview")
+                            .navigationBarTitleDisplayMode(.inline)
                             .toolbar {
                                 // FIXME: - Not a good place to put it here. Move to a file of its own.
                                 ToolbarItem(placement: .navigationBarTrailing) {
