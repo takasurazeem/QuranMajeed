@@ -17,14 +17,6 @@ struct QuizPDFPreview: View {
                 PDFKitView(documentData: documentData)
             }
         }
-        .navigationTitle("PDF Preview")
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                if let documentData, let document = PDFDocument(data: documentData) {
-                    ShareLink(item: document, preview: SharePreview("PDF"))
-                }
-            }
-        }
     }
 }
 

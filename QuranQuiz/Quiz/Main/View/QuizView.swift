@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import PDFKit
 
 struct QuizView: View {
     @StateObject var viewModel: ViewModel
@@ -66,6 +67,19 @@ struct QuizView: View {
                                 )
                                 .createFlyer()
                             )
+                            .navigationTitle("PDF Preview")
+                            .toolbar {
+                                // FIXME: - Not a good place to put it here. Move to a file of its own.
+                                ToolbarItem(placement: .navigationBarTrailing) {
+                                    if let document = PDFDocument(data: PDFCreator(
+                                        title: "",
+                                        verses: []
+                                    )
+                                    .createFlyer()) {
+                                        ShareLink(item: document, preview: SharePreview("PDF"))
+                                    }
+                                }
+                            }
                         }
                     }
                 }
