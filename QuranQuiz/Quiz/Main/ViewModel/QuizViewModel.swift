@@ -64,9 +64,6 @@ extension QuizView {
         @Published var selectedSurah: SurahElement
         @Published var surahs: Surahs
         @Published private(set) var selectedVerse: Verse
-        
         @Published private(set) var selectedVerses: [QuizVerse] = []
-        
-        @Published var showingPDFPreview = false
     }
 }

@@ -29,6 +29,7 @@ class PDFCreator {
         
         // 2
         let pageWidth = 8.5 * 72.0
+        print("Page Width: \(pageWidth)")
         let pageHeight = 11 * 72.0
         let pageRect = CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight)
         
@@ -44,7 +45,7 @@ class PDFCreator {
                 NSAttributedString.Key.font: font
             ]
             let text = "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ"
-            print(text.width(usingFont: font))
+            print("Text Width: \(text.width(usingFont: font))")
             text.draw(
                 at: CGPoint(
                     x: pageWidth / 2 - text.width(usingFont: font) / 2,

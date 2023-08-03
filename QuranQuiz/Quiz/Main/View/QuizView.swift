@@ -58,19 +58,16 @@ struct QuizView: View {
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("PDF Preview") {
-                            viewModel.showingPDFPreview.toggle()
+                        NavigationLink("PDF Preview") {
+                            PDFKitView(
+                                documentData: PDFCreator(
+                                    title: "",
+                                    verses: []
+                                )
+                                .createFlyer()
+                            )
                         }
                     }
-                }
-                .sheet(isPresented: $viewModel.showingPDFPreview) {
-                    PDFKitView(
-                        documentData: PDFCreator(
-                            title: "",
-                            verses: []
-                        )
-                        .createFlyer()
-                    )
                 }
             }
         }
