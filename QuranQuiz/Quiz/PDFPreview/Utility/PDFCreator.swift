@@ -45,10 +45,10 @@ class PDFCreator {
                 NSAttributedString.Key.font: font
             ]
             
-            print("Text Width: \(theOpening.width(usingFont: font))")
-            theOpening.draw(
+            print("Text Width: \(theOpeningText.width(usingFont: font))")
+            theOpeningText.draw(
                 at: CGPoint(
-                    x: pageWidth / 2 - theOpening.width(usingFont: font) / 2,
+                    x: pageWidth / 2 - theOpeningText.width(usingFont: font) / 2,
                     y: 5
                 ),
                 withAttributes: attributes
@@ -58,7 +58,16 @@ class PDFCreator {
         return data
     }
     
-    let theOpening = "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ"
+    // TODO: - Use AppStorage, some of these will be set from a settings menu for more flexibility in future ان شاء اللہ تَعَالٰی 
+    let theOpeningText = "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ"
+    let leftHeadingText = ""
+    let rightHeadingText = ""
+    let belowOpeningText = ""
+    let studentNameText = ""
+    let dateText = ""
+    let translateFollowingAyahsText = ""
+    
+    
     private let title: String
     private let verses: [QuizVerse]
 }
