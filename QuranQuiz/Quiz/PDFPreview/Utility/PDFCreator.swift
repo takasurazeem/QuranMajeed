@@ -17,7 +17,7 @@ class PDFCreator {
     }
     
     
-    func createFlyer() -> Data {
+    func generateQuiz() -> Data {
         // 1
         let pdfMetaData = [
           kCGPDFContextCreator: "Quiz Builder",
@@ -44,11 +44,11 @@ class PDFCreator {
             let attributes = [
                 NSAttributedString.Key.font: font
             ]
-            let text = "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ"
-            print("Text Width: \(text.width(usingFont: font))")
-            text.draw(
+            
+            print("Text Width: \(theOpening.width(usingFont: font))")
+            theOpening.draw(
                 at: CGPoint(
-                    x: pageWidth / 2 - text.width(usingFont: font) / 2,
+                    x: pageWidth / 2 - theOpening.width(usingFont: font) / 2,
                     y: 5
                 ),
                 withAttributes: attributes
@@ -58,6 +58,7 @@ class PDFCreator {
         return data
     }
     
+    let theOpening = "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ"
     private let title: String
     private let verses: [QuizVerse]
 }

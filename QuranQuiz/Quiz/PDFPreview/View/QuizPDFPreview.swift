@@ -28,7 +28,7 @@ struct ContentView_Previews: PreviewProvider {
                     title: "Quiz",
                     verses: []
                 )
-                .createFlyer()
+                .generateQuiz()
             )
         }
     }

@@ -63,9 +63,9 @@ struct QuizView: View {
                             PDFKitView(
                                 documentData: PDFCreator(
                                     title: "",
-                                    verses: []
+                                    verses: viewModel.selectedVerses
                                 )
-                                .createFlyer()
+                                .generateQuiz()
                             )
                             .navigationTitle("PDF Preview")
                             .navigationBarTitleDisplayMode(.inline)
@@ -76,7 +76,7 @@ struct QuizView: View {
                                         title: "",
                                         verses: []
                                     )
-                                    .createFlyer()) {
+                                    .generateQuiz()) {
                                         ShareLink(item: document, preview: SharePreview("PDF"))
                                     }
                                 }

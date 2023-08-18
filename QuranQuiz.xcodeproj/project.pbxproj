@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F952CFC92A90273C0039478F /* Quran_ur.json in Resources */ = {isa = PBXBuildFile; fileRef = F952CFC82A90273C0039478F /* Quran_ur.json */; };
 		F9D60D012A76C69D00701635 /* QuranQuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D002A76C69D00701635 /* QuranQuizApp.swift */; };
 		F9D60D052A76C69E00701635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D042A76C69E00701635 /* Assets.xcassets */; };
 		F9D60D082A76C69E00701635 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D072A76C69E00701635 /* Preview Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F952CFC82A90273C0039478F /* Quran_ur.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Quran_ur.json; sourceTree = "<group>"; };
 		F9D60CFD2A76C69D00701635 /* QuranQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuranQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D60D002A76C69D00701635 /* QuranQuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranQuizApp.swift; sourceTree = "<group>"; };
 		F9D60D042A76C69E00701635 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		F9D60D1B2A76C6DB00701635 /* JSON Files */ = {
 			isa = PBXGroup;
 			children = (
+				F952CFC82A90273C0039478F /* Quran_ur.json */,
 				F9D60D1E2A76C6DB00701635 /* Al-Fatihah.json */,
 				F9D60D1F2A76C6DB00701635 /* Quran.json */,
 			);
@@ -269,6 +272,7 @@
 				F9D60D312A77DE4800701635 /* Offers and Discounts.pdf in Resources */,
 				F9D60D292A76C6EF00701635 /* diwani-bent.ttf in Resources */,
 				F9D60D222A76C6DB00701635 /* Al-Fatihah.json in Resources */,
+				F952CFC92A90273C0039478F /* Quran_ur.json in Resources */,
 				F9D60D052A76C69E00701635 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
