@@ -104,6 +104,14 @@ struct PrimaryButtonStyle: ButtonStyle {
 
 struct QuizView_Previews: PreviewProvider {
     static var previews: some View {
+        PDFKitView(
+            documentData: PDFCreator(
+                title: "",
+                verses: []
+            )
+            .generateQuiz()
+        )
+        .previewDisplayName("PDF")
         QuizView(viewModel: QuizView.ViewModel())
     }
 }

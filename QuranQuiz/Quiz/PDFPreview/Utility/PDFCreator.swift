@@ -39,19 +39,41 @@ class PDFCreator {
         let data = renderer.pdfData { (context) in
             // 5
             context.beginPage()
-            let font = UIFont(name: "_PDMS_Saleem_QuranFont", size: 24) ?? .boldSystemFont(ofSize: 24)
+            let theOpeningFont = UIFont(name: "_PDMS_Saleem_QuranFont", size: 24) ?? .boldSystemFont(ofSize: 24)
+            let leftRightHeadingsFont = UIFont(name: "_PDMS_Saleem_QuranFont", size: 18) ?? .boldSystemFont(ofSize: 16)
             // 6
-            let attributes = [
-                NSAttributedString.Key.font: font
+            let openingAttributes = [
+                NSAttributedString.Key.font: theOpeningFont
             ]
             
-            print("Text Width: \(theOpeningText.width(usingFont: font))")
+            let rightHeadingTextAttributes = [
+                NSAttributedString.Key.font: leftRightHeadingsFont
+            ]
+            
+//            print("Text Width: \(theOpeningText.width(usingFont: theOpeningFont))")
             theOpeningText.draw(
                 at: CGPoint(
-                    x: pageWidth / 2 - theOpeningText.width(usingFont: font) / 2,
+                    x: (pageWidth) / 2 - theOpeningText.width(usingFont: theOpeningFont) / 2,
                     y: 5
                 ),
-                withAttributes: attributes
+                withAttributes: openingAttributes
+            )
+            let rightHeadingTextWidth = rightHeadingText.width(usingFont: leftRightHeadingsFont)
+            rightHeadingText.draw(
+                at: CGPoint(
+                    x: pageWidth - rightHeadingTextWidth - (rightHeadingTextWidth * 0.1),
+                    y: 5
+                ),
+                withAttributes: rightHeadingTextAttributes
+            )
+            let leftHeadingTextWidth = leftHeadingText.width(usingFont: leftRightHeadingsFont)
+            print("leftHeadingTextWidth Width: \(leftHeadingTextWidth)")
+            leftHeadingText.draw(
+                at: CGPoint(
+                    x: 5,
+                    y: 5
+                ),
+                withAttributes: rightHeadingTextAttributes
             )
         }
         
@@ -60,8 +82,8 @@ class PDFCreator {
     
     // TODO: - Use AppStorage, some of these will be set from a settings menu for more flexibility in future ان شاء اللہ تَعَالٰی
     let theOpeningText = "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ"
-    let leftHeadingText = "امن ترجمةالقرآن کلاس"
-    let rightHeadingText = "جامع مسجد امن واپڈا ٹاؤن گوجراںوالہ"
+    let rightHeadingText = "امن ترجمةالقرآن کلاس"
+    let leftHeadingText = "جامع مسجد امن واپڈا ٹاؤن گوجراںوالہ"
     let belowOpeningText = "سلسلہ وار ٹیسٹ"
     let studentNameText = "_______________________:نام طالب علم"
     let dateText = "بتاریخ:"
