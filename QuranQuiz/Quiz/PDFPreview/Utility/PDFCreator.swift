@@ -58,14 +58,14 @@ class PDFCreator {
         return data
     }
     
-    // TODO: - Use AppStorage, some of these will be set from a settings menu for more flexibility in future ان شاء اللہ تَعَالٰی 
+    // TODO: - Use AppStorage, some of these will be set from a settings menu for more flexibility in future ان شاء اللہ تَعَالٰی
     let theOpeningText = "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ"
-    let leftHeadingText = ""
-    let rightHeadingText = ""
-    let belowOpeningText = ""
-    let studentNameText = ""
-    let dateText = ""
-    let translateFollowingAyahsText = ""
+    let leftHeadingText = "امن ترجمةالقرآن کلاس"
+    let rightHeadingText = "جامع مسجد امن واپڈا ٹاؤن گوجراںوالہ"
+    let belowOpeningText = "سلسلہ وار ٹیسٹ"
+    let studentNameText = "_______________________:نام طالب علم"
+    let dateText = "بتاریخ:"
+    let translateFollowingAyahsText = "درج زیل آیات ترجمہ لکھیں:"
     
     
     private let title: String
