@@ -95,6 +95,27 @@ class PDFGenerator {
                 ),
                 withAttributes: nameAndDateTextAttributes
             )
+            nameUnderScores.draw(
+                at: CGPoint(
+                    x: pageWidth - studentNameTextWidth - (nameUnderScores.width(usingFont: .boldSystemFont(ofSize: 14)) * 1.35),
+                    y: studentNameRowYPos
+                ),
+                withAttributes: nameAndDateTextAttributes
+            )
+            dateText.draw(
+                at: CGPoint(
+                    x: dateTextXPos,
+                    y: studentNameRowYPos
+                ),
+                withAttributes: nameAndDateTextAttributes
+            )
+            date.draw(
+                at: CGPoint(
+                    x: 15,
+                    y: studentNameRowYPos
+                ),
+                withAttributes: nameAndDateTextAttributes
+            )
         }
         
         return data
@@ -113,6 +134,7 @@ class PDFGenerator {
     let leftHeadingText = "جامع مسجد امن واپڈا ٹاؤن گوجراںوالہ"
     let belowOpeningText = "سلسلہ وار ٹیسٹ"
     let studentNameText = "نام طالب علم:"
+    let nameUnderScores = Array(repeating: "_", count: 20).reduce("", +)
     let dateText = "بتاریخ:"
     let translateFollowingAyahsText = "درج زیل آیات ترجمہ لکھیں:"
     
@@ -124,6 +146,17 @@ class PDFGenerator {
 extension PDFGenerator {
     var studentNameRowYPos: CGFloat {
         belowOpeningText.heightOfString(usingFont: belowOpeningTextFont) + theOpeningText.heightOfString(usingFont: theOpeningFont)
+    }
+    
+    var dateTextXPos: CGFloat {
+        date.width(usingFont: nameAndDateTextFont) + 20
+    }
+    
+    var date: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let formattedDate = dateFormatter.string(from: Date())
+        return formattedDate
     }
 }
 
