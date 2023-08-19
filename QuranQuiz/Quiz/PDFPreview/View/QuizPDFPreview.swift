@@ -24,7 +24,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             QuizPDFPreview(
-                documentData: PDFCreator(
+                documentData: PDFGenerator(
                     title: "Quiz",
                     verses: []
                 )

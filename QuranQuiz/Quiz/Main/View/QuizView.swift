@@ -61,7 +61,7 @@ struct QuizView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         NavigationLink("PDF Preview") {
                             PDFKitView(
-                                documentData: PDFCreator(
+                                documentData: PDFGenerator(
                                     title: "",
                                     verses: viewModel.selectedVerses
                                 )
@@ -72,7 +72,7 @@ struct QuizView: View {
                             .toolbar {
                                 // FIXME: - Not a good place to put it here. Move to a file of its own.
                                 ToolbarItem(placement: .navigationBarTrailing) {
-                                    if let document = PDFDocument(data: PDFCreator(
+                                    if let document = PDFDocument(data: PDFGenerator(
                                         title: "",
                                         verses: []
                                     )
@@ -105,7 +105,7 @@ struct PrimaryButtonStyle: ButtonStyle {
 struct QuizView_Previews: PreviewProvider {
     static var previews: some View {
         PDFKitView(
-            documentData: PDFCreator(
+            documentData: PDFGenerator(
                 title: "",
                 verses: []
             )

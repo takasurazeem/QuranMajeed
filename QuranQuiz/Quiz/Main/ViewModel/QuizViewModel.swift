@@ -20,6 +20,14 @@ extension QuizView {
             surahs = Bundle.main.decode(Surahs.self, from: "Quran.json")
             selectedVerse = selectedSurah.verses.first!
             setTextForSelectedAya()
+            for family in UIFont.familyNames.sorted() {
+                print("Family: \(family)")
+                
+                let names = UIFont.fontNames(forFamilyName: family)
+                for fontName in names {
+                    print("- \(fontName)")
+                }
+            }
         }
         
         func setTextForSelectedAya() {
@@ -53,7 +61,7 @@ extension QuizView {
         }
         
         func generatePDF() -> URL? {
-            _ = PDFCreator(title: "Test", verses: selectedVerses)
+            _ = PDFGenerator(title: "Test", verses: selectedVerses)
             
             
             return nil
