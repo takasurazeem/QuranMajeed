@@ -39,6 +39,8 @@ struct QuizView: View {
                         Section("Selected Verses") {
                             ForEach(viewModel.selectedVerses) { verse in
                                 Text(verse.text)
+                                    .font(Font.custom("_PDMS_Saleem_QuranFont", size: 24.0))
+                                    .multilineTextAlignment(.trailing)
                             }
                             .onDelete(perform: viewModel.delete(at:))
                         }
@@ -74,7 +76,7 @@ struct QuizView: View {
                                 ToolbarItem(placement: .navigationBarTrailing) {
                                     if let document = PDFDocument(data: PDFGenerator(
                                         title: "",
-                                        verses: []
+                                        verses: viewModel.selectedVerses
                                     )
                                     .generateQuiz()) {
                                         ShareLink(item: document, preview: SharePreview("PDF"))
@@ -107,7 +109,14 @@ struct QuizView_Previews: PreviewProvider {
         PDFKitView(
             documentData: PDFGenerator(
                 title: "",
-                verses: []
+                verses:
+                    Bundle.main.decode(SurahElement.self, from: "Al-Fatihah.json").verses.map({
+                        QuizVerse(
+                            surahId: 1,
+                            ayahId: $0.id,
+                            text: $0.text
+                        )
+                    })
             )
             .generateQuiz()
         )

@@ -116,10 +116,49 @@ class PDFGenerator {
                 ),
                 withAttributes: nameAndDateTextAttributes
             )
+            var yPos = studentNameRowYPos + 10
+            for verse in verses {
+                yPos += verse.text.heightOfString(usingFont: theOpeningFont)
+                addVerseText(
+                    verse: verse.text,
+                    pageRect: pageRect,
+                    textTop: yPos
+                )
+            }
         }
         
         return data
     }
+    
+    func addVerseText(
+        verse: String,
+        pageRect: CGRect,
+        textTop: CGFloat
+    ) {
+        let textFont = theOpeningFont//.withSize(22)
+      // 1
+      let paragraphStyle = NSMutableParagraphStyle()
+      paragraphStyle.alignment = .right
+      paragraphStyle.lineBreakMode = .byWordWrapping
+      // 2
+      let textAttributes = [
+        NSAttributedString.Key.paragraphStyle: paragraphStyle,
+        NSAttributedString.Key.font: textFont
+      ]
+      let attributedText = NSAttributedString(
+        string: verse,
+        attributes: textAttributes
+      )
+      // 3
+      let textRect = CGRect(
+        x: 10,
+        y: textTop,
+        width: pageRect.width - 20,
+        height: pageRect.height - textTop - pageRect.height / 5.0
+      )
+      attributedText.draw(in: textRect)
+    }
+
     
     // TODO: - Use AppStorage, some of these will be set from a settings menu for more flexibility in future ان شاء اللہ تَعَالٰی
     // MARK: - Fonts

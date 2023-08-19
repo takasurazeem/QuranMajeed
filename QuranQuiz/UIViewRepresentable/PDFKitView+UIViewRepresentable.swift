@@ -50,7 +50,7 @@ struct PDFKitView: UIViewRepresentable {
             border.style = .dashed
             border.lineWidth = 3
             
-            annotation.border = border
+//            annotation.border = border
             let lastPage = document.page(at: document.pageCount - 1)
             lastPage?.addAnnotation(annotation)
             // TODO: - Set custom border
