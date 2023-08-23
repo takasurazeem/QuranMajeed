@@ -14,6 +14,7 @@ class PDFGenerator {
     ) {
         self.title = title
         self.verses = verses
+//        print("verses.count: \(verses.count)")
     }
     
     
@@ -29,7 +30,7 @@ class PDFGenerator {
         
         // 2
         let pageWidth = 8.5 * 72.0
-        print("Page Width: \(pageWidth)")
+//        print("Page Width: \(pageWidth)")
         let pageHeight = 11 * 72.0
         let pageRect = CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight)
         
@@ -71,8 +72,6 @@ class PDFGenerator {
                 ),
                 withAttributes: rightHeadingTextAttributes
             )
-            let leftHeadingTextWidth = leftHeadingText.width(usingFont: leftRightHeadingsFont)
-            print("leftHeadingTextWidth Width: \(leftHeadingTextWidth)")
             leftHeadingText.draw(
                 at: CGPoint(
                     x: 10,
@@ -116,14 +115,15 @@ class PDFGenerator {
                 ),
                 withAttributes: nameAndDateTextAttributes
             )
-            var yPos = studentNameRowYPos + 10
+            var yPos = studentNameRowYPos + 70
             for verse in verses {
-                yPos += verse.text.heightOfString(usingFont: theOpeningFont)
-                addVerseText(
+                let nextPost = addVerseText(
                     verse: verse.text,
                     pageRect: pageRect,
                     textTop: yPos
                 )
+                yPos = nextPost
+                
             }
         }
         
@@ -134,29 +134,35 @@ class PDFGenerator {
         verse: String,
         pageRect: CGRect,
         textTop: CGFloat
-    ) {
+    ) -> CGFloat {
         let textFont = theOpeningFont//.withSize(22)
-      // 1
-      let paragraphStyle = NSMutableParagraphStyle()
-      paragraphStyle.alignment = .right
-      paragraphStyle.lineBreakMode = .byWordWrapping
-      // 2
-      let textAttributes = [
-        NSAttributedString.Key.paragraphStyle: paragraphStyle,
-        NSAttributedString.Key.font: textFont
-      ]
-      let attributedText = NSAttributedString(
-        string: verse,
-        attributes: textAttributes
-      )
-      // 3
-      let textRect = CGRect(
-        x: 10,
-        y: textTop,
-        width: pageRect.width - 20,
-        height: pageRect.height - textTop - pageRect.height / 5.0
-      )
-      attributedText.draw(in: textRect)
+        // 1
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .right
+        paragraphStyle.lineBreakMode = .byWordWrapping
+        // 2
+        let textAttributes = [
+            NSAttributedString.Key.paragraphStyle: paragraphStyle,
+            NSAttributedString.Key.font: textFont,
+            NSAttributedString.Key.writingDirection: [NSWritingDirection.rightToLeft.rawValue],
+            NSAttributedString.Key.languageIdentifier: "ar_SA"
+        ] as [NSAttributedString.Key : Any]
+        let attributedText = NSAttributedString(
+            string: verse,
+            attributes: textAttributes
+        )
+        // 3
+        let width = pageRect.width - 20
+        let height = attributedText.height(containerWidth: width)
+        let textRect = CGRect(
+            x: 10,
+            y: textTop,
+            width: width,
+            height: height
+        )
+        print(textRect)
+        attributedText.draw(in: textRect)
+        return textRect.maxY
     }
 
     
@@ -216,5 +222,42 @@ extension String {
     func sizeOfString(usingFont font: UIFont) -> CGSize {
         let fontAttributes = [NSAttributedString.Key.font: font]
         return self.size(withAttributes: fontAttributes)
+    }
+    
+    func size(font: UIFont, width: CGFloat) -> CGSize {
+        let attrString = NSAttributedString(
+            string: self,
+            attributes: [NSAttributedString.Key.font: font]
+        )
+        let bounds = attrString.boundingRect(
+            with: CGSize(
+                width: width, height: .greatestFiniteMagnitude
+            ),
+            options: .usesLineFragmentOrigin, context: nil
+        )
+        let size = CGSize(
+            width: bounds.width,
+            height: bounds.height
+        )
+        return size
+    }
+}
+
+extension NSAttributedString {
+
+    func height(containerWidth: CGFloat) -> CGFloat {
+
+        let rect = self.boundingRect(with: CGSize.init(width: containerWidth, height: CGFloat.greatestFiniteMagnitude),
+                                     options: [.usesLineFragmentOrigin, .usesFontLeading],
+                                     context: nil)
+        return ceil(rect.size.height)
+    }
+
+    func width(containerHeight: CGFloat) -> CGFloat {
+
+        let rect = self.boundingRect(with: CGSize.init(width: CGFloat.greatestFiniteMagnitude, height: containerHeight),
+                                     options: [.usesLineFragmentOrigin, .usesFontLeading],
+                                     context: nil)
+        return ceil(rect.size.width)
     }
 }

@@ -110,18 +110,33 @@ struct QuizView_Previews: PreviewProvider {
             documentData: PDFGenerator(
                 title: "",
                 verses:
-                    Bundle.main.decode(SurahElement.self, from: "Al-Fatihah.json").verses.map({
+                    Array(Bundle.main.decode(Surahs.self, from: "Quran.json").first(where: {$0.id==5})?.verses.map({
                         QuizVerse(
                             surahId: 1,
                             ayahId: $0.id,
                             text: $0.text
                         )
-                    })
+                    })[2...6] ?? [])
             )
             .generateQuiz()
         )
         .previewDisplayName("PDF")
-        QuizView(viewModel: QuizView.ViewModel())
+//        PDFKitView(
+//            documentData: PDFGenerator(
+//                title: "",
+//                verses:
+//                    Bundle.main.decode(SurahElement.self, from: "Al-Fatihah.json").verses.map({
+//                        QuizVerse(
+//                            surahId: 1,
+//                            ayahId: $0.id,
+//                            text: $0.text
+//                        )
+//                    })
+//            )
+//            .generateQuiz()
+//        )
+//        .previewDisplayName("PDF")
+//        QuizView(viewModel: QuizView.ViewModel())
     }
 }
 

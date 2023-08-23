@@ -83,11 +83,11 @@ struct QuizVerse: Identifiable, Hashable {
 
 
 
-let verses = Bundle.main.decode(SurahElement.self, from: "Al-Fatihah.json").verses.map {
+let verses = Array(Bundle.main.decode(SurahElement.self, from: "Al-Fatihah.json").verses.map {
     QuizVerse(
         surahId: 1,
         ayahId: $0.id,
         text: $0.text
     )
-}
+}.prefix(4))
 
