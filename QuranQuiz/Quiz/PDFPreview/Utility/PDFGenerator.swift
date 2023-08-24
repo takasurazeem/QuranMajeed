@@ -118,7 +118,7 @@ class PDFGenerator {
             var yPos = studentNameRowYPos + 70
             for verse in verses {
                 let nextPost = addVerseText(
-                    verse: verse.text,
+                    verse: verse,
                     pageRect: pageRect,
                     textTop: yPos
                 )
@@ -131,7 +131,7 @@ class PDFGenerator {
     }
     
     func addVerseText(
-        verse: String,
+        verse: QuizVerse,
         pageRect: CGRect,
         textTop: CGFloat
     ) -> CGFloat {
@@ -148,7 +148,7 @@ class PDFGenerator {
             NSAttributedString.Key.languageIdentifier: "ar_SA"
         ] as [NSAttributedString.Key : Any]
         let attributedText = NSAttributedString(
-            string: verse,
+            string: verse.text,
             attributes: textAttributes
         )
         // 3
