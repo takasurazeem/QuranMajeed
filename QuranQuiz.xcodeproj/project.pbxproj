@@ -18,7 +18,6 @@
 		F9D60D172A76C6AC00701635 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D142A76C6AC00701635 /* QuizView.swift */; };
 		F9D60D1A2A76C6CA00701635 /* Bundle+Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D192A76C6CA00701635 /* Bundle+Decode.swift */; };
 		F9D60D222A76C6DB00701635 /* Al-Fatihah.json in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D1E2A76C6DB00701635 /* Al-Fatihah.json */; };
-		F9D60D232A76C6DB00701635 /* Quran.json in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D1F2A76C6DB00701635 /* Quran.json */; };
 		F9D60D282A76C6EF00701635 /* pdms-saleem-quranfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D252A76C6EF00701635 /* pdms-saleem-quranfont.ttf */; };
 		F9D60D292A76C6EF00701635 /* diwani-bent.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D262A76C6EF00701635 /* diwani-bent.ttf */; };
 		F9D60D2A2A76C6EF00701635 /* UthmanTN1Ver10.otf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D272A76C6EF00701635 /* UthmanTN1Ver10.otf */; };
@@ -45,7 +44,6 @@
 		F9D60D142A76C6AC00701635 /* QuizView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		F9D60D192A76C6CA00701635 /* Bundle+Decode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Decode.swift"; sourceTree = "<group>"; };
 		F9D60D1E2A76C6DB00701635 /* Al-Fatihah.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Al-Fatihah.json"; sourceTree = "<group>"; };
-		F9D60D1F2A76C6DB00701635 /* Quran.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Quran.json; sourceTree = "<group>"; };
 		F9D60D252A76C6EF00701635 /* pdms-saleem-quranfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pdms-saleem-quranfont.ttf"; sourceTree = "<group>"; };
 		F9D60D262A76C6EF00701635 /* diwani-bent.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "diwani-bent.ttf"; sourceTree = "<group>"; };
 		F9D60D272A76C6EF00701635 /* UthmanTN1Ver10.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = UthmanTN1Ver10.otf; sourceTree = "<group>"; };
@@ -183,7 +181,6 @@
 			children = (
 				F952CFC82A90273C0039478F /* Quran_ur.json */,
 				F9D60D1E2A76C6DB00701635 /* Al-Fatihah.json */,
-				F9D60D1F2A76C6DB00701635 /* Quran.json */,
 			);
 			path = "JSON Files";
 			sourceTree = "<group>";
@@ -302,7 +299,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9D60D082A76C69E00701635 /* Preview Assets.xcassets in Resources */,
-				F9D60D232A76C6DB00701635 /* Quran.json in Resources */,
 				F9D60D2A2A76C6EF00701635 /* UthmanTN1Ver10.otf in Resources */,
 				F9D60D282A76C6EF00701635 /* pdms-saleem-quranfont.ttf in Resources */,
 				F9D60D312A77DE4800701635 /* Offers and Discounts.pdf in Resources */,

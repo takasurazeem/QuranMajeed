@@ -20,7 +20,7 @@ struct QuizView: View {
                         Section("Select Surah and Verse") {
                             Picker("Surah", selection: $viewModel.selectedSurah) {
                                 ForEach(viewModel.surahs) { surah in
-                                    Text("\(surah.name) {\(surah.id)}")
+                                    Text("\(surah.translation ?? "N?A") {\(surah.id)}")
                                         .font(Font.custom("_PDMS_Saleem_QuranFont", size: 22.0))
                                         .tag(surah)
                                 }
@@ -110,7 +110,7 @@ struct QuizView_Previews: PreviewProvider {
             documentData: PDFGenerator(
                 title: "",
                 verses:
-                    Array(Bundle.main.decode(Surahs.self, from: "Quran.json").first(where: {$0.id==5})?.verses.map({
+                    Array(Bundle.main.decode(Surahs.self, from: "Quran_ur.json").first(where: {$0.id==5})?.verses.map({
                         QuizVerse(
                             surahId: 1,
                             ayahId: $0.id,
@@ -136,7 +136,7 @@ struct QuizView_Previews: PreviewProvider {
 //            .generateQuiz()
 //        )
 //        .previewDisplayName("PDF")
-//        QuizView(viewModel: QuizView.ViewModel())
+        QuizView(viewModel: QuizView.ViewModel())
     }
 }
 

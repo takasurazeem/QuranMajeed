@@ -24,13 +24,15 @@ struct SurahElement: Codable, Identifiable, Hashable {
     }
     
     var id: Int
-    let name, transliteration: String
+    let name: String
+    let transliteration: String
+    let translation: String
     let type: TypeEnum
     let totalVerses: Int
     let verses: [Verse]
 
     enum CodingKeys: String, CodingKey {
-        case id, name, transliteration, type
+        case id, name, transliteration, type, translation
         case totalVerses = "total_verses"
         case verses
     }
@@ -45,6 +47,7 @@ enum TypeEnum: String, Codable {
 struct Verse: Codable, Identifiable {
     var id: Int
     let text: String
+    let translation: String
 }
 
 typealias Surahs = [SurahElement]
