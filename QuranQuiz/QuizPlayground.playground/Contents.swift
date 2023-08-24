@@ -63,6 +63,7 @@ enum TypeEnum: String, Codable {
 struct Verse: Codable, Identifiable {
     var id: Int
     let text: String
+    let translation: String
 }
 
 typealias Surahs = [SurahElement]
@@ -83,11 +84,12 @@ struct QuizVerse: Identifiable, Hashable {
 
 
 
-let verses = Array(Bundle.main.decode(SurahElement.self, from: "Al-Fatihah.json").verses.map {
-    QuizVerse(
-        surahId: 1,
-        ayahId: $0.id,
-        text: $0.text
-    )
-}.prefix(4))
+//let verses = Array(Bundle.main.decode(SurahElement.self, from: "Al-Fatihah.json").verses.map {
+//    QuizVerse(
+//        surahId: 1,
+//        ayahId: $0.id,
+//        text: $0.text
+//    )
+//}.prefix(4))
 
+let surahs = Bundle.main.decode(Surahs.self, from: "Quran_ur.json")

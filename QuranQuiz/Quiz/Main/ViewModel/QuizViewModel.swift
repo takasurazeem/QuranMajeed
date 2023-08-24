@@ -15,10 +15,12 @@ extension QuizView {
         init() {
             selectedAyahNumber = 1
             surahs = []
-            selectedVerse = Verse(id: 1, text: "")
+            selectedVerse = Verse(id: 1, text: "", translation: "")
             selectedSurah = Bundle.main.decode(SurahElement.self, from: "Al-Fatihah.json")
-            surahs = Bundle.main.decode(Surahs.self, from: "Quran.json")
-            selectedVerse = selectedSurah.verses.first!
+            surahs = Bundle.main.decode(Surahs.self, from: "Quran_ur.json")
+            if let verse = selectedSurah.verses.first {
+                selectedVerse = verse
+            }
             setTextForSelectedAya()
 //            for family in UIFont.familyNames.sorted() {
 //                print("Family: \(family)")
