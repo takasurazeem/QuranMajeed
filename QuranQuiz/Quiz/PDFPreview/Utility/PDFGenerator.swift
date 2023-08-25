@@ -28,11 +28,6 @@ class PDFGenerator {
         renderer = UIGraphicsPDFRenderer(bounds: pageRect, format: format)
         
     }
-    let renderer: UIGraphicsPDFRenderer
-    let format: UIGraphicsPDFRendererFormat
-    let pageWidth: Double
-    let pageHeight: Double
-    let pageRect: CGRect
     
     func generateQuiz() -> Data {
         format.documentInfo = pdfMetaData as [String: Any]
@@ -186,8 +181,13 @@ class PDFGenerator {
     
     // MARK: - MetaData
     let pdfMetaData: [CFString: String]
-    
+    let renderer: UIGraphicsPDFRenderer
+    let format: UIGraphicsPDFRendererFormat
+
     // MARK: - Page Dimensions (A4 right now, but this will as well be configurablein in near future ان شاء اللہ تَعَالٰی
+    let pageWidth: Double
+    let pageHeight: Double
+    let pageRect: CGRect
     
     
     // MARK: - Dependencies
