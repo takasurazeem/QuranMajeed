@@ -64,7 +64,6 @@ struct QuizView: View {
                         NavigationLink("PDF Preview") {
                             PDFKitView(
                                 documentData: PDFGenerator(
-                                    title: "",
                                     verses: viewModel.selectedVerses
                                 )
                                 .generateQuiz()
@@ -75,7 +74,6 @@ struct QuizView: View {
                                 // FIXME: - Not a good place to put it here. Move to a file of its own.
                                 ToolbarItem(placement: .navigationBarTrailing) {
                                     if let document = PDFDocument(data: PDFGenerator(
-                                        title: "",
                                         verses: viewModel.selectedVerses
                                     )
                                     .generateQuiz()) {
@@ -105,22 +103,28 @@ struct PrimaryButtonStyle: ButtonStyle {
 }
 
 struct QuizView_Previews: PreviewProvider {
-    static var previews: some View {
-        PDFKitView(
-            documentData: PDFGenerator(
-                title: "",
-                verses:
-                    Array(Bundle.main.decode(Surahs.self, from: "Quran_ur.json").first(where: {$0.id==5})?.verses.map({
-                        QuizVerse(
-                            surahId: 1,
-                            ayahId: $0.id,
-                            text: $0.text
-                        )
-                    })[2...6] ?? [])
-            )
-            .generateQuiz()
+    static let quizVerses = Bundle.main.decode(Surahs.self, from: "Quran_ur.json").first(where: {$0.id==65})?.verses.compactMap({
+        QuizVerse(
+            surahId: 1,
+            ayahId: $0.id,
+            text: $0.text
         )
-        .previewDisplayName("PDF")
+    })
+    static var previews: some View {
+        if let quizVerses {
+            PDFKitView(
+                documentData: PDFGenerator(
+                    verses: [
+                        quizVerses[0],
+                        quizVerses[3],
+                        quizVerses[5],
+                        quizVerses[11]
+                    ]
+                )
+                .generateQuiz()
+            )
+            .previewDisplayName("PDF")
+        }
 //        PDFKitView(
 //            documentData: PDFGenerator(
 //                title: "",
