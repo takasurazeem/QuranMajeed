@@ -48,9 +48,13 @@ class PDFGenerator {
                 NSAttributedString.Key.font: belowOpeningTextFont
             ]
             
-            let nameAndDateTextAttributes = [
+            let nameFieldAttributes = [
                 NSAttributedString.Key.font: nameAndDateTextFont
             ]
+            let dateFieldAttributes = [
+                NSAttributedString.Key.font: nameAndDateTextFont,
+                NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue
+            ] as [NSAttributedString.Key : Any]
 
             theOpeningText.draw(
                 at: CGPoint(
@@ -87,28 +91,28 @@ class PDFGenerator {
                     x: pageWidth - studentNameTextWidth - (studentNameTextWidth * 0.1),
                     y: studentNameRowYPos
                 ),
-                withAttributes: nameAndDateTextAttributes
+                withAttributes: nameFieldAttributes
             )
             nameUnderScores.draw(
                 at: CGPoint(
                     x: pageWidth - studentNameTextWidth - (nameUnderScores.width(usingFont: .boldSystemFont(ofSize: 14)) * 1.35),
                     y: studentNameRowYPos
                 ),
-                withAttributes: nameAndDateTextAttributes
+                withAttributes: nameFieldAttributes
             )
             dateText.draw(
                 at: CGPoint(
                     x: dateTextXPos,
                     y: studentNameRowYPos
                 ),
-                withAttributes: nameAndDateTextAttributes
+                withAttributes: nameFieldAttributes
             )
             date.draw(
                 at: CGPoint(
                     x: 15,
                     y: studentNameRowYPos
                 ),
-                withAttributes: nameAndDateTextAttributes
+                withAttributes: dateFieldAttributes
             )
             var yPos = studentNameRowYPos + 70
             for verse in verses {
