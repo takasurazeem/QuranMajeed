@@ -20,8 +20,8 @@ class PDFGenerator {
        ]
         format = UIGraphicsPDFRendererFormat()
         // 2
-        pageWidth   = 8.5 * 72.0
-        pageHeight  = 11 * 72.0
+        pageWidth   = 595.2
+        pageHeight  = 841.0
         pageRect    = CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight)
         
         // 3
@@ -40,24 +40,33 @@ class PDFGenerator {
             context.beginPage()
             
             drawQuizHeaders()
-            var yPos = studentNameRowYPos + 70
+            var yPos = studentNameRowYPos + 45
             for verse in verses {
                 let nextPost = addVerseText(
+                    context: context,
                     verse: verse,
-                    pageRect: pageRect,
                     textTop: yPos
                 )
                 yPos = nextPost
-                
             }
         }
         
         return data
     }
     
+    
+    private func makeTranslationTextAttributes(_ paragraphStyle: NSMutableParagraphStyle) -> [NSAttributedString.Key : Any] {
+        return [
+            NSAttributedString.Key.paragraphStyle: paragraphStyle,
+            NSAttributedString.Key.font: leftRightHeadingsFont.withSize(11.0),
+            NSAttributedString.Key.writingDirection: [NSWritingDirection.rightToLeft.rawValue],
+            NSAttributedString.Key.languageIdentifier: "ur_PK"
+        ] as [NSAttributedString.Key : Any]
+    }
+    
     func addVerseText(
+        context: UIGraphicsPDFRendererContext,
         verse: QuizVerse,
-        pageRect: CGRect,
         textTop: CGFloat
     ) -> CGFloat {
         let textFont = theOpeningFont//.withSize(22)
@@ -66,38 +75,75 @@ class PDFGenerator {
         paragraphStyle.alignment = .right
         paragraphStyle.lineBreakMode = .byWordWrapping
         // 2
-        let verseTextAttributes = [
-            NSAttributedString.Key.paragraphStyle: paragraphStyle,
-            NSAttributedString.Key.font: textFont,
-            NSAttributedString.Key.writingDirection: [NSWritingDirection.rightToLeft.rawValue],
-            NSAttributedString.Key.languageIdentifier: "ar_SA"
-        ] as [NSAttributedString.Key : Any]
+        let verseTextAttributes = makeVerseTextAttributes(paragraphStyle, textFont)
         let attributedVerseText = NSAttributedString(
             string: verse.text,
             attributes: verseTextAttributes
         )
+        let translationTextAttributes = makeTranslationTextAttributes(paragraphStyle)
+        let attributedTranslationText = NSAttributedString(
+            string: verse.translation,
+            attributes: translationTextAttributes
+        )
         // I think I will move the above properties to a better place ان شاء اللہ تَعَالٰی 
         // 3
         let width = pageRect.width - 20
-        let height = attributedVerseText.height(containerWidth: width)
-        let textRect = CGRect(
+        let verseTextHeight = attributedVerseText.height(containerWidth: width)
+//        let translationTextHeight = attributedTranslationText.height(containerWidth: width)
+        let verseTextRect = CGRect(
             x: 10,
             y: textTop,
             width: width,
-            height: height
+            height: verseTextHeight
         )
-        print(textRect)
-        attributedVerseText.draw(in: textRect)
-        return textRect.maxY
+//        let translationTextRect = CGRect(
+//            x: 10,
+//            y: verseTextRect.maxY + 10,
+//            width: width,
+//            height: translationTextHeight
+//        )
+        let numberOfLines = attributedTranslationText.numberOfLines(with: pageRect.width)
+        print(verse.translation)
+        print(numberOfLines)
+        attributedVerseText.draw(in: verseTextRect)
+//        attributedTranslationText.draw(in: translationTextRect)
+        let lineHeight = 35.0
+        for number in 1...numberOfLines {
+            drawLineBreak(
+                drawContext: context.cgContext,
+                pageRect: pageRect,
+                numberOfLines: numberOfLines,
+                tearOffY: verseTextRect.maxY + lineHeight * Double(number)
+            )
+        }
+        
+        return verseTextRect.maxY + lineHeight * Double(numberOfLines) + 8
     }
 
+    func drawLineBreak(
+        drawContext: CGContext,
+        pageRect: CGRect,
+        numberOfLines: Int,
+        tearOffY: Double
+    ) {
+        // 2
+        drawContext.saveGState()
+        // 3
+        drawContext.setLineWidth(1.0)
+        
+        // 4
+        drawContext.move(to: CGPoint(x: 5, y: tearOffY))
+        drawContext.addLine(to: CGPoint(x: pageRect.width - 5, y: tearOffY))
+        drawContext.strokePath()
+        drawContext.restoreGState()
+    }
     
     // TODO: - Use AppStorage, some of these will be set from a settings menu for more flexibility in future ان شاء اللہ تَعَالٰی
     // MARK: - Fonts
-    let theOpeningFont = UIFont(name: "_PDMS_Saleem_QuranFont", size: 24) ?? .boldSystemFont(ofSize: 64)
-    let leftRightHeadingsFont = UIFont(name: "NotoNastaliqUrdu", size: 14) ?? .boldSystemFont(ofSize: 64)
-    let belowOpeningTextFont = UIFont(name: "DiwaniBent", size: 28) ?? .boldSystemFont(ofSize: 64)
-    let nameAndDateTextFont = UIFont(name: "NotoNastaliqUrdu", size: 18) ?? .boldSystemFont(ofSize: 64)
+    let theOpeningFont = UIFont(name: "_PDMS_Saleem_QuranFont", size: 20) ?? .boldSystemFont(ofSize: 64)
+    let leftRightHeadingsFont = UIFont(name: "NotoNastaliqUrdu", size: 10) ?? .boldSystemFont(ofSize: 64)
+    let belowOpeningTextFont = UIFont(name: "DiwaniBent", size: 20) ?? .boldSystemFont(ofSize: 64)
+    let nameAndDateTextFont = UIFont(name: "NotoNastaliqUrdu", size: 14) ?? .boldSystemFont(ofSize: 64)
     
     // MARK: - Shared Attributes
     let rightAndLeftHeadingTextAttributes: [NSAttributedString.Key : UIFont]
@@ -128,6 +174,15 @@ class PDFGenerator {
 }
 
 extension PDFGenerator {
+    private func makeVerseTextAttributes(_ paragraphStyle: NSMutableParagraphStyle, _ textFont: UIFont) -> [NSAttributedString.Key : Any] {
+        return [
+            NSAttributedString.Key.paragraphStyle: paragraphStyle,
+            NSAttributedString.Key.font: textFont.withSize(18),
+            NSAttributedString.Key.writingDirection: [NSWritingDirection.rightToLeft.rawValue],
+            NSAttributedString.Key.languageIdentifier: "ar_SA"
+        ] as [NSAttributedString.Key : Any]
+    }
+    
     
     private func drawQuizHeaders() {
         // 6

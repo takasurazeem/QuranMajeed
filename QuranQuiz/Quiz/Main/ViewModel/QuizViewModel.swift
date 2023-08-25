@@ -51,7 +51,8 @@ extension QuizView {
                 let verse = QuizVerse(
                     surahId: selectedSurah.id,
                     ayahId: selectedVerse.id,
-                    text: selectedVerse.text
+                    text: selectedVerse.text,
+                    translation: selectedVerse.translation
                 )
                 print(verse)
                 selectedVerses.append(verse)
