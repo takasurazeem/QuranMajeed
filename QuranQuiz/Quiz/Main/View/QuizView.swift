@@ -103,21 +103,28 @@ struct PrimaryButtonStyle: ButtonStyle {
 }
 
 struct QuizView_Previews: PreviewProvider {
-    static var previews: some View {
-        PDFKitView(
-            documentData: PDFGenerator(
-                verses:
-                    Array(Bundle.main.decode(Surahs.self, from: "Quran_ur.json").first(where: {$0.id==5})?.verses.map({
-                        QuizVerse(
-                            surahId: 1,
-                            ayahId: $0.id,
-                            text: $0.text
-                        )
-                    })[2...6] ?? [])
-            )
-            .generateQuiz()
+    static let quizVerses = Bundle.main.decode(Surahs.self, from: "Quran_ur.json").first(where: {$0.id==65})?.verses.compactMap({
+        QuizVerse(
+            surahId: 1,
+            ayahId: $0.id,
+            text: $0.text
         )
-        .previewDisplayName("PDF")
+    })
+    static var previews: some View {
+        if let quizVerses {
+            PDFKitView(
+                documentData: PDFGenerator(
+                    verses: [
+                        quizVerses[0],
+                        quizVerses[3],
+                        quizVerses[5],
+                        quizVerses[11]
+                    ]
+                )
+                .generateQuiz()
+            )
+            .previewDisplayName("PDF")
+        }
 //        PDFKitView(
 //            documentData: PDFGenerator(
 //                title: "",

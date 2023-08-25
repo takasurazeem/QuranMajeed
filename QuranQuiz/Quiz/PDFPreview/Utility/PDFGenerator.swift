@@ -26,6 +26,9 @@ class PDFGenerator {
         
         // 3
         renderer = UIGraphicsPDFRenderer(bounds: pageRect, format: format)
+        rightAndLeftHeadingTextAttributes = [
+            NSAttributedString.Key.font: leftRightHeadingsFont
+        ]
     }
     
     func generateQuiz() -> Data {
@@ -35,85 +38,8 @@ class PDFGenerator {
         let data = renderer.pdfData { (context) in
             // 5
             context.beginPage()
-            // 6
-            let openingAttributes = [
-                NSAttributedString.Key.font: theOpeningFont
-            ]
             
-            let rightHeadingTextAttributes = [
-                NSAttributedString.Key.font: leftRightHeadingsFont
-            ]
-            
-            let belowOpeningTextAttributes = [
-                NSAttributedString.Key.font: belowOpeningTextFont
-            ]
-            
-            let nameFieldAttributes = [
-                NSAttributedString.Key.font: nameAndDateTextFont
-            ]
-            let dateFieldAttributes = [
-                NSAttributedString.Key.font: nameAndDateTextFont,
-                NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue
-            ] as [NSAttributedString.Key : Any]
-
-            theOpeningText.draw(
-                at: CGPoint(
-                    x: (pageWidth) / 2 - theOpeningText.width(usingFont: theOpeningFont) / 2,
-                    y: 5
-                ),
-                withAttributes: openingAttributes
-            )
-            let rightHeadingTextWidth = rightHeadingText.width(usingFont: leftRightHeadingsFont)
-            rightHeadingText.draw(
-                at: CGPoint(
-                    x: pageWidth - rightHeadingTextWidth - (rightHeadingTextWidth * 0.1),
-                    y: 5
-                ),
-                withAttributes: rightHeadingTextAttributes
-            )
-            leftHeadingText.draw(
-                at: CGPoint(
-                    x: 10,
-                    y: 5
-                ),
-                withAttributes: rightHeadingTextAttributes
-            )
-            belowOpeningText.draw(
-                at: CGPoint(
-                    x: (pageWidth) / 2 - belowOpeningText.width(usingFont: belowOpeningTextFont) / 2,
-                    y: theOpeningText.heightOfString(usingFont: theOpeningFont)
-                ),
-                withAttributes: belowOpeningTextAttributes
-            )
-            let studentNameTextWidth = studentNameText.width(usingFont: nameAndDateTextFont)
-            studentNameText.draw(
-                at: CGPoint(
-                    x: pageWidth - studentNameTextWidth - (studentNameTextWidth * 0.1),
-                    y: studentNameRowYPos
-                ),
-                withAttributes: nameFieldAttributes
-            )
-            nameUnderScores.draw(
-                at: CGPoint(
-                    x: pageWidth - studentNameTextWidth - (nameUnderScores.width(usingFont: .boldSystemFont(ofSize: 14)) * 1.35),
-                    y: studentNameRowYPos
-                ),
-                withAttributes: nameFieldAttributes
-            )
-            dateText.draw(
-                at: CGPoint(
-                    x: dateTextXPos,
-                    y: studentNameRowYPos
-                ),
-                withAttributes: nameFieldAttributes
-            )
-            date.draw(
-                at: CGPoint(
-                    x: 15,
-                    y: studentNameRowYPos
-                ),
-                withAttributes: dateFieldAttributes
-            )
+            drawQuizHeaders()
             var yPos = studentNameRowYPos + 70
             for verse in verses {
                 let nextPost = addVerseText(
@@ -140,19 +66,20 @@ class PDFGenerator {
         paragraphStyle.alignment = .right
         paragraphStyle.lineBreakMode = .byWordWrapping
         // 2
-        let textAttributes = [
+        let verseTextAttributes = [
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont,
             NSAttributedString.Key.writingDirection: [NSWritingDirection.rightToLeft.rawValue],
             NSAttributedString.Key.languageIdentifier: "ar_SA"
         ] as [NSAttributedString.Key : Any]
-        let attributedText = NSAttributedString(
+        let attributedVerseText = NSAttributedString(
             string: verse.text,
-            attributes: textAttributes
+            attributes: verseTextAttributes
         )
+        // I think I will move the above properties to a better place ان شاء اللہ تَعَالٰی 
         // 3
         let width = pageRect.width - 20
-        let height = attributedText.height(containerWidth: width)
+        let height = attributedVerseText.height(containerWidth: width)
         let textRect = CGRect(
             x: 10,
             y: textTop,
@@ -160,7 +87,7 @@ class PDFGenerator {
             height: height
         )
         print(textRect)
-        attributedText.draw(in: textRect)
+        attributedVerseText.draw(in: textRect)
         return textRect.maxY
     }
 
@@ -171,6 +98,9 @@ class PDFGenerator {
     let leftRightHeadingsFont = UIFont(name: "NotoNastaliqUrdu", size: 14) ?? .boldSystemFont(ofSize: 64)
     let belowOpeningTextFont = UIFont(name: "DiwaniBent", size: 28) ?? .boldSystemFont(ofSize: 64)
     let nameAndDateTextFont = UIFont(name: "NotoNastaliqUrdu", size: 18) ?? .boldSystemFont(ofSize: 64)
+    
+    // MARK: - Shared Attributes
+    let rightAndLeftHeadingTextAttributes: [NSAttributedString.Key : UIFont]
     
     // MARK: - Texts
     let theOpeningText = "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ"
@@ -198,6 +128,106 @@ class PDFGenerator {
 }
 
 extension PDFGenerator {
+    
+    private func drawQuizHeaders() {
+        // 6
+        drawOpening()
+        drawRightHeadingText()
+        drawLeftHeadingText()
+        drawBelowOpeningText()
+        drawStudentNameField()
+        drawDateField()
+    }
+    
+    private func drawOpening() {
+        let openingAttributes = [
+            NSAttributedString.Key.font: theOpeningFont
+        ]
+        theOpeningText.draw(
+            at: CGPoint(
+                x: (pageWidth) / 2 - theOpeningText.width(usingFont: theOpeningFont) / 2,
+                y: 5
+            ),
+            withAttributes: openingAttributes
+        )
+    }
+    
+    private func drawRightHeadingText() {
+        let rightHeadingTextWidth = rightHeadingText.width(usingFont: leftRightHeadingsFont)
+        rightHeadingText.draw(
+            at: CGPoint(
+                x: pageWidth - rightHeadingTextWidth - (rightHeadingTextWidth * 0.1),
+                y: 5
+            ),
+            withAttributes: rightAndLeftHeadingTextAttributes
+        )
+    }
+    
+    private func drawLeftHeadingText() {
+        leftHeadingText.draw(
+            at: CGPoint(
+                x: 10,
+                y: 5
+            ),
+            withAttributes: rightAndLeftHeadingTextAttributes
+        )
+    }
+    
+    private func drawBelowOpeningText() {
+        let belowOpeningTextAttributes = [
+            NSAttributedString.Key.font: belowOpeningTextFont
+        ]
+        belowOpeningText.draw(
+            at: CGPoint(
+                x: (pageWidth) / 2 - belowOpeningText.width(usingFont: belowOpeningTextFont) / 2,
+                y: theOpeningText.heightOfString(usingFont: theOpeningFont)
+            ),
+            withAttributes: belowOpeningTextAttributes
+        )
+    }
+    
+    private func drawStudentNameField() {
+        let nameFieldAttributes = [
+            NSAttributedString.Key.font: nameAndDateTextFont
+        ]
+        let studentNameTextWidth = studentNameText.width(usingFont: nameAndDateTextFont)
+        studentNameText.draw(
+            at: CGPoint(
+                x: pageWidth - studentNameTextWidth - (studentNameTextWidth * 0.1),
+                y: studentNameRowYPos
+            ),
+            withAttributes: nameFieldAttributes
+        )
+        nameUnderScores.draw(
+            at: CGPoint(
+                x: pageWidth - studentNameTextWidth - (nameUnderScores.width(usingFont: .boldSystemFont(ofSize: 14)) * 1.35),
+                y: studentNameRowYPos
+            ),
+            withAttributes: nameFieldAttributes
+        )
+        dateText.draw(
+            at: CGPoint(
+                x: dateTextXPos,
+                y: studentNameRowYPos
+            ),
+            withAttributes: nameFieldAttributes
+        )
+    }
+    
+    private func drawDateField() {
+        let dateFieldAttributes = [
+            NSAttributedString.Key.font: nameAndDateTextFont,
+            NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue
+        ] as [NSAttributedString.Key : Any]
+        date.draw(
+            at: CGPoint(
+                x: 15,
+                y: studentNameRowYPos
+            ),
+            withAttributes: dateFieldAttributes
+        )
+    }
+    
     var studentNameRowYPos: CGFloat {
         belowOpeningText.heightOfString(usingFont: belowOpeningTextFont) + theOpeningText.heightOfString(usingFont: theOpeningFont)
     }
