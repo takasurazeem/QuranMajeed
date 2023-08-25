@@ -12,26 +12,31 @@ class PDFGenerator {
         verses: [QuizVerse]
     ) {
         self.verses = verses
-    }
-    
-    
-    func generateQuiz() -> Data {
-        // 1
-        let pdfMetaData = [
-          kCGPDFContextCreator: "Quiz Builder",
-          kCGPDFContextAuthor: "takasurazeem@gmail.com"
-        ]
-        let format = UIGraphicsPDFRendererFormat()
-        format.documentInfo = pdfMetaData as [String: Any]
         
+        // 1
+        pdfMetaData = [
+         kCGPDFContextCreator: "Quiz Builder",
+         kCGPDFContextAuthor: "takasurazeem@gmail.com"
+       ]
+        format = UIGraphicsPDFRendererFormat()
         // 2
-        let pageWidth = 8.5 * 72.0
-//        print("Page Width: \(pageWidth)")
-        let pageHeight = 11 * 72.0
-        let pageRect = CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight)
+        pageWidth   = 8.5 * 72.0
+        pageHeight  = 11 * 72.0
+        pageRect    = CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight)
         
         // 3
-        let renderer = UIGraphicsPDFRenderer(bounds: pageRect, format: format)
+        renderer = UIGraphicsPDFRenderer(bounds: pageRect, format: format)
+        
+    }
+    let renderer: UIGraphicsPDFRenderer
+    let format: UIGraphicsPDFRendererFormat
+    let pageWidth: Double
+    let pageHeight: Double
+    let pageRect: CGRect
+    
+    func generateQuiz() -> Data {
+        format.documentInfo = pdfMetaData as [String: Any]
+        
         // 4
         let data = renderer.pdfData { (context) in
             // 5
@@ -179,6 +184,13 @@ class PDFGenerator {
     let dateText = "بتاریخ:"
     let translateFollowingAyahsText = "درج زیل آیات ترجمہ لکھیں:"
     
+    // MARK: - MetaData
+    let pdfMetaData: [CFString: String]
+    
+    // MARK: - Page Dimensions (A4 right now, but this will as well be configurablein in near future ان شاء اللہ تَعَالٰی
+    
+    
+    // MARK: - Dependencies
     private let verses: [QuizVerse]
 }
 
