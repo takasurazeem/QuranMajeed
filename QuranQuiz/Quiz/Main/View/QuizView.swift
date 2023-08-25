@@ -64,7 +64,6 @@ struct QuizView: View {
                         NavigationLink("PDF Preview") {
                             PDFKitView(
                                 documentData: PDFGenerator(
-                                    title: "",
                                     verses: viewModel.selectedVerses
                                 )
                                 .generateQuiz()
@@ -75,7 +74,6 @@ struct QuizView: View {
                                 // FIXME: - Not a good place to put it here. Move to a file of its own.
                                 ToolbarItem(placement: .navigationBarTrailing) {
                                     if let document = PDFDocument(data: PDFGenerator(
-                                        title: "",
                                         verses: viewModel.selectedVerses
                                     )
                                     .generateQuiz()) {
@@ -108,7 +106,6 @@ struct QuizView_Previews: PreviewProvider {
     static var previews: some View {
         PDFKitView(
             documentData: PDFGenerator(
-                title: "",
                 verses:
                     Array(Bundle.main.decode(Surahs.self, from: "Quran_ur.json").first(where: {$0.id==5})?.verses.map({
                         QuizVerse(

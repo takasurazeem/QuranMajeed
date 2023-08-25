@@ -63,7 +63,7 @@ extension QuizView {
         }
         
         func generatePDF() -> URL? {
-            _ = PDFGenerator(title: "Test", verses: selectedVerses)
+            _ = PDFGenerator(verses: selectedVerses)
             
             
             return nil

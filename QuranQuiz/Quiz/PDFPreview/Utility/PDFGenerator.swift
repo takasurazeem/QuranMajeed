@@ -9,12 +9,9 @@ import PDFKit
 
 class PDFGenerator {
     init(
-        title: String,
         verses: [QuizVerse]
     ) {
-        self.title = title
         self.verses = verses
-//        print("verses.count: \(verses.count)")
     }
     
     
@@ -22,8 +19,7 @@ class PDFGenerator {
         // 1
         let pdfMetaData = [
           kCGPDFContextCreator: "Quiz Builder",
-          kCGPDFContextAuthor: "takasurazeem@gmail.com",
-          kCGPDFContextTitle: title
+          kCGPDFContextAuthor: "takasurazeem@gmail.com"
         ]
         let format = UIGraphicsPDFRendererFormat()
         format.documentInfo = pdfMetaData as [String: Any]
@@ -183,8 +179,6 @@ class PDFGenerator {
     let dateText = "بتاریخ:"
     let translateFollowingAyahsText = "درج زیل آیات ترجمہ لکھیں:"
     
-    
-    private let title: String
     private let verses: [QuizVerse]
 }
 
