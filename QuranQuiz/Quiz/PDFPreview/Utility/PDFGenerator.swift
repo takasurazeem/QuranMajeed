@@ -26,7 +26,6 @@ class PDFGenerator {
         
         // 3
         renderer = UIGraphicsPDFRenderer(bounds: pageRect, format: format)
-        
     }
     
     func generateQuiz() -> Data {
