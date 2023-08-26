@@ -125,6 +125,7 @@ struct QuizView_Previews: PreviewProvider {
                 .generateQuiz()
             )
             .previewDisplayName("PDF")
+            .previewDevice("iPad Pro (12.9-inch) (6th generation)")
         }
 //        PDFKitView(
 //            documentData: PDFGenerator(
@@ -142,6 +143,7 @@ struct QuizView_Previews: PreviewProvider {
 //        )
 //        .previewDisplayName("PDF")
         QuizView(viewModel: QuizView.ViewModel())
+            .previewDevice("iPad Pro (12.9-inch) (6th generation)")
     }
 }
 
