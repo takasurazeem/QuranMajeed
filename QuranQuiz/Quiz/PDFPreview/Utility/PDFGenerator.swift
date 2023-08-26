@@ -31,6 +31,9 @@ class PDFGenerator {
         ]
     }
     
+    
+    /// This method uses the injected QuizVerses to generate the quiz and calls internal methods
+    /// - Returns: Data that can be used by `PDFKitView`
     func generateQuiz() -> Data {
         format.documentInfo = pdfMetaData as [String: Any]
         
@@ -55,16 +58,13 @@ class PDFGenerator {
     }
     
     
-    private func makeTranslationTextAttributes(_ paragraphStyle: NSMutableParagraphStyle) -> [NSAttributedString.Key : Any] {
-        return [
-            NSAttributedString.Key.paragraphStyle: paragraphStyle,
-            NSAttributedString.Key.font: leftRightHeadingsFont.withSize(11.0),
-            NSAttributedString.Key.writingDirection: [NSWritingDirection.rightToLeft.rawValue],
-            NSAttributedString.Key.languageIdentifier: "ur_PK"
-        ] as [NSAttributedString.Key : Any]
-    }
-    
-    func addVerseText(
+    /// This method adds verse and empty horizontal lines required to write answer for that verse.
+    /// - Parameters:
+    ///   - context: This context is passed down to `drawLineBreak` method as  context.cgContext
+    ///   - verse: The verse with its text and translation
+    ///   - textTop: The Y Position of the text where it should be drawn
+    /// - Returns: Y Position for the next text to be drawn.
+    private func addVerseText(
         context: UIGraphicsPDFRendererContext,
         verse: QuizVerse,
         textTop: CGFloat
@@ -112,19 +112,24 @@ class PDFGenerator {
             drawLineBreak(
                 drawContext: context.cgContext,
                 pageRect: pageRect,
-                numberOfLines: numberOfLines,
-                tearOffY: verseTextRect.maxY + lineHeight * Double(number)
+                yOffset: verseTextRect.maxY + lineHeight * Double(number)
             )
         }
         
         return verseTextRect.maxY + lineHeight * Double(numberOfLines) + 8
     }
 
-    func drawLineBreak(
+    
+    /// This method draws in a horizontal rule
+    /// - Parameters:
+    ///   - drawContext: Context in which you draw
+    ///   - pageRect: Rect in which the rule will be drawn
+    ///   - numberOfLines: Number of lines (horizontal rule) to draw,
+    ///   - yOffset: Y Position of the line in the rect.
+    private func drawLineBreak(
         drawContext: CGContext,
         pageRect: CGRect,
-        numberOfLines: Int,
-        tearOffY: Double
+        yOffset: Double
     ) {
         // 2
         drawContext.saveGState()
@@ -132,8 +137,8 @@ class PDFGenerator {
         drawContext.setLineWidth(1.0)
         
         // 4
-        drawContext.move(to: CGPoint(x: 5, y: tearOffY))
-        drawContext.addLine(to: CGPoint(x: pageRect.width - 5, y: tearOffY))
+        drawContext.move(to: CGPoint(x: 5, y: yOffset))
+        drawContext.addLine(to: CGPoint(x: pageRect.width - 5, y: yOffset))
         drawContext.strokePath()
         drawContext.restoreGState()
     }
@@ -174,6 +179,17 @@ class PDFGenerator {
 }
 
 extension PDFGenerator {
+    
+    
+    private func makeTranslationTextAttributes(_ paragraphStyle: NSMutableParagraphStyle) -> [NSAttributedString.Key : Any] {
+        return [
+            NSAttributedString.Key.paragraphStyle: paragraphStyle,
+            NSAttributedString.Key.font: leftRightHeadingsFont.withSize(11.0),
+            NSAttributedString.Key.writingDirection: [NSWritingDirection.rightToLeft.rawValue],
+            NSAttributedString.Key.languageIdentifier: "ur_PK"
+        ] as [NSAttributedString.Key : Any]
+    }
+    
     private func makeVerseTextAttributes(_ paragraphStyle: NSMutableParagraphStyle, _ textFont: UIFont) -> [NSAttributedString.Key : Any] {
         return [
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
