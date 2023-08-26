@@ -32,7 +32,6 @@
 		F952CFC82A90273C0039478F /* Quran_ur.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Quran_ur.json; sourceTree = "<group>"; };
 		F952CFCA2A903FFB0039478F /* NotoNastaliqUrdu-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoNastaliqUrdu-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		F952CFCB2A90425D0039478F /* Jameel Noori Nastaleeq Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jameel Noori Nastaleeq Regular.ttf"; sourceTree = "<group>"; };
-		F952CFCC2A904DBC0039478F /* QuizPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = QuizPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F952CFD12A96D6BA0039478F /* String+size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+size.swift"; sourceTree = "<group>"; };
 		F952CFD32A96D6E50039478F /* NSAttributedString+size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+size.swift"; sourceTree = "<group>"; };
 		F9D60CFD2A76C69D00701635 /* QuranQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuranQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +119,6 @@
 				F9D60D302A77DE4800701635 /* Offers and Discounts.pdf */,
 				F9D60D042A76C69E00701635 /* Assets.xcassets */,
 				F9D60D062A76C69E00701635 /* Preview Content */,
-				F952CFCC2A904DBC0039478F /* QuizPlayground.playground */,
 			);
 			path = QuranQuiz;
 			sourceTree = "<group>";
