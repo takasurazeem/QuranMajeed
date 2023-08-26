@@ -20,7 +20,7 @@ struct QuizView: View {
                         Section("Select Surah and Verse") {
                             Picker("Surah", selection: $viewModel.selectedSurah) {
                                 ForEach(viewModel.surahs) { surah in
-                                    Text("\(surah.translation) {\(surah.id)}")
+                                    Text("\(surah.name) {\(surah.id)}")
                                         .font(Font.custom("_PDMS_Saleem_QuranFont", size: 22.0))
                                         .tag(surah)
                                 }
@@ -107,7 +107,8 @@ struct QuizView_Previews: PreviewProvider {
         QuizVerse(
             surahId: 1,
             ayahId: $0.id,
-            text: $0.text
+            text: $0.text,
+            translation: $0.translation
         )
     })
     static var previews: some View {
