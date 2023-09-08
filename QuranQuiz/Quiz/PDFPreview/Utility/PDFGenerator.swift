@@ -77,7 +77,7 @@ class PDFGenerator {
         // 2
         let verseTextAttributes = makeVerseTextAttributes(paragraphStyle, textFont)
         let attributedVerseText = NSAttributedString(
-            string: verse.text,
+            string: " ✤\t" + verse.text + "  ❍",
             attributes: verseTextAttributes
         )
         let translationTextAttributes = makeTranslationTextAttributes(paragraphStyle)

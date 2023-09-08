@@ -25,6 +25,7 @@ extension NSAttributedString {
         return ceil(rect.size.width)
     }
     
+    // https://stackoverflow.com/a/42305854/3077444
     func numberOfLines(with width: CGFloat) -> Int {
         let path = UIBezierPath(rect: CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT)))
         let frameSetterRef : CTFramesetter = CTFramesetterCreateWithAttributedString(self as CFAttributedString)
