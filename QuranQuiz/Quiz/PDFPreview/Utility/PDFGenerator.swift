@@ -271,7 +271,7 @@ extension PDFGenerator {
         )
         nameUnderScores.draw(
             at: CGPoint(
-                x: pageWidth - studentNameTextWidth - (nameUnderScores.width(usingFont: .boldSystemFont(ofSize: 14)) * 1.35),
+                x: pageWidth - studentNameTextWidth - (nameUnderScores.width(usingFont: .boldSystemFont(ofSize: 14)) * 1.10),
                 y: studentNameRowYPos
             ),
             withAttributes: nameFieldAttributes
