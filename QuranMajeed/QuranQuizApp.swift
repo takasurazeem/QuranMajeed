@@ -1,6 +1,6 @@
 //
-//  QuranQuizApp.swift
-//  QuranQuiz
+//  QuranMajeedApp.swift
+//  QuranMajeed
 //
 //  Created by Takasur Azeem on 30/07/2023.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct QuranQuizApp: App {
+struct QuranMajeedApp: App {
     var body: some Scene {
         WindowGroup {
             QuizView(viewModel: QuizView.ViewModel())

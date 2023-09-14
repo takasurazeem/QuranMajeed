@@ -1,6 +1,6 @@
 //
 //  QuizPDFPreview.swift
-//  QuranQuiz
+//  QuranMajeed
 //
 //  Created by Takasur Azeem on 31/07/2023.
 //

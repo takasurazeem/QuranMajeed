@@ -1,6 +1,6 @@
 //
 //  PDFCreator.swift
-//  QuranQuiz
+//  QuranMajeed
 //
 //  Created by Takasur Azeem on 31/07/2023.
 //
@@ -69,6 +69,7 @@ class PDFGenerator {
         verse: QuizVerse,
         textTop: CGFloat
     ) -> CGFloat {
+        var textPos = textTop
         let textFont = theOpeningFont//.withSize(22)
         // 1
         let paragraphStyle = NSMutableParagraphStyle()
@@ -90,33 +91,55 @@ class PDFGenerator {
         let width = pageRect.width - 20
         let verseTextHeight = attributedVerseText.height(containerWidth: width)
 //        let translationTextHeight = attributedTranslationText.height(containerWidth: width)
-        let verseTextRect = CGRect(
+        var verseTextRect = CGRect(
             x: 10,
-            y: textTop,
+            y: textPos,
             width: width,
             height: verseTextHeight
         )
-//        let translationTextRect = CGRect(
-//            x: 10,
-//            y: verseTextRect.maxY + 10,
-//            width: width,
-//            height: translationTextHeight
-//        )
+/*
+        let translationTextRect = CGRect(
+            x: 10,
+            y: verseTextRect.maxY + 10,
+            width: width,
+            height: translationTextHeight
+        )
+ */
         let numberOfLines = attributedTranslationText.numberOfLines(with: pageRect.width)
-        print(verse.translation)
-        print(numberOfLines)
+        let verseTextMaxY = verseTextRect.maxY
+        let pageRectMaxY = pageRect.maxY
+        if verseTextMaxY > pageRectMaxY - 5 {
+            context.beginPage()
+            textPos = 5
+        }
+        verseTextRect = CGRect(
+            x: 10,
+            y: textPos,
+            width: width,
+            height: verseTextHeight
+        )
         attributedVerseText.draw(in: verseTextRect)
+        // The text is drawn now, space the text from text's y + line's height
+        textPos = verseTextRect.maxY
 //        attributedTranslationText.draw(in: translationTextRect)
         let lineHeight = 35.0
+        var yOffSet = textPos + lineHeight
         for number in 1...numberOfLines {
+            if yOffSet > pageRect.maxY - 5 {
+                context.beginPage()
+                yOffSet = lineHeight
+            }
+            if number > 1 {
+                yOffSet += lineHeight
+            }
             drawLineBreak(
                 drawContext: context.cgContext,
                 pageRect: pageRect,
-                yOffset: verseTextRect.maxY + lineHeight * Double(number)
+                yOffset: yOffSet
             )
         }
         
-        return verseTextRect.maxY + lineHeight * Double(numberOfLines) + 8
+        return yOffSet + 8
     }
 
     

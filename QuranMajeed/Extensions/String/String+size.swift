@@ -1,6 +1,6 @@
 //
 //  String+size.swift
-//  QuranQuiz
+//  QuranMajeed
 //
 //  Created by Takasur Azeem on 24/08/2023.
 //
