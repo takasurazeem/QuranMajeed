@@ -70,7 +70,7 @@ class PDFGenerator {
         textTop: CGFloat
     ) -> CGFloat {
         var textPos = textTop
-        let textFont = theOpeningFont//.withSize(22)
+        let textFont = verseFont
         // 1
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .right
@@ -169,6 +169,7 @@ class PDFGenerator {
     // TODO: - Use AppStorage, some of these will be set from a settings menu for more flexibility in future ان شاء اللہ تَعَالٰی
     // MARK: - Fonts
     let theOpeningFont = UIFont(name: "_PDMS_Saleem_QuranFont", size: 20) ?? .boldSystemFont(ofSize: 64)
+    let verseFont = UIFont(name: "ScheherazadeNew-Regular", size: 20) ?? .boldSystemFont(ofSize: 64)
     let leftRightHeadingsFont = UIFont(name: "NotoNastaliqUrdu", size: 10) ?? .boldSystemFont(ofSize: 64)
     let belowOpeningTextFont = UIFont(name: "DiwaniBent", size: 20) ?? .boldSystemFont(ofSize: 64)
     let nameAndDateTextFont = UIFont(name: "NotoNastaliqUrdu", size: 14) ?? .boldSystemFont(ofSize: 64)
@@ -218,7 +219,7 @@ extension PDFGenerator {
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont.withSize(18),
             NSAttributedString.Key.writingDirection: [NSWritingDirection.rightToLeft.rawValue],
-//            NSAttributedString.Key.languageIdentifier: "ar_SA"
+            NSAttributedString.Key.languageIdentifier: "ar_SA"
         ] as [NSAttributedString.Key : Any]
     }
     
