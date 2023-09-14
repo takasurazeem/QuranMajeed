@@ -23,12 +23,13 @@ extension QuizView {
             }
             setTextForSelectedAya()
             
+            // For testing only.
 //            selectedVerses = surahs[4].verses[1...5].map { verse in
 //                QuizVerse(surahId: surahs[4].id, ayahId: verse.id, text: verse.text, translation: verse.translation)
 //            }
-            selectedVerses = surahs[0].verses.map { verse in
-                QuizVerse(surahId: surahs[4].id, ayahId: verse.id, text: verse.text, translation: verse.translation)
-            }
+//            selectedVerses = surahs[0].verses.map { verse in
+//                QuizVerse(surahId: surahs[4].id, ayahId: verse.id, text: verse.text, translation: verse.translation)
+//            }
         }
         
         func setTextForSelectedAya() {
