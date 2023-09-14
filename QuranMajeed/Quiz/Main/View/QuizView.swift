@@ -118,34 +118,28 @@ struct QuizView_Previews: PreviewProvider {
         if let quizVerses {
             PDFKitView(
                 documentData: PDFGenerator(
-                    verses: [
-//                        quizVerses[2],
-//                        quizVerses[4],
-                        quizVerses[7],
-//                        quizVerses[14],
-//                        quizVerses[26]
-                    ]
+                    verses: quizVerses
                 )
                 .generateQuiz()
             )
             .previewDisplayName("PDF")
             .previewDevice("iPad Pro (12.9-inch) (6th generation)")
         }
-//        PDFKitView(
-//            documentData: PDFGenerator(
-//                title: "",
-//                verses:
-//                    Bundle.main.decode(SurahElement.self, from: "Al-Fatihah.json").verses.map({
-//                        QuizVerse(
-//                            surahId: 1,
-//                            ayahId: $0.id,
-//                            text: $0.text
-//                        )
-//                    })
-//            )
-//            .generateQuiz()
-//        )
-//        .previewDisplayName("PDF")
+        PDFKitView(
+            documentData: PDFGenerator(
+                verses:
+                    Bundle.main.decode(SurahElement.self, from: "Al-Fatihah.json").verses.map({
+                        QuizVerse(
+                            surahId: 1,
+                            ayahId: $0.id,
+                            text: $0.text, 
+                            translation: $0.translation
+                        )
+                    })
+            )
+            .generateQuiz()
+        )
+        .previewDisplayName("PDF")
         QuizView(viewModel: QuizView.ViewModel())
             .previewDevice("iPad Pro (12.9-inch) (6th generation)")
     }
