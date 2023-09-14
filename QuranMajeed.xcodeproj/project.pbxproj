@@ -100,11 +100,11 @@
 			path = String;
 			sourceTree = "<group>";
 		};
-		F9A105302AB3020A008FA0DE /* Quran */ = {
+		F9A105312AB31BD2008FA0DE /* QuranMajeed */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Quran;
+			path = QuranMajeed;
 			sourceTree = "<group>";
 		};
 		F9D60CF42A76C69D00701635 = {
@@ -126,7 +126,7 @@
 		F9D60CFF2A76C69D00701635 /* QuranMajeed */ = {
 			isa = PBXGroup;
 			children = (
-				F9A105302AB3020A008FA0DE /* Quran */,
+				F9A105312AB31BD2008FA0DE /* QuranMajeed */,
 				F9D60D0E2A76C6AC00701635 /* Quiz */,
 				F9D60D372A78531600701635 /* UIViewRepresentable */,
 				F9D60D182A76C6BA00701635 /* Extensions */,
