@@ -39,13 +39,16 @@ struct QuizView: View {
                         Section("Selected Verses") {
                             ForEach(viewModel.selectedVerses) { verse in
                                 Text(verse.text)
-                                    .font(Font.custom("_PDMS_Saleem_QuranFont", size: 24.0))
+                                    .font(Font.custom("AlQalamQuranMajeed2", size: 24.0))
                                     .multilineTextAlignment(.trailing)
+                                    .frame(maxWidth: .infinity, alignment: .trailing)
+                                
+//                                    .border(.red)
                             }
                             .onDelete(perform: viewModel.delete(at:))
                         }
                     }
-                    
+
                     Button("Add") {
                         viewModel.addSelectedVerseToQuiz()
                         proxy.scrollTo(viewModel.selectedVerses.last, anchor: .bottom)
@@ -103,7 +106,7 @@ struct PrimaryButtonStyle: ButtonStyle {
 }
 
 struct QuizView_Previews: PreviewProvider {
-    static let quizVerses = Bundle.main.decode(Surahs.self, from: "Quran_ur.json").first(where: {$0.id==65})?.verses.compactMap({
+    static let quizVerses = Bundle.main.decode(Surahs.self, from: "Quran_ur.json").first(where: {$0.id==67})?.verses.compactMap({
         QuizVerse(
             surahId: 1,
             ayahId: $0.id,
@@ -116,10 +119,11 @@ struct QuizView_Previews: PreviewProvider {
             PDFKitView(
                 documentData: PDFGenerator(
                     verses: [
-                        quizVerses[0],
-                        quizVerses[3],
-                        quizVerses[5],
-                        quizVerses[11]
+//                        quizVerses[2],
+//                        quizVerses[4],
+                        quizVerses[7],
+//                        quizVerses[14],
+//                        quizVerses[26]
                     ]
                 )
                 .generateQuiz()

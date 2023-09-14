@@ -22,14 +22,6 @@ extension QuizView {
                 selectedVerse = verse
             }
             setTextForSelectedAya()
-//            for family in UIFont.familyNames.sorted() {
-//                print("Family: \(family)")
-//                
-//                let names = UIFont.fontNames(forFamilyName: family)
-//                for fontName in names {
-//                    print("- \(fontName)")
-//                }
-//            }
         }
         
         func setTextForSelectedAya() {

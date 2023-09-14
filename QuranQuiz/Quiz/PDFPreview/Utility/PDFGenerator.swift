@@ -195,7 +195,7 @@ extension PDFGenerator {
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont.withSize(18),
             NSAttributedString.Key.writingDirection: [NSWritingDirection.rightToLeft.rawValue],
-            NSAttributedString.Key.languageIdentifier: "ar_SA"
+//            NSAttributedString.Key.languageIdentifier: "ar_SA"
         ] as [NSAttributedString.Key : Any]
     }
     

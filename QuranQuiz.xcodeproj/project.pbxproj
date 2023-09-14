@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F94C11BA2AB2986D004BAD10 /* Al-Qalam-Quran-Majeed-1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F94C11B02AB29745004BAD10 /* Al-Qalam-Quran-Majeed-1.ttf */; };
+		F94C11BB2AB2986D004BAD10 /* pdms-saleem-quranfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D252A76C6EF00701635 /* pdms-saleem-quranfont.ttf */; };
+		F94C11BC2AB2986D004BAD10 /* NotoNastaliqUrdu-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F952CFCA2A903FFB0039478F /* NotoNastaliqUrdu-VariableFont_wght.ttf */; };
+		F94C11BD2AB2986D004BAD10 /* diwani-bent.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D262A76C6EF00701635 /* diwani-bent.ttf */; };
+		F94C11BE2AB2986D004BAD10 /* Al-Majeed-Quranic-Font_shiped.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F94C11B12AB29745004BAD10 /* Al-Majeed-Quranic-Font_shiped.ttf */; };
+		F94C11BF2AB2986D004BAD10 /* Al-Qalam-Quran-Majeed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F94C11B32AB29745004BAD10 /* Al-Qalam-Quran-Majeed.ttf */; };
+		F94C11C02AB2986D004BAD10 /* Al-Qalam-Quran-Majeed-2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F94C11B22AB29745004BAD10 /* Al-Qalam-Quran-Majeed-2.ttf */; };
+		F94C11C12AB2986D004BAD10 /* Jameel Noori Nastaleeq Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F952CFCB2A90425D0039478F /* Jameel Noori Nastaleeq Regular.ttf */; };
+		F94C11C22AB2986D004BAD10 /* UthmanTN1Ver10.otf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D272A76C6EF00701635 /* UthmanTN1Ver10.otf */; };
 		F952CFC92A90273C0039478F /* Quran_ur.json in Resources */ = {isa = PBXBuildFile; fileRef = F952CFC82A90273C0039478F /* Quran_ur.json */; };
 		F952CFD22A96D6BA0039478F /* String+size.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952CFD12A96D6BA0039478F /* String+size.swift */; };
 		F952CFD42A96D6E50039478F /* NSAttributedString+size.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952CFD32A96D6E50039478F /* NSAttributedString+size.swift */; };
@@ -18,17 +27,17 @@
 		F9D60D172A76C6AC00701635 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D142A76C6AC00701635 /* QuizView.swift */; };
 		F9D60D1A2A76C6CA00701635 /* Bundle+Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D192A76C6CA00701635 /* Bundle+Decode.swift */; };
 		F9D60D222A76C6DB00701635 /* Al-Fatihah.json in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D1E2A76C6DB00701635 /* Al-Fatihah.json */; };
-		F9D60D282A76C6EF00701635 /* pdms-saleem-quranfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D252A76C6EF00701635 /* pdms-saleem-quranfont.ttf */; };
-		F9D60D292A76C6EF00701635 /* diwani-bent.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D262A76C6EF00701635 /* diwani-bent.ttf */; };
-		F9D60D2A2A76C6EF00701635 /* UthmanTN1Ver10.otf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D272A76C6EF00701635 /* UthmanTN1Ver10.otf */; };
 		F9D60D2F2A77DD9600701635 /* QuizPDFPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D2E2A77DD9600701635 /* QuizPDFPreview.swift */; };
-		F9D60D312A77DE4800701635 /* Offers and Discounts.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D302A77DE4800701635 /* Offers and Discounts.pdf */; };
 		F9D60D332A77E01300701635 /* PDFGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D322A77E01300701635 /* PDFGenerator.swift */; };
 		F9D60D362A7852F400701635 /* PDFDocument+Transferable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D352A7852F400701635 /* PDFDocument+Transferable.swift */; };
 		F9D60D392A78534B00701635 /* PDFKitView+UIViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D382A78534B00701635 /* PDFKitView+UIViewRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F94C11B02AB29745004BAD10 /* Al-Qalam-Quran-Majeed-1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Al-Qalam-Quran-Majeed-1.ttf"; sourceTree = "<group>"; };
+		F94C11B12AB29745004BAD10 /* Al-Majeed-Quranic-Font_shiped.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Al-Majeed-Quranic-Font_shiped.ttf"; sourceTree = "<group>"; };
+		F94C11B22AB29745004BAD10 /* Al-Qalam-Quran-Majeed-2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Al-Qalam-Quran-Majeed-2.ttf"; sourceTree = "<group>"; };
+		F94C11B32AB29745004BAD10 /* Al-Qalam-Quran-Majeed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Al-Qalam-Quran-Majeed.ttf"; sourceTree = "<group>"; };
 		F952CFC82A90273C0039478F /* Quran_ur.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Quran_ur.json; sourceTree = "<group>"; };
 		F952CFCA2A903FFB0039478F /* NotoNastaliqUrdu-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoNastaliqUrdu-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		F952CFCB2A90425D0039478F /* Jameel Noori Nastaleeq Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jameel Noori Nastaleeq Regular.ttf"; sourceTree = "<group>"; };
@@ -48,7 +57,6 @@
 		F9D60D272A76C6EF00701635 /* UthmanTN1Ver10.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = UthmanTN1Ver10.otf; sourceTree = "<group>"; };
 		F9D60D2B2A76C6FE00701635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F9D60D2E2A77DD9600701635 /* QuizPDFPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPDFPreview.swift; sourceTree = "<group>"; };
-		F9D60D302A77DE4800701635 /* Offers and Discounts.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Offers and Discounts.pdf"; sourceTree = "<group>"; };
 		F9D60D322A77E01300701635 /* PDFGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFGenerator.swift; sourceTree = "<group>"; };
 		F9D60D352A7852F400701635 /* PDFDocument+Transferable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFDocument+Transferable.swift"; sourceTree = "<group>"; };
 		F9D60D382A78534B00701635 /* PDFKitView+UIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFKitView+UIViewRepresentable.swift"; sourceTree = "<group>"; };
@@ -116,7 +124,6 @@
 				F9D60D2B2A76C6FE00701635 /* Info.plist */,
 				F9D60D002A76C69D00701635 /* QuranQuizApp.swift */,
 				F9D60D242A76C6EF00701635 /* fonts */,
-				F9D60D302A77DE4800701635 /* Offers and Discounts.pdf */,
 				F9D60D042A76C69E00701635 /* Assets.xcassets */,
 				F9D60D062A76C69E00701635 /* Preview Content */,
 			);
@@ -186,6 +193,10 @@
 		F9D60D242A76C6EF00701635 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				F94C11B12AB29745004BAD10 /* Al-Majeed-Quranic-Font_shiped.ttf */,
+				F94C11B02AB29745004BAD10 /* Al-Qalam-Quran-Majeed-1.ttf */,
+				F94C11B22AB29745004BAD10 /* Al-Qalam-Quran-Majeed-2.ttf */,
+				F94C11B32AB29745004BAD10 /* Al-Qalam-Quran-Majeed.ttf */,
 				F952CFCA2A903FFB0039478F /* NotoNastaliqUrdu-VariableFont_wght.ttf */,
 				F952CFCB2A90425D0039478F /* Jameel Noori Nastaleeq Regular.ttf */,
 				F9D60D252A76C6EF00701635 /* pdms-saleem-quranfont.ttf */,
@@ -296,12 +307,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F94C11BA2AB2986D004BAD10 /* Al-Qalam-Quran-Majeed-1.ttf in Resources */,
 				F9D60D082A76C69E00701635 /* Preview Assets.xcassets in Resources */,
-				F9D60D2A2A76C6EF00701635 /* UthmanTN1Ver10.otf in Resources */,
-				F9D60D282A76C6EF00701635 /* pdms-saleem-quranfont.ttf in Resources */,
-				F9D60D312A77DE4800701635 /* Offers and Discounts.pdf in Resources */,
-				F9D60D292A76C6EF00701635 /* diwani-bent.ttf in Resources */,
+				F94C11BC2AB2986D004BAD10 /* NotoNastaliqUrdu-VariableFont_wght.ttf in Resources */,
+				F94C11C02AB2986D004BAD10 /* Al-Qalam-Quran-Majeed-2.ttf in Resources */,
+				F94C11BB2AB2986D004BAD10 /* pdms-saleem-quranfont.ttf in Resources */,
 				F9D60D222A76C6DB00701635 /* Al-Fatihah.json in Resources */,
+				F94C11BF2AB2986D004BAD10 /* Al-Qalam-Quran-Majeed.ttf in Resources */,
+				F94C11BD2AB2986D004BAD10 /* diwani-bent.ttf in Resources */,
+				F94C11C22AB2986D004BAD10 /* UthmanTN1Ver10.otf in Resources */,
+				F94C11C12AB2986D004BAD10 /* Jameel Noori Nastaleeq Regular.ttf in Resources */,
+				F94C11BE2AB2986D004BAD10 /* Al-Majeed-Quranic-Font_shiped.ttf in Resources */,
 				F952CFC92A90273C0039478F /* Quran_ur.json in Resources */,
 				F9D60D052A76C69E00701635 /* Assets.xcassets in Resources */,
 			);
