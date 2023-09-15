@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "quran-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TazkiyaTech/quran-sdk",
+      "state" : {
+        "revision" : "1c19d128efe846ce47d27e4841de9586a41aba7d",
+        "version" : "1.3.0"
+      }
+    }
+  ],
+  "version" : 2
+}
