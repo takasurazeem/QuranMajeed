@@ -7,4 +7,16 @@
 
 import Foundation
 
-// TODO: Create an AppDependencyContainer for repositories.
+class AppDependencyContainer {
+    private init() {
+        self.theQuranProvider = MainQuranProvider()
+    }
+    
+    static let shared = AppDependencyContainer()
+    
+    lazy var theQuranDependencyContainer: QuranDataDependencyContainer = {
+        QuranDataDependencyContainer(providerForQuran: theQuranProvider)
+    }()
+    
+    private let theQuranProvider: QuranProvider
+}
