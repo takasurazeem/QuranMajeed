@@ -21,12 +21,22 @@ struct MainQuranService: QuranService {
         try quran.getSurahNames()
     }
     
-    func getAyasFor(surah number: Int) throws -> [String] {
-        try quran.getAyahsInSurah(number)
+    func getAyasFor(
+        surah number: Int
+    ) throws -> [String] {
+        try quran.getAyahsInSurah(
+            number
+        )
     }
     
-    func getAyahFor(surahNumber: Int, ayahNumber: Int) throws -> String {
-        try quran.getAyah(surahNumber: surahNumber, ayahNumber: ayahNumber)
+    func getAyahFor(
+        surahNumber: Int,
+        ayahNumber: Int
+    ) throws -> String {
+        try quran.getAyah(
+            surahNumber: surahNumber,
+            ayahNumber: ayahNumber
+        )
     }
     
     private let quran: QuranDatabase
