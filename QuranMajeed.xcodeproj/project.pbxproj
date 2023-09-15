@@ -21,6 +21,8 @@
 		F964477C2AB4561900DB5412 /* MainQuranRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964477B2AB4561900DB5412 /* MainQuranRepository.swift */; };
 		F964477F2AB457AE00DB5412 /* QuranService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964477E2AB457AE00DB5412 /* QuranService.swift */; };
 		F96447812AB457B400DB5412 /* MainQuranService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96447802AB457B400DB5412 /* MainQuranService.swift */; };
+		F96447852AB466CC00DB5412 /* QuranProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96447842AB466CC00DB5412 /* QuranProvider.swift */; };
+		F96447872AB466FA00DB5412 /* MainQuranProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96447862AB466FA00DB5412 /* MainQuranProvider.swift */; };
 		F992EBA92AB3CC1A00649632 /* ScheherazadeNew-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F992EBA52AB3CC1A00649632 /* ScheherazadeNew-Regular.ttf */; };
 		F992EBAA2AB3CC1A00649632 /* ScheherazadeNew-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F992EBA62AB3CC1A00649632 /* ScheherazadeNew-SemiBold.ttf */; };
 		F992EBAB2AB3CC1A00649632 /* ScheherazadeNew-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F992EBA72AB3CC1A00649632 /* ScheherazadeNew-Bold.ttf */; };
@@ -50,6 +52,8 @@
 		F964477B2AB4561900DB5412 /* MainQuranRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQuranRepository.swift; sourceTree = "<group>"; };
 		F964477E2AB457AE00DB5412 /* QuranService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranService.swift; sourceTree = "<group>"; };
 		F96447802AB457B400DB5412 /* MainQuranService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQuranService.swift; sourceTree = "<group>"; };
+		F96447842AB466CC00DB5412 /* QuranProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranProvider.swift; sourceTree = "<group>"; };
+		F96447862AB466FA00DB5412 /* MainQuranProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQuranProvider.swift; sourceTree = "<group>"; };
 		F992EBA52AB3CC1A00649632 /* ScheherazadeNew-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScheherazadeNew-Regular.ttf"; sourceTree = "<group>"; };
 		F992EBA62AB3CC1A00649632 /* ScheherazadeNew-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScheherazadeNew-SemiBold.ttf"; sourceTree = "<group>"; };
 		F992EBA72AB3CC1A00649632 /* ScheherazadeNew-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScheherazadeNew-Bold.ttf"; sourceTree = "<group>"; };
@@ -135,12 +139,30 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		F9A105312AB31BD2008FA0DE /* QuranMajeed */ = {
+		F96447822AB4668A00DB5412 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				F96447842AB466CC00DB5412 /* QuranProvider.swift */,
+				F96447862AB466FA00DB5412 /* MainQuranProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		F96447832AB466B400DB5412 /* Quran */ = {
 			isa = PBXGroup;
 			children = (
 				F96447782AB454D300DB5412 /* DependencyContainer */,
-				F964477D2AB4579F00DB5412 /* Service */,
 				F96447772AB4545D00DB5412 /* Repository */,
+				F964477D2AB4579F00DB5412 /* Service */,
+				F96447822AB4668A00DB5412 /* Provider */,
+			);
+			path = Quran;
+			sourceTree = "<group>";
+		};
+		F9A105312AB31BD2008FA0DE /* QuranMajeed */ = {
+			isa = PBXGroup;
+			children = (
+				F96447832AB466B400DB5412 /* Quran */,
 			);
 			path = QuranMajeed;
 			sourceTree = "<group>";
@@ -391,12 +413,14 @@
 				F9D60D362A7852F400701635 /* PDFDocument+Transferable.swift in Sources */,
 				F9D60D1A2A76C6CA00701635 /* Bundle+Decode.swift in Sources */,
 				F952CFD42A96D6E50039478F /* NSAttributedString+size.swift in Sources */,
+				F96447852AB466CC00DB5412 /* QuranProvider.swift in Sources */,
 				F9D60D152A76C6AC00701635 /* QuizViewModel.swift in Sources */,
 				F9D60D332A77E01300701635 /* PDFGenerator.swift in Sources */,
 				F9D60D172A76C6AC00701635 /* QuizView.swift in Sources */,
 				F9D60D012A76C69D00701635 /* QuranQuizApp.swift in Sources */,
 				F9D60D162A76C6AC00701635 /* QuranModel.swift in Sources */,
 				F94C11C42AB2F962004BAD10 /* AppDependencyContainer.swift in Sources */,
+				F96447872AB466FA00DB5412 /* MainQuranProvider.swift in Sources */,
 				F9D60D392A78534B00701635 /* PDFKitView+UIViewRepresentable.swift in Sources */,
 				F964477F2AB457AE00DB5412 /* QuranService.swift in Sources */,
 				F96447812AB457B400DB5412 /* MainQuranService.swift in Sources */,

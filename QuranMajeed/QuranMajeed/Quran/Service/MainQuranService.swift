@@ -8,8 +8,11 @@
 import QuranSDK
 
 struct MainQuranService: QuranService {
-    init() throws {
-        self.quran = QuranDatabase()
+    init(
+        providerForQuran: QuranProvider
+    ) throws {
+        self.providerForQuran = providerForQuran
+        self.quran = providerForQuran.getQuran()
         try loadQuran()
     }
     
@@ -39,5 +42,6 @@ struct MainQuranService: QuranService {
         )
     }
     
+    private let providerForQuran: QuranProvider
     private let quran: QuranDatabase
 }
