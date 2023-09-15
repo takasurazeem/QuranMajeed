@@ -5,10 +5,14 @@
 //  Created by Takasur Azeem on 15/09/2023.
 //
 
-import QuranSDK
+import QuranKit
+import QuranTextKit
 
 struct MainQuranProvider: QuranProvider {
-    func getQuran() -> QuranDatabase {
-        QuranDatabase()
+    func getQuranKit() -> Quran {
+        Quran.madani
+    }
+    func getQuranTextKit() -> QuranTextKit.QuranTextDataService {
+        fatalError("Need to learn this.")
     }
 }

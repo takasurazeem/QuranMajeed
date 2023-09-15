@@ -5,7 +5,9 @@
 //  Created by Takasur Azeem on 15/09/2023.
 //
 
-import QuranSDK
+import Foundation
+import QuranKit
+import QuranTextKit
 
 struct MainQuranRepository: QuranRepository {
     
@@ -13,21 +15,16 @@ struct MainQuranRepository: QuranRepository {
         quranService: QuranService
     ) throws {
         self.quranService = quranService
-        try loadQuran()
     }
     
-    func loadQuran() throws {
-        try quranService.loadQuran()
-    }
-    
-    func getSurahNames() throws -> [String] {
-        try quranService.getSurahNames()
+    func getSuras() -> [Sura] {
+        quranService.getSuras()
     }
     
     func getAyasFor(
         surah number: Int
-    ) throws -> [String] {
-        try quranService.getAyasFor(
+    ) -> [String] {
+        quranService.getAyasFor(
             surah: number
         )
     }
@@ -35,8 +32,8 @@ struct MainQuranRepository: QuranRepository {
     func getAyahFor(
         surahNumber: Int,
         ayahNumber: Int
-    ) throws -> String {
-        try quranService.getAyahFor(
+    ) -> String {
+        quranService.getAyahFor(
             surahNumber: surahNumber,
             ayahNumber: ayahNumber
         )

@@ -25,14 +25,14 @@ struct SurahElement: Codable, Identifiable, Hashable {
     
     var id: Int
     let name: String
-    let transliteration: String
-    let translation: String
-    let type: TypeEnum
+//    let transliteration: String
+//    let translation: String
+//    let type: TypeEnum
     let totalVerses: Int
     let verses: [Verse]
 
     enum CodingKeys: String, CodingKey {
-        case id, name, transliteration, type, translation
+        case id, name //, type //, translation, transliteration,
         case totalVerses = "total_verses"
         case verses
     }
@@ -47,7 +47,7 @@ enum TypeEnum: String, Codable {
 struct Verse: Codable, Identifiable {
     var id: Int
     let text: String
-    let translation: String
+//    let translation: String
 }
 
 typealias Surahs = [SurahElement]
@@ -57,13 +57,11 @@ struct QuizVerse: Identifiable, Hashable {
     let surahId: Int
     let ayahId: Int
     let text: String
-    let translation: String
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
         hasher.combine(surahId)
         hasher.combine(ayahId)
         hasher.combine(text)
-        hasher.combine(translation)
     }
 }

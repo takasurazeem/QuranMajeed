@@ -8,20 +8,25 @@
 
 import Foundation
 import PDFKit
+import QuranKit
 
 extension QuizView {
     class ViewModel: ObservableObject {
         
-        init() {
+        init(
+            theQuranRepository: QuranRepository
+        ) {
+            self.theQuranRepository = theQuranRepository
             selectedAyahNumber = 1
-            surahs = []
-            selectedVerse = Verse(id: 1, text: "", translation: "")
+            surahs = theQuranRepository.getSuras()
+            
+            selectedVerse = Verse(id: 1, text: "")
             selectedSurah = Bundle.main.decode(SurahElement.self, from: "Al-Fatihah.json")
-            surahs = Bundle.main.decode(Surahs.self, from: "Quran_ur.json")
+            
             if let verse = selectedSurah.verses.first {
                 selectedVerse = verse
             }
-            setTextForSelectedAya()
+//            setTextForSelectedAya()
             
             // For testing only.
 //            selectedVerses = surahs[4].verses[1...5].map { verse in
@@ -32,17 +37,17 @@ extension QuizView {
 //            }
         }
         
-        func setTextForSelectedAya() {
-            for surah in surahs {
-                if surah.id == selectedSurah.id {
-                    for verse in selectedSurah.verses {
-                        if verse.id == selectedAyahNumber {
-                            selectedVerse = verse
-                        }
-                    }
-                }
-            }
-        }
+//        func setTextForSelectedAya() {
+//            for surah in surahs {
+//                if surah.id == selectedSurah.id {
+//                    for verse in selectedSurah.verses {
+//                        if verse.id == selectedAyahNumber {
+//                            selectedVerse = verse
+//                        }
+//                    }
+//                }
+//            }
+//        }
         
         func addSelectedVerseToQuiz() {
             if selectedVerses.contains(where: { verse in
@@ -51,8 +56,7 @@ extension QuizView {
                 let verse = QuizVerse(
                     surahId: selectedSurah.id,
                     ayahId: selectedVerse.id,
-                    text: selectedVerse.text,
-                    translation: selectedVerse.translation
+                    text: selectedVerse.text
                 )
                 print(verse)
                 selectedVerses.append(verse)
@@ -70,11 +74,16 @@ extension QuizView {
             return nil
         }
         
+        private let theQuranRepository: QuranRepository
         
         @Published var selectedAyahNumber: Int
         @Published var selectedSurah: SurahElement
-        @Published var surahs: Surahs
+        @Published var surahs: [Sura]
         @Published private(set) var selectedVerse: Verse
         @Published private(set) var selectedVerses: [QuizVerse] = []
     }
+}
+
+extension Sura: Identifiable {
+    public var id: Int { suraNumber }
 }

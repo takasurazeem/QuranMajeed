@@ -20,7 +20,7 @@ struct QuizView: View {
                         Section("Select Surah and Verse") {
                             Picker("Surah", selection: $viewModel.selectedSurah) {
                                 ForEach(viewModel.surahs) { surah in
-                                    Text("\(surah.name) {\(surah.id)}")
+                                    Text("\(surah.arabicSuraName) {\(surah.id)}")
                                         .font(Font.custom("ScheherazadeNew-Regular", size: 22.0))
                                         .tag(surah)
                                 }
@@ -57,10 +57,10 @@ struct QuizView: View {
                 }
                 .navigationTitle("Prepare Quiz")
                 .onChange(of: viewModel.selectedSurah) { _ in
-                    viewModel.setTextForSelectedAya()
+//                    viewModel.setTextForSelectedAya()
                 }
                 .onChange(of: viewModel.selectedAyahNumber) { _ in
-                    viewModel.setTextForSelectedAya()
+//                    viewModel.setTextForSelectedAya()
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
@@ -110,8 +110,7 @@ struct QuizView_Previews: PreviewProvider {
         QuizVerse(
             surahId: 1,
             ayahId: $0.id,
-            text: $0.text,
-            translation: $0.translation
+            text: $0.text
         )
     })
     static var previews: some View {
@@ -132,16 +131,22 @@ struct QuizView_Previews: PreviewProvider {
                         QuizVerse(
                             surahId: 1,
                             ayahId: $0.id,
-                            text: $0.text, 
-                            translation: $0.translation
+                            text: $0.text
                         )
                     })
             )
             .generateQuiz()
         )
         .previewDisplayName("PDF")
-        QuizView(viewModel: QuizView.ViewModel())
-            .previewDevice("iPad Pro (12.9-inch) (6th generation)")
+        QuizView(
+            viewModel: QuizView.ViewModel(
+                theQuranRepository: try! AppDependencyContainer
+                    .shared
+                    .theQuranDependencyContainer
+                    .makeQuranRepository()
+            )
+        )
+        .previewDevice("iPad Pro (12.9-inch) (6th generation)")
     }
 }
 

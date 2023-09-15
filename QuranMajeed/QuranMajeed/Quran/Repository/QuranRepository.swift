@@ -5,11 +5,11 @@
 //  Created by Takasur Azeem on 15/09/2023.
 //
 
-import Foundation
+import QuranKit
+import QuranTextKit
 
 protocol QuranRepository {
-    func loadQuran() throws
-    func getSurahNames() throws -> [String]
-    func getAyasFor(surah number: Int) throws -> [String]
-    func getAyahFor(surahNumber: Int, ayahNumber: Int) throws -> String
+    func getSuras() -> [Sura]
+    func getAyasFor(surah number: Int) -> [String]
+    func getAyahFor(surahNumber: Int, ayahNumber: Int) -> String
 }

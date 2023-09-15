@@ -13,6 +13,12 @@
 		F94C11C12AB2986D004BAD10 /* Jameel Noori Nastaleeq Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F952CFCB2A90425D0039478F /* Jameel Noori Nastaleeq Regular.ttf */; };
 		F94C11C22AB2986D004BAD10 /* UthmanTN1Ver10.otf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D272A76C6EF00701635 /* UthmanTN1Ver10.otf */; };
 		F94C11C42AB2F962004BAD10 /* AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94C11C32AB2F962004BAD10 /* AppDependencyContainer.swift */; };
+		F950FACB2AB4A20D00CB45B5 /* Localization in Frameworks */ = {isa = PBXBuildFile; productRef = F950FACA2AB4A20D00CB45B5 /* Localization */; };
+		F950FACD2AB4A20D00CB45B5 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = F950FACC2AB4A20D00CB45B5 /* Preferences */; };
+		F950FACF2AB4A20D00CB45B5 /* QuranKit in Frameworks */ = {isa = PBXBuildFile; productRef = F950FACE2AB4A20D00CB45B5 /* QuranKit */; };
+		F950FAD12AB4A20D00CB45B5 /* QuranMadaniData in Frameworks */ = {isa = PBXBuildFile; productRef = F950FAD02AB4A20D00CB45B5 /* QuranMadaniData */; };
+		F950FAD32AB4A20D00CB45B5 /* QuranTextKit in Frameworks */ = {isa = PBXBuildFile; productRef = F950FAD22AB4A20D00CB45B5 /* QuranTextKit */; };
+		F950FAE32AB4BA6400CB45B5 /* SurasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F950FAE22AB4BA6400CB45B5 /* SurasTests.swift */; };
 		F952CFC92A90273C0039478F /* Quran_ur.json in Resources */ = {isa = PBXBuildFile; fileRef = F952CFC82A90273C0039478F /* Quran_ur.json */; };
 		F952CFD22A96D6BA0039478F /* String+size.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952CFD12A96D6BA0039478F /* String+size.swift */; };
 		F952CFD42A96D6E50039478F /* NSAttributedString+size.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952CFD32A96D6E50039478F /* NSAttributedString+size.swift */; };
@@ -42,8 +48,21 @@
 		F9D60D392A78534B00701635 /* PDFKitView+UIViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D382A78534B00701635 /* PDFKitView+UIViewRepresentable.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F950FADC2AB4BA0000CB45B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9D60CF52A76C69D00701635 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F9D60CFC2A76C69D00701635;
+			remoteInfo = QuranMajeed;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		F94C11C32AB2F962004BAD10 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
+		F950FAD82AB4BA0000CB45B5 /* QuranMajeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuranMajeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F950FAE12AB4BA6400CB45B5 /* QuranMajeedTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuranMajeedTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		F950FAE22AB4BA6400CB45B5 /* SurasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurasTests.swift; sourceTree = "<group>"; };
 		F952CFC82A90273C0039478F /* Quran_ur.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Quran_ur.json; sourceTree = "<group>"; };
 		F952CFCA2A903FFB0039478F /* NotoNastaliqUrdu-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoNastaliqUrdu-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		F952CFCB2A90425D0039478F /* Jameel Noori Nastaleeq Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jameel Noori Nastaleeq Regular.ttf"; sourceTree = "<group>"; };
@@ -80,17 +99,38 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F950FAD52AB4BA0000CB45B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F9D60CFA2A76C69D00701635 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F96447762AB4544300DB5412 /* QuranSDK in Frameworks */,
+				F950FACD2AB4A20D00CB45B5 /* Preferences in Frameworks */,
+				F950FACB2AB4A20D00CB45B5 /* Localization in Frameworks */,
+				F950FACF2AB4A20D00CB45B5 /* QuranKit in Frameworks */,
+				F950FAD32AB4A20D00CB45B5 /* QuranTextKit in Frameworks */,
+				F950FAD12AB4A20D00CB45B5 /* QuranMadaniData in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F950FAD92AB4BA0000CB45B5 /* QuranMajeedTests */ = {
+			isa = PBXGroup;
+			children = (
+				F950FAE22AB4BA6400CB45B5 /* SurasTests.swift */,
+				F950FAE12AB4BA6400CB45B5 /* QuranMajeedTests-Bridging-Header.h */,
+			);
+			path = QuranMajeedTests;
+			sourceTree = "<group>";
+		};
 		F952CFCE2A96D6770039478F /* Bundle */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				F9D60CFF2A76C69D00701635 /* QuranMajeed */,
+				F950FAD92AB4BA0000CB45B5 /* QuranMajeedTests */,
 				F9D60CFE2A76C69D00701635 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -182,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				F9D60CFD2A76C69D00701635 /* QuranMajeed.app */,
+				F950FAD82AB4BA0000CB45B5 /* QuranMajeedTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -326,6 +368,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F950FAD72AB4BA0000CB45B5 /* QuranMajeedTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F950FADE2AB4BA0000CB45B5 /* Build configuration list for PBXNativeTarget "QuranMajeedTests" */;
+			buildPhases = (
+				F950FAD42AB4BA0000CB45B5 /* Sources */,
+				F950FAD52AB4BA0000CB45B5 /* Frameworks */,
+				F950FAD62AB4BA0000CB45B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F950FADD2AB4BA0000CB45B5 /* PBXTargetDependency */,
+			);
+			name = QuranMajeedTests;
+			productName = QuranMajeedTests;
+			productReference = F950FAD82AB4BA0000CB45B5 /* QuranMajeedTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F9D60CFC2A76C69D00701635 /* QuranMajeed */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F9D60D0B2A76C69E00701635 /* Build configuration list for PBXNativeTarget "QuranMajeed" */;
@@ -341,6 +401,11 @@
 			name = QuranMajeed;
 			packageProductDependencies = (
 				F96447752AB4544300DB5412 /* QuranSDK */,
+				F950FACA2AB4A20D00CB45B5 /* Localization */,
+				F950FACC2AB4A20D00CB45B5 /* Preferences */,
+				F950FACE2AB4A20D00CB45B5 /* QuranKit */,
+				F950FAD02AB4A20D00CB45B5 /* QuranMadaniData */,
+				F950FAD22AB4A20D00CB45B5 /* QuranTextKit */,
 			);
 			productName = QuranQuiz;
 			productReference = F9D60CFD2A76C69D00701635 /* QuranMajeed.app */;
@@ -353,9 +418,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					F950FAD72AB4BA0000CB45B5 = {
+						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
+						TestTargetID = F9D60CFC2A76C69D00701635;
+					};
 					F9D60CFC2A76C69D00701635 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -372,17 +442,26 @@
 			mainGroup = F9D60CF42A76C69D00701635;
 			packageReferences = (
 				F96447742AB4544300DB5412 /* XCRemoteSwiftPackageReference "quran-sdk" */,
+				F950FAC92AB4A20D00CB45B5 /* XCRemoteSwiftPackageReference "quran-ios" */,
 			);
 			productRefGroup = F9D60CFE2A76C69D00701635 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				F9D60CFC2A76C69D00701635 /* QuranMajeed */,
+				F950FAD72AB4BA0000CB45B5 /* QuranMajeedTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F950FAD62AB4BA0000CB45B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F9D60CFB2A76C69D00701635 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -406,6 +485,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F950FAD42AB4BA0000CB45B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F950FAE32AB4BA6400CB45B5 /* SurasTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F9D60CF92A76C69D00701635 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -434,7 +521,61 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F950FADD2AB4BA0000CB45B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F9D60CFC2A76C69D00701635 /* QuranMajeed */;
+			targetProxy = F950FADC2AB4BA0000CB45B5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		F950FADF2AB4BA0000CB45B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.takasurazeem.QuranMajeedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "QuranMajeedTests/QuranMajeedTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuranMajeed.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/QuranMajeed";
+			};
+			name = Debug;
+		};
+		F950FAE02AB4BA0000CB45B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.takasurazeem.QuranMajeedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "QuranMajeedTests/QuranMajeedTests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuranMajeed.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/QuranMajeed";
+			};
+			name = Release;
+		};
 		F9D60D092A76C69E00701635 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -618,6 +759,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F950FADE2AB4BA0000CB45B5 /* Build configuration list for PBXNativeTarget "QuranMajeedTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F950FADF2AB4BA0000CB45B5 /* Debug */,
+				F950FAE02AB4BA0000CB45B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F9D60CF82A76C69D00701635 /* Build configuration list for PBXProject "QuranMajeed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -639,6 +789,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F950FAC92AB4A20D00CB45B5 /* XCRemoteSwiftPackageReference "quran-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/quran/quran-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
 		F96447742AB4544300DB5412 /* XCRemoteSwiftPackageReference "quran-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/TazkiyaTech/quran-sdk";
@@ -650,6 +808,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F950FACA2AB4A20D00CB45B5 /* Localization */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F950FAC92AB4A20D00CB45B5 /* XCRemoteSwiftPackageReference "quran-ios" */;
+			productName = Localization;
+		};
+		F950FACC2AB4A20D00CB45B5 /* Preferences */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F950FAC92AB4A20D00CB45B5 /* XCRemoteSwiftPackageReference "quran-ios" */;
+			productName = Preferences;
+		};
+		F950FACE2AB4A20D00CB45B5 /* QuranKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F950FAC92AB4A20D00CB45B5 /* XCRemoteSwiftPackageReference "quran-ios" */;
+			productName = QuranKit;
+		};
+		F950FAD02AB4A20D00CB45B5 /* QuranMadaniData */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F950FAC92AB4A20D00CB45B5 /* XCRemoteSwiftPackageReference "quran-ios" */;
+			productName = QuranMadaniData;
+		};
+		F950FAD22AB4A20D00CB45B5 /* QuranTextKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F950FAC92AB4A20D00CB45B5 /* XCRemoteSwiftPackageReference "quran-ios" */;
+			productName = QuranTextKit;
+		};
 		F96447752AB4544300DB5412 /* QuranSDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F96447742AB4544300DB5412 /* XCRemoteSwiftPackageReference "quran-sdk" */;

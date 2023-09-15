@@ -11,7 +11,14 @@ import SwiftUI
 struct QuranMajeedApp: App {
     var body: some Scene {
         WindowGroup {
-            QuizView(viewModel: QuizView.ViewModel())
+            QuizView(
+                viewModel: QuizView.ViewModel(
+                    theQuranRepository: try! AppDependencyContainer
+                        .shared
+                        .theQuranDependencyContainer
+                        .makeQuranRepository()
+                )
+            )
         }
     }
 }

@@ -5,43 +5,43 @@
 //  Created by Takasur Azeem on 15/09/2023.
 //
 
-import QuranSDK
+import QuranTextKit
+import QuranMadaniData
+import QuranKit
 
 struct MainQuranService: QuranService {
     init(
         providerForQuran: QuranProvider
-    ) throws {
+    ) {
         self.providerForQuran = providerForQuran
-        self.quran = providerForQuran.getQuran()
-        try loadQuran()
+        self.theQuranKit = providerForQuran.getQuranKit()
+        let anotherQuran = QuranKit.Quran.madani
     }
     
-    func loadQuran() throws {
-        try self.quran.openDatabase()
-    }
-    
-    func getSurahNames() throws -> [String] {
-        try quran.getSurahNames()
+    func getSuras() -> [Sura] {
+        theQuranKit.suras
     }
     
     func getAyasFor(
         surah number: Int
-    ) throws -> [String] {
-        try quran.getAyahsInSurah(
-            number
-        )
+    ) -> [String] {
+//        try theQuran.getAyahsInSurah(
+//            number
+//        )
+        fatalError("work in progress")
     }
     
     func getAyahFor(
         surahNumber: Int,
         ayahNumber: Int
-    ) throws -> String {
-        try quran.getAyah(
-            surahNumber: surahNumber,
-            ayahNumber: ayahNumber
-        )
+    ) -> String {
+//        try theQuranKit.getAyah(
+//            surahNumber: surahNumber,
+//            ayahNumber: ayahNumber
+//        )
+        fatalError("work in progress")
     }
     
     private let providerForQuran: QuranProvider
-    private let quran: QuranDatabase
+    private let theQuranKit: Quran
 }

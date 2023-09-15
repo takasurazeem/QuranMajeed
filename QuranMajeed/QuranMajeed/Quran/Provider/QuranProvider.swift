@@ -5,8 +5,10 @@
 //  Created by Takasur Azeem on 15/09/2023.
 //
 
-import QuranSDK
+import QuranKit
+import QuranTextKit
 
 protocol QuranProvider {
-    func getQuran() -> QuranDatabase
+    func getQuranKit() -> Quran
+    func getQuranTextKit() -> QuranTextKit.QuranTextDataService
 }
