@@ -22,8 +22,8 @@ struct QuizView: View {
                         Section("Select Surah and Verse") {
                             Picker("Surah", selection: $viewModel.selectedSurah) {
                                 ForEach(viewModel.suras) { sura in
-                                    Text("\(sura.suraNumber)")
-                                        .font(Font.custom("ScheherazadeNew-Regular", size: 22.0))
+                                    Text("\(sura.localizedName(withNumber: true, language: .arabic))")
+                                        .font(Font.custom("ScheherazadeNew-Bold", size: 22.0))
                                         .tag(sura)
                                 }
                             }
@@ -33,7 +33,7 @@ struct QuizView: View {
                                 }
                             }
                             Text(viewModel.selectedVerse.text)
-                                .font(Font.custom("ScheherazadeNew-Regular", size: 24.0))
+                                .font(Font.custom("ScheherazadeNew-Bold", size: 24.0))
                                 .multilineTextAlignment(.trailing)
                                 .frame(maxWidth: .infinity)
                         }
@@ -41,7 +41,7 @@ struct QuizView: View {
                         Section("Selected Verses") {
                             ForEach(viewModel.selectedVerses) { verse in
                                 Text(verse.text)
-                                    .font(Font.custom("ScheherazadeNew-Regular", size: 24.0))
+                                    .font(Font.custom("ScheherazadeNew-Bold", size: 24.0))
                                     .multilineTextAlignment(.trailing)
                                     .frame(maxWidth: .infinity, alignment: .trailing)
                                 

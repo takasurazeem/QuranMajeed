@@ -10,6 +10,7 @@ import Foundation
 import PDFKit
 import QuranKit
 import ReadingService
+import Localization
 
 extension QuizView {
     class ViewModel: ObservableObject {
@@ -49,7 +50,11 @@ extension QuizView {
                 .values()
 
             for await reading in readings {
-                suras = reading.quran.suras
+                DispatchQueue.main.async { [weak self] in
+                    if let self {
+                        self.suras = reading.quran.suras
+                    }
+                }
             }
         }
         
@@ -89,3 +94,23 @@ extension QuizView {
         private let readingPreferences = ReadingPreferences.shared
     }
 }
+
+
+
+extension Sura {
+    public var localizedSuraNumber: String {
+        NumberFormatter.shared.format(suraNumber)
+    }
+
+    public func localizedName(withPrefix: Bool = false, withNumber: Bool = false, language: Language? = nil) -> String {
+        var suraName = l("sura_names[\(suraNumber - 1)]", table: .suras, language: language)
+        if withPrefix {
+            suraName = lFormat("quran_sura_title", table: .android, language: language, suraName)
+        }
+        if withNumber {
+            suraName = "\(localizedSuraNumber). \(suraName)"
+        }
+        return suraName
+    }
+}
+
