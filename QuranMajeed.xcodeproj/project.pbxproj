@@ -11,6 +11,7 @@
 		763539D52AB7975500CC27FD /* ReadingService in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D42AB7975500CC27FD /* ReadingService */; };
 		763539D72AB7998A00CC27FD /* Localization in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D62AB7998A00CC27FD /* Localization */; };
 		763539D92AB799E500CC27FD /* QuranTextKit in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D82AB799E500CC27FD /* QuranTextKit */; };
+		F91839492AB7AF2800E4D45B /* Sura+localizedName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91839482AB7AF2800E4D45B /* Sura+localizedName.swift */; };
 		F94C11BB2AB2986D004BAD10 /* pdms-saleem-quranfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D252A76C6EF00701635 /* pdms-saleem-quranfont.ttf */; };
 		F94C11BC2AB2986D004BAD10 /* NotoNastaliqUrdu-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F952CFCA2A903FFB0039478F /* NotoNastaliqUrdu-VariableFont_wght.ttf */; };
 		F94C11BD2AB2986D004BAD10 /* diwani-bent.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D262A76C6EF00701635 /* diwani-bent.ttf */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F91839482AB7AF2800E4D45B /* Sura+localizedName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sura+localizedName.swift"; sourceTree = "<group>"; };
 		F94C11C32AB2F962004BAD10 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
 		F950FAD82AB4BA0000CB45B5 /* QuranMajeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuranMajeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F950FAE12AB4BA6400CB45B5 /* QuranMajeedTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuranMajeedTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F91839472AB7AF0600E4D45B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F91839482AB7AF2800E4D45B /* Sura+localizedName.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F950FAD92AB4BA0000CB45B5 /* QuranMajeedTests */ = {
@@ -197,6 +207,7 @@
 		F96447832AB466B400DB5412 /* Quran */ = {
 			isa = PBXGroup;
 			children = (
+				F91839472AB7AF0600E4D45B /* Model */,
 				F96447782AB454D300DB5412 /* DependencyContainer */,
 				F96447772AB4545D00DB5412 /* Repository */,
 				F964477D2AB4579F00DB5412 /* Service */,
@@ -511,6 +522,7 @@
 				F9D60D172A76C6AC00701635 /* QuizView.swift in Sources */,
 				F9D60D012A76C69D00701635 /* QuranQuizApp.swift in Sources */,
 				F9D60D162A76C6AC00701635 /* QuranModel.swift in Sources */,
+				F91839492AB7AF2800E4D45B /* Sura+localizedName.swift in Sources */,
 				F94C11C42AB2F962004BAD10 /* AppDependencyContainer.swift in Sources */,
 				F96447872AB466FA00DB5412 /* MainQuranProvider.swift in Sources */,
 				F9D60D392A78534B00701635 /* PDFKitView+UIViewRepresentable.swift in Sources */,

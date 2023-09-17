@@ -13,7 +13,6 @@ struct MainQuranService: QuranService {
     ) {
         self.providerForQuran = providerForQuran
         self.theQuranKit = providerForQuran.getQuranKit()
-        let anotherQuran = QuranKit.Quran.hafsMadani1405
     }
     
     func getSuras() -> [Sura] {
