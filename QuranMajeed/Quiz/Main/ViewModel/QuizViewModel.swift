@@ -22,11 +22,11 @@ extension QuizView {
             
             
             selectedVerse = Verse(id: 1, text: "")
-            selectedSurah = Bundle.main.decode(SurahElement.self, from: "Al-Fatihah.json")
+            selectedSurah = theQuranRepository.getFirstSura()
             
-            if let verse = selectedSurah.verses.first {
-                selectedVerse = verse
-            }
+//            if let verse = selectedSurah.verses.first {
+//                selectedVerse = verse
+//            }
 //            setTextForSelectedAya()
             
             // For testing only.
@@ -58,17 +58,17 @@ extension QuizView {
         }
         
         func addSelectedVerseToQuiz() {
-            if selectedVerses.contains(where: { verse in
-                (verse.surahId == selectedSurah.id && verse.ayahId == selectedVerse.id) || verse.text == selectedVerse.text
-            }) == false {
-                let verse = QuizVerse(
-                    surahId: selectedSurah.id,
-                    ayahId: selectedVerse.id,
-                    text: selectedVerse.text
-                )
-                print(verse)
-                selectedVerses.append(verse)
-            }
+//            if selectedVerses.contains(where: { verse in
+//                (verse.surahId == selectedSurah.id && verse.ayahId == selectedVerse.id) || verse.text == selectedVerse.text
+//            }) == false {
+//                let verse = QuizVerse(
+//                    surahId: selectedSurah.id,
+//                    ayahId: selectedVerse.id,
+//                    text: selectedVerse.text
+//                )
+//                print(verse)
+//                selectedVerses.append(verse)
+//            }
         }
 
         func delete(at offsets: IndexSet) {
@@ -85,7 +85,7 @@ extension QuizView {
         private let theQuranRepository: QuranRepository
         
         @Published var selectedAyahNumber: Int
-        @Published var selectedSurah: SurahElement
+        @Published var selectedSurah: Sura
         @Published var suras: [Sura] = []
         @Published private(set) var selectedVerse: Verse
         @Published private(set) var selectedVerses: [QuizVerse] = []

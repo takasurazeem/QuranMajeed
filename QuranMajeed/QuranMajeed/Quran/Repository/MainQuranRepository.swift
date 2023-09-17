@@ -20,6 +20,10 @@ struct MainQuranRepository: QuranRepository {
         quranService.getSuras()
     }
     
+    func getFirstSura() -> Sura {
+        quranService.getFirstSura()
+    }
+    
     func getAyasFor(
         surah number: Int
     ) -> [String] {

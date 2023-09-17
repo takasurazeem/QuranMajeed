@@ -19,14 +19,20 @@ struct QuizView: View {
             VStack {
                 ScrollViewReader { proxy in
                     List {
-                        Section("Select Surah and Verse") {
-                            Picker("Surah", selection: $viewModel.selectedSurah) {
-                                ForEach(viewModel.suras) { sura in
-                                    Text("\(sura.localizedName(withNumber: true, language: .arabic))")
-                                        .font(Font.custom("ScheherazadeNew-Bold", size: 22.0))
-                                        .tag(sura)
+                        Section("Selected Surah") {
+                            NavigationLink(value: viewModel.suras) {
+                                VStack {
+                                    SuraNameView(for: viewModel.selectedSurah)
                                 }
                             }
+                            .navigationDestination(for: [Sura].self) { suras in
+                                SuraListView(
+                                    suras: viewModel.suras,
+                                    selectedSura: $viewModel.selectedSurah
+                                )
+                            }
+                        }
+                        Section("Select Verse") {
                             Picker("Ayah", selection: $viewModel.selectedAyahNumber) {
                                 ForEach(1...viewModel.selectedSurah.verses.count, id: \.self) { aya in
                                     Text("\(aya)")
@@ -44,8 +50,6 @@ struct QuizView: View {
                                     .font(Font.custom("ScheherazadeNew-Bold", size: 24.0))
                                     .multilineTextAlignment(.trailing)
                                     .frame(maxWidth: .infinity, alignment: .trailing)
-                                
-//                                    .border(.red)
                             }
                             .onDelete(perform: viewModel.delete(at:))
                         }

@@ -19,6 +19,10 @@ struct MainQuranService: QuranService {
         theQuranKit.suras
     }
     
+    func getFirstSura() -> Sura {
+        theQuranKit.suras[0]
+    }
+    
     func getAyasFor(
         surah number: Int
     ) -> [String] {
