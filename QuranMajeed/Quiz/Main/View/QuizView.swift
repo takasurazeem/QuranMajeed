@@ -6,6 +6,8 @@
 //  Copyright © 2023 Takasur Azeem. All rights reserved.
 //
 
+import Localization
+import QuranKit
 import SwiftUI
 import PDFKit
 
@@ -19,10 +21,10 @@ struct QuizView: View {
                     List {
                         Section("Select Surah and Verse") {
                             Picker("Surah", selection: $viewModel.selectedSurah) {
-                                ForEach(viewModel.surahs) { surah in
-                                    Text("\(surah.arabicSuraName) {\(surah.id)}")
+                                ForEach(viewModel.suras) { sura in
+                                    Text("\(sura.suraNumber)")
                                         .font(Font.custom("ScheherazadeNew-Regular", size: 22.0))
-                                        .tag(surah)
+                                        .tag(sura)
                                 }
                             }
                             Picker("Ayah", selection: $viewModel.selectedAyahNumber) {
@@ -87,6 +89,9 @@ struct QuizView: View {
                         }
                     }
                 }
+            }
+            .task {
+                await viewModel.start()
             }
         }
     }

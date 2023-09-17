@@ -9,6 +9,7 @@
 import Foundation
 import PDFKit
 import QuranKit
+import ReadingService
 
 extension QuizView {
     class ViewModel: ObservableObject {
@@ -18,7 +19,7 @@ extension QuizView {
         ) {
             self.theQuranRepository = theQuranRepository
             selectedAyahNumber = 1
-            surahs = theQuranRepository.getSuras()
+            
             
             selectedVerse = Verse(id: 1, text: "")
             selectedSurah = Bundle.main.decode(SurahElement.self, from: "Al-Fatihah.json")
@@ -37,17 +38,20 @@ extension QuizView {
 //            }
         }
         
-//        func setTextForSelectedAya() {
-//            for surah in surahs {
-//                if surah.id == selectedSurah.id {
-//                    for verse in selectedSurah.verses {
-//                        if verse.id == selectedAyahNumber {
-//                            selectedVerse = verse
-//                        }
-//                    }
-//                }
-//            }
-//        }
+        func start() async {
+            async let suras: () = loadSuras()
+            _ = await [suras]
+        }
+        
+        private func loadSuras() async {
+            let readings = readingPreferences.$reading
+                .prepend(readingPreferences.reading)
+                .values()
+
+            for await reading in readings {
+                suras = reading.quran.suras
+            }
+        }
         
         func addSelectedVerseToQuiz() {
             if selectedVerses.contains(where: { verse in
@@ -78,12 +82,10 @@ extension QuizView {
         
         @Published var selectedAyahNumber: Int
         @Published var selectedSurah: SurahElement
-        @Published var surahs: [Sura]
+        @Published var suras: [Sura] = []
         @Published private(set) var selectedVerse: Verse
         @Published private(set) var selectedVerses: [QuizVerse] = []
+        
+        private let readingPreferences = ReadingPreferences.shared
     }
-}
-
-extension Sura: Identifiable {
-    public var id: Int { suraNumber }
 }

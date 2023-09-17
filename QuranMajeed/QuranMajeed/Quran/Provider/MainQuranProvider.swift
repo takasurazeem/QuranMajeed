@@ -6,13 +6,12 @@
 //
 
 import QuranKit
-import QuranTextKit
 
 struct MainQuranProvider: QuranProvider {
     func getQuranKit() -> Quran {
-        Quran.madani
+        Quran.hafsMadani1440
     }
-    func getQuranTextKit() -> QuranTextKit.QuranTextDataService {
+    func getQuranTextKit() -> Void {
         fatalError("Need to learn this.")
     }
 }

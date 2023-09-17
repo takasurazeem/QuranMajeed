@@ -5,8 +5,6 @@
 //  Created by Takasur Azeem on 15/09/2023.
 //
 
-import QuranTextKit
-import QuranMadaniData
 import QuranKit
 
 struct MainQuranService: QuranService {
@@ -15,7 +13,7 @@ struct MainQuranService: QuranService {
     ) {
         self.providerForQuran = providerForQuran
         self.theQuranKit = providerForQuran.getQuranKit()
-        let anotherQuran = QuranKit.Quran.madani
+        let anotherQuran = QuranKit.Quran.hafsMadani1405
     }
     
     func getSuras() -> [Sura] {

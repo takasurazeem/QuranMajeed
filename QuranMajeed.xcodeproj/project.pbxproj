@@ -7,22 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		763539D02AB7943600CC27FD /* QuranKit in Frameworks */ = {isa = PBXBuildFile; productRef = 763539CF2AB7943600CC27FD /* QuranKit */; };
+		763539D52AB7975500CC27FD /* ReadingService in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D42AB7975500CC27FD /* ReadingService */; };
+		763539D72AB7998A00CC27FD /* Localization in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D62AB7998A00CC27FD /* Localization */; };
+		763539D92AB799E500CC27FD /* QuranTextKit in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D82AB799E500CC27FD /* QuranTextKit */; };
 		F94C11BB2AB2986D004BAD10 /* pdms-saleem-quranfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D252A76C6EF00701635 /* pdms-saleem-quranfont.ttf */; };
 		F94C11BC2AB2986D004BAD10 /* NotoNastaliqUrdu-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F952CFCA2A903FFB0039478F /* NotoNastaliqUrdu-VariableFont_wght.ttf */; };
 		F94C11BD2AB2986D004BAD10 /* diwani-bent.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D262A76C6EF00701635 /* diwani-bent.ttf */; };
 		F94C11C12AB2986D004BAD10 /* Jameel Noori Nastaleeq Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F952CFCB2A90425D0039478F /* Jameel Noori Nastaleeq Regular.ttf */; };
 		F94C11C22AB2986D004BAD10 /* UthmanTN1Ver10.otf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D272A76C6EF00701635 /* UthmanTN1Ver10.otf */; };
 		F94C11C42AB2F962004BAD10 /* AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94C11C32AB2F962004BAD10 /* AppDependencyContainer.swift */; };
-		F950FACB2AB4A20D00CB45B5 /* Localization in Frameworks */ = {isa = PBXBuildFile; productRef = F950FACA2AB4A20D00CB45B5 /* Localization */; };
-		F950FACD2AB4A20D00CB45B5 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = F950FACC2AB4A20D00CB45B5 /* Preferences */; };
-		F950FACF2AB4A20D00CB45B5 /* QuranKit in Frameworks */ = {isa = PBXBuildFile; productRef = F950FACE2AB4A20D00CB45B5 /* QuranKit */; };
-		F950FAD12AB4A20D00CB45B5 /* QuranMadaniData in Frameworks */ = {isa = PBXBuildFile; productRef = F950FAD02AB4A20D00CB45B5 /* QuranMadaniData */; };
-		F950FAD32AB4A20D00CB45B5 /* QuranTextKit in Frameworks */ = {isa = PBXBuildFile; productRef = F950FAD22AB4A20D00CB45B5 /* QuranTextKit */; };
 		F950FAE32AB4BA6400CB45B5 /* SurasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F950FAE22AB4BA6400CB45B5 /* SurasTests.swift */; };
 		F952CFC92A90273C0039478F /* Quran_ur.json in Resources */ = {isa = PBXBuildFile; fileRef = F952CFC82A90273C0039478F /* Quran_ur.json */; };
 		F952CFD22A96D6BA0039478F /* String+size.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952CFD12A96D6BA0039478F /* String+size.swift */; };
 		F952CFD42A96D6E50039478F /* NSAttributedString+size.swift in Sources */ = {isa = PBXBuildFile; fileRef = F952CFD32A96D6E50039478F /* NSAttributedString+size.swift */; };
-		F96447762AB4544300DB5412 /* QuranSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F96447752AB4544300DB5412 /* QuranSDK */; };
 		F964477A2AB454F200DB5412 /* QuranRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96447792AB454F200DB5412 /* QuranRepository.swift */; };
 		F964477C2AB4561900DB5412 /* MainQuranRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964477B2AB4561900DB5412 /* MainQuranRepository.swift */; };
 		F964477F2AB457AE00DB5412 /* QuranService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F964477E2AB457AE00DB5412 /* QuranService.swift */; };
@@ -110,18 +108,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F96447762AB4544300DB5412 /* QuranSDK in Frameworks */,
-				F950FACD2AB4A20D00CB45B5 /* Preferences in Frameworks */,
-				F950FACB2AB4A20D00CB45B5 /* Localization in Frameworks */,
-				F950FACF2AB4A20D00CB45B5 /* QuranKit in Frameworks */,
-				F950FAD32AB4A20D00CB45B5 /* QuranTextKit in Frameworks */,
-				F950FAD12AB4A20D00CB45B5 /* QuranMadaniData in Frameworks */,
+				763539D92AB799E500CC27FD /* QuranTextKit in Frameworks */,
+				763539D02AB7943600CC27FD /* QuranKit in Frameworks */,
+				763539D52AB7975500CC27FD /* ReadingService in Frameworks */,
+				763539D72AB7998A00CC27FD /* Localization in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		763539D12AB7954000CC27FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F950FAD92AB4BA0000CB45B5 /* QuranMajeedTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +219,7 @@
 				F9D60CFF2A76C69D00701635 /* QuranMajeed */,
 				F950FAD92AB4BA0000CB45B5 /* QuranMajeedTests */,
 				F9D60CFE2A76C69D00701635 /* Products */,
+				763539D12AB7954000CC27FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -400,12 +404,10 @@
 			);
 			name = QuranMajeed;
 			packageProductDependencies = (
-				F96447752AB4544300DB5412 /* QuranSDK */,
-				F950FACA2AB4A20D00CB45B5 /* Localization */,
-				F950FACC2AB4A20D00CB45B5 /* Preferences */,
-				F950FACE2AB4A20D00CB45B5 /* QuranKit */,
-				F950FAD02AB4A20D00CB45B5 /* QuranMadaniData */,
-				F950FAD22AB4A20D00CB45B5 /* QuranTextKit */,
+				763539CF2AB7943600CC27FD /* QuranKit */,
+				763539D42AB7975500CC27FD /* ReadingService */,
+				763539D62AB7998A00CC27FD /* Localization */,
+				763539D82AB799E500CC27FD /* QuranTextKit */,
 			);
 			productName = QuranQuiz;
 			productReference = F9D60CFD2A76C69D00701635 /* QuranMajeed.app */;
@@ -441,8 +443,7 @@
 			);
 			mainGroup = F9D60CF42A76C69D00701635;
 			packageReferences = (
-				F96447742AB4544300DB5412 /* XCRemoteSwiftPackageReference "quran-sdk" */,
-				F950FAC92AB4A20D00CB45B5 /* XCRemoteSwiftPackageReference "quran-ios" */,
+				763539CE2AB7943600CC27FD /* XCRemoteSwiftPackageReference "quran-ios" */,
 			);
 			productRefGroup = F9D60CFE2A76C69D00701635 /* Products */;
 			projectDirPath = "";
@@ -789,54 +790,36 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F950FAC92AB4A20D00CB45B5 /* XCRemoteSwiftPackageReference "quran-ios" */ = {
+		763539CE2AB7943600CC27FD /* XCRemoteSwiftPackageReference "quran-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/quran/quran-ios";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.1.0;
-			};
-		};
-		F96447742AB4544300DB5412 /* XCRemoteSwiftPackageReference "quran-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/TazkiyaTech/quran-sdk";
-			requirement = {
-				kind = exactVersion;
-				version = 1.3.0;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F950FACA2AB4A20D00CB45B5 /* Localization */ = {
+		763539CF2AB7943600CC27FD /* QuranKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F950FAC92AB4A20D00CB45B5 /* XCRemoteSwiftPackageReference "quran-ios" */;
-			productName = Localization;
-		};
-		F950FACC2AB4A20D00CB45B5 /* Preferences */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F950FAC92AB4A20D00CB45B5 /* XCRemoteSwiftPackageReference "quran-ios" */;
-			productName = Preferences;
-		};
-		F950FACE2AB4A20D00CB45B5 /* QuranKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F950FAC92AB4A20D00CB45B5 /* XCRemoteSwiftPackageReference "quran-ios" */;
+			package = 763539CE2AB7943600CC27FD /* XCRemoteSwiftPackageReference "quran-ios" */;
 			productName = QuranKit;
 		};
-		F950FAD02AB4A20D00CB45B5 /* QuranMadaniData */ = {
+		763539D42AB7975500CC27FD /* ReadingService */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F950FAC92AB4A20D00CB45B5 /* XCRemoteSwiftPackageReference "quran-ios" */;
-			productName = QuranMadaniData;
+			package = 763539CE2AB7943600CC27FD /* XCRemoteSwiftPackageReference "quran-ios" */;
+			productName = ReadingService;
 		};
-		F950FAD22AB4A20D00CB45B5 /* QuranTextKit */ = {
+		763539D62AB7998A00CC27FD /* Localization */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F950FAC92AB4A20D00CB45B5 /* XCRemoteSwiftPackageReference "quran-ios" */;
+			package = 763539CE2AB7943600CC27FD /* XCRemoteSwiftPackageReference "quran-ios" */;
+			productName = Localization;
+		};
+		763539D82AB799E500CC27FD /* QuranTextKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 763539CE2AB7943600CC27FD /* XCRemoteSwiftPackageReference "quran-ios" */;
 			productName = QuranTextKit;
-		};
-		F96447752AB4544300DB5412 /* QuranSDK */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F96447742AB4544300DB5412 /* XCRemoteSwiftPackageReference "quran-sdk" */;
-			productName = QuranSDK;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -7,7 +7,6 @@
 
 import Foundation
 import QuranKit
-import QuranTextKit
 
 struct MainQuranRepository: QuranRepository {
     

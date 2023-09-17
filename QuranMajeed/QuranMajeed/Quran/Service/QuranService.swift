@@ -6,7 +6,6 @@
 //
 
 import QuranKit
-import QuranTextKit
 
 protocol QuranService {
     func getSuras() -> [Sura]
