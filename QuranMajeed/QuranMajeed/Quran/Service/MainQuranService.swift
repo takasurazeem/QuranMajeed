@@ -6,6 +6,9 @@
 //
 
 import QuranKit
+import QuranText
+import QuranTextKit
+import AppDependencies
 
 struct MainQuranService: QuranService {
     init(
@@ -13,6 +16,7 @@ struct MainQuranService: QuranService {
     ) {
         self.providerForQuran = providerForQuran
         self.theQuranKit = providerForQuran.getQuranKit()
+        self.shareableTextRetriever = providerForQuran.getShareableTextRetriever()
     }
     
     func getSuras() -> [Sura] {
@@ -23,26 +27,16 @@ struct MainQuranService: QuranService {
         theQuranKit.suras[0]
     }
     
-    func getAyasFor(
-        surah number: Int
-    ) -> [String] {
-//        try theQuran.getAyahsInSurah(
-//            number
-//        )
-        fatalError("work in progress")
-    }
-    
-    func getAyahFor(
-        surahNumber: Int,
-        ayahNumber: Int
-    ) -> String {
-//        try theQuranKit.getAyah(
-//            surahNumber: surahNumber,
-//            ayahNumber: ayahNumber
-//        )
-        fatalError("work in progress")
+    func getTextFor(
+        verses: [AyahNumber]
+    ) async throws -> [String] {
+        try await shareableTextRetriever.textForVerses(verses)
     }
     
     private let providerForQuran: QuranProvider
     private let theQuranKit: Quran
+    private let shareableTextRetriever: ShareableVerseTextRetriever
 }
+
+
+

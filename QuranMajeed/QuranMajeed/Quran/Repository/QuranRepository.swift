@@ -10,6 +10,5 @@ import QuranKit
 protocol QuranRepository {
     func getSuras() -> [Sura]
     func getFirstSura() -> Sura
-    func getAyasFor(surah number: Int) -> [String]
-    func getAyahFor(surahNumber: Int, ayahNumber: Int) -> String
+    func getTextFor(verses: [AyahNumber]) async throws -> [String]
 }

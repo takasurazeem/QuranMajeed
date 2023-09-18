@@ -6,8 +6,10 @@
 //
 
 import QuranKit
+import QuranTextKit
 
 protocol QuranProvider {
     func getQuranKit() -> Quran
     func getQuranTextKit() -> Void
+    func getShareableTextRetriever() -> ShareableVerseTextRetriever
 }

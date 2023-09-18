@@ -13,34 +13,20 @@ struct MainQuranRepository: QuranRepository {
     init(
         quranService: QuranService
     ) throws {
-        self.quranService = quranService
+        self.theQuranService = quranService
     }
     
     func getSuras() -> [Sura] {
-        quranService.getSuras()
+        theQuranService.getSuras()
     }
     
     func getFirstSura() -> Sura {
-        quranService.getFirstSura()
+        theQuranService.getFirstSura()
     }
     
-    func getAyasFor(
-        surah number: Int
-    ) -> [String] {
-        quranService.getAyasFor(
-            surah: number
-        )
+    func getTextFor(verses: [AyahNumber]) async throws -> [String] {
+       try await theQuranService.getTextFor(verses: verses)
     }
     
-    func getAyahFor(
-        surahNumber: Int,
-        ayahNumber: Int
-    ) -> String {
-        quranService.getAyahFor(
-            surahNumber: surahNumber,
-            ayahNumber: ayahNumber
-        )
-    }
-    
-    private let quranService: QuranService
+    private let theQuranService: QuranService
 }
