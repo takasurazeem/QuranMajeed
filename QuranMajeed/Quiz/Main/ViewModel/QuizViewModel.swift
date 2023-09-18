@@ -19,8 +19,6 @@ extension QuizView {
         ) {
             self.theQuranRepository = theQuranRepository
             selectedAyahNumber = 1
-            
-            
             selectedVerse = Verse(id: 1, text: "")
             selectedSurah = theQuranRepository.getFirstSura()
             
@@ -54,17 +52,13 @@ extension QuizView {
             }
         }
         
-        private func loadSuras() async {
+        @MainActor private func loadSuras() async {
             let readings = readingPreferences.$reading
                 .prepend(readingPreferences.reading)
                 .values()
 
             for await reading in readings {
-                DispatchQueue.main.async { [weak self] in
-                    if let self {
-                        self.suras = reading.quran.suras
-                    }
-                }
+                suras = reading.quran.suras
             }
         }
         
