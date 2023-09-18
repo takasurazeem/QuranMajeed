@@ -19,8 +19,4 @@ struct MainQuranProvider: QuranProvider {
             quranFileURL: AppDependencyContainer.shared.quranUthmaniV2Database
         )
     }
-    
-    func getQuranTextKit() -> Void {
-        fatalError("Need to learn this.")
-    }
 }
