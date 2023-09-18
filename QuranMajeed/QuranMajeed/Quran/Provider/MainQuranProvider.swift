@@ -22,5 +22,5 @@ struct MainQuranProvider: QuranProvider {
         fatalError("Need to learn this.")
     }
     
-    private let container = Container.shared
+    private let container = AppDependencyContainer.shared
 }

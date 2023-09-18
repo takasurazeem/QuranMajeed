@@ -19,7 +19,7 @@ import Analytics
 import Logging
 import VLogging
 
-class AppDependencyContainer {
+class AppDependencyContainer: AppDependencies {
     private init() {
         self.theQuranProvider = MainQuranProvider()
     }
@@ -30,22 +30,6 @@ class AppDependencyContainer {
         QuranDataDependencyContainer(providerForQuran: theQuranProvider)
     }()
     
-    private let theQuranProvider: QuranProvider
-}
-
-
-
-
-/// Hosts singleton dependencies
-class Container: AppDependencies {
-    // MARK: Lifecycle
-
-    private init() {}
-
-    // MARK: Internal
-
-    static let shared = Container()
-
     let readingResources = ReadingResourcesService()
     let analytics: AnalyticsLibrary = LoggingAnalyticsLibrary()
 
@@ -81,6 +65,8 @@ class Container: AppDependencies {
         }
         return stack
     }()
+    
+    private let theQuranProvider: QuranProvider
 }
 
 private enum Constant {
@@ -94,3 +80,4 @@ private enum Constant {
     static let databasesURL = FileManager.documentsURL
         .appendingPathComponent("databases", isDirectory: true)
 }
+
