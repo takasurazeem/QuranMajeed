@@ -6,6 +6,18 @@
 //
 
 import Foundation
+import Analytics
+import AppDependencies
+import BatchDownloader
+import CoreDataModel
+import CoreDataPersistence
+import LastPagePersistence
+import NotePersistence
+import PageBookmarkPersistence
+import ReadingService
+import Analytics
+import Logging
+import VLogging
 
 class AppDependencyContainer {
     private init() {
@@ -21,26 +33,8 @@ class AppDependencyContainer {
     private let theQuranProvider: QuranProvider
 }
 
-import Analytics
-import Logging
-import VLogging
-
-struct LoggingAnalyticsLibrary: AnalyticsLibrary {
-    func logEvent(_ name: String, value: String) {
-        logger.info("[Analytics] \(name)=\(value)")
-    }
-}
 
 
-import Analytics
-import AppDependencies
-import BatchDownloader
-import CoreDataModel
-import CoreDataPersistence
-import LastPagePersistence
-import NotePersistence
-import PageBookmarkPersistence
-import ReadingService
 
 /// Hosts singleton dependencies
 class Container: AppDependencies {

@@ -21,6 +21,7 @@
 		F918395B2AB7CB6300E4D45B /* CoreDataPersistence in Frameworks */ = {isa = PBXBuildFile; productRef = F918395A2AB7CB6300E4D45B /* CoreDataPersistence */; };
 		F918395D2AB7CB6300E4D45B /* CoreDataPersistenceTestSupport in Frameworks */ = {isa = PBXBuildFile; productRef = F918395C2AB7CB6300E4D45B /* CoreDataPersistenceTestSupport */; };
 		F918395F2AB7CDA700E4D45B /* AppStructureFeature in Frameworks */ = {isa = PBXBuildFile; productRef = F918395E2AB7CDA700E4D45B /* AppStructureFeature */; };
+		F91839622AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91839612AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift */; };
 		F94C11BB2AB2986D004BAD10 /* pdms-saleem-quranfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D252A76C6EF00701635 /* pdms-saleem-quranfont.ttf */; };
 		F94C11BC2AB2986D004BAD10 /* NotoNastaliqUrdu-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F952CFCA2A903FFB0039478F /* NotoNastaliqUrdu-VariableFont_wght.ttf */; };
 		F94C11BD2AB2986D004BAD10 /* diwani-bent.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D262A76C6EF00701635 /* diwani-bent.ttf */; };
@@ -70,6 +71,7 @@
 		F91839482AB7AF2800E4D45B /* Sura+localizedName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sura+localizedName.swift"; sourceTree = "<group>"; };
 		F918394A2AB7B10E00E4D45B /* SuraListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuraListView.swift; sourceTree = "<group>"; };
 		F918394C2AB7B69900E4D45B /* SuraNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuraNameView.swift; sourceTree = "<group>"; };
+		F91839612AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingAnalyticsLibrary.swift; sourceTree = "<group>"; };
 		F94C11C32AB2F962004BAD10 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
 		F950FAD82AB4BA0000CB45B5 /* QuranMajeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuranMajeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F950FAE12AB4BA6400CB45B5 /* QuranMajeedTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuranMajeedTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -151,6 +153,14 @@
 				F91839482AB7AF2800E4D45B /* Sura+localizedName.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F91839602AB7D0AC00E4D45B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F91839612AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		F950FAD92AB4BA0000CB45B5 /* QuranMajeedTests */ = {
@@ -237,6 +247,7 @@
 		F9A105312AB31BD2008FA0DE /* QuranMajeed */ = {
 			isa = PBXGroup;
 			children = (
+				F91839602AB7D0AC00E4D45B /* Utilities */,
 				F96447832AB466B400DB5412 /* Quran */,
 			);
 			path = QuranMajeed;
@@ -548,6 +559,7 @@
 				F9D60D152A76C6AC00701635 /* QuizViewModel.swift in Sources */,
 				F9D60D332A77E01300701635 /* PDFGenerator.swift in Sources */,
 				F9D60D172A76C6AC00701635 /* QuizView.swift in Sources */,
+				F91839622AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift in Sources */,
 				F9D60D012A76C69D00701635 /* QuranQuizApp.swift in Sources */,
 				F9D60D162A76C6AC00701635 /* QuranModel.swift in Sources */,
 				F91839492AB7AF2800E4D45B /* Sura+localizedName.swift in Sources */,
