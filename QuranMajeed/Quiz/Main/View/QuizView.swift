@@ -33,11 +33,14 @@ struct QuizView: View {
                             }
                         }
                         Section("Select Verse") {
-                            Picker("Ayah", selection: $viewModel.selectedAyahNumber) {
-                                ForEach(1...viewModel.selectedSurah.verses.count, id: \.self) { aya in
-                                    Text("\(aya)")
-                                }
-                            }
+//                            Picker("Ayah", selection: $viewModel.selectedAyahNumber) {
+//                                ForEach(1...viewModel.selectedSurah.verses.count, id: \.self) { aya in
+//                                    Text("\(aya)")
+//                                }
+//                            }
+//                            VerseListView(
+//                                verses: viewModel.selectedSurah.verses
+//                            )
                             Text(viewModel.selectedVerse.text)
                                 .font(Font.custom("ScheherazadeNew-Bold", size: 24.0))
                                 .multilineTextAlignment(.trailing)
