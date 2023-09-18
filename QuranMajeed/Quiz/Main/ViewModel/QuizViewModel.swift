@@ -40,7 +40,18 @@ extension QuizView {
         
         func start() async {
             async let suras: () = loadSuras()
-            _ = await [suras]
+            async let firstVerse: () = loadVersesOfFirstSurah()
+            _ = await [suras, firstVerse]
+        }
+        
+        @MainActor private func loadVersesOfFirstSurah() async {
+            do {
+                if let verse = try await theQuranRepository.getTextFor(verses: [selectedSurah.verses[0]]).first {
+                    selectedVerse = Verse(id: 1, text: verse)
+                }
+            } catch {
+                // TODO: Show error if it occurs
+            }
         }
         
         private func loadSuras() async {
