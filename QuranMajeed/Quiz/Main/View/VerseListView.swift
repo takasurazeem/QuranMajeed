@@ -14,6 +14,8 @@ struct VerseListView: View {
     var body: some View {
         List(verses) { verse in
             /*@START_MENU_TOKEN@*/Text(verse.text)/*@END_MENU_TOKEN@*/
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .multilineTextAlignment(.trailing)
         }
     }
 }

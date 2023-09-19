@@ -44,7 +44,7 @@ enum TypeEnum: String, Codable {
 }
 
 // MARK: - Verse
-struct Verse: Codable, Identifiable {
+struct Verse: Codable, Identifiable, Hashable {
     var id: Int
     let text: String
 //    let translation: String
