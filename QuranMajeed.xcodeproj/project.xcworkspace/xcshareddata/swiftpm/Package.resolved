@@ -29,15 +29,6 @@
         }
       },
       {
-        "package": "QuranEngine",
-        "repositoryURL": "https://github.com/quran/quran-ios",
-        "state": {
-          "branch": "main",
-          "revision": "af9cbdc7278cc3247e7ca417239556db0132285e",
-          "version": null
-        }
-      },
-      {
         "package": "AsyncAlgorithms",
         "repositoryURL": "https://github.com/apple/swift-async-algorithms",
         "state": {
@@ -62,6 +53,24 @@
           "branch": null,
           "revision": "532d8b529501fb73a2455b179e0bbb6d49b652ed",
           "version": "1.5.3"
+        }
+      },
+      {
+        "package": "swift-snapshot-testing",
+        "repositoryURL": "https://github.com/pointfreeco/swift-snapshot-testing.git",
+        "state": {
+          "branch": null,
+          "revision": "696b86a6d151578bca7c1a2a3ed419a5f834d40f",
+          "version": "1.13.0"
+        }
+      },
+      {
+        "package": "swift-syntax",
+        "repositoryURL": "https://github.com/apple/swift-syntax.git",
+        "state": {
+          "branch": null,
+          "revision": "74203046135342e4a4a627476dd6caf8b28fe11b",
+          "version": "509.0.0"
         }
       },
       {

@@ -84,6 +84,7 @@
 		F952CFD12A96D6BA0039478F /* String+size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+size.swift"; sourceTree = "<group>"; };
 		F952CFD32A96D6E50039478F /* NSAttributedString+size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+size.swift"; sourceTree = "<group>"; };
 		F96002A82ABA48C7008C16D5 /* GenericDataSource */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GenericDataSource; path = ../../../../Documents/GitHub/GenericDataSource; sourceTree = "<group>"; };
+		F96002A92ABA4FD0008C16D5 /* quran-ios */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "quran-ios"; path = "../../../../Documents/GitHub/quran-ios"; sourceTree = "<group>"; };
 		F96447792AB454F200DB5412 /* QuranRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranRepository.swift; sourceTree = "<group>"; };
 		F964477B2AB4561900DB5412 /* MainQuranRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQuranRepository.swift; sourceTree = "<group>"; };
 		F964477E2AB457AE00DB5412 /* QuranService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranService.swift; sourceTree = "<group>"; };
@@ -278,6 +279,7 @@
 		F9D60CFF2A76C69D00701635 /* QuranMajeed */ = {
 			isa = PBXGroup;
 			children = (
+				F96002A92ABA4FD0008C16D5 /* quran-ios */,
 				F96002A82ABA48C7008C16D5 /* GenericDataSource */,
 				F9A105312AB31BD2008FA0DE /* QuranMajeed */,
 				F9D60D0E2A76C6AC00701635 /* Quiz */,
