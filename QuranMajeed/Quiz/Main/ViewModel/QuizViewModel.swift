@@ -45,16 +45,14 @@ extension QuizView {
         @MainActor private func loadVersesOfFirstSurah() async {
             do {
                 versesOfSelectedSura = try await theQuranRepository
-                    .getTextFor(verses: selectedSurah.verses)[0]
-                    .split(separator: "﴿")
+                    .getTextFor(verses: selectedSurah.verses)
                     .enumerated()
-                    .map { (index, text) in
-                        let snippet = String(text)
-                        if let range = snippet.range(of: "﴾ ") {
-                            let verse = snippet[range.upperBound...]
-                            print(verse.trimmingCharacters(in: .whitespacesAndNewlines))
+                    .map { (id, text) in
+                        var verseText = text
+                        if selectedSurah.startsWithBesmAllah, selectedSurah.suraNumber > 1, id == 0 {
+                            verseText = verseText.replacingOccurrences(of: theQuranRepository.arabicBismillah, with: "")
                         }
-                        return Verse(id: index + 1, text: String(text))
+                        return Verse(id: id + 1, text: verseText)
                     }
                 if let verse = versesOfSelectedSura.first {
                     selectedVerse = verse

@@ -19,6 +19,10 @@ struct MainQuranService: QuranService {
         self.shareableTextRetriever = providerForQuran.getShareableTextRetriever()
     }
     
+    func getQuran() -> Quran {
+        theQuranKit
+    }
+    
     func getSuras() -> [Sura] {
         theQuranKit.suras
     }
@@ -30,7 +34,7 @@ struct MainQuranService: QuranService {
     func getTextFor(
         verses: [AyahNumber]
     ) async throws -> [String] {
-        try await shareableTextRetriever.textForVerses(verses)
+        try await shareableTextRetriever.versesAsArray(verses)
     }
     
     private let providerForQuran: QuranProvider

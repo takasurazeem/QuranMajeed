@@ -16,6 +16,10 @@ struct MainQuranRepository: QuranRepository {
         self.theQuranService = quranService
     }
     
+    func getQuran() -> Quran {
+        theQuranService.getQuran()
+    }
+    
     func getSuras() -> [Sura] {
         theQuranService.getSuras()
     }
@@ -28,5 +32,6 @@ struct MainQuranRepository: QuranRepository {
        try await theQuranService.getTextFor(verses: verses)
     }
     
+    var arabicBismillah: String { "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ" }
     private let theQuranService: QuranService
 }

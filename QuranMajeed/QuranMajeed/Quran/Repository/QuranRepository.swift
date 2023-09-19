@@ -8,7 +8,10 @@
 import QuranKit
 
 protocol QuranRepository {
+    func getQuran() -> Quran
     func getSuras() -> [Sura]
     func getFirstSura() -> Sura
     func getTextFor(verses: [AyahNumber]) async throws -> [String]
+    
+    var arabicBismillah: String { get }
 }
