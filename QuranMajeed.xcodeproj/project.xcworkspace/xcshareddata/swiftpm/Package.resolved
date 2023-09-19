@@ -1,95 +1,88 @@
 {
-  "pins" : [
-    {
-      "identity" : "genericdatasource",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/GenericDataSource/GenericDataSource",
-      "state" : {
-        "revision" : "b301a090c9fb1aa664e80f3960f0930f224ee217",
-        "version" : "3.1.2"
+  "object": {
+    "pins": [
+      {
+        "package": "GRDB",
+        "repositoryURL": "https://github.com/groue/GRDB.swift",
+        "state": {
+          "branch": null,
+          "revision": "ce63f697ed381383041d245b185af3c501de8bef",
+          "version": "6.18.0"
+        }
+      },
+      {
+        "package": "NVActivityIndicatorView",
+        "repositoryURL": "https://github.com/ninjaprox/NVActivityIndicatorView",
+        "state": {
+          "branch": null,
+          "revision": "bcb52371f2259254bac6690f92bb474a61768c47",
+          "version": "5.1.1"
+        }
+      },
+      {
+        "package": "Popover_OC",
+        "repositoryURL": "https://github.com/mohamede1945/Popover",
+        "state": {
+          "branch": "master",
+          "revision": "9641cb324d61554f7e542acb58df2eba55b3a537",
+          "version": null
+        }
+      },
+      {
+        "package": "QuranEngine",
+        "repositoryURL": "https://github.com/quran/quran-ios",
+        "state": {
+          "branch": "main",
+          "revision": "af9cbdc7278cc3247e7ca417239556db0132285e",
+          "version": null
+        }
+      },
+      {
+        "package": "AsyncAlgorithms",
+        "repositoryURL": "https://github.com/apple/swift-async-algorithms",
+        "state": {
+          "branch": null,
+          "revision": "9cfed92b026c524674ed869a4ff2dcfdeedf8a2a",
+          "version": "0.1.0"
+        }
+      },
+      {
+        "package": "swift-collections",
+        "repositoryURL": "https://github.com/apple/swift-collections",
+        "state": {
+          "branch": null,
+          "revision": "937e904258d22af6e447a0b72c0bc67583ef64a2",
+          "version": "1.0.4"
+        }
+      },
+      {
+        "package": "swift-log",
+        "repositoryURL": "https://github.com/apple/swift-log",
+        "state": {
+          "branch": null,
+          "revision": "532d8b529501fb73a2455b179e0bbb6d49b652ed",
+          "version": "1.5.3"
+        }
+      },
+      {
+        "package": "WhatsNewKit",
+        "repositoryURL": "https://github.com/SvenTiigi/WhatsNewKit.git",
+        "state": {
+          "branch": null,
+          "revision": "92a9d6f5f6754aba0df972514fd7686f1de03bcc",
+          "version": "1.3.7"
+        }
+      },
+      {
+        "package": "Zip",
+        "repositoryURL": "https://github.com/marmelroy/Zip",
+        "state": {
+          "branch": null,
+          "revision": "67fa55813b9e7b3b9acee9c0ae501def28746d76",
+          "version": "2.1.2"
+        }
       }
-    },
-    {
-      "identity" : "grdb.swift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/groue/GRDB.swift",
-      "state" : {
-        "revision" : "ce63f697ed381383041d245b185af3c501de8bef",
-        "version" : "6.18.0"
-      }
-    },
-    {
-      "identity" : "nvactivityindicatorview",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ninjaprox/NVActivityIndicatorView",
-      "state" : {
-        "revision" : "bcb52371f2259254bac6690f92bb474a61768c47",
-        "version" : "5.1.1"
-      }
-    },
-    {
-      "identity" : "popover",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/mohamede1945/Popover",
-      "state" : {
-        "branch" : "master",
-        "revision" : "9641cb324d61554f7e542acb58df2eba55b3a537"
-      }
-    },
-    {
-      "identity" : "quran-ios",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/quran/quran-ios",
-      "state" : {
-        "branch" : "main",
-        "revision" : "af9cbdc7278cc3247e7ca417239556db0132285e"
-      }
-    },
-    {
-      "identity" : "swift-async-algorithms",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-async-algorithms",
-      "state" : {
-        "revision" : "9cfed92b026c524674ed869a4ff2dcfdeedf8a2a",
-        "version" : "0.1.0"
-      }
-    },
-    {
-      "identity" : "swift-collections",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-collections",
-      "state" : {
-        "revision" : "937e904258d22af6e447a0b72c0bc67583ef64a2",
-        "version" : "1.0.4"
-      }
-    },
-    {
-      "identity" : "swift-log",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-log",
-      "state" : {
-        "revision" : "532d8b529501fb73a2455b179e0bbb6d49b652ed",
-        "version" : "1.5.3"
-      }
-    },
-    {
-      "identity" : "whatsnewkit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SvenTiigi/WhatsNewKit.git",
-      "state" : {
-        "revision" : "92a9d6f5f6754aba0df972514fd7686f1de03bcc",
-        "version" : "1.3.7"
-      }
-    },
-    {
-      "identity" : "zip",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/marmelroy/Zip",
-      "state" : {
-        "revision" : "67fa55813b9e7b3b9acee9c0ae501def28746d76",
-        "version" : "2.1.2"
-      }
-    }
-  ],
-  "version" : 2
+    ]
+  },
+  "version": 1
 }
