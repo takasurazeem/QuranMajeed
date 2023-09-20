@@ -10,5 +10,5 @@ import QuranTextKit
 
 protocol QuranProvider {
     func getQuranKit() -> Quran
-    func getShareableTextRetriever() -> ShareableVerseTextRetriever
+    func getQuranTextDataService() -> QuranTextDataService
 }

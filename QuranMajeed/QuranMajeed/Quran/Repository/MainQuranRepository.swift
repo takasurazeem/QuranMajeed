@@ -7,6 +7,7 @@
 
 import Foundation
 import QuranKit
+import QuranText
 
 struct MainQuranRepository: QuranRepository {
     
@@ -28,8 +29,8 @@ struct MainQuranRepository: QuranRepository {
         theQuranService.getFirstSura()
     }
     
-    func getTextFor(verses: [AyahNumber]) async throws -> [String] {
-       try await theQuranService.getTextFor(verses: verses)
+    func getTranslatedVerses(verses: [AyahNumber]) async throws -> TranslatedVerses {
+        try await theQuranService.getTranslatedVerses(verses: verses)
     }
     
     var arabicBismillah: String { "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ" }

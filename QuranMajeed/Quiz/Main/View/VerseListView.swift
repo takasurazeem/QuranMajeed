@@ -29,8 +29,8 @@ struct VerseListView_Previews: PreviewProvider {
                     .shared
                     .theQuranDependencyContainer
                     .makeQuranRepository()
-                if let verses = try? await repo.getTextFor(verses: repo.getFirstSura().verses) {
-                    self.verses = verses.enumerated().map { Verse(id: $0 + 1, text: $1) }
+                if let verses = try? await repo.getTranslatedVerses(verses: repo.getFirstSura().verses).verses {
+                    self.verses = verses.enumerated().map { Verse(id: $0 + 1, text: $1.arabicText) }
                 }
             }
     }

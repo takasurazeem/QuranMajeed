@@ -13,8 +13,8 @@ struct MainQuranProvider: QuranProvider {
         Quran.hafsMadani1440
     }
     
-    func getShareableTextRetriever() -> ShareableVerseTextRetriever {
-        ShareableVerseTextRetriever(
+    func getQuranTextDataService() -> QuranTextDataService {
+        QuranTextDataService(
             databasesURL: AppDependencyContainer.shared.databasesURL,
             quranFileURL: AppDependencyContainer.shared.quranUthmaniV2Database
         )

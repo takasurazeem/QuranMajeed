@@ -6,12 +6,13 @@
 //
 
 import QuranKit
+import QuranText
 
 protocol QuranRepository {
     func getQuran() -> Quran
     func getSuras() -> [Sura]
     func getFirstSura() -> Sura
-    func getTextFor(verses: [AyahNumber]) async throws -> [String]
+    func getTranslatedVerses(verses: [AyahNumber]) async throws -> TranslatedVerses
     
     var arabicBismillah: String { get }
 }
