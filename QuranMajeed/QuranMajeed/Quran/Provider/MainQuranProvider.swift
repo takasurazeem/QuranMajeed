@@ -7,6 +7,7 @@
 
 import QuranKit
 import QuranTextKit
+import AppDependencies
 
 struct MainQuranProvider: QuranProvider {
     func getQuranKit() -> Quran {
@@ -14,9 +15,6 @@ struct MainQuranProvider: QuranProvider {
     }
     
     func getQuranTextDataService() -> QuranTextDataService {
-        QuranTextDataService(
-            databasesURL: AppDependencyContainer.shared.databasesURL,
-            quranFileURL: AppDependencyContainer.shared.quranUthmaniV2Database
-        )
+        AppDependencyContainer.shared.textDataService()
     }
 }

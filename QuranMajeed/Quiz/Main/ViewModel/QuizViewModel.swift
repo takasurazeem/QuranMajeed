@@ -49,8 +49,7 @@ extension QuizView {
                     .verses
                     .enumerated()
                     .map { (id, verse) in
-                        var verseText = verse.arabicText
-                        return Verse(id: id + 1, text: verseText)
+                        return Verse(id: id + 1, text: verse.arabicText)
                     }
                 if let verse = versesOfSelectedSura.first {
                     selectedVerse = verse
