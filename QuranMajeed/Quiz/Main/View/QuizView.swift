@@ -35,10 +35,13 @@ struct QuizView: View {
                         Section("Select Verses") {
                             NavigationLink {
                                 VerseListView(
+                                    selectedVerses: $viewModel.selectedVerses,
                                     selectedSuraVerses: viewModel.versesOfSelectedSura
                                 )
                             } label: {
-                                Text(viewModel.selectedVerse.text)
+                                HStack {
+                                    Text(viewModel.selectedVerse.text)
+                                }
                             }
                             /*
                             NavigationLink(
@@ -56,20 +59,17 @@ struct QuizView: View {
                         .deleteDisabled(true)
                         Section("Selected Verses") {
                             ForEach(viewModel.selectedVerses) { verse in
-                                Text(verse.text)
-                                    .font(Font.custom("ScheherazadeNew-Bold", size: 24.0))
-                                    .multilineTextAlignment(.trailing)
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
+                                HStack {
+                                    Text(("\(verse.ayaNumber)"))
+                                    Text(verse.text)
+                                        .font(Font.custom("ScheherazadeNew-Bold", size: 24.0))
+                                        .frame(maxWidth: .infinity, alignment: .trailing)
+                                        .multilineTextAlignment(.trailing)
+                                }
                             }
                             .onDelete(perform: viewModel.delete(at:))
                         }
                     }
-
-                    Button("Add") {
-                        viewModel.addSelectedVerseToQuiz()
-                        proxy.scrollTo(viewModel.selectedVerses.last, anchor: .bottom)
-                    }
-                    .buttonStyle(PrimaryButtonStyle())
                 }
                 .navigationTitle("Prepare Quiz")
                 .toolbar {
@@ -102,19 +102,6 @@ struct QuizView: View {
                 await viewModel.start()
             }
         }
-    }
-}
-
-struct PrimaryButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .buttonStyle(.plain)
-            .frame(maxWidth: .infinity)
-            .frame(height: 45)
-            .foregroundColor(.white)
-            .background(Color(r: 32, g: 35, b: 37))
-            .clipShape(RoundedRectangle(cornerRadius: 8))
-            .padding(16)
     }
 }
 
@@ -165,17 +152,3 @@ struct QuizView_Previews: PreviewProvider {
     }
 }
 */
-extension Color {
-    
-    init(
-        r: Double,
-        g: Double,
-        b: Double
-    ) {
-        self.init(
-            red: r/255,
-            green: g/255,
-            blue: b/255)
-    }
-    
-}

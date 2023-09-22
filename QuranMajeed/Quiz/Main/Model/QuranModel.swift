@@ -13,11 +13,6 @@
 
 import Foundation
 
-enum TypeEnum: String, Codable {
-    case meccan = "meccan"
-    case medinan = "medinan"
-}
-
 // MARK: - Verse
 struct Verse: Codable, Identifiable, Hashable, Comparable {
     static func < (lhs: Verse, rhs: Verse) -> Bool {

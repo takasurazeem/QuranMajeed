@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct VerseListView: View {
+    @Environment(\.dismiss) private var dismiss
+    @Environment(\.editMode) private var editMode
+    @State var defaultEditMode = EditMode.active /// the edit mode
     @State private var searchText = ""
-    var selectedSuraVerses: [Verse] = []
     @State private var selection = Set<Verse>()
     
+    @Binding var selectedVerses: [Verse]
+    var selectedSuraVerses: [Verse] = []
     var searchResults: [Verse] {
         if searchText.isEmpty {
             return selectedSuraVerses
@@ -29,6 +33,22 @@ struct VerseListView: View {
                     .multilineTextAlignment(.trailing)
             }
         }
+        .environment(\.editMode, $defaultEditMode)
+        .onDisappear {
+            defaultEditMode = .inactive
+        }
+        .onChange(of: selection) { newValue in
+            if newValue.count > 0 {
+                selectedVerses = Array(selection).sorted()
+            }
+        }
+        .onChange(of: editMode?.wrappedValue) { newValue in
+            if newValue == EditMode.inactive {
+                dismiss()
+            } else {
+                // Leaving edit mode (e.g. 'Done' tapped)
+            }
+        }
         .searchable(text: $searchText)
         .navigationTitle("Ayah Selection")
         .toolbar { EditButton() }
@@ -43,7 +63,7 @@ fileprivate struct ContentPreview: View {
     @State var allVerses: [Verse] = []
     var body: some View {
         NavigationStack {
-            VerseListView(selectedSuraVerses: allVerses)
+            VerseListView(selectedVerses: .constant([]), selectedSuraVerses: allVerses)
                 .task {
                     let repo = try! AppDependencyContainer
                         .shared
