@@ -19,9 +19,9 @@ extension QuizView {
         ) {
             self.theQuranRepository = theQuranRepository
             selectedAyahNumber = 1
-            selectedVerse = Verse(id: 1, text: "")
+            selectedVerse = Verse(id: UUID(), ayaNumber: 1, text: "", translation: "")
             selectedSurah = theQuranRepository.getFirstSura()
-            
+            urduQuran = theQuranRepository.getQuranTranslations()
 //            if let verse = selectedSurah.verses.first {
 //                selectedVerse = verse
 //            }
@@ -49,7 +49,9 @@ extension QuizView {
                     .verses
                     .enumerated()
                     .map { (id, verse) in
-                        return Verse(id: id + 1, text: verse.arabicText)
+                        let translation = urduQuran.first { $0.id == selectedSurah.suraNumber }?.verses.first { $0.id == id + 1 }?.translation ?? ""
+                        let verse = Verse(ayaNumber: id + 1, text: verse.arabicText, translation: translation)
+                        return verse
                     }
                 if let verse = versesOfSelectedSura.first {
                     selectedVerse = verse
@@ -88,7 +90,7 @@ extension QuizView {
         }
         
         func generatePDF() -> URL? {
-            _ = PDFGenerator(verses: selectedVerses)
+            _ = PDFGenerator(verses: selectedVerses.asQuizVerses(selectedSuraNumber: selectedSurah.suraNumber))
             
             
             return nil
@@ -98,11 +100,24 @@ extension QuizView {
         
         @Published var selectedAyahNumber: Int
         @Published var selectedSurah: Sura
-        @Published private(set) var versesOfSelectedSura: [Verse] = []
+        @Published private(set)var versesOfSelectedSura: [Verse] = []
         @Published var suras: [Sura] = []
         @Published private(set) var selectedVerse: Verse
-        @Published private(set) var selectedVerses: [QuizVerse] = []
-        
+        @Published var selectedVerses: [Verse] = [] {
+            didSet {
+                quizVerses = selectedVerses.asQuizVerses(selectedSuraNumber: selectedSurah.suraNumber)
+            }
+        }
+        private(set) var quizVerses: [QuizVerse] = []
         private let readingPreferences = ReadingPreferences.shared
+        private let urduQuran: [UrduTranslatedSuras]
+    }
+}
+
+extension Array where Element == Verse {
+    func asQuizVerses(selectedSuraNumber: Int) -> [QuizVerse] {
+        self.map {
+            QuizVerse(verse: $0, selectedSuraNumber: selectedSuraNumber)
+        }
     }
 }

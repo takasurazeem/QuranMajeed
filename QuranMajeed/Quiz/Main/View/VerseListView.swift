@@ -8,30 +8,51 @@
 import SwiftUI
 
 struct VerseListView: View {
+    @State private var searchText = ""
+    var selectedSuraVerses: [Verse] = []
+    @State private var selection = Set<Verse>()
     
-    let verses: [Verse]
+    var searchResults: [Verse] {
+        if searchText.isEmpty {
+            return selectedSuraVerses
+        }
+        return selectedSuraVerses
+            .filter { "\($0.ayaNumber)".contains(searchText) }
+    }
     
     var body: some View {
-        List(verses) { verse in
-            /*@START_MENU_TOKEN@*/Text(verse.text)/*@END_MENU_TOKEN@*/
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                .multilineTextAlignment(.trailing)
+        List(searchResults, id: \.self, selection: $selection) { verse in
+            HStack {
+                Text(("\(verse.ayaNumber)"))
+                Text(verse.text)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .multilineTextAlignment(.trailing)
+            }
         }
+        .searchable(text: $searchText)
+        .navigationTitle("Ayah Selection")
+        .toolbar { EditButton() }
     }
 }
 
-struct VerseListView_Previews: PreviewProvider {
-    @State static var verses: [Verse] = []
-    static var previews: some View {
-        VerseListView(verses: verses)
-            .task {
-                let repo = try! AppDependencyContainer
-                    .shared
-                    .theQuranDependencyContainer
-                    .makeQuranRepository()
-                if let verses = try? await repo.getTranslatedVerses(verses: repo.getFirstSura().verses).verses {
-                    self.verses = verses.enumerated().map { Verse(id: $0 + 1, text: $1.arabicText) }
+#Preview {
+    ContentPreview()
+}
+
+fileprivate struct ContentPreview: View {
+    @State var allVerses: [Verse] = []
+    var body: some View {
+        NavigationStack {
+            VerseListView(selectedSuraVerses: allVerses)
+                .task {
+                    let repo = try! AppDependencyContainer
+                        .shared
+                        .theQuranDependencyContainer
+                        .makeQuranRepository()
+                    if let verses = try? await repo.getTranslatedVerses(verses: repo.getFirstSura().verses).verses {
+                        self.allVerses = verses.enumerated().map { Verse(ayaNumber: $0 + 1, text: $1.arabicText, translation: "") }
+                    }
                 }
-            }
+        }
     }
 }

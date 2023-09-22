@@ -17,4 +17,8 @@ struct MainQuranProvider: QuranProvider {
     func getQuranTextDataService() -> QuranTextDataService {
         AppDependencyContainer.shared.textDataService()
     }
+    
+    func getQuranTranslationProviderName() -> String {
+        "Quran_ur.json"
+    }
 }

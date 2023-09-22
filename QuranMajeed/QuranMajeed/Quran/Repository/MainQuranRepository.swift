@@ -33,6 +33,10 @@ struct MainQuranRepository: QuranRepository {
         try await theQuranService.getTranslatedVerses(verses: verses)
     }
     
+    func getQuranTranslations() -> [UrduTranslatedSuras] {
+        theQuranService.getQuranTranslations()
+    }
+    
     var arabicBismillah: String { "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ" }
     private let theQuranService: QuranService
 }

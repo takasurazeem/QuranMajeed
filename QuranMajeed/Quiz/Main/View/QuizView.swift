@@ -32,9 +32,17 @@ struct QuizView: View {
                                 )
                             }
                         }
-                        Section("Select Verse") {
+                        Section("Select Verses") {
+                            NavigationLink {
+                                VerseListView(
+                                    selectedSuraVerses: viewModel.versesOfSelectedSura
+                                )
+                            } label: {
+                                Text(viewModel.selectedVerse.text)
+                            }
+                            /*
                             NavigationLink(
-                                value: viewModel.versesOfSelectedSura
+                                value: $viewModel.selectedVerses
                             ) {
                                 Text(viewModel.selectedVerse.text)
                             }
@@ -43,10 +51,7 @@ struct QuizView: View {
                                     verses: verses
                                 )
                             }
-                            Text(viewModel.selectedVerse.text)
-                                .font(Font.custom("ScheherazadeNew-Bold", size: 24.0))
-                                .multilineTextAlignment(.trailing)
-                                .frame(maxWidth: .infinity)
+                            */
                         }
                         .deleteDisabled(true)
                         Section("Selected Verses") {
@@ -67,18 +72,12 @@ struct QuizView: View {
                     .buttonStyle(PrimaryButtonStyle())
                 }
                 .navigationTitle("Prepare Quiz")
-                .onChange(of: viewModel.selectedSurah) { _ in
-//                    viewModel.setTextForSelectedAya()
-                }
-                .onChange(of: viewModel.selectedAyahNumber) { _ in
-//                    viewModel.setTextForSelectedAya()
-                }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         NavigationLink("PDF Preview") {
                             PDFKitView(
                                 documentData: PDFGenerator(
-                                    verses: viewModel.selectedVerses
+                                    verses: viewModel.quizVerses
                                 )
                                 .generateQuiz()
                             )
@@ -88,7 +87,7 @@ struct QuizView: View {
                                 // FIXME: - Not a good place to put it here. Move to a file of its own.
                                 ToolbarItem(placement: .navigationBarTrailing) {
                                     if let document = PDFDocument(data: PDFGenerator(
-                                        verses: viewModel.selectedVerses
+                                        verses: viewModel.quizVerses
                                     )
                                     .generateQuiz()) {
                                         ShareLink(item: document, preview: SharePreview("PDF"))
@@ -119,12 +118,14 @@ struct PrimaryButtonStyle: ButtonStyle {
     }
 }
 
+/* FIXME: - Fix later
 struct QuizView_Previews: PreviewProvider {
     static let quizVerses = Bundle.main.decode(Surahs.self, from: "Quran_ur.json").first(where: {$0.id==67})?.verses.compactMap({
         QuizVerse(
             surahId: 1,
             ayahId: $0.id,
-            text: $0.text
+            text: $0.text,
+            translatedText: ""
         )
     })
     static var previews: some View {
@@ -163,7 +164,7 @@ struct QuizView_Previews: PreviewProvider {
         .previewDevice("iPad Pro (12.9-inch) (6th generation)")
     }
 }
-
+*/
 extension Color {
     
     init(

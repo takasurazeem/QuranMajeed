@@ -84,7 +84,7 @@ class PDFGenerator {
         let translationTextAttributes = makeTranslationTextAttributes(paragraphStyle)
         // FIXME: - 
         let attributedTranslationText = NSAttributedString(
-            string: "", //verse.translation,
+            string: verse.translatedText,
             attributes: translationTextAttributes
         )
         // I think I will move the above properties to a better place ان شاء اللہ تَعَالٰی 

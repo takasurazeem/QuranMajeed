@@ -40,6 +40,7 @@
 		F96447852AB466CC00DB5412 /* QuranProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96447842AB466CC00DB5412 /* QuranProvider.swift */; };
 		F96447872AB466FA00DB5412 /* MainQuranProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96447862AB466FA00DB5412 /* MainQuranProvider.swift */; };
 		F96447892AB467A000DB5412 /* QuranDataDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96447882AB467A000DB5412 /* QuranDataDependencyContainer.swift */; };
+		F98C231B2ABE2C8E00FED70E /* UrduTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C231A2ABE2C8E00FED70E /* UrduTranslation.swift */; };
 		F992EBA92AB3CC1A00649632 /* ScheherazadeNew-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F992EBA52AB3CC1A00649632 /* ScheherazadeNew-Regular.ttf */; };
 		F992EBAA2AB3CC1A00649632 /* ScheherazadeNew-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F992EBA62AB3CC1A00649632 /* ScheherazadeNew-SemiBold.ttf */; };
 		F992EBAB2AB3CC1A00649632 /* ScheherazadeNew-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F992EBA72AB3CC1A00649632 /* ScheherazadeNew-Bold.ttf */; };
@@ -91,6 +92,7 @@
 		F96447842AB466CC00DB5412 /* QuranProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranProvider.swift; sourceTree = "<group>"; };
 		F96447862AB466FA00DB5412 /* MainQuranProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQuranProvider.swift; sourceTree = "<group>"; };
 		F96447882AB467A000DB5412 /* QuranDataDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranDataDependencyContainer.swift; sourceTree = "<group>"; };
+		F98C231A2ABE2C8E00FED70E /* UrduTranslation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrduTranslation.swift; sourceTree = "<group>"; };
 		F992EBA52AB3CC1A00649632 /* ScheherazadeNew-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScheherazadeNew-Regular.ttf"; sourceTree = "<group>"; };
 		F992EBA62AB3CC1A00649632 /* ScheherazadeNew-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScheherazadeNew-SemiBold.ttf"; sourceTree = "<group>"; };
 		F992EBA72AB3CC1A00649632 /* ScheherazadeNew-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScheherazadeNew-Bold.ttf"; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				F91839482AB7AF2800E4D45B /* Sura+localizedName.swift */,
+				F98C231A2ABE2C8E00FED70E /* UrduTranslation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 				F9D60D172A76C6AC00701635 /* QuizView.swift in Sources */,
 				F91839622AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift in Sources */,
 				F9D60D012A76C69D00701635 /* QuranQuizApp.swift in Sources */,
+				F98C231B2ABE2C8E00FED70E /* UrduTranslation.swift in Sources */,
 				F9D60D162A76C6AC00701635 /* QuranModel.swift in Sources */,
 				F91839492AB7AF2800E4D45B /* Sura+localizedName.swift in Sources */,
 				F94C11C42AB2F962004BAD10 /* AppDependencyContainer.swift in Sources */,

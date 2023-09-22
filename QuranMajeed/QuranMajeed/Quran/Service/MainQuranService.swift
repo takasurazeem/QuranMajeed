@@ -9,6 +9,7 @@ import QuranKit
 import QuranText
 import QuranTextKit
 import AppDependencies
+import Foundation
 
 struct MainQuranService: QuranService {
     init(
@@ -35,6 +36,10 @@ struct MainQuranService: QuranService {
         verses: [AyahNumber]
     ) async throws -> TranslatedVerses {
         try await theQuranTextDataService.textForVerses(verses)
+    }
+    
+    func getQuranTranslations() -> [UrduTranslatedSuras] {
+        Bundle.main.decode([UrduTranslatedSuras].self, from: providerForQuran.getQuranTranslationProviderName())
     }
     
     private let providerForQuran: QuranProvider
