@@ -51,7 +51,6 @@
 		F9D60D162A76C6AC00701635 /* QuranModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D122A76C6AC00701635 /* QuranModel.swift */; };
 		F9D60D172A76C6AC00701635 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D142A76C6AC00701635 /* QuizView.swift */; };
 		F9D60D1A2A76C6CA00701635 /* Bundle+Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D192A76C6CA00701635 /* Bundle+Decode.swift */; };
-		F9D60D222A76C6DB00701635 /* Al-Fatihah.json in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D1E2A76C6DB00701635 /* Al-Fatihah.json */; };
 		F9D60D2F2A77DD9600701635 /* QuizPDFPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D2E2A77DD9600701635 /* QuizPDFPreview.swift */; };
 		F9D60D332A77E01300701635 /* PDFGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D322A77E01300701635 /* PDFGenerator.swift */; };
 		F9D60D362A7852F400701635 /* PDFDocument+Transferable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D352A7852F400701635 /* PDFDocument+Transferable.swift */; };
@@ -104,7 +103,6 @@
 		F9D60D122A76C6AC00701635 /* QuranModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuranModel.swift; sourceTree = "<group>"; };
 		F9D60D142A76C6AC00701635 /* QuizView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		F9D60D192A76C6CA00701635 /* Bundle+Decode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Decode.swift"; sourceTree = "<group>"; };
-		F9D60D1E2A76C6DB00701635 /* Al-Fatihah.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Al-Fatihah.json"; sourceTree = "<group>"; };
 		F9D60D252A76C6EF00701635 /* pdms-saleem-quranfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pdms-saleem-quranfont.ttf"; sourceTree = "<group>"; };
 		F9D60D262A76C6EF00701635 /* diwani-bent.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "diwani-bent.ttf"; sourceTree = "<group>"; };
 		F9D60D272A76C6EF00701635 /* UthmanTN1Ver10.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = UthmanTN1Ver10.otf; sourceTree = "<group>"; };
@@ -354,7 +352,6 @@
 			isa = PBXGroup;
 			children = (
 				F952CFC82A90273C0039478F /* Quran_ur.json */,
-				F9D60D1E2A76C6DB00701635 /* Al-Fatihah.json */,
 			);
 			path = "JSON Files";
 			sourceTree = "<group>";
@@ -527,7 +524,6 @@
 				F94C11BC2AB2986D004BAD10 /* NotoNastaliqUrdu-VariableFont_wght.ttf in Resources */,
 				F992EBAB2AB3CC1A00649632 /* ScheherazadeNew-Bold.ttf in Resources */,
 				F94C11BB2AB2986D004BAD10 /* pdms-saleem-quranfont.ttf in Resources */,
-				F9D60D222A76C6DB00701635 /* Al-Fatihah.json in Resources */,
 				F992EBAC2AB3CC1A00649632 /* ScheherazadeNew-Medium.ttf in Resources */,
 				F992EBAA2AB3CC1A00649632 /* ScheherazadeNew-SemiBold.ttf in Resources */,
 				F94C11BD2AB2986D004BAD10 /* diwani-bent.ttf in Resources */,
