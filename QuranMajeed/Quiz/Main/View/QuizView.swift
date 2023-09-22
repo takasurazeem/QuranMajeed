@@ -6,6 +6,8 @@
 //  Copyright © 2023 Takasur Azeem. All rights reserved.
 //
 
+import Localization
+import QuranKit
 import SwiftUI
 import PDFKit
 
@@ -17,33 +19,47 @@ struct QuizView: View {
             VStack {
                 ScrollViewReader { proxy in
                     List {
-                        Section("Select Surah and Verse") {
-                            Picker("Surah", selection: $viewModel.selectedSurah) {
-                                ForEach(viewModel.surahs) { surah in
-                                    Text("\(surah.name) {\(surah.id)}")
-                                        .font(Font.custom("ScheherazadeNew-Regular", size: 22.0))
-                                        .tag(surah)
+                        Section("Selected Surah") {
+                            NavigationLink(value: viewModel.suras) {
+                                VStack {
+                                    SuraNameView(for: viewModel.selectedSurah)
                                 }
                             }
-                            Picker("Ayah", selection: $viewModel.selectedAyahNumber) {
-                                ForEach(1...viewModel.selectedSurah.verses.count, id: \.self) { aya in
-                                    Text("\(aya)")
-                                }
+                            .navigationDestination(for: [Sura].self) { suras in
+                                SuraListView(
+                                    suras: viewModel.suras,
+                                    selectedSura: $viewModel.selectedSurah
+                                )
                             }
-                            Text(viewModel.selectedVerse.text)
-                                .font(Font.custom("ScheherazadeNew-Regular", size: 24.0))
-                                .multilineTextAlignment(.trailing)
-                                .frame(maxWidth: .infinity)
+                        }
+                        Section("Select Verses") {
+                            NavigationLink {
+                                VerseListView(
+                                    selectedSuraVerses: viewModel.versesOfSelectedSura
+                                )
+                            } label: {
+                                Text(viewModel.selectedVerse.text)
+                            }
+                            /*
+                            NavigationLink(
+                                value: $viewModel.selectedVerses
+                            ) {
+                                Text(viewModel.selectedVerse.text)
+                            }
+                            .navigationDestination(for: [Verse].self) { verses in
+                                VerseListView(
+                                    verses: verses
+                                )
+                            }
+                            */
                         }
                         .deleteDisabled(true)
                         Section("Selected Verses") {
                             ForEach(viewModel.selectedVerses) { verse in
                                 Text(verse.text)
-                                    .font(Font.custom("ScheherazadeNew-Regular", size: 24.0))
+                                    .font(Font.custom("ScheherazadeNew-Bold", size: 24.0))
                                     .multilineTextAlignment(.trailing)
                                     .frame(maxWidth: .infinity, alignment: .trailing)
-                                
-//                                    .border(.red)
                             }
                             .onDelete(perform: viewModel.delete(at:))
                         }
@@ -56,18 +72,12 @@ struct QuizView: View {
                     .buttonStyle(PrimaryButtonStyle())
                 }
                 .navigationTitle("Prepare Quiz")
-                .onChange(of: viewModel.selectedSurah) { _ in
-                    viewModel.setTextForSelectedAya()
-                }
-                .onChange(of: viewModel.selectedAyahNumber) { _ in
-                    viewModel.setTextForSelectedAya()
-                }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         NavigationLink("PDF Preview") {
                             PDFKitView(
                                 documentData: PDFGenerator(
-                                    verses: viewModel.selectedVerses
+                                    verses: viewModel.quizVerses
                                 )
                                 .generateQuiz()
                             )
@@ -77,7 +87,7 @@ struct QuizView: View {
                                 // FIXME: - Not a good place to put it here. Move to a file of its own.
                                 ToolbarItem(placement: .navigationBarTrailing) {
                                     if let document = PDFDocument(data: PDFGenerator(
-                                        verses: viewModel.selectedVerses
+                                        verses: viewModel.quizVerses
                                     )
                                     .generateQuiz()) {
                                         ShareLink(item: document, preview: SharePreview("PDF"))
@@ -87,6 +97,9 @@ struct QuizView: View {
                         }
                     }
                 }
+            }
+            .task {
+                await viewModel.start()
             }
         }
     }
@@ -105,13 +118,14 @@ struct PrimaryButtonStyle: ButtonStyle {
     }
 }
 
+/* FIXME: - Fix later
 struct QuizView_Previews: PreviewProvider {
     static let quizVerses = Bundle.main.decode(Surahs.self, from: "Quran_ur.json").first(where: {$0.id==67})?.verses.compactMap({
         QuizVerse(
             surahId: 1,
             ayahId: $0.id,
             text: $0.text,
-            translation: $0.translation
+            translatedText: ""
         )
     })
     static var previews: some View {
@@ -132,19 +146,25 @@ struct QuizView_Previews: PreviewProvider {
                         QuizVerse(
                             surahId: 1,
                             ayahId: $0.id,
-                            text: $0.text, 
-                            translation: $0.translation
+                            text: $0.text
                         )
                     })
             )
             .generateQuiz()
         )
         .previewDisplayName("PDF")
-        QuizView(viewModel: QuizView.ViewModel())
-            .previewDevice("iPad Pro (12.9-inch) (6th generation)")
+        QuizView(
+            viewModel: QuizView.ViewModel(
+                theQuranRepository: try! AppDependencyContainer
+                    .shared
+                    .theQuranDependencyContainer
+                    .makeQuranRepository()
+            )
+        )
+        .previewDevice("iPad Pro (12.9-inch) (6th generation)")
     }
 }
-
+*/
 extension Color {
     
     init(

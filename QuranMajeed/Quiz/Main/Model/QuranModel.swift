@@ -13,57 +13,54 @@
 
 import Foundation
 
-// MARK: - SurahElement
-struct SurahElement: Codable, Identifiable, Hashable {
-    static func == (lhs: SurahElement, rhs: SurahElement) -> Bool {
-        lhs.id == rhs.id
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-    
-    var id: Int
-    let name: String
-    let transliteration: String
-    let translation: String
-    let type: TypeEnum
-    let totalVerses: Int
-    let verses: [Verse]
-
-    enum CodingKeys: String, CodingKey {
-        case id, name, transliteration, type, translation
-        case totalVerses = "total_verses"
-        case verses
-    }
-}
-
 enum TypeEnum: String, Codable {
     case meccan = "meccan"
     case medinan = "medinan"
 }
 
 // MARK: - Verse
-struct Verse: Codable, Identifiable {
-    var id: Int
-    let text: String
+struct Verse: Codable, Identifiable, Hashable, Comparable {
+    static func < (lhs: Verse, rhs: Verse) -> Bool {
+        lhs.ayaNumber < rhs.ayaNumber
+    }
+    
+    var id = UUID()
+    var ayaNumber: Int
+    var text: String
     let translation: String
 }
 
-typealias Surahs = [SurahElement]
-
 struct QuizVerse: Identifiable, Hashable {
-    let id = UUID()
-    let surahId: Int
-    let ayahId: Int
-    let text: String
-    let translation: String
+    
+    init(
+        surahId: Int,
+        ayahId: Int,
+        text: String,
+        translatedText: String
+    ) {
+        self.surahId = surahId
+        self.ayahId = ayahId
+        self.text = text
+        self.translatedText = translatedText
+    }
+    
+    init(verse: Verse, selectedSuraNumber: Int) {
+        surahId = selectedSuraNumber
+        ayahId = verse.ayaNumber
+        text = verse.text
+        translatedText = verse.translation
+    }
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
         hasher.combine(surahId)
         hasher.combine(ayahId)
         hasher.combine(text)
-        hasher.combine(translation)
     }
+    
+    let id = UUID()
+    let surahId: Int
+    let ayahId: Int
+    let text: String
+    let translatedText: String
 }

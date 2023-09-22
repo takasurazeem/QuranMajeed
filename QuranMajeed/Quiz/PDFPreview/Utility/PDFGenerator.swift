@@ -82,8 +82,9 @@ class PDFGenerator {
             attributes: verseTextAttributes
         )
         let translationTextAttributes = makeTranslationTextAttributes(paragraphStyle)
+        // FIXME: - 
         let attributedTranslationText = NSAttributedString(
-            string: verse.translation,
+            string: verse.translatedText,
             attributes: translationTextAttributes
         )
         // I think I will move the above properties to a better place ان شاء اللہ تَعَالٰی 
@@ -169,7 +170,7 @@ class PDFGenerator {
     // TODO: - Use AppStorage, some of these will be set from a settings menu for more flexibility in future ان شاء اللہ تَعَالٰی
     // MARK: - Fonts
     let theOpeningFont = UIFont(name: "_PDMS_Saleem_QuranFont", size: 20) ?? .boldSystemFont(ofSize: 64)
-    let verseFont = UIFont(name: "ScheherazadeNew-Regular", size: 20) ?? .boldSystemFont(ofSize: 64)
+    let verseFont = UIFont(name: "ScheherazadeNew-Bold", size: 20) ?? .boldSystemFont(ofSize: 64)
     let leftRightHeadingsFont = UIFont(name: "NotoNastaliqUrdu", size: 10) ?? .boldSystemFont(ofSize: 64)
     let belowOpeningTextFont = UIFont(name: "DiwaniBent", size: 20) ?? .boldSystemFont(ofSize: 64)
     let nameAndDateTextFont = UIFont(name: "NotoNastaliqUrdu", size: 14) ?? .boldSystemFont(ofSize: 64)
