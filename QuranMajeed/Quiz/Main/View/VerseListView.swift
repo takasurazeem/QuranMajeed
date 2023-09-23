@@ -8,24 +8,27 @@
 import SwiftUI
 
 struct VerseListView: View {
-    @Environment(\.dismiss) private var dismiss
     @Environment(\.editMode) private var editMode
-    @State var defaultEditMode = EditMode.active /// the edit mode
     @State private var searchText = ""
     @State private var selection = Set<Verse>()
     
+    var allVerses: [Verse] = []
     @Binding var selectedVerses: [Verse]
-    var selectedSuraVerses: [Verse] = []
-    var searchResults: [Verse] {
+    
+    private var searchResults: [Verse] {
         if searchText.isEmpty {
-            return selectedSuraVerses
+            return allVerses
         }
-        return selectedSuraVerses
+        return allVerses
             .filter { "\($0.ayaNumber)".contains(searchText) }
     }
     
     var body: some View {
-        List(searchResults, id: \.self, selection: $selection) { verse in
+        List(
+            searchResults,
+            id: \.self,
+            selection: $selection
+        ) { verse in
             HStack {
                 Text(("\(verse.ayaNumber)"))
                 Text(verse.text)
@@ -33,46 +36,43 @@ struct VerseListView: View {
                     .multilineTextAlignment(.trailing)
             }
         }
-        .environment(\.editMode, $defaultEditMode)
-        .onDisappear {
-            defaultEditMode = .inactive
+        .navigationTitle("Ayah Selection")
+        .environment(\.editMode, .constant(.active))
+        .onAppear {
+            selection = Set(selectedVerses)
         }
-        .onChange(of: selection) { newValue in
-            if newValue.count > 0 {
+        .onChange(of: selection) { _ in
+            if !selection.isEmpty {
                 selectedVerses = Array(selection).sorted()
             }
         }
-        .onChange(of: editMode?.wrappedValue) { newValue in
-            if newValue == EditMode.inactive {
-                dismiss()
-            } else {
-                // Leaving edit mode (e.g. 'Done' tapped)
-            }
-        }
         .searchable(text: $searchText)
-        .navigationTitle("Ayah Selection")
-        .toolbar { EditButton() }
     }
 }
 
-#Preview {
-    ContentPreview()
+struct VerseListView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentPreview()
+    }
 }
 
 fileprivate struct ContentPreview: View {
     @State var allVerses: [Verse] = []
     var body: some View {
         NavigationStack {
-            VerseListView(selectedVerses: .constant([]), selectedSuraVerses: allVerses)
-                .task {
-                    let repo = try! AppDependencyContainer
-                        .shared
-                        .theQuranDependencyContainer
-                        .makeQuranRepository()
-                    if let verses = try? await repo.getTranslatedVerses(verses: repo.getFirstSura().verses).verses {
-                        self.allVerses = verses.enumerated().map { Verse(ayaNumber: $0 + 1, text: $1.arabicText, translation: "") }
-                    }
+            VerseListView(
+                allVerses: allVerses,
+                selectedVerses: .constant([])
+            )
+            .task {
+                let repo = try! AppDependencyContainer
+                    .shared
+                    .theQuranDependencyContainer
+                    .makeQuranRepository()
+                if let verses = try? await repo.getTranslatedVerses(verses: repo.getFirstSura().verses).verses {
+                    self.allVerses = verses.enumerated().map { Verse(ayaNumber: $0 + 1, text: $1.arabicText, translation: "") }
                 }
+            }
         }
     }
 }

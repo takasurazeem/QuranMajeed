@@ -31,6 +31,7 @@ struct SuraListView: View {
                 presentationMode.wrappedValue.dismiss()
             }
         }
+        .navigationTitle("Select Sura")
         .searchable(text: $searchText)
     }
 }

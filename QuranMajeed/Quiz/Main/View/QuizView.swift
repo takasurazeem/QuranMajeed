@@ -6,7 +6,6 @@
 //  Copyright © 2023 Takasur Azeem. All rights reserved.
 //
 
-import Localization
 import QuranKit
 import SwiftUI
 import PDFKit
@@ -27,7 +26,7 @@ struct QuizView: View {
                             }
                             .navigationDestination(for: [Sura].self) { suras in
                                 SuraListView(
-                                    suras: viewModel.suras,
+                                    suras: suras,
                                     selectedSura: $viewModel.selectedSurah
                                 )
                             }
@@ -35,26 +34,14 @@ struct QuizView: View {
                         Section("Select Verses") {
                             NavigationLink {
                                 VerseListView(
-                                    selectedVerses: $viewModel.selectedVerses,
-                                    selectedSuraVerses: viewModel.versesOfSelectedSura
+                                    allVerses: viewModel.versesOfSelectedSura,
+                                    selectedVerses: $viewModel.selectedVerses
                                 )
                             } label: {
                                 HStack {
                                     Text(viewModel.selectedVerse.text)
                                 }
                             }
-                            /*
-                            NavigationLink(
-                                value: $viewModel.selectedVerses
-                            ) {
-                                Text(viewModel.selectedVerse.text)
-                            }
-                            .navigationDestination(for: [Verse].self) { verses in
-                                VerseListView(
-                                    verses: verses
-                                )
-                            }
-                            */
                         }
                         .deleteDisabled(true)
                         Section("Selected Verses") {

@@ -19,7 +19,7 @@ extension QuizView {
         ) {
             self.theQuranRepository = theQuranRepository
             selectedAyahNumber = 1
-            selectedVerse = Verse(id: UUID(), ayaNumber: 1, text: "", translation: "")
+            selectedVerse = Verse(ayaNumber: 1, text: "", translation: "")
             selectedSurah = theQuranRepository.getFirstSura()
             urduQuran = theQuranRepository.getQuranTranslations()
 //            if let verse = selectedSurah.verses.first {
@@ -69,20 +69,6 @@ extension QuizView {
             for await reading in readings {
                 suras = reading.quran.suras
             }
-        }
-        
-        func addSelectedVerseToQuiz() {
-//            if selectedVerses.contains(where: { verse in
-//                (verse.surahId == selectedSurah.id && verse.ayahId == selectedVerse.id) || verse.text == selectedVerse.text
-//            }) == false {
-//                let verse = QuizVerse(
-//                    surahId: selectedSurah.id,
-//                    ayahId: selectedVerse.id,
-//                    text: selectedVerse.text
-//                )
-//                print(verse)
-//                selectedVerses.append(verse)
-//            }
         }
 
         func delete(at offsets: IndexSet) {
