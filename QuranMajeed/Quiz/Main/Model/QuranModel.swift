@@ -14,7 +14,7 @@ struct Verse: Codable, Identifiable, Hashable, Comparable {
         lhs.ayaNumber < rhs.ayaNumber
     }
     
-    var id = UUID()
+    var id: Int { ayaNumber }
     var ayaNumber: Int
     var text: String
     let translation: String
