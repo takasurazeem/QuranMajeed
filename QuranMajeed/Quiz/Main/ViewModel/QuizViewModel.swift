@@ -19,7 +19,7 @@ extension QuizView {
         ) {
             self.theQuranRepository = theQuranRepository
             selectedAyahNumber = 1
-            selectedVerse = Verse(id: UUID(), ayaNumber: 1, text: "", translation: "")
+            selectedVerse = Verse(ayaNumber: 1, text: "", translation: "")
             selectedSurah = theQuranRepository.getFirstSura()
             urduQuran = theQuranRepository.getQuranTranslations()
 //            if let verse = selectedSurah.verses.first {
