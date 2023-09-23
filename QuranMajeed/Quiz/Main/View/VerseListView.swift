@@ -51,7 +51,6 @@ struct VerseListView: View {
         }
         .searchable(text: $searchText)
         .navigationTitle("Ayah Selection")
-//        .toolbar { EditButton() }
     }
 }
 
