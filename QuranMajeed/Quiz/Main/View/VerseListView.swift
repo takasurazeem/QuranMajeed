@@ -51,12 +51,14 @@ struct VerseListView: View {
         }
         .searchable(text: $searchText)
         .navigationTitle("Ayah Selection")
-        .toolbar { EditButton() }
+//        .toolbar { EditButton() }
     }
 }
 
-#Preview {
-    ContentPreview()
+struct VerseListView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentPreview()
+    }
 }
 
 fileprivate struct ContentPreview: View {
