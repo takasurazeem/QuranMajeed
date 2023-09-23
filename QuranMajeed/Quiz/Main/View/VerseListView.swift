@@ -34,19 +34,9 @@ struct VerseListView: View {
             }
         }
         .environment(\.editMode, $defaultEditMode)
-        .onDisappear {
-            defaultEditMode = .inactive
-        }
         .onChange(of: selection) { newValue in
             if newValue.count > 0 {
                 selectedVerses = Array(selection).sorted()
-            }
-        }
-        .onChange(of: editMode?.wrappedValue) { newValue in
-            if newValue == EditMode.inactive {
-                dismiss()
-            } else {
-                // Leaving edit mode (e.g. 'Done' tapped)
             }
         }
         .searchable(text: $searchText)
