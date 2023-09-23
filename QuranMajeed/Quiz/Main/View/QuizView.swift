@@ -42,18 +42,6 @@ struct QuizView: View {
                                     Text(viewModel.selectedVerse.text)
                                 }
                             }
-                            /*
-                            NavigationLink(
-                                value: $viewModel.selectedVerses
-                            ) {
-                                Text(viewModel.selectedVerse.text)
-                            }
-                            .navigationDestination(for: [Verse].self) { verses in
-                                VerseListView(
-                                    verses: verses
-                                )
-                            }
-                            */
                         }
                         .deleteDisabled(true)
                         Section("Selected Verses") {
