@@ -70,20 +70,6 @@ extension QuizView {
                 suras = reading.quran.suras
             }
         }
-        
-        func addSelectedVerseToQuiz() {
-//            if selectedVerses.contains(where: { verse in
-//                (verse.surahId == selectedSurah.id && verse.ayahId == selectedVerse.id) || verse.text == selectedVerse.text
-//            }) == false {
-//                let verse = QuizVerse(
-//                    surahId: selectedSurah.id,
-//                    ayahId: selectedVerse.id,
-//                    text: selectedVerse.text
-//                )
-//                print(verse)
-//                selectedVerses.append(verse)
-//            }
-        }
 
         func delete(at offsets: IndexSet) {
             selectedVerses.remove(atOffsets: offsets)
