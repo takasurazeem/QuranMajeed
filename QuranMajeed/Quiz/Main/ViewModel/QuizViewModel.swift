@@ -73,6 +73,7 @@ extension QuizView {
         private let theQuranRepository: QuranRepository
         
         @Published var expandSelectedVersesSection = false
+        @Published var expandSelectVersesSection = true
         @Published var selectedAyahNumber: Int
         @Published var selectedSurah: Sura
         @Published private(set)var versesOfSelectedSura: [Verse] = []
