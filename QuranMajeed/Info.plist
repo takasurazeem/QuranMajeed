@@ -14,5 +14,12 @@
 		<string>ScheherazadeNew-SemiBold.ttf</string>
 		<string>ScheherazadeNew-Medium.ttf</string>
 	</array>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict/>
+	</dict>
 </dict>
 </plist>
