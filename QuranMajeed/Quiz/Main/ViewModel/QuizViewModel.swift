@@ -76,7 +76,8 @@ extension QuizView {
         
         private let theQuranRepository: QuranRepository
         
-        @Published var expandSelectedVersesSection = false
+        @Published var expandSelectedVersesForTranslationSection = false
+        @Published var expandSelectedVersesForWordsMeaningSection = false
         @Published var expandSelectVersesForTranslationSection = true
         @Published var expandSelectVersesForWordsMeaningSection = true
         @Published var selectedAyahNumber: Int
@@ -84,11 +85,15 @@ extension QuizView {
         @Published private(set)var versesOfSelectedSura: [Verse] = []
         @Published var suras: [Sura] = []
         @Published private(set) var selectedVerse: Verse
-        @Published var selectedVersesForWordsMeaning: [Verse] = []
+        @Published var selectedVersesForWordsMeaning: [Verse] = [] {
+            didSet {
+                expandSelectedVersesForWordsMeaningSection = true
+            }
+        }
         @Published var selectedVersesForTranslation: [Verse] = [] {
             didSet {
                 quizVerses = selectedVersesForTranslation.asQuizVerses(selectedSuraNumber: selectedSurah.suraNumber)
-                expandSelectedVersesSection = true
+                expandSelectedVersesForTranslationSection = true
             }
         }
         private(set) var quizVerses: [QuizVerse] = []

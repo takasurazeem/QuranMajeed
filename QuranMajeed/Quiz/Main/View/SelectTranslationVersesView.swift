@@ -12,7 +12,7 @@ struct SelectTranslationVersesView: View {
     @ObservedObject var viewModel: QuizView.ViewModel
     var body: some View {
         DisclosureGroup(
-            "Select Translation Verses",
+            "Select verses for translation",
             isExpanded: $viewModel.expandSelectVersesForTranslationSection
         ) {
             NavigationLink {
@@ -30,8 +30,8 @@ struct SelectTranslationVersesView: View {
             .deleteDisabled(true)
             if !viewModel.selectedVersesForTranslation.isEmpty {
                 DisclosureGroup(
-                    "Selected Verses",
-                    isExpanded: $viewModel.expandSelectedVersesSection
+                    "Selected verses for translation",
+                    isExpanded: $viewModel.expandSelectedVersesForTranslationSection
                 ) {
                     ForEach(viewModel.selectedVersesForTranslation) { verse in
                         HStack {
