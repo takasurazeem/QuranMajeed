@@ -97,41 +97,9 @@ struct QuizView: View {
     }
 }
 
-/* FIXME: - Fix later
+
 struct QuizView_Previews: PreviewProvider {
-    static let quizVerses = Bundle.main.decode(Surahs.self, from: "Quran_ur.json").first(where: {$0.id==67})?.verses.compactMap({
-        QuizVerse(
-            surahId: 1,
-            ayahId: $0.id,
-            text: $0.text,
-            translatedText: ""
-        )
-    })
     static var previews: some View {
-        if let quizVerses {
-            PDFKitView(
-                documentData: PDFGenerator(
-                    verses: quizVerses
-                )
-                .generateQuiz()
-            )
-            .previewDisplayName("PDF")
-            .previewDevice("iPad Pro (12.9-inch) (6th generation)")
-        }
-        PDFKitView(
-            documentData: PDFGenerator(
-                verses:
-                    Bundle.main.decode(SurahElement.self, from: "Al-Fatihah.json").verses.map({
-                        QuizVerse(
-                            surahId: 1,
-                            ayahId: $0.id,
-                            text: $0.text
-                        )
-                    })
-            )
-            .generateQuiz()
-        )
-        .previewDisplayName("PDF")
         QuizView(
             viewModel: QuizView.ViewModel(
                 theQuranRepository: try! AppDependencyContainer
@@ -140,7 +108,5 @@ struct QuizView_Previews: PreviewProvider {
                     .makeQuranRepository()
             )
         )
-        .previewDevice("iPad Pro (12.9-inch) (6th generation)")
     }
 }
-*/
