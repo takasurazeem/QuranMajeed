@@ -44,17 +44,22 @@ struct QuizView: View {
                             }
                         }
                         .deleteDisabled(true)
-                        Section("Selected Verses") {
-                            ForEach(viewModel.selectedVerses) { verse in
-                                HStack {
-                                    Text(("\(verse.ayaNumber)"))
-                                    Text(verse.text)
-                                        .font(Font.custom("ScheherazadeNew-Bold", size: 24.0))
-                                        .frame(maxWidth: .infinity, alignment: .trailing)
-                                        .multilineTextAlignment(.trailing)
+                        if !viewModel.selectedVerses.isEmpty {
+                            DisclosureGroup(
+                                "Selected Verses",
+                                isExpanded: $viewModel.expandSelectedVersesSection
+                            ) {
+                                ForEach(viewModel.selectedVerses) { verse in
+                                    HStack {
+                                        Text(("\(verse.ayaNumber)"))
+                                        Text(verse.text)
+                                            .font(Font.custom("ScheherazadeNew-Bold", size: 24.0))
+                                            .frame(maxWidth: .infinity, alignment: .trailing)
+                                            .multilineTextAlignment(.trailing)
+                                    }
                                 }
+                                .onDelete(perform: viewModel.delete(at:))
                             }
-                            .onDelete(perform: viewModel.delete(at:))
                         }
                     }
                 }
