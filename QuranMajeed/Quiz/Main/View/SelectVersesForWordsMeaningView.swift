@@ -1,5 +1,5 @@
 //
-//  SelectTranslationVersesView.swift
+//  SelectVersesForWordsMeaningView.swift
 //  QuranMajeed
 //
 //  Created by Takasur Azeem on 25/09/2023.
@@ -8,17 +8,17 @@
 import SwiftUI
 
 /// Use the ``QuizView`` for the preview
-struct SelectTranslationVersesView: View {
+struct SelectVersesForWordsMeaningView: View {
     @ObservedObject var viewModel: QuizView.ViewModel
     var body: some View {
         DisclosureGroup(
-            "Select Translation Verses",
-            isExpanded: $viewModel.expandSelectVersesForTranslationSection
+            "Select Verses For Words Meaning",
+            isExpanded: $viewModel.expandSelectVersesForWordsMeaningSection
         ) {
             NavigationLink {
                 VerseListView(
                     allVerses: viewModel.versesOfSelectedSura,
-                    selectedVerses: $viewModel.selectedVersesForTranslation
+                    selectedVerses: $viewModel.selectedVersesForWordsMeaning
                 )
             } label: {
                 HStack {
@@ -28,12 +28,12 @@ struct SelectTranslationVersesView: View {
                 }
             }
             .deleteDisabled(true)
-            if !viewModel.selectedVersesForTranslation.isEmpty {
+            if !viewModel.selectedVersesForWordsMeaning.isEmpty {
                 DisclosureGroup(
                     "Selected Verses",
                     isExpanded: $viewModel.expandSelectedVersesSection
                 ) {
-                    ForEach(viewModel.selectedVersesForTranslation) { verse in
+                    ForEach(viewModel.selectedVersesForWordsMeaning) { verse in
                         HStack {
                             Text(("\(verse.ayaNumber)"))
                             Text(verse.text)
@@ -42,7 +42,7 @@ struct SelectTranslationVersesView: View {
                                 .multilineTextAlignment(.trailing)
                         }
                     }
-                    .onDelete(perform: viewModel.deleteTranslationVerse(at:))
+                    .onDelete(perform: viewModel.deleteWordsMeaningVerse(at:))
                 }
             }
         }

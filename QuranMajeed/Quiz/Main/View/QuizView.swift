@@ -19,6 +19,7 @@ struct QuizView: View {
                     List {
                         SelectedSurahView(viewModel: viewModel)
                         SelectTranslationVersesView(viewModel: viewModel)
+                        SelectVersesForWordsMeaningView(viewModel: viewModel)
                     }
                 }
                 .navigationTitle("Prepare Quiz")

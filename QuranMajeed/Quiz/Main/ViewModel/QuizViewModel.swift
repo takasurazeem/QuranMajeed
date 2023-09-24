@@ -59,12 +59,16 @@ extension QuizView {
             }
         }
 
-        func delete(at offsets: IndexSet) {
-            selectedVerses.remove(atOffsets: offsets)
+        func deleteTranslationVerse(at offsets: IndexSet) {
+            selectedVersesForTranslation.remove(atOffsets: offsets)
+        }
+
+        func deleteWordsMeaningVerse(at offsets: IndexSet) {
+            selectedVersesForTranslation.remove(atOffsets: offsets)
         }
         
         func generatePDF() -> URL? {
-            _ = PDFGenerator(verses: selectedVerses.asQuizVerses(selectedSuraNumber: selectedSurah.suraNumber))
+            _ = PDFGenerator(verses: selectedVersesForTranslation.asQuizVerses(selectedSuraNumber: selectedSurah.suraNumber))
             
             
             return nil
@@ -73,15 +77,17 @@ extension QuizView {
         private let theQuranRepository: QuranRepository
         
         @Published var expandSelectedVersesSection = false
-        @Published var expandSelectVersesSection = true
+        @Published var expandSelectVersesForTranslationSection = true
+        @Published var expandSelectVersesForWordsMeaningSection = true
         @Published var selectedAyahNumber: Int
         @Published var selectedSurah: Sura
         @Published private(set)var versesOfSelectedSura: [Verse] = []
         @Published var suras: [Sura] = []
         @Published private(set) var selectedVerse: Verse
-        @Published var selectedVerses: [Verse] = [] {
+        @Published var selectedVersesForWordsMeaning: [Verse] = []
+        @Published var selectedVersesForTranslation: [Verse] = [] {
             didSet {
-                quizVerses = selectedVerses.asQuizVerses(selectedSuraNumber: selectedSurah.suraNumber)
+                quizVerses = selectedVersesForTranslation.asQuizVerses(selectedSuraNumber: selectedSurah.suraNumber)
                 expandSelectedVersesSection = true
             }
         }

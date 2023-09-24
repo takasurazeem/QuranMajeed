@@ -11,6 +11,7 @@
 		763539D52AB7975500CC27FD /* ReadingService in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D42AB7975500CC27FD /* ReadingService */; };
 		763539D72AB7998A00CC27FD /* Localization in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D62AB7998A00CC27FD /* Localization */; };
 		763539D92AB799E500CC27FD /* QuranTextKit in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D82AB799E500CC27FD /* QuranTextKit */; };
+		F91766432AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */; };
 		F91839492AB7AF2800E4D45B /* Sura+localizedName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91839482AB7AF2800E4D45B /* Sura+localizedName.swift */; };
 		F918394B2AB7B10E00E4D45B /* SuraListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F918394A2AB7B10E00E4D45B /* SuraListView.swift */; };
 		F918394D2AB7B69900E4D45B /* SuraNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F918394C2AB7B69900E4D45B /* SuraNameView.swift */; };
@@ -71,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVersesForWordsMeaningView.swift; sourceTree = "<group>"; };
 		F91839482AB7AF2800E4D45B /* Sura+localizedName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sura+localizedName.swift"; sourceTree = "<group>"; };
 		F918394A2AB7B10E00E4D45B /* SuraListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuraListView.swift; sourceTree = "<group>"; };
 		F918394C2AB7B69900E4D45B /* SuraNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuraNameView.swift; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 				F91839652AB7D98D00E4D45B /* VerseListView.swift */,
 				F968AC762AC0F25C0086F841 /* SelectedSurahView.swift */,
 				F968AC782AC0F3690086F841 /* SelectTranslationVersesView.swift */,
+				F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				F98C231B2ABE2C8E00FED70E /* UrduTranslation.swift in Sources */,
 				F9D60D162A76C6AC00701635 /* QuranModel.swift in Sources */,
 				F91839492AB7AF2800E4D45B /* Sura+localizedName.swift in Sources */,
+				F91766432AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift in Sources */,
 				F94C11C42AB2F962004BAD10 /* AppDependencyContainer.swift in Sources */,
 				F96447872AB466FA00DB5412 /* MainQuranProvider.swift in Sources */,
 				F918394B2AB7B10E00E4D45B /* SuraListView.swift in Sources */,
