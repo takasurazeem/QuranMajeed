@@ -31,7 +31,10 @@ struct QuizView: View {
                                 )
                             }
                         }
-                        Section("Select Verses") {
+                        DisclosureGroup(
+                            "Select Verses",
+                            isExpanded: $viewModel.expandSelectVersesSection
+                        ) {
                             NavigationLink {
                                 VerseListView(
                                     allVerses: viewModel.versesOfSelectedSura,
@@ -42,23 +45,23 @@ struct QuizView: View {
                                     Text(viewModel.selectedVerse.text)
                                 }
                             }
-                        }
-                        .deleteDisabled(true)
-                        if !viewModel.selectedVerses.isEmpty {
-                            DisclosureGroup(
-                                "Selected Verses",
-                                isExpanded: $viewModel.expandSelectedVersesSection
-                            ) {
-                                ForEach(viewModel.selectedVerses) { verse in
-                                    HStack {
-                                        Text(("\(verse.ayaNumber)"))
-                                        Text(verse.text)
-                                            .font(Font.custom("ScheherazadeNew-Bold", size: 24.0))
-                                            .frame(maxWidth: .infinity, alignment: .trailing)
-                                            .multilineTextAlignment(.trailing)
+                            .deleteDisabled(true)
+                            if !viewModel.selectedVerses.isEmpty {
+                                DisclosureGroup(
+                                    "Selected Verses",
+                                    isExpanded: $viewModel.expandSelectedVersesSection
+                                ) {
+                                    ForEach(viewModel.selectedVerses) { verse in
+                                        HStack {
+                                            Text(("\(verse.ayaNumber)"))
+                                            Text(verse.text)
+                                                .font(Font.custom("ScheherazadeNew-Bold", size: 24.0))
+                                                .frame(maxWidth: .infinity, alignment: .trailing)
+                                                .multilineTextAlignment(.trailing)
+                                        }
                                     }
+                                    .onDelete(perform: viewModel.delete(at:))
                                 }
-                                .onDelete(perform: viewModel.delete(at:))
                             }
                         }
                     }
