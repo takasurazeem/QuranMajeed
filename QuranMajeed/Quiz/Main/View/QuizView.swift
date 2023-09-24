@@ -12,58 +12,13 @@ import PDFKit
 
 struct QuizView: View {
     @StateObject var viewModel: ViewModel
-    @State private var searchText: String = ""
     var body: some View {
         NavigationStack {
             VStack {
                 ScrollViewReader { proxy in
                     List {
-                        Section("Selected Surah") {
-                            NavigationLink(value: viewModel.suras) {
-                                VStack {
-                                    SuraNameView(for: viewModel.selectedSurah)
-                                }
-                            }
-                            .navigationDestination(for: [Sura].self) { suras in
-                                SuraListView(
-                                    suras: suras,
-                                    selectedSura: $viewModel.selectedSurah
-                                )
-                            }
-                        }
-                        DisclosureGroup(
-                            "Select Verses",
-                            isExpanded: $viewModel.expandSelectVersesSection
-                        ) {
-                            NavigationLink {
-                                VerseListView(
-                                    allVerses: viewModel.versesOfSelectedSura,
-                                    selectedVerses: $viewModel.selectedVerses
-                                )
-                            } label: {
-                                HStack {
-                                    Text(viewModel.selectedVerse.text)
-                                }
-                            }
-                            .deleteDisabled(true)
-                            if !viewModel.selectedVerses.isEmpty {
-                                DisclosureGroup(
-                                    "Selected Verses",
-                                    isExpanded: $viewModel.expandSelectedVersesSection
-                                ) {
-                                    ForEach(viewModel.selectedVerses) { verse in
-                                        HStack {
-                                            Text(("\(verse.ayaNumber)"))
-                                            Text(verse.text)
-                                                .font(Font.custom("ScheherazadeNew-Bold", size: 24.0))
-                                                .frame(maxWidth: .infinity, alignment: .trailing)
-                                                .multilineTextAlignment(.trailing)
-                                        }
-                                    }
-                                    .onDelete(perform: viewModel.delete(at:))
-                                }
-                            }
-                        }
+                        SelectedSurahView(viewModel: viewModel)
+                        SelectTranslationVersesView(viewModel: viewModel)
                     }
                 }
                 .navigationTitle("Prepare Quiz")
