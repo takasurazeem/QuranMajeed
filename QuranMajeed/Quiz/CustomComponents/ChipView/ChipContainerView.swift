@@ -15,31 +15,33 @@ struct ChipContainerView: View {
         var height = CGFloat.zero
         return GeometryReader { geo in
             ZStack(alignment: .topLeading) {
-                ForEach(viewModel.chipArray) { data in
-                    ChipView(
-                        titleKey: data.titleKey,
-                        isSelected: data.isSelected
-                    )
-                    .padding(.all, 5)
-                    .alignmentGuide(.leading) { dimension in
-                        if (abs(width - dimension.width) > geo.size.width) {
-                            width = 0
-                            height -= dimension.height
+                if !viewModel.chipArray.isEmpty {
+                    ForEach(viewModel.chipArray) { data in
+                        ChipView(
+                            titleKey: data.titleKey,
+                            isSelected: data.isSelected
+                        )
+                        .padding(.all, 5)
+                        .alignmentGuide(.leading) { dimension in
+                            if (abs(width - dimension.width) > geo.size.width) {
+                                width = 0
+                                height -= dimension.height
+                            }
+                            let result = width
+                            if data.id == viewModel.chipArray.last!.id {
+                                width = 0
+                            } else {
+                                width -= dimension.width
+                            }
+                            return result
                         }
-                        let result = width
-                        if data.id == viewModel.chipArray.last!.id {
-                            width = 0
-                        } else {
-                            width -= dimension.width
+                        .alignmentGuide(.top) { dimension in
+                            let result = height
+                            if data.id == viewModel.chipArray.last!.id {
+                                height = 0
+                            }
+                            return result
                         }
-                        return result
-                    }
-                    .alignmentGuide(.top) { dimension in
-                        let result = height
-                        if data.id == viewModel.chipArray.last!.id {
-                            height = 0
-                        }
-                        return result
                     }
                 }
             }

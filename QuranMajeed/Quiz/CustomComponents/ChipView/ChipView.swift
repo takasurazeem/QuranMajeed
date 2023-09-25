@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChipView: View {
-    let titleKey: LocalizedStringKey
+    let titleKey: String
     @State var isSelected: Bool
     
     var body: some View {

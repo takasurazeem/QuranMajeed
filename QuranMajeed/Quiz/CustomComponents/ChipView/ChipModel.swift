@@ -11,8 +11,8 @@ import SwiftUI
 struct ChipModel: Identifiable {
     @State var isSelected: Bool
     let id = UUID()
-    var titleKey: LocalizedStringKey
-    let verse: Verse
+    var titleKey: String
+    let word: WordForWordsMeaning
 }
 
 class ChipsViewModel: ObservableObject {
