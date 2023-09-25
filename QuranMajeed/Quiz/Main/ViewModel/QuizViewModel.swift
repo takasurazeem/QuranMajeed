@@ -67,13 +67,6 @@ extension QuizView {
             selectedVersesForWordsMeaning.remove(atOffsets: offsets)
         }
         
-        func generatePDF() -> URL? {
-            _ = PDFGenerator(verses: selectedVersesForTranslation.asQuizVerses(selectedSuraNumber: selectedSurah.suraNumber))
-            
-            
-            return nil
-        }
-        
         private let theQuranRepository: QuranRepository
         
         @Published var expandSelectedVersesForTranslationSection = false
