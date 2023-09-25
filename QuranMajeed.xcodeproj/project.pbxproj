@@ -14,6 +14,7 @@
 		76C1F8D72AC229AC00085DA2 /* ChipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1F8D42AC229AB00085DA2 /* ChipModel.swift */; };
 		76C1F8D82AC229AC00085DA2 /* ChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1F8D52AC229AB00085DA2 /* ChipView.swift */; };
 		76C1F8D92AC229AC00085DA2 /* ChipContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1F8D62AC229AC00085DA2 /* ChipContainerView.swift */; };
+		76C1F8DB2AC2421900085DA2 /* QuizVerse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1F8DA2AC2421900085DA2 /* QuizVerse.swift */; };
 		F91766432AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */; };
 		F91839492AB7AF2800E4D45B /* Sura+localizedName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91839482AB7AF2800E4D45B /* Sura+localizedName.swift */; };
 		F918394B2AB7B10E00E4D45B /* SuraListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F918394A2AB7B10E00E4D45B /* SuraListView.swift */; };
@@ -78,6 +79,7 @@
 		76C1F8D42AC229AB00085DA2 /* ChipModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipModel.swift; sourceTree = "<group>"; };
 		76C1F8D52AC229AB00085DA2 /* ChipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipView.swift; sourceTree = "<group>"; };
 		76C1F8D62AC229AC00085DA2 /* ChipContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipContainerView.swift; sourceTree = "<group>"; };
+		76C1F8DA2AC2421900085DA2 /* QuizVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVerse.swift; sourceTree = "<group>"; };
 		F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVersesForWordsMeaningView.swift; sourceTree = "<group>"; };
 		F91839482AB7AF2800E4D45B /* Sura+localizedName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sura+localizedName.swift"; sourceTree = "<group>"; };
 		F918394A2AB7B10E00E4D45B /* SuraListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuraListView.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				F9D60D122A76C6AC00701635 /* QuranModel.swift */,
+				76C1F8DA2AC2421900085DA2 /* QuizVerse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				F9D60D162A76C6AC00701635 /* QuranModel.swift in Sources */,
 				F91839492AB7AF2800E4D45B /* Sura+localizedName.swift in Sources */,
 				F91766432AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift in Sources */,
+				76C1F8DB2AC2421900085DA2 /* QuizVerse.swift in Sources */,
 				F94C11C42AB2F962004BAD10 /* AppDependencyContainer.swift in Sources */,
 				F96447872AB466FA00DB5412 /* MainQuranProvider.swift in Sources */,
 				F918394B2AB7B10E00E4D45B /* SuraListView.swift in Sources */,

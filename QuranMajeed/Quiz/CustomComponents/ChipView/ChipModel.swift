@@ -11,37 +11,13 @@ import SwiftUI
 struct ChipModel: Identifiable {
     @State var isSelected: Bool
     let id = UUID()
-    let titleKey: LocalizedStringKey
-//    let verse: Verse
+    var titleKey: LocalizedStringKey
+    let verse: Verse
 }
 
 class ChipsViewModel: ObservableObject {
 //    @Published var dataObject: [ChipModel] = [ChipModel.init(isSelected: false, systemImage: "pencil.circle", titleKey: "Pencil Circle")]
-    @Published var chipArray: [ChipModel] = [
-        ChipModel(isSelected: false, titleKey: "Heart"),
-        ChipModel(isSelected: false, titleKey: "Folder"),
-        ChipModel(isSelected: false, titleKey: "Pen"),
-        ChipModel(isSelected: false, titleKey: "Book"),
-        ChipModel(isSelected: false, titleKey: "Paper Plain"),
-        ChipModel(isSelected: false, titleKey: "Documents"),
-        ChipModel(isSelected: false, titleKey: "Heart"),
-        ChipModel(isSelected: false, titleKey: "Folder"),
-        ChipModel(isSelected: false, titleKey: "Pen"),
-        ChipModel(isSelected: false, titleKey: "Book"),
-        ChipModel(isSelected: false, titleKey: "Paper Plain"),
-        ChipModel(isSelected: false, titleKey: "Documents"),
-        ChipModel(isSelected: false, titleKey: "Folder"),
-        ChipModel(isSelected: false, titleKey: "Pen"),
-        ChipModel(isSelected: false, titleKey: "Book"),
-        ChipModel(isSelected: false, titleKey: "Paper Plain"),
-        ChipModel(isSelected: false, titleKey: "Documents"),
-        ChipModel(isSelected: false, titleKey: "Heart"),
-        ChipModel(isSelected: false, titleKey: "Folder"),
-        ChipModel(isSelected: false, titleKey: "Pen"),
-        ChipModel(isSelected: false, titleKey: "Book"),
-        ChipModel(isSelected: false, titleKey: "Paper Plain"),
-        ChipModel(isSelected: false, titleKey: "Documents")
-    ]
+    @Published var chipArray: [ChipModel] = []
     
 //    func addChip() {
 //        dataObject.append(ChipModel.init(isSelected: false, systemImage: "pencil.circle", titleKey: "Pencil"))
