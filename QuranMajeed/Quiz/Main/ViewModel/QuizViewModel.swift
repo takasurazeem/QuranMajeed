@@ -64,7 +64,7 @@ extension QuizView {
         }
 
         func deleteWordsMeaningVerse(at offsets: IndexSet) {
-            selectedVersesForTranslation.remove(atOffsets: offsets)
+            selectedVersesForWordsMeaning.remove(atOffsets: offsets)
         }
         
         func generatePDF() -> URL? {
