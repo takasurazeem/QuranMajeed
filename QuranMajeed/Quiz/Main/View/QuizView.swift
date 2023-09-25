@@ -15,12 +15,12 @@ struct QuizView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                ScrollViewReader { proxy in
-                    List {
-                        SelectedSurahView(viewModel: viewModel)
-                        SelectTranslationVersesView(viewModel: viewModel)
-                        SelectVersesForWordsMeaningView(viewModel: viewModel)
-                    }
+                List {
+                    SelectedSurahView(viewModel: viewModel)
+                    SelectTranslationVersesView(viewModel: viewModel)
+                    SelectVersesForWordsMeaningView(viewModel: viewModel)
+                    ChipContainerView(viewModel: ChipsViewModel(chipArray: viewModel.chipArray))
+                        .fixedSize(horizontal: false, vertical: false)
                 }
                 .navigationTitle("Prepare Quiz")
                 .toolbar {

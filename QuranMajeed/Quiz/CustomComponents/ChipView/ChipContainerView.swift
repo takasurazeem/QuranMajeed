@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChipContainerView: View {
-    @ObservedObject var viewModel = ChipsViewModel()
+    @ObservedObject var viewModel: ChipsViewModel
     
     var body: some View {
         var width = CGFloat.zero
@@ -51,7 +51,11 @@ struct ChipContainerView: View {
 
 struct ChipContainerView_Previews: PreviewProvider {
     static var previews: some View {
-        ChipContainerView()
+        ChipContainerView(
+            viewModel: ChipsViewModel(
+                chipArray: []
+            )
+        )
     }
 }
 

@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct WordForWordsMeaning: Identifiable {
-    var id = UUID()
+struct WordForWordsMeaning: Identifiable, Hashable, Comparable {
+    static func < (lhs: WordForWordsMeaning, rhs: WordForWordsMeaning) -> Bool {
+        lhs.id < rhs.id
+    }
+    
+    var id: Double
     let word: String
 }

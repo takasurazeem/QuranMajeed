@@ -9,26 +9,21 @@ import Foundation
 import SwiftUI
 
 struct ChipModel: Identifiable {
-    @State var isSelected: Bool
-    let id = UUID()
-    var titleKey: String
+    @State var isSelected: Bool = false
+    var id = UUID()
+    var titleKey: String { word.word }
     let word: WordForWordsMeaning
+    
+    init(word: WordForWordsMeaning) {
+        self.word = word
+    }
 }
 
 class ChipsViewModel: ObservableObject {
-//    @Published var dataObject: [ChipModel] = [ChipModel.init(isSelected: false, systemImage: "pencil.circle", titleKey: "Pencil Circle")]
-    @Published var chipArray: [ChipModel] = []
     
-//    func addChip() {
-//        dataObject.append(ChipModel.init(isSelected: false, systemImage: "pencil.circle", titleKey: "Pencil"))
-//    }
-//
-//    func removeLast() {
-//        guard dataObject.count != 0 else {
-//            return
-//        }
-//        dataObject.removeLast()
-//    }
+    init(chipArray: [ChipModel]) {
+        self.chipArray = chipArray
+    }
+    
+    @Published var chipArray: [ChipModel]
 }
-
-

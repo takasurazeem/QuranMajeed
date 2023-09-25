@@ -81,8 +81,22 @@ extension QuizView {
         @Published var selectedVersesForWordsMeaning: [Verse] = [] {
             didSet {
                 expandSelectedVersesForWordsMeaningSection = true
+                var words = Set<WordForWordsMeaning>()
+                for verse in selectedVersesForWordsMeaning {
+                    for (index, word) in verse.text.split(separator: " ").enumerated() {
+                        words
+                            .insert(
+                                WordForWordsMeaning(
+                                    id: Double(verse.id) + (Double("0.\(index)") ?? 0.1),
+                                    word: String(word)
+                                )
+                            )
+                    }
+                }
+                chipArray = Array(words).sorted().map(ChipModel.init)
             }
         }
+        var chipArray: [ChipModel] = []
         @Published var selectedVersesForTranslation: [Verse] = [] {
             didSet {
                 quizVerses = selectedVersesForTranslation.asQuizVerses(selectedSuraNumber: selectedSurah.suraNumber)
