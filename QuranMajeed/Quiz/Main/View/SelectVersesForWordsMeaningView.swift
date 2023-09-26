@@ -44,6 +44,7 @@ struct SelectVersesForWordsMeaningView: View {
                     }
                     .onDelete(perform: viewModel.deleteWordsMeaningVerse(at:))
                 }
+                ChipContainerView(viewModel: ChipsViewModel(chipArray: viewModel.chipArray))
             }
         }
     }

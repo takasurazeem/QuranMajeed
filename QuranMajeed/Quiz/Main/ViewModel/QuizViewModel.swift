@@ -80,7 +80,6 @@ extension QuizView {
         @Published private(set) var selectedVerse: Verse
         @Published var selectedVersesForWordsMeaning: [Verse] = [] {
             didSet {
-                expandSelectedVersesForWordsMeaningSection = true
                 var words = Set<WordForWordsMeaning>()
                 for verse in selectedVersesForWordsMeaning {
                     for (index, word) in verse.text.split(separator: " ").enumerated() {
@@ -93,7 +92,7 @@ extension QuizView {
                             )
                     }
                 }
-                chipArray = Array(words).sorted().map(ChipModel.init)
+                chipArray = Array(words).sorted(by: >).map(ChipModel.init)
             }
         }
         var chipArray: [ChipModel] = []

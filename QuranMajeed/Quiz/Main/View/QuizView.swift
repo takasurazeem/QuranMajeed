@@ -19,8 +19,6 @@ struct QuizView: View {
                     SelectedSurahView(viewModel: viewModel)
                     SelectTranslationVersesView(viewModel: viewModel)
                     SelectVersesForWordsMeaningView(viewModel: viewModel)
-                    ChipContainerView(viewModel: ChipsViewModel(chipArray: viewModel.chipArray))
-                        .fixedSize(horizontal: false, vertical: false)
                 }
                 .navigationTitle("Prepare Quiz")
                 .toolbar {
