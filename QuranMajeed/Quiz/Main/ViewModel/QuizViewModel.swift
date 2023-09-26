@@ -92,6 +92,7 @@ extension QuizView {
                             )
                     }
                 }
+                // > (gerater than operator used because of Arabic)
                 chipArray = Array(words).sorted(by: >).map(ChipModel.init)
             }
         }
