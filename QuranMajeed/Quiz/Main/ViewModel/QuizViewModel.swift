@@ -93,10 +93,14 @@ extension QuizView {
                     }
                 }
                 // > (gerater than operator used because of Arabic)
-                tagsArray = Array(words).sorted(by: >).map(TagViewItem.init)
+                wordsForWordsMeaning = Array(words).sorted(by: >)
             }
         }
-        @Published var tagsArray: [TagViewItem] = []
+        @Published var wordsForWordsMeaning: [WordForWordsMeaning] = [] {
+            didSet {
+                print("wordsForWordsMeaning: \(wordsForWordsMeaning.count)")
+            }
+        }
         @Published var selectedVersesForTranslation: [Verse] = [] {
             didSet {
                 quizVerses = selectedVersesForTranslation.asQuizVerses(selectedSuraNumber: selectedSurah.suraNumber)

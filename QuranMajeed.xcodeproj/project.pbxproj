@@ -14,7 +14,6 @@
 		76C1F8DB2AC2421900085DA2 /* QuizVerse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1F8DA2AC2421900085DA2 /* QuizVerse.swift */; };
 		76C1F8DD2AC2444B00085DA2 /* WordForWordsMeaning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1F8DC2AC2444B00085DA2 /* WordForWordsMeaning.swift */; };
 		F91766432AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */; };
-		F91766452AC39C4600792D2F /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91766442AC39C4600792D2F /* TagView.swift */; };
 		F917664B2AC3A3DC00792D2F /* FlexibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91766472AC3A3DC00792D2F /* FlexibleView.swift */; };
 		F917664C2AC3A3DC00792D2F /* FlexibleViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91766482AC3A3DC00792D2F /* FlexibleViewContainer.swift */; };
 		F917664D2AC3A3DC00792D2F /* _FlexibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91766492AC3A3DC00792D2F /* _FlexibleView.swift */; };
@@ -67,6 +66,8 @@
 		F9D60D332A77E01300701635 /* PDFGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D322A77E01300701635 /* PDFGenerator.swift */; };
 		F9D60D362A7852F400701635 /* PDFDocument+Transferable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D352A7852F400701635 /* PDFDocument+Transferable.swift */; };
 		F9D60D392A78534B00701635 /* PDFKitView+UIViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D382A78534B00701635 /* PDFKitView+UIViewRepresentable.swift */; };
+		F9F11E0C2AC4D66800100507 /* FlexibleViewContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F11E0B2AC4D66800100507 /* FlexibleViewContainerViewModel.swift */; };
+		F9F11E0E2AC4D6A200100507 /* FlexibleViewContainerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F11E0D2AC4D6A200100507 /* FlexibleViewContainerSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +84,6 @@
 		76C1F8DA2AC2421900085DA2 /* QuizVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVerse.swift; sourceTree = "<group>"; };
 		76C1F8DC2AC2444B00085DA2 /* WordForWordsMeaning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordForWordsMeaning.swift; sourceTree = "<group>"; };
 		F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVersesForWordsMeaningView.swift; sourceTree = "<group>"; };
-		F91766442AC39C4600792D2F /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		F91766472AC3A3DC00792D2F /* FlexibleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleView.swift; sourceTree = "<group>"; };
 		F91766482AC3A3DC00792D2F /* FlexibleViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleViewContainer.swift; sourceTree = "<group>"; };
 		F91766492AC3A3DC00792D2F /* _FlexibleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _FlexibleView.swift; sourceTree = "<group>"; };
@@ -135,6 +135,8 @@
 		F9D60D322A77E01300701635 /* PDFGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFGenerator.swift; sourceTree = "<group>"; };
 		F9D60D352A7852F400701635 /* PDFDocument+Transferable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFDocument+Transferable.swift"; sourceTree = "<group>"; };
 		F9D60D382A78534B00701635 /* PDFKitView+UIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFKitView+UIViewRepresentable.swift"; sourceTree = "<group>"; };
+		F9F11E0B2AC4D66800100507 /* FlexibleViewContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleViewContainerViewModel.swift; sourceTree = "<group>"; };
+		F9F11E0D2AC4D6A200100507 /* FlexibleViewContainerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleViewContainerSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,27 +179,16 @@
 			isa = PBXGroup;
 			children = (
 				F91766462AC3A3CD00792D2F /* FlexibleLayout */,
-				76C1F8D32AC2299C00085DA2 /* TagView */,
 			);
 			path = CustomComponents;
-			sourceTree = "<group>";
-		};
-		76C1F8D32AC2299C00085DA2 /* TagView */ = {
-			isa = PBXGroup;
-			children = (
-				F91766442AC39C4600792D2F /* TagView.swift */,
-			);
-			path = TagView;
 			sourceTree = "<group>";
 		};
 		F91766462AC3A3CD00792D2F /* FlexibleLayout */ = {
 			isa = PBXGroup;
 			children = (
 				F917664F2AC3A47900792D2F /* README.md */,
-				F91766492AC3A3DC00792D2F /* _FlexibleView.swift */,
-				F91766482AC3A3DC00792D2F /* FlexibleViewContainer.swift */,
-				F91766472AC3A3DC00792D2F /* FlexibleView.swift */,
-				F917664A2AC3A3DC00792D2F /* SizeReader.swift */,
+				F9F11E0F2AC4D6F000100507 /* View */,
+				F9F11E102AC4D6FD00100507 /* ViewModel */,
 			);
 			path = FlexibleLayout;
 			sourceTree = "<group>";
@@ -475,6 +466,26 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		F9F11E0F2AC4D6F000100507 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F91766492AC3A3DC00792D2F /* _FlexibleView.swift */,
+				F91766482AC3A3DC00792D2F /* FlexibleViewContainer.swift */,
+				F9F11E0D2AC4D6A200100507 /* FlexibleViewContainerSettings.swift */,
+				F91766472AC3A3DC00792D2F /* FlexibleView.swift */,
+				F917664A2AC3A3DC00792D2F /* SizeReader.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F9F11E102AC4D6FD00100507 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F9F11E0B2AC4D66800100507 /* FlexibleViewContainerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -611,6 +622,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9F11E0C2AC4D66800100507 /* FlexibleViewContainerViewModel.swift in Sources */,
 				F96447892AB467A000DB5412 /* QuranDataDependencyContainer.swift in Sources */,
 				F9D60D2F2A77DD9600701635 /* QuizPDFPreview.swift in Sources */,
 				F91839662AB7D98D00E4D45B /* VerseListView.swift in Sources */,
@@ -625,8 +637,8 @@
 				F952CFD42A96D6E50039478F /* NSAttributedString+size.swift in Sources */,
 				F96447852AB466CC00DB5412 /* QuranProvider.swift in Sources */,
 				F9D60D152A76C6AC00701635 /* QuizViewModel.swift in Sources */,
+				F9F11E0E2AC4D6A200100507 /* FlexibleViewContainerSettings.swift in Sources */,
 				F9D60D332A77E01300701635 /* PDFGenerator.swift in Sources */,
-				F91766452AC39C4600792D2F /* TagView.swift in Sources */,
 				F9D60D172A76C6AC00701635 /* QuizView.swift in Sources */,
 				F91839622AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift in Sources */,
 				F9D60D012A76C69D00701635 /* QuranQuizApp.swift in Sources */,
