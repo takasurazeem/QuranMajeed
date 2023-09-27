@@ -93,10 +93,10 @@ extension QuizView {
                     }
                 }
                 // > (gerater than operator used because of Arabic)
-                chipArray = Array(words).sorted(by: >).map(ChipModel.init)
+                tagsArray = Array(words).sorted(by: >).map(TagViewItem.init)
             }
         }
-        var chipArray: [ChipModel] = []
+        @Published var tagsArray: [TagViewItem] = []
         @Published var selectedVersesForTranslation: [Verse] = [] {
             didSet {
                 quizVerses = selectedVersesForTranslation.asQuizVerses(selectedSuraNumber: selectedSurah.suraNumber)

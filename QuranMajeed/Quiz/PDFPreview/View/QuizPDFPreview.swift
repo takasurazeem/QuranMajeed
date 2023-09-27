@@ -20,7 +20,7 @@ struct QuizPDFPreview: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct QuizPDFPreview_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             QuizPDFPreview(
