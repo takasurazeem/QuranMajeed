@@ -25,14 +25,14 @@ class ContentViewModel: ObservableObject {
 }
 
 struct ContentView: View {
-    @StateObject var model = ContentViewModel()
+    @StateObject var viewModel = ContentViewModel()
     
     var body: some View {
         ScrollView {
             FlexibleView(
-                data: model.words,
-                spacing: model.spacing,
-                alignment: model.alignment
+                data: viewModel.words,
+                spacing: viewModel.spacing,
+                alignment: viewModel.alignment
             ) { item in
                 Text(verbatim: item)
                     .padding(8)
@@ -41,36 +41,36 @@ struct ContentView: View {
                             .fill(Color.gray.opacity(0.2))
                     )
             }
-            .padding(.horizontal, model.padding)
+            .padding(.horizontal, viewModel.padding)
         }
-//        .overlay(Settings(model: model), alignment: .bottom)
+//        .overlay(Settings(model: viewModel), alignment: .bottom)
     }
 }
 
 struct Settings: View {
-    @ObservedObject var model: ContentViewModel
+    @ObservedObject var viewModel: ContentViewModel
     let alignmentName: [String] = ["leading", "center", "trailing"]
     
     var body: some View {
         VStack {
-            Stepper(value: $model.wordCount, in: 0...model.originalItems.count) {
-                Text("\(model.wordCount) words")
+            Stepper(value: $viewModel.wordCount, in: 0...viewModel.originalItems.count) {
+                Text("\(viewModel.wordCount) words")
             }
             
             HStack {
                 Text("Padding")
-                Slider(value: $model.padding, in: 0...60) { Text("") }
+                Slider(value: $viewModel.padding, in: 0...60) { Text("") }
             }
             
             HStack {
                 Text("Spacing")
-                Slider(value: $model.spacing, in: 0...40) { Text("") }
+                Slider(value: $viewModel.spacing, in: 0...40) { Text("") }
             }
             
             HStack {
                 Text("Alignment")
-                Picker("Choose alignment", selection: $model.alignmentIndex) {
-                    ForEach(0..<model.alignments.count, id: \.self) {
+                Picker("Choose alignment", selection: $viewModel.alignmentIndex) {
+                    ForEach(0..<viewModel.alignments.count, id: \.self) {
                         Text(alignmentName[$0])
                     }
                 }
@@ -78,7 +78,7 @@ struct Settings: View {
             }
             
             Button {
-                model.originalItems.shuffle()
+                viewModel.originalItems.shuffle()
             } label: {
                 Text("Shuffle")
             }
