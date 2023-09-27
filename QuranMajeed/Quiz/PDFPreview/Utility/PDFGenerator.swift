@@ -9,9 +9,11 @@ import PDFKit
 
 class PDFGenerator {
     init(
-        verses: [QuizVerse]
+        verses: [QuizVerse],
+        words: [WordForWordsMeaning]
     ) {
         self.verses = verses
+        self.words = words
         
         // 1
         pdfMetaData = [
@@ -31,7 +33,6 @@ class PDFGenerator {
         ]
     }
     
-    
     /// This method uses the injected QuizVerses to generate the quiz and calls internal methods
     /// - Returns: Data that can be used by `PDFKitView`
     func generateQuiz() -> Data {
@@ -43,20 +44,31 @@ class PDFGenerator {
             context.beginPage()
             
             drawQuizHeaders()
-            var yPos = studentNameRowYPos + 45
-            for verse in verses {
-                let nextPost = addVerseText(
-                    context: context,
-                    verse: verse,
-                    textTop: yPos
-                )
-                yPos = nextPost
-            }
+            let yPosForNextTask = drawVerses(context)
+            
         }
         
         return data
     }
     
+    
+    /// This method takes context and draw verses in that context
+    /// - Parameter context: ``UIGraphicsPDFRendererContext``
+    /// - Returns: yPos for the next task
+    func drawVerses(
+        _ context: UIGraphicsPDFRendererContext
+    ) -> CGFloat {
+        var yPos = studentNameRowYPos + 45
+        for verse in verses {
+            let nextPost = addVerseText(
+                context: context,
+                verse: verse,
+                textTop: yPos
+            )
+            yPos = nextPost
+        }
+        return yPos
+    }
     
     /// This method adds verse and empty horizontal lines required to write answer for that verse.
     /// - Parameters:
@@ -201,6 +213,7 @@ class PDFGenerator {
     
     // MARK: - Dependencies
     private let verses: [QuizVerse]
+    private let words: [WordForWordsMeaning]
 }
 
 extension PDFGenerator {
