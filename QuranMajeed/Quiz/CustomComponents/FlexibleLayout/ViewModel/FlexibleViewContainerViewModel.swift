@@ -17,11 +17,7 @@ extension FlexibleViewContainer {
             wordCount = originalItems.count
         }
         
-        @Published var originalItems: [WordForWordsMeaning] {
-            didSet {
-                print(originalItems.count)
-            }
-        }
+        @Published var originalItems: [WordForWordsMeaning]
         @Published var spacing: CGFloat = 8
         @Published var padding: CGFloat = 8
         @Published var wordCount: Int
