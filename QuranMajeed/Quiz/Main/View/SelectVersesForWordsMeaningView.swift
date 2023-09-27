@@ -45,6 +45,7 @@ struct SelectVersesForWordsMeaningView: View {
                     .onDelete(perform: viewModel.deleteWordsMeaningVerse(at:))
                 }
             }
+            FlexibleViewContainer()
         }
     }
 }

@@ -24,7 +24,7 @@ class ContentViewModel: ObservableObject {
     }
 }
 
-struct ContentView: View {
+struct FlexibleViewContainer: View {
     @StateObject var viewModel = ContentViewModel()
     
     var body: some View {
@@ -94,8 +94,8 @@ struct Settings: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct FlexibleViewContainer_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        FlexibleViewContainer()
     }
 }

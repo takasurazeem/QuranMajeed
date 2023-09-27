@@ -16,7 +16,7 @@
 		F91766432AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */; };
 		F91766452AC39C4600792D2F /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91766442AC39C4600792D2F /* TagView.swift */; };
 		F917664B2AC3A3DC00792D2F /* FlexibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91766472AC3A3DC00792D2F /* FlexibleView.swift */; };
-		F917664C2AC3A3DC00792D2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91766482AC3A3DC00792D2F /* ContentView.swift */; };
+		F917664C2AC3A3DC00792D2F /* FlexibleViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91766482AC3A3DC00792D2F /* FlexibleViewContainer.swift */; };
 		F917664D2AC3A3DC00792D2F /* _FlexibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91766492AC3A3DC00792D2F /* _FlexibleView.swift */; };
 		F917664E2AC3A3DC00792D2F /* SizeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F917664A2AC3A3DC00792D2F /* SizeReader.swift */; };
 		F91766502AC3A47900792D2F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F917664F2AC3A47900792D2F /* README.md */; };
@@ -85,7 +85,7 @@
 		F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVersesForWordsMeaningView.swift; sourceTree = "<group>"; };
 		F91766442AC39C4600792D2F /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		F91766472AC3A3DC00792D2F /* FlexibleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleView.swift; sourceTree = "<group>"; };
-		F91766482AC3A3DC00792D2F /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F91766482AC3A3DC00792D2F /* FlexibleViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleViewContainer.swift; sourceTree = "<group>"; };
 		F91766492AC3A3DC00792D2F /* _FlexibleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _FlexibleView.swift; sourceTree = "<group>"; };
 		F917664A2AC3A3DC00792D2F /* SizeReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeReader.swift; sourceTree = "<group>"; };
 		F917664F2AC3A47900792D2F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 			children = (
 				F917664F2AC3A47900792D2F /* README.md */,
 				F91766492AC3A3DC00792D2F /* _FlexibleView.swift */,
-				F91766482AC3A3DC00792D2F /* ContentView.swift */,
+				F91766482AC3A3DC00792D2F /* FlexibleViewContainer.swift */,
 				F91766472AC3A3DC00792D2F /* FlexibleView.swift */,
 				F917664A2AC3A3DC00792D2F /* SizeReader.swift */,
 			);
@@ -636,7 +636,7 @@
 				F9D60D162A76C6AC00701635 /* Verse.swift in Sources */,
 				76C1F8DD2AC2444B00085DA2 /* WordForWordsMeaning.swift in Sources */,
 				F91839492AB7AF2800E4D45B /* Sura+localizedName.swift in Sources */,
-				F917664C2AC3A3DC00792D2F /* ContentView.swift in Sources */,
+				F917664C2AC3A3DC00792D2F /* FlexibleViewContainer.swift in Sources */,
 				F91766432AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift in Sources */,
 				76C1F8DB2AC2421900085DA2 /* QuizVerse.swift in Sources */,
 				F94C11C42AB2F962004BAD10 /* AppDependencyContainer.swift in Sources */,
