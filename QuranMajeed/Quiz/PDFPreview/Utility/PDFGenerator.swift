@@ -9,9 +9,11 @@ import PDFKit
 
 class PDFGenerator {
     init(
-        verses: [QuizVerse]
+        verses: [QuizVerse],
+        words: [WordForWordsMeaning]
     ) {
         self.verses = verses
+        self.words = words
         
         // 1
         pdfMetaData = [
@@ -31,7 +33,6 @@ class PDFGenerator {
         ]
     }
     
-    
     /// This method uses the injected QuizVerses to generate the quiz and calls internal methods
     /// - Returns: Data that can be used by `PDFKitView`
     func generateQuiz() -> Data {
@@ -43,20 +44,74 @@ class PDFGenerator {
             context.beginPage()
             
             drawQuizHeaders()
-            var yPos = studentNameRowYPos + 45
-            for verse in verses {
-                let nextPost = addVerseText(
-                    context: context,
-                    verse: verse,
-                    textTop: yPos
-                )
-                yPos = nextPost
-            }
+            var yPosForNextTask = drawVerses(context)
+            drawWordsMeanings(
+                context: context,
+                yPos: &yPosForNextTask
+            )
         }
         
         return data
     }
     
+    func drawWordsMeanings(
+        context: UIGraphicsPDFRendererContext,
+        yPos: inout CGFloat
+    ) {
+        let textFont = verseFont
+        // 1
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .right
+        paragraphStyle.lineBreakMode = .byWordWrapping
+        // 2
+        let verseTextAttributes = makeVerseTextAttributes(paragraphStyle, textFont)
+        let pageRectMaxY = pageRect.maxY
+        let boundedWidth = pageRect.width - 20
+        let xOffset = boundedWidth / 3 // 3 words in a row
+        var xPos = 2.0
+        for (index, word) in words.enumerated() {
+            let attributedVerseText = NSAttributedString(
+                string: word.word,
+                attributes: verseTextAttributes
+            )
+            let wordTextHeight = attributedVerseText.height(containerWidth: xOffset)
+            if yPos + wordTextHeight > pageRectMaxY - 5 {
+                context.beginPage()
+                yPos = 5
+            }
+            let wordTextRect = CGRect(
+                x: xOffset * xPos,
+                y: yPos,
+                width: xOffset,
+                height: wordTextHeight
+            )
+            attributedVerseText.draw(in: wordTextRect)
+            xPos -= 1
+            if (index + 1).isMultiple(of: 3) {
+                yPos += 45
+                xPos = 2
+            }
+        }
+    }
+    
+    
+    /// This method takes context and draw verses in that context
+    /// - Parameter context: ``UIGraphicsPDFRendererContext``
+    /// - Returns: yPos for the next task
+    func drawVerses(
+        _ context: UIGraphicsPDFRendererContext
+    ) -> CGFloat {
+        var yPos = studentNameRowYPos + 45
+        for verse in verses {
+            let nextPost = addVerseText(
+                context: context,
+                verse: verse,
+                textTop: yPos
+            )
+            yPos = nextPost
+        }
+        return yPos
+    }
     
     /// This method adds verse and empty horizontal lines required to write answer for that verse.
     /// - Parameters:
@@ -201,6 +256,7 @@ class PDFGenerator {
     
     // MARK: - Dependencies
     private let verses: [QuizVerse]
+    private let words: [WordForWordsMeaning]
 }
 
 extension PDFGenerator {

@@ -1,24 +1,11 @@
 //
-//  QuranModel.swift
-//  Quran
+//  QuizVerse.swift
+//  QuranMajeed
 //
-//  Created by Takasur Azeem on 30/07/2023.
-//  Copyright © 2023 Takasur Azeem. All rights reserved.
+//  Created by Takasur A. on 26/09/2023.
 //
 
 import Foundation
-
-// MARK: - Verse
-struct Verse: Codable, Identifiable, Hashable, Comparable {
-    static func < (lhs: Verse, rhs: Verse) -> Bool {
-        lhs.ayaNumber < rhs.ayaNumber
-    }
-    
-    var id: Int { ayaNumber }
-    var ayaNumber: Int
-    var text: String
-    let translation: String
-}
 
 struct QuizVerse: Identifiable, Hashable {
     
