@@ -11,6 +11,14 @@
 		763539D52AB7975500CC27FD /* ReadingService in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D42AB7975500CC27FD /* ReadingService */; };
 		763539D72AB7998A00CC27FD /* Localization in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D62AB7998A00CC27FD /* Localization */; };
 		763539D92AB799E500CC27FD /* QuranTextKit in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D82AB799E500CC27FD /* QuranTextKit */; };
+		76C1F8DB2AC2421900085DA2 /* QuizVerse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1F8DA2AC2421900085DA2 /* QuizVerse.swift */; };
+		76C1F8DD2AC2444B00085DA2 /* WordForWordsMeaning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1F8DC2AC2444B00085DA2 /* WordForWordsMeaning.swift */; };
+		F91766432AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */; };
+		F917664B2AC3A3DC00792D2F /* FlexibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91766472AC3A3DC00792D2F /* FlexibleView.swift */; };
+		F917664C2AC3A3DC00792D2F /* FlexibleViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91766482AC3A3DC00792D2F /* FlexibleViewContainer.swift */; };
+		F917664D2AC3A3DC00792D2F /* _FlexibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91766492AC3A3DC00792D2F /* _FlexibleView.swift */; };
+		F917664E2AC3A3DC00792D2F /* SizeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F917664A2AC3A3DC00792D2F /* SizeReader.swift */; };
+		F91766502AC3A47900792D2F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F917664F2AC3A47900792D2F /* README.md */; };
 		F91839492AB7AF2800E4D45B /* Sura+localizedName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91839482AB7AF2800E4D45B /* Sura+localizedName.swift */; };
 		F918394B2AB7B10E00E4D45B /* SuraListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F918394A2AB7B10E00E4D45B /* SuraListView.swift */; };
 		F918394D2AB7B69900E4D45B /* SuraNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F918394C2AB7B69900E4D45B /* SuraNameView.swift */; };
@@ -51,13 +59,15 @@
 		F9D60D052A76C69E00701635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D042A76C69E00701635 /* Assets.xcassets */; };
 		F9D60D082A76C69E00701635 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D072A76C69E00701635 /* Preview Assets.xcassets */; };
 		F9D60D152A76C6AC00701635 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D102A76C6AC00701635 /* QuizViewModel.swift */; };
-		F9D60D162A76C6AC00701635 /* QuranModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D122A76C6AC00701635 /* QuranModel.swift */; };
+		F9D60D162A76C6AC00701635 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D122A76C6AC00701635 /* Verse.swift */; };
 		F9D60D172A76C6AC00701635 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D142A76C6AC00701635 /* QuizView.swift */; };
 		F9D60D1A2A76C6CA00701635 /* Bundle+Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D192A76C6CA00701635 /* Bundle+Decode.swift */; };
 		F9D60D2F2A77DD9600701635 /* QuizPDFPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D2E2A77DD9600701635 /* QuizPDFPreview.swift */; };
 		F9D60D332A77E01300701635 /* PDFGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D322A77E01300701635 /* PDFGenerator.swift */; };
 		F9D60D362A7852F400701635 /* PDFDocument+Transferable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D352A7852F400701635 /* PDFDocument+Transferable.swift */; };
 		F9D60D392A78534B00701635 /* PDFKitView+UIViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D382A78534B00701635 /* PDFKitView+UIViewRepresentable.swift */; };
+		F9F11E0C2AC4D66800100507 /* FlexibleViewContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F11E0B2AC4D66800100507 /* FlexibleViewContainerViewModel.swift */; };
+		F9F11E0E2AC4D6A200100507 /* FlexibleViewContainerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F11E0D2AC4D6A200100507 /* FlexibleViewContainerSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +81,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		76C1F8DA2AC2421900085DA2 /* QuizVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVerse.swift; sourceTree = "<group>"; };
+		76C1F8DC2AC2444B00085DA2 /* WordForWordsMeaning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordForWordsMeaning.swift; sourceTree = "<group>"; };
+		F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVersesForWordsMeaningView.swift; sourceTree = "<group>"; };
+		F91766472AC3A3DC00792D2F /* FlexibleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleView.swift; sourceTree = "<group>"; };
+		F91766482AC3A3DC00792D2F /* FlexibleViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleViewContainer.swift; sourceTree = "<group>"; };
+		F91766492AC3A3DC00792D2F /* _FlexibleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _FlexibleView.swift; sourceTree = "<group>"; };
+		F917664A2AC3A3DC00792D2F /* SizeReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeReader.swift; sourceTree = "<group>"; };
+		F917664F2AC3A47900792D2F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F91839482AB7AF2800E4D45B /* Sura+localizedName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sura+localizedName.swift"; sourceTree = "<group>"; };
 		F918394A2AB7B10E00E4D45B /* SuraListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuraListView.swift; sourceTree = "<group>"; };
 		F918394C2AB7B69900E4D45B /* SuraNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuraNameView.swift; sourceTree = "<group>"; };
@@ -106,7 +124,7 @@
 		F9D60D042A76C69E00701635 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9D60D072A76C69E00701635 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F9D60D102A76C6AC00701635 /* QuizViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
-		F9D60D122A76C6AC00701635 /* QuranModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuranModel.swift; sourceTree = "<group>"; };
+		F9D60D122A76C6AC00701635 /* Verse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
 		F9D60D142A76C6AC00701635 /* QuizView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		F9D60D192A76C6CA00701635 /* Bundle+Decode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Decode.swift"; sourceTree = "<group>"; };
 		F9D60D252A76C6EF00701635 /* pdms-saleem-quranfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pdms-saleem-quranfont.ttf"; sourceTree = "<group>"; };
@@ -117,6 +135,8 @@
 		F9D60D322A77E01300701635 /* PDFGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFGenerator.swift; sourceTree = "<group>"; };
 		F9D60D352A7852F400701635 /* PDFDocument+Transferable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFDocument+Transferable.swift"; sourceTree = "<group>"; };
 		F9D60D382A78534B00701635 /* PDFKitView+UIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFKitView+UIViewRepresentable.swift"; sourceTree = "<group>"; };
+		F9F11E0B2AC4D66800100507 /* FlexibleViewContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleViewContainerViewModel.swift; sourceTree = "<group>"; };
+		F9F11E0D2AC4D6A200100507 /* FlexibleViewContainerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleViewContainerSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +173,24 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		76C1F8D22AC2291000085DA2 /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				F91766462AC3A3CD00792D2F /* FlexibleLayout */,
+			);
+			path = CustomComponents;
+			sourceTree = "<group>";
+		};
+		F91766462AC3A3CD00792D2F /* FlexibleLayout */ = {
+			isa = PBXGroup;
+			children = (
+				F917664F2AC3A47900792D2F /* README.md */,
+				F9F11E0F2AC4D6F000100507 /* View */,
+				F9F11E102AC4D6FD00100507 /* ViewModel */,
+			);
+			path = FlexibleLayout;
 			sourceTree = "<group>";
 		};
 		F91839472AB7AF0600E4D45B /* Model */ = {
@@ -312,6 +350,7 @@
 		F9D60D0E2A76C6AC00701635 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				76C1F8D22AC2291000085DA2 /* CustomComponents */,
 				F9D60D2C2A77DD7E00701635 /* PDFPreview */,
 				F9D60D3B2A78550700701635 /* Main */,
 			);
@@ -329,7 +368,9 @@
 		F9D60D112A76C6AC00701635 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F9D60D122A76C6AC00701635 /* QuranModel.swift */,
+				F9D60D122A76C6AC00701635 /* Verse.swift */,
+				76C1F8DA2AC2421900085DA2 /* QuizVerse.swift */,
+				76C1F8DC2AC2444B00085DA2 /* WordForWordsMeaning.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -343,6 +384,7 @@
 				F91839652AB7D98D00E4D45B /* VerseListView.swift */,
 				F968AC762AC0F25C0086F841 /* SelectedSurahView.swift */,
 				F968AC782AC0F3690086F841 /* SelectTranslationVersesView.swift */,
+				F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -422,6 +464,26 @@
 				F9D60D132A76C6AC00701635 /* View */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		F9F11E0F2AC4D6F000100507 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F91766492AC3A3DC00792D2F /* _FlexibleView.swift */,
+				F91766482AC3A3DC00792D2F /* FlexibleViewContainer.swift */,
+				F9F11E0D2AC4D6A200100507 /* FlexibleViewContainerSettings.swift */,
+				F91766472AC3A3DC00792D2F /* FlexibleView.swift */,
+				F917664A2AC3A3DC00792D2F /* SizeReader.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F9F11E102AC4D6FD00100507 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F9F11E0B2AC4D66800100507 /* FlexibleViewContainerViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -533,6 +595,7 @@
 				F94C11BC2AB2986D004BAD10 /* NotoNastaliqUrdu-VariableFont_wght.ttf in Resources */,
 				F992EBAB2AB3CC1A00649632 /* ScheherazadeNew-Bold.ttf in Resources */,
 				F94C11BB2AB2986D004BAD10 /* pdms-saleem-quranfont.ttf in Resources */,
+				F91766502AC3A47900792D2F /* README.md in Resources */,
 				F992EBAC2AB3CC1A00649632 /* ScheherazadeNew-Medium.ttf in Resources */,
 				F992EBAA2AB3CC1A00649632 /* ScheherazadeNew-SemiBold.ttf in Resources */,
 				F94C11BD2AB2986D004BAD10 /* diwani-bent.ttf in Resources */,
@@ -559,10 +622,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9F11E0C2AC4D66800100507 /* FlexibleViewContainerViewModel.swift in Sources */,
 				F96447892AB467A000DB5412 /* QuranDataDependencyContainer.swift in Sources */,
 				F9D60D2F2A77DD9600701635 /* QuizPDFPreview.swift in Sources */,
 				F91839662AB7D98D00E4D45B /* VerseListView.swift in Sources */,
 				F952CFD22A96D6BA0039478F /* String+size.swift in Sources */,
+				F917664E2AC3A3DC00792D2F /* SizeReader.swift in Sources */,
 				F968AC792AC0F3690086F841 /* SelectTranslationVersesView.swift in Sources */,
 				F964477C2AB4561900DB5412 /* MainQuranRepository.swift in Sources */,
 				F968AC772AC0F25C0086F841 /* SelectedSurahView.swift in Sources */,
@@ -572,13 +637,20 @@
 				F952CFD42A96D6E50039478F /* NSAttributedString+size.swift in Sources */,
 				F96447852AB466CC00DB5412 /* QuranProvider.swift in Sources */,
 				F9D60D152A76C6AC00701635 /* QuizViewModel.swift in Sources */,
+				F9F11E0E2AC4D6A200100507 /* FlexibleViewContainerSettings.swift in Sources */,
 				F9D60D332A77E01300701635 /* PDFGenerator.swift in Sources */,
 				F9D60D172A76C6AC00701635 /* QuizView.swift in Sources */,
 				F91839622AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift in Sources */,
 				F9D60D012A76C69D00701635 /* QuranQuizApp.swift in Sources */,
 				F98C231B2ABE2C8E00FED70E /* UrduTranslation.swift in Sources */,
-				F9D60D162A76C6AC00701635 /* QuranModel.swift in Sources */,
+				F917664D2AC3A3DC00792D2F /* _FlexibleView.swift in Sources */,
+				F917664B2AC3A3DC00792D2F /* FlexibleView.swift in Sources */,
+				F9D60D162A76C6AC00701635 /* Verse.swift in Sources */,
+				76C1F8DD2AC2444B00085DA2 /* WordForWordsMeaning.swift in Sources */,
 				F91839492AB7AF2800E4D45B /* Sura+localizedName.swift in Sources */,
+				F917664C2AC3A3DC00792D2F /* FlexibleViewContainer.swift in Sources */,
+				F91766432AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift in Sources */,
+				76C1F8DB2AC2421900085DA2 /* QuizVerse.swift in Sources */,
 				F94C11C42AB2F962004BAD10 /* AppDependencyContainer.swift in Sources */,
 				F96447872AB466FA00DB5412 /* MainQuranProvider.swift in Sources */,
 				F918394B2AB7B10E00E4D45B /* SuraListView.swift in Sources */,

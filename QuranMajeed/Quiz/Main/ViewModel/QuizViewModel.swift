@@ -59,30 +59,47 @@ extension QuizView {
             }
         }
 
-        func delete(at offsets: IndexSet) {
-            selectedVerses.remove(atOffsets: offsets)
+        func deleteTranslationVerse(at offsets: IndexSet) {
+            selectedVersesForTranslation.remove(atOffsets: offsets)
         }
-        
-        func generatePDF() -> URL? {
-            _ = PDFGenerator(verses: selectedVerses.asQuizVerses(selectedSuraNumber: selectedSurah.suraNumber))
-            
-            
-            return nil
+
+        func deleteWordsMeaningVerse(at offsets: IndexSet) {
+            selectedVersesForWordsMeaning.remove(atOffsets: offsets)
         }
         
         private let theQuranRepository: QuranRepository
         
-        @Published var expandSelectedVersesSection = false
-        @Published var expandSelectVersesSection = true
+        @Published var expandSelectedVersesForTranslationSection = false
+        @Published var expandSelectedVersesForWordsMeaningSection = false
+        @Published var expandSelectVersesForTranslationSection = true
+        @Published var expandSelectVersesForWordsMeaningSection = true
         @Published var selectedAyahNumber: Int
         @Published var selectedSurah: Sura
         @Published private(set)var versesOfSelectedSura: [Verse] = []
         @Published var suras: [Sura] = []
         @Published private(set) var selectedVerse: Verse
-        @Published var selectedVerses: [Verse] = [] {
+        @Published var selectedVersesForWordsMeaning: [Verse] = [] {
             didSet {
-                quizVerses = selectedVerses.asQuizVerses(selectedSuraNumber: selectedSurah.suraNumber)
-                expandSelectedVersesSection = true
+                var words = Set<WordForWordsMeaning>()
+                for verse in selectedVersesForWordsMeaning {
+                    for (index, word) in verse.text.split(separator: " ").enumerated() {
+                        words
+                            .insert(
+                                WordForWordsMeaning(
+                                    id: Double(verse.id) + (Double("0.\(index)") ?? 0.1),
+                                    word: String(word)
+                                )
+                            )
+                    }
+                }
+                wordsForWordsMeaning = Array(words).sorted()
+            }
+        }
+        @Published var wordsForWordsMeaning: [WordForWordsMeaning] = []
+        @Published var selectedVersesForTranslation: [Verse] = [] {
+            didSet {
+                quizVerses = selectedVersesForTranslation.asQuizVerses(selectedSuraNumber: selectedSurah.suraNumber)
+                expandSelectedVersesForTranslationSection = true
             }
         }
         private(set) var quizVerses: [QuizVerse] = []
