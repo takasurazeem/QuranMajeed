@@ -26,7 +26,8 @@ struct QuizView: View {
                         NavigationLink("PDF Preview") {
                             PDFKitView(
                                 documentData: PDFGenerator(
-                                    verses: viewModel.quizVerses
+                                    verses: viewModel.quizVerses,
+                                    words: viewModel.wordsForWordsMeaning
                                 )
                                 .generateQuiz()
                             )
@@ -36,7 +37,8 @@ struct QuizView: View {
                                 // FIXME: - Not a good place to put it here. Move to a file of its own.
                                 ToolbarItem(placement: .navigationBarTrailing) {
                                     if let document = PDFDocument(data: PDFGenerator(
-                                        verses: viewModel.quizVerses
+                                        verses: viewModel.quizVerses,
+                                        words: viewModel.wordsForWordsMeaning
                                     )
                                     .generateQuiz()) {
                                         ShareLink(item: document, preview: SharePreview("PDF"))

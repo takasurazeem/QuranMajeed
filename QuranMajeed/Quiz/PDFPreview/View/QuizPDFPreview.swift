@@ -25,7 +25,8 @@ struct QuizPDFPreview_Previews: PreviewProvider {
         NavigationStack {
             QuizPDFPreview(
                 documentData: PDFGenerator(
-                    verses: []
+                    verses: [], 
+                    words: []
                 )
                 .generateQuiz()
             )
