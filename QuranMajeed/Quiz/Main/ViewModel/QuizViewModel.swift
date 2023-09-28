@@ -92,8 +92,7 @@ extension QuizView {
                             )
                     }
                 }
-                // > (gerater than operator used because of Arabic)
-                wordsForWordsMeaning = Array(words).sorted(by: >)
+                wordsForWordsMeaning = Array(words).sorted()
             }
         }
         @Published var wordsForWordsMeaning: [WordForWordsMeaning] = []

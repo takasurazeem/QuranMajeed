@@ -44,11 +44,54 @@ class PDFGenerator {
             context.beginPage()
             
             drawQuizHeaders()
-            let yPosForNextTask = drawVerses(context)
-            
+            var yPosForNextTask = drawVerses(context)
+            drawWordsMeanings(
+                context: context,
+                yPos: &yPosForNextTask
+            )
         }
         
         return data
+    }
+    
+    func drawWordsMeanings(
+        context: UIGraphicsPDFRendererContext,
+        yPos: inout CGFloat
+    ) {
+        let textFont = verseFont
+        // 1
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .right
+        paragraphStyle.lineBreakMode = .byWordWrapping
+        // 2
+        let verseTextAttributes = makeVerseTextAttributes(paragraphStyle, textFont)
+        let pageRectMaxY = pageRect.maxY
+        let boundedWidth = pageRect.width - 20
+        let xOffset = boundedWidth / 3 // 3 words in a row
+        var xPos = 2.0
+        for (index, word) in words.enumerated() {
+            let attributedVerseText = NSAttributedString(
+                string: word.word,
+                attributes: verseTextAttributes
+            )
+            let wordTextHeight = attributedVerseText.height(containerWidth: xOffset)
+            if yPos + wordTextHeight > pageRectMaxY - 5 {
+                context.beginPage()
+                yPos = 5
+            }
+            let wordTextRect = CGRect(
+                x: xOffset * xPos,
+                y: yPos,
+                width: xOffset,
+                height: wordTextHeight
+            )
+            attributedVerseText.draw(in: wordTextRect)
+            xPos -= 1
+            if (index + 1).isMultiple(of: 3) {
+                yPos += 45
+                xPos = 2
+            }
+        }
     }
     
     
