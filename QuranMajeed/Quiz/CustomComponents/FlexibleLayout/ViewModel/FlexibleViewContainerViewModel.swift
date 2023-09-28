@@ -12,12 +12,12 @@ import Combine
 extension FlexibleViewContainer {
     class ViewModel: ObservableObject {
         
-        init(originalItems: [WordForWordsMeaning]) {
-            self.originalItems = originalItems
+        init(originalItems: Binding<[WordForWordsMeaning]>) {
+            self._originalItems = originalItems
             wordCount = originalItems.count
         }
         
-        @Published var originalItems: [WordForWordsMeaning]
+        @Binding var originalItems: [WordForWordsMeaning]
         @Published var spacing: CGFloat = 8
         @Published var padding: CGFloat = 8
         @Published var wordCount: Int

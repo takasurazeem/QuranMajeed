@@ -38,7 +38,7 @@ struct FlexibleViewContainer_Previews: PreviewProvider {
         .map { WordForWordsMeaning(id: Double($0), word: String($1)) }
     static var previews: some View {
         FlexibleViewContainer(
-            viewModel: FlexibleViewContainer.ViewModel(originalItems: words)
+            viewModel: FlexibleViewContainer.ViewModel(originalItems: .constant(words))
         )
     }
 }

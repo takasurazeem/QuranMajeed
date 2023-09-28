@@ -46,7 +46,7 @@ struct SelectVersesForWordsMeaningView: View {
                 }
                 FlexibleViewContainer(
                     viewModel: FlexibleViewContainer.ViewModel(
-                        originalItems: viewModel.wordsForWordsMeaning
+                        originalItems: $viewModel.wordsForWordsMeaning
                     )
                 )
             }
