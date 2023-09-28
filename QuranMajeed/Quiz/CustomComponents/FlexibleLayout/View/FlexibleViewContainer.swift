@@ -8,7 +8,7 @@ struct FlexibleViewContainer: View {
     var body: some View {
         ScrollView {
             FlexibleView(
-                data: viewModel.words,
+                data: viewModel.originalItems,
                 spacing: viewModel.spacing,
                 alignment: viewModel.alignment
             ) { item in
@@ -16,8 +16,13 @@ struct FlexibleViewContainer: View {
                     .padding(8)
                     .background(
                         RoundedRectangle(cornerRadius: 8)
-                            .fill(Color.gray.opacity(0.2))
+                            .fill(item.isSelected ? Color.blue : Color.gray.opacity(0.8))
                     )
+                    .onTapGesture {
+                        if let index = viewModel.originalItems.firstIndex(where: { $0 == item }) {
+                            viewModel.originalItems[index].isSelected = !viewModel.originalItems[index].isSelected
+                        }
+                    }
             }
             .padding(.horizontal, viewModel.padding)
         }

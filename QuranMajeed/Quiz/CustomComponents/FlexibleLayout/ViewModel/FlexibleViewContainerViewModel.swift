@@ -23,10 +23,10 @@ extension FlexibleViewContainer {
         @Published var wordCount: Int
         @Published var alignmentIndex = 2
         
-        var words: [WordForWordsMeaning] {
-            originalItems
-            //Array(originalItems.prefix(wordCount))
-        }
+//        var words: [WordForWordsMeaning] {
+//            originalItems
+//            //Array(originalItems.prefix(wordCount))
+//        }
         
         let alignments: [HorizontalAlignment] = [.leading, .center, .trailing]
         

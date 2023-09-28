@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct WordForWordsMeaning: Identifiable, Hashable, Comparable, Equatable {
     static func < (lhs: WordForWordsMeaning, rhs: WordForWordsMeaning) -> Bool {
@@ -18,6 +19,7 @@ struct WordForWordsMeaning: Identifiable, Hashable, Comparable, Equatable {
     
     var id: Double
     let word: String
+    var isSelected = true
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(word)
