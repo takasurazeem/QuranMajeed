@@ -96,11 +96,7 @@ extension QuizView {
                 wordsForWordsMeaning = Array(words).sorted(by: >)
             }
         }
-        @Published var wordsForWordsMeaning: [WordForWordsMeaning] = [] {
-            didSet {
-                print("wordsForWordsMeaning: \(wordsForWordsMeaning.count)")
-            }
-        }
+        @Published var wordsForWordsMeaning: [WordForWordsMeaning] = []
         @Published var selectedVersesForTranslation: [Verse] = [] {
             didSet {
                 quizVerses = selectedVersesForTranslation.asQuizVerses(selectedSuraNumber: selectedSurah.suraNumber)
