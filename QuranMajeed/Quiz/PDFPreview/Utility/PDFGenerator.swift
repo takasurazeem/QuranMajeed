@@ -265,7 +265,7 @@ extension PDFGenerator {
     private func makeTranslationTextAttributes(_ paragraphStyle: NSMutableParagraphStyle) -> [NSAttributedString.Key : Any] {
         return [
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
-            NSAttributedString.Key.font: leftRightHeadingsFont.withSize(11.0),
+            NSAttributedString.Key.font: leftRightHeadingsFont.withSize(15.0),
             NSAttributedString.Key.writingDirection: [NSWritingDirection.rightToLeft.rawValue],
             NSAttributedString.Key.languageIdentifier: "ur_PK"
         ] as [NSAttributedString.Key : Any]
