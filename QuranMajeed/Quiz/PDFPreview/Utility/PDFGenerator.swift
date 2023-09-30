@@ -13,7 +13,7 @@ class PDFGenerator {
         words: [WordForWordsMeaning]
     ) {
         self.verses = verses
-        self.words = words
+        self.words = words.filter { $0.isSelected }
         
         // 1
         pdfMetaData = [
