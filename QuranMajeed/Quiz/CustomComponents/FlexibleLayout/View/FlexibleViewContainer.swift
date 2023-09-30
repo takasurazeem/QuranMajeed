@@ -8,7 +8,7 @@ struct FlexibleViewContainer: View {
     var body: some View {
         ScrollView {
             FlexibleView(
-                data: viewModel.originalItems,
+                data: viewModel.originalItems.sorted(by: >),
                 spacing: viewModel.spacing,
                 alignment: viewModel.alignment
             ) { item in
