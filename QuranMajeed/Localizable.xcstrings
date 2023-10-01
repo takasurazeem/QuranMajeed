@@ -1,0 +1,39 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%lld" : {
+
+    },
+    "Ayah Selection" : {
+      "comment" : "Ayah is a noun, but can be translated in Urdu and Arabic and in some other languages as well."
+    },
+    "PDF" : {
+
+    },
+    "PDF Preview" : {
+
+    },
+    "Prepare Quiz" : {
+
+    },
+    "Select Surah" : {
+      "comment" : "Sura is a noun, but can be translated in Urdu and Arabic and in some other languages as well."
+    },
+    "Select verses for translation" : {
+
+    },
+    "Select verses for words meaning" : {
+
+    },
+    "Selected Surah" : {
+
+    },
+    "Selected verses for translation" : {
+
+    },
+    "Selected verses for words meaning" : {
+
+    }
+  },
+  "version" : "1.0"
+}

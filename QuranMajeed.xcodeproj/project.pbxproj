@@ -55,6 +55,7 @@
 		F992EBAA2AB3CC1A00649632 /* ScheherazadeNew-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F992EBA62AB3CC1A00649632 /* ScheherazadeNew-SemiBold.ttf */; };
 		F992EBAB2AB3CC1A00649632 /* ScheherazadeNew-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F992EBA72AB3CC1A00649632 /* ScheherazadeNew-Bold.ttf */; };
 		F992EBAC2AB3CC1A00649632 /* ScheherazadeNew-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F992EBA82AB3CC1A00649632 /* ScheherazadeNew-Medium.ttf */; };
+		F9CF78442AC9D43A005B8BC7 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F9CF78432AC9D43A005B8BC7 /* Localizable.xcstrings */; };
 		F9D60D012A76C69D00701635 /* QuranQuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D002A76C69D00701635 /* QuranQuizApp.swift */; };
 		F9D60D052A76C69E00701635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D042A76C69E00701635 /* Assets.xcassets */; };
 		F9D60D082A76C69E00701635 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D072A76C69E00701635 /* Preview Assets.xcassets */; };
@@ -67,7 +68,6 @@
 		F9D60D362A7852F400701635 /* PDFDocument+Transferable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D352A7852F400701635 /* PDFDocument+Transferable.swift */; };
 		F9D60D392A78534B00701635 /* PDFKitView+UIViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D382A78534B00701635 /* PDFKitView+UIViewRepresentable.swift */; };
 		F9F11E0C2AC4D66800100507 /* FlexibleViewContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F11E0B2AC4D66800100507 /* FlexibleViewContainerViewModel.swift */; };
-		F9F11E0E2AC4D6A200100507 /* FlexibleViewContainerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F11E0D2AC4D6A200100507 /* FlexibleViewContainerSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +119,7 @@
 		F992EBA62AB3CC1A00649632 /* ScheherazadeNew-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScheherazadeNew-SemiBold.ttf"; sourceTree = "<group>"; };
 		F992EBA72AB3CC1A00649632 /* ScheherazadeNew-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScheherazadeNew-Bold.ttf"; sourceTree = "<group>"; };
 		F992EBA82AB3CC1A00649632 /* ScheherazadeNew-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScheherazadeNew-Medium.ttf"; sourceTree = "<group>"; };
+		F9CF78432AC9D43A005B8BC7 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F9D60CFD2A76C69D00701635 /* QuranMajeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuranMajeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D60D002A76C69D00701635 /* QuranQuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranQuizApp.swift; sourceTree = "<group>"; };
 		F9D60D042A76C69E00701635 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -136,7 +137,6 @@
 		F9D60D352A7852F400701635 /* PDFDocument+Transferable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFDocument+Transferable.swift"; sourceTree = "<group>"; };
 		F9D60D382A78534B00701635 /* PDFKitView+UIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFKitView+UIViewRepresentable.swift"; sourceTree = "<group>"; };
 		F9F11E0B2AC4D66800100507 /* FlexibleViewContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleViewContainerViewModel.swift; sourceTree = "<group>"; };
-		F9F11E0D2AC4D6A200100507 /* FlexibleViewContainerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleViewContainerSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +334,7 @@
 				F9D60D002A76C69D00701635 /* QuranQuizApp.swift */,
 				F9D60D242A76C6EF00701635 /* fonts */,
 				F9D60D042A76C69E00701635 /* Assets.xcassets */,
+				F9CF78432AC9D43A005B8BC7 /* Localizable.xcstrings */,
 				F9D60D062A76C69E00701635 /* Preview Content */,
 			);
 			path = QuranMajeed;
@@ -471,7 +472,6 @@
 			children = (
 				F91766492AC3A3DC00792D2F /* _FlexibleView.swift */,
 				F91766482AC3A3DC00792D2F /* FlexibleViewContainer.swift */,
-				F9F11E0D2AC4D6A200100507 /* FlexibleViewContainerSettings.swift */,
 				F91766472AC3A3DC00792D2F /* FlexibleView.swift */,
 				F917664A2AC3A3DC00792D2F /* SizeReader.swift */,
 			);
@@ -564,6 +564,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
+				ur,
 			);
 			mainGroup = F9D60CF42A76C69D00701635;
 			packageReferences = (
@@ -603,6 +605,7 @@
 				F94C11C12AB2986D004BAD10 /* Jameel Noori Nastaleeq Regular.ttf in Resources */,
 				F992EBA92AB3CC1A00649632 /* ScheherazadeNew-Regular.ttf in Resources */,
 				F952CFC92A90273C0039478F /* Quran_ur.json in Resources */,
+				F9CF78442AC9D43A005B8BC7 /* Localizable.xcstrings in Resources */,
 				F9D60D052A76C69E00701635 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -637,7 +640,6 @@
 				F952CFD42A96D6E50039478F /* NSAttributedString+size.swift in Sources */,
 				F96447852AB466CC00DB5412 /* QuranProvider.swift in Sources */,
 				F9D60D152A76C6AC00701635 /* QuizViewModel.swift in Sources */,
-				F9F11E0E2AC4D6A200100507 /* FlexibleViewContainerSettings.swift in Sources */,
 				F9D60D332A77E01300701635 /* PDFGenerator.swift in Sources */,
 				F9D60D172A76C6AC00701635 /* QuizView.swift in Sources */,
 				F91839622AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift in Sources */,
@@ -770,7 +772,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -826,7 +828,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
