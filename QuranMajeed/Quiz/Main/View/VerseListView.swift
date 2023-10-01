@@ -36,7 +36,7 @@ struct VerseListView: View {
                     .multilineTextAlignment(.trailing)
             }
         }
-        .navigationTitle("Ayah Selection")
+        .navigationTitle(Text("Ayah Selection", comment: "Ayah is a noun, but can be translated in Urdu and Arabic and in some other languages as well."))
         .environment(\.editMode, .constant(.active))
         .onAppear {
             selection = Set(selectedVerses)
@@ -53,6 +53,7 @@ struct VerseListView: View {
 struct VerseListView_Previews: PreviewProvider {
     static var previews: some View {
         ContentPreview()
+            .environment(\.locale, .init(identifier: "ur"))
     }
 }
 

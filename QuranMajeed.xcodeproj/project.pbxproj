@@ -66,8 +66,8 @@
 		F9D60D332A77E01300701635 /* PDFGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D322A77E01300701635 /* PDFGenerator.swift */; };
 		F9D60D362A7852F400701635 /* PDFDocument+Transferable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D352A7852F400701635 /* PDFDocument+Transferable.swift */; };
 		F9D60D392A78534B00701635 /* PDFKitView+UIViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D382A78534B00701635 /* PDFKitView+UIViewRepresentable.swift */; };
+		F9D90A4F2ACD850000CD8FD4 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F9D90A4E2ACD850000CD8FD4 /* Localizable.xcstrings */; };
 		F9F11E0C2AC4D66800100507 /* FlexibleViewContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F11E0B2AC4D66800100507 /* FlexibleViewContainerViewModel.swift */; };
-		F9F11E0E2AC4D6A200100507 /* FlexibleViewContainerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F11E0D2AC4D6A200100507 /* FlexibleViewContainerSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,7 +104,6 @@
 		F952CFD12A96D6BA0039478F /* String+size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+size.swift"; sourceTree = "<group>"; };
 		F952CFD32A96D6E50039478F /* NSAttributedString+size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+size.swift"; sourceTree = "<group>"; };
 		F96002A82ABA48C7008C16D5 /* GenericDataSource */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GenericDataSource; path = ../../../../Documents/GitHub/GenericDataSource; sourceTree = "<group>"; };
-		F96002A92ABA4FD0008C16D5 /* quran-ios */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "quran-ios"; path = "../../../../Documents/GitHub/quran-ios"; sourceTree = "<group>"; };
 		F96447792AB454F200DB5412 /* QuranRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranRepository.swift; sourceTree = "<group>"; };
 		F964477B2AB4561900DB5412 /* MainQuranRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQuranRepository.swift; sourceTree = "<group>"; };
 		F964477E2AB457AE00DB5412 /* QuranService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranService.swift; sourceTree = "<group>"; };
@@ -135,8 +134,8 @@
 		F9D60D322A77E01300701635 /* PDFGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFGenerator.swift; sourceTree = "<group>"; };
 		F9D60D352A7852F400701635 /* PDFDocument+Transferable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFDocument+Transferable.swift"; sourceTree = "<group>"; };
 		F9D60D382A78534B00701635 /* PDFKitView+UIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFKitView+UIViewRepresentable.swift"; sourceTree = "<group>"; };
+		F9D90A4E2ACD850000CD8FD4 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F9F11E0B2AC4D66800100507 /* FlexibleViewContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleViewContainerViewModel.swift; sourceTree = "<group>"; };
-		F9F11E0D2AC4D6A200100507 /* FlexibleViewContainerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleViewContainerSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,7 +321,6 @@
 		F9D60CFF2A76C69D00701635 /* QuranMajeed */ = {
 			isa = PBXGroup;
 			children = (
-				F96002A92ABA4FD0008C16D5 /* quran-ios */,
 				F96002A82ABA48C7008C16D5 /* GenericDataSource */,
 				F9A105312AB31BD2008FA0DE /* QuranMajeed */,
 				F9D60D0E2A76C6AC00701635 /* Quiz */,
@@ -335,6 +333,7 @@
 				F9D60D242A76C6EF00701635 /* fonts */,
 				F9D60D042A76C69E00701635 /* Assets.xcassets */,
 				F9D60D062A76C69E00701635 /* Preview Content */,
+				F9D90A4E2ACD850000CD8FD4 /* Localizable.xcstrings */,
 			);
 			path = QuranMajeed;
 			sourceTree = "<group>";
@@ -471,7 +470,6 @@
 			children = (
 				F91766492AC3A3DC00792D2F /* _FlexibleView.swift */,
 				F91766482AC3A3DC00792D2F /* FlexibleViewContainer.swift */,
-				F9F11E0D2AC4D6A200100507 /* FlexibleViewContainerSettings.swift */,
 				F91766472AC3A3DC00792D2F /* FlexibleView.swift */,
 				F917664A2AC3A3DC00792D2F /* SizeReader.swift */,
 			);
@@ -546,6 +544,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
+				ORGANIZATIONNAME = Islam;
 				TargetAttributes = {
 					F950FAD72AB4BA0000CB45B5 = {
 						CreatedOnToolsVersion = 15.0;
@@ -564,6 +563,9 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
+				ur,
+				"ur-Arab-PK",
 			);
 			mainGroup = F9D60CF42A76C69D00701635;
 			packageReferences = (
@@ -603,6 +605,7 @@
 				F94C11C12AB2986D004BAD10 /* Jameel Noori Nastaleeq Regular.ttf in Resources */,
 				F992EBA92AB3CC1A00649632 /* ScheherazadeNew-Regular.ttf in Resources */,
 				F952CFC92A90273C0039478F /* Quran_ur.json in Resources */,
+				F9D90A4F2ACD850000CD8FD4 /* Localizable.xcstrings in Resources */,
 				F9D60D052A76C69E00701635 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -637,7 +640,6 @@
 				F952CFD42A96D6E50039478F /* NSAttributedString+size.swift in Sources */,
 				F96447852AB466CC00DB5412 /* QuranProvider.swift in Sources */,
 				F9D60D152A76C6AC00701635 /* QuizViewModel.swift in Sources */,
-				F9F11E0E2AC4D6A200100507 /* FlexibleViewContainerSettings.swift in Sources */,
 				F9D60D332A77E01300701635 /* PDFGenerator.swift in Sources */,
 				F9D60D172A76C6AC00701635 /* QuizView.swift in Sources */,
 				F91839622AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift in Sources */,
@@ -723,6 +725,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -770,7 +773,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -785,6 +788,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -826,7 +830,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

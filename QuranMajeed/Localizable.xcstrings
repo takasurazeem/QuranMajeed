@@ -1,0 +1,257 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%lld" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
+    },
+    "Ayah Selection" : {
+      "comment" : "Ayah is a noun, but can be translated in Urdu and Arabic and in some other languages as well.",
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "آیت کا انتخاب"
+          }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "منتخب سورة"
+          }
+        }
+      }
+    },
+    "Date:" : {
+      "comment" : "The date text, not the today's date.",
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "بتاریخ:"
+          }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "بتاریخ:"
+          }
+        }
+      }
+    },
+    "Name: ____________________" : {
+      "comment" : "Name of the student",
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نام طالب علم: ____________________"
+          }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نام طالب علم: ____________________"
+          }
+        }
+      }
+    },
+    "PDF" : {
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ڈاکیومنٹ"
+          }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ڈاکیومنٹ"
+          }
+        }
+      }
+    },
+    "PDF Preview" : {
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ڈاکیومنٹ"
+          }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ڈاکیومنٹ"
+          }
+        }
+      }
+    },
+    "Prepare Quiz" : {
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "کوئز تیار کریں۔"
+          }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "کوئز تیار کریں۔"
+          }
+        }
+      }
+    },
+    "Select Surah" : {
+      "comment" : "Sura is a noun, but can be translated in Urdu and Arabic and in some other languages as well.",
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "سورہ منتخب کریں۔"
+          }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "سورہ منتخب کریں۔"
+          }
+        }
+      }
+    },
+    "Select verses for translation" : {
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ترجمہ کے لیے آیات کا انتخاب کریں۔"
+          }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ترجمہ کے لیے آیات کا انتخاب کریں۔"
+          }
+        }
+      }
+    },
+    "Select verses for words meaning" : {
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفاظ کے معنی کے لیے آیات کا انتخاب کریں۔"
+          }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفاظ کے معنی کے لیے آیات کا انتخاب کریں۔"
+          }
+        }
+      }
+    },
+    "Selected Surah" : {
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "منتخب سورة"
+          }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "منتخب سورة"
+          }
+        }
+      }
+    },
+    "Selected verses for translation" : {
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ترجمہ کے لیے منتخب آیات۔"
+          }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ترجمہ کے لیے منتخب آیات۔"
+          }
+        }
+      }
+    },
+    "Selected verses for words meaning" : {
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفاظ کے معنی کے لیے منتخب آیات۔"
+          }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفاظ کے معنی کے لیے منتخب آیات۔"
+          }
+        }
+      }
+    },
+    "Translate the following verses" : {
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "درج زیل آیات ترجمہ لکھیں:"
+          }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "درج زیل آیات ترجمہ لکھیں:"
+          }
+        }
+      }
+    },
+    "Weekly Test" : {
+      "comment" : "Middle heading",
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "سلسلہ وار ٹیسٹ"
+          }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "سلسلہ وار ٹیسٹ"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
