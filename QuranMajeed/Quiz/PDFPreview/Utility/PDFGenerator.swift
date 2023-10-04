@@ -6,6 +6,8 @@
 //
 
 import PDFKit
+import Foundation
+import SwiftUI
 
 class PDFGenerator {
     init(
@@ -241,7 +243,7 @@ class PDFGenerator {
     let studentNameText = "نام طالب علم:"
     let nameUnderScores = Array(repeating: "_", count: 20).reduce("", +)
     let dateText = "بتاریخ:"
-    let translateFollowingAyahsText = "درج زیل آیات ترجمہ لکھیں:"
+    let translateFollowingAyahsText/*: LocalizedStringKey*/ = "درج زیل آیات ترجمہ لکھیں:"
     
     // MARK: - MetaData
     let pdfMetaData: [CFString: String]

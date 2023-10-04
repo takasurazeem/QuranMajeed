@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/groue/GRDB.swift",
         "state": {
           "branch": null,
-          "revision": "ce63f697ed381383041d245b185af3c501de8bef",
-          "version": "6.18.0"
+          "revision": "458b7211df26cc39b0283aa6dceeebbfe2181aa6",
+          "version": "6.19.0"
         }
       },
       {
@@ -29,6 +29,15 @@
         }
       },
       {
+        "package": "QuranEngine",
+        "repositoryURL": "https://github.com/quran/quran-ios",
+        "state": {
+          "branch": "main",
+          "revision": "af9cbdc7278cc3247e7ca417239556db0132285e",
+          "version": null
+        }
+      },
+      {
         "package": "AsyncAlgorithms",
         "repositoryURL": "https://github.com/apple/swift-async-algorithms",
         "state": {
@@ -42,8 +51,8 @@
         "repositoryURL": "https://github.com/apple/swift-collections",
         "state": {
           "branch": null,
-          "revision": "937e904258d22af6e447a0b72c0bc67583ef64a2",
-          "version": "1.0.4"
+          "revision": "a902f1823a7ff3c9ab2fba0f992396b948eda307",
+          "version": "1.0.5"
         }
       },
       {
@@ -53,24 +62,6 @@
           "branch": null,
           "revision": "532d8b529501fb73a2455b179e0bbb6d49b652ed",
           "version": "1.5.3"
-        }
-      },
-      {
-        "package": "swift-snapshot-testing",
-        "repositoryURL": "https://github.com/pointfreeco/swift-snapshot-testing.git",
-        "state": {
-          "branch": null,
-          "revision": "696b86a6d151578bca7c1a2a3ed419a5f834d40f",
-          "version": "1.13.0"
-        }
-      },
-      {
-        "package": "swift-syntax",
-        "repositoryURL": "https://github.com/apple/swift-syntax.git",
-        "state": {
-          "branch": null,
-          "revision": "74203046135342e4a4a627476dd6caf8b28fe11b",
-          "version": "509.0.0"
         }
       },
       {

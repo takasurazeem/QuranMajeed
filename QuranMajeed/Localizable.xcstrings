@@ -2,37 +2,116 @@
   "sourceLanguage" : "en",
   "strings" : {
     "%lld" : {
-
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
     },
     "Ayah Selection" : {
-      "comment" : "Ayah is a noun, but can be translated in Urdu and Arabic and in some other languages as well."
+      "comment" : "Ayah is a noun, but can be translated in Urdu and Arabic and in some other languages as well.",
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "آیت کا انتخاب"
+          }
+        }
+      }
     },
     "PDF" : {
-
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ڈاکیومنٹ"
+          }
+        }
+      }
     },
     "PDF Preview" : {
-
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ڈاکیومنٹ چیک"
+          }
+        }
+      }
     },
     "Prepare Quiz" : {
-
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "کوئز تیار کریں۔"
+          }
+        }
+      }
     },
     "Select Surah" : {
-      "comment" : "Sura is a noun, but can be translated in Urdu and Arabic and in some other languages as well."
+      "comment" : "Sura is a noun, but can be translated in Urdu and Arabic and in some other languages as well.",
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "سورہ منتخب کریں۔"
+          }
+        }
+      }
     },
     "Select verses for translation" : {
-
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ترجمہ کے لیے آیات کا انتخاب کریں۔"
+          }
+        }
+      }
     },
     "Select verses for words meaning" : {
-
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفاظ کے معنی کے لیے آیات کا انتخاب کریں۔"
+          }
+        }
+      }
     },
     "Selected Surah" : {
-
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "منتخب سورة"
+          }
+        }
+      }
     },
     "Selected verses for translation" : {
-
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ترجمہ کے لیے منتخب آیات۔"
+          }
+        }
+      }
     },
     "Selected verses for words meaning" : {
-
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفاظ کے معنی کے لیے منتخب آیات۔"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

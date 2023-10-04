@@ -53,6 +53,7 @@ struct VerseListView: View {
 struct VerseListView_Previews: PreviewProvider {
     static var previews: some View {
         ContentPreview()
+            .environment(\.locale, .init(identifier: "ur"))
     }
 }
 
