@@ -544,6 +544,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
+				ORGANIZATIONNAME = Islam;
 				TargetAttributes = {
 					F950FAD72AB4BA0000CB45B5 = {
 						CreatedOnToolsVersion = 15.0;
