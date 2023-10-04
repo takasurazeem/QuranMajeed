@@ -3,7 +3,19 @@
   "strings" : {
     "%lld" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
         "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "ur-Arab-PK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld"
@@ -19,12 +31,24 @@
             "state" : "translated",
             "value" : "آیت کا انتخاب"
           }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "منتخب سورة"
+          }
         }
       }
     },
     "PDF" : {
       "localizations" : {
         "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ڈاکیومنٹ"
+          }
+        },
+        "ur-Arab-PK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ڈاکیومنٹ"
@@ -37,7 +61,13 @@
         "ur" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ڈاکیومنٹ چیک"
+            "value" : "ڈاکیومنٹ"
+          }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ڈاکیومنٹ"
           }
         }
       }
@@ -45,6 +75,12 @@
     "Prepare Quiz" : {
       "localizations" : {
         "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "کوئز تیار کریں۔"
+          }
+        },
+        "ur-Arab-PK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "کوئز تیار کریں۔"
@@ -60,12 +96,24 @@
             "state" : "translated",
             "value" : "سورہ منتخب کریں۔"
           }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "سورہ منتخب کریں۔"
+          }
         }
       }
     },
     "Select verses for translation" : {
       "localizations" : {
         "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ترجمہ کے لیے آیات کا انتخاب کریں۔"
+          }
+        },
+        "ur-Arab-PK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ترجمہ کے لیے آیات کا انتخاب کریں۔"
@@ -80,12 +128,24 @@
             "state" : "translated",
             "value" : "الفاظ کے معنی کے لیے آیات کا انتخاب کریں۔"
           }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفاظ کے معنی کے لیے آیات کا انتخاب کریں۔"
+          }
         }
       }
     },
     "Selected Surah" : {
       "localizations" : {
         "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "منتخب سورة"
+          }
+        },
+        "ur-Arab-PK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "منتخب سورة"
@@ -100,12 +160,24 @@
             "state" : "translated",
             "value" : "ترجمہ کے لیے منتخب آیات۔"
           }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ترجمہ کے لیے منتخب آیات۔"
+          }
         }
       }
     },
     "Selected verses for words meaning" : {
       "localizations" : {
         "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفاظ کے معنی کے لیے منتخب آیات۔"
+          }
+        },
+        "ur-Arab-PK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "الفاظ کے معنی کے لیے منتخب آیات۔"

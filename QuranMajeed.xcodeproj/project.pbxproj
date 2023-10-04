@@ -564,6 +564,7 @@
 				Base,
 				ar,
 				ur,
+				"ur-Arab-PK",
 			);
 			mainGroup = F9D60CF42A76C69D00701635;
 			packageReferences = (
