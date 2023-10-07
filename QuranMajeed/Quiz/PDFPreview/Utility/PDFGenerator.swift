@@ -239,11 +239,11 @@ class PDFGenerator {
     let theOpeningText = "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ"
     let rightHeadingText = "امن ترجمةالقرآن کلاس"
     let leftHeadingText = "جامع مسجد امن واپڈا ٹاؤن گوجراںوالہ"
-    let belowOpeningText = "سلسلہ وار ٹیسٹ"
-    let studentNameText = "نام طالب علم:"
+    let belowOpeningText = NSLocalizedString("Weekly Test", comment: "Middle heading")
+    let studentNameText = NSLocalizedString("Name: ____________________", comment: "") // "نام طالب علم:"
     let nameUnderScores = Array(repeating: "_", count: 20).reduce("", +)
-    let dateText = "بتاریخ:"
-    let translateFollowingAyahsText/*: LocalizedStringKey*/ = "درج زیل آیات ترجمہ لکھیں:"
+    let dateText = NSLocalizedString("Date:", comment: "")
+    let translateFollowingAyahsText  = NSLocalizedString("Translate the following verses", comment: "")
     
     // MARK: - MetaData
     let pdfMetaData: [CFString: String]
@@ -352,13 +352,13 @@ extension PDFGenerator {
             ),
             withAttributes: nameFieldAttributes
         )
-        nameUnderScores.draw(
-            at: CGPoint(
-                x: pageWidth - studentNameTextWidth - (nameUnderScores.width(usingFont: .boldSystemFont(ofSize: 14)) * 1.10),
-                y: studentNameRowYPos
-            ),
-            withAttributes: nameFieldAttributes
-        )
+//        nameUnderScores.draw(
+//            at: CGPoint(
+//                x: pageWidth - studentNameTextWidth - (nameUnderScores.width(usingFont: .boldSystemFont(ofSize: 14)) * 1.10),
+//                y: studentNameRowYPos
+//            ),
+//            withAttributes: nameFieldAttributes
+//        )
         dateText.draw(
             at: CGPoint(
                 x: dateTextXPos,

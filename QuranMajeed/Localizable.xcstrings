@@ -40,6 +40,40 @@
         }
       }
     },
+    "Date:" : {
+      "comment" : "The date text, not the today's date.",
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "بتاریخ:"
+          }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "بتاریخ:"
+          }
+        }
+      }
+    },
+    "Name: ____________________" : {
+      "comment" : "Name of the student",
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نام طالب علم: ____________________"
+          }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نام طالب علم: ____________________"
+          }
+        }
+      }
+    },
     "PDF" : {
       "localizations" : {
         "ur" : {
@@ -181,6 +215,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "الفاظ کے معنی کے لیے منتخب آیات۔"
+          }
+        }
+      }
+    },
+    "Translate the following verses" : {
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "درج زیل آیات ترجمہ لکھیں:"
+          }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "درج زیل آیات ترجمہ لکھیں:"
+          }
+        }
+      }
+    },
+    "Weekly Test" : {
+      "comment" : "Middle heading",
+      "localizations" : {
+        "ur" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "سلسلہ وار ٹیسٹ"
+          }
+        },
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "سلسلہ وار ٹیسٹ"
           }
         }
       }
