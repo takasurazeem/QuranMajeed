@@ -352,33 +352,28 @@ extension PDFGenerator {
             ),
             withAttributes: nameFieldAttributes
         )
-//        nameUnderScores.draw(
-//            at: CGPoint(
-//                x: pageWidth - studentNameTextWidth - (nameUnderScores.width(usingFont: .boldSystemFont(ofSize: 14)) * 1.10),
-//                y: studentNameRowYPos
-//            ),
-//            withAttributes: nameFieldAttributes
-//        )
-        dateText.draw(
-            at: CGPoint(
-                x: dateTextXPos,
-                y: studentNameRowYPos
-            ),
-            withAttributes: nameFieldAttributes
-        )
     }
-    
+    /*
+     "\(dateText) \(date)".draw(
+         at: CGPoint(
+             x: dateTextXPos,
+             y: studentNameRowYPos
+         ),
+         withAttributes: nameFieldAttributes
+     )
+     */
     private func drawDateField() {
-        let dateFieldAttributes = [
-            NSAttributedString.Key.font: nameAndDateTextFont,
-            NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue
-        ] as [NSAttributedString.Key : Any]
-        date.draw(
+        let fullText = "\(dateText) \(date)"
+        let dateRange = (fullText as NSString).range(of: date)
+        let attributedString = NSMutableAttributedString(string: fullText)
+        attributedString.addAttribute(.font, value: nameAndDateTextFont, range: NSMakeRange(0, attributedString.length))
+        attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: dateRange)
+
+        attributedString.draw(
             at: CGPoint(
                 x: 15,
                 y: studentNameRowYPos
-            ),
-            withAttributes: dateFieldAttributes
+            )
         )
     }
     
