@@ -94,7 +94,6 @@
 		F918394C2AB7B69900E4D45B /* SuraNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuraNameView.swift; sourceTree = "<group>"; };
 		F91839612AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingAnalyticsLibrary.swift; sourceTree = "<group>"; };
 		F91839652AB7D98D00E4D45B /* VerseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseListView.swift; sourceTree = "<group>"; };
-		F936509C2AE1FB3C007773CE /* GenericDataSource */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GenericDataSource; path = ../../../../Documents/GitHub/GenericDataSource; sourceTree = "<group>"; };
 		F94C11C32AB2F962004BAD10 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
 		F950FAD82AB4BA0000CB45B5 /* Al-TanzeelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Al-TanzeelTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F950FAE12AB4BA6400CB45B5 /* QuranMajeedTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuranMajeedTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -136,6 +135,7 @@
 		F9D60D382A78534B00701635 /* PDFKitView+UIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFKitView+UIViewRepresentable.swift"; sourceTree = "<group>"; };
 		F9D90A4E2ACD850000CD8FD4 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F9F11E0B2AC4D66800100507 /* FlexibleViewContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleViewContainerViewModel.swift; sourceTree = "<group>"; };
+		F9F250162AE200BA00D2CCD4 /* GenericDataSource */ = {isa = PBXFileReference; lastKnownFileType = text; name = GenericDataSource; path = Packges/GenericDataSource; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,7 +321,7 @@
 		F9D60CFF2A76C69D00701635 /* QuranMajeed */ = {
 			isa = PBXGroup;
 			children = (
-				F936509C2AE1FB3C007773CE /* GenericDataSource */,
+				F9F250162AE200BA00D2CCD4 /* GenericDataSource */,
 				F9A105312AB31BD2008FA0DE /* QuranMajeed */,
 				F9D60D0E2A76C6AC00701635 /* Quiz */,
 				F9D60D372A78531600701635 /* UIViewRepresentable */,
