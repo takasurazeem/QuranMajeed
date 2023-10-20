@@ -19,7 +19,7 @@ struct WordForWordsMeaning: Identifiable, Hashable, Comparable, Equatable {
     
     var id: Double
     let word: String
-    var isSelected = true
+    var isSelected = false
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(word)

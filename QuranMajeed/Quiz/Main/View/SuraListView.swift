@@ -31,7 +31,7 @@ struct SuraListView: View {
                 presentationMode.wrappedValue.dismiss()
             }
         }
-        .navigationTitle("Select Sura")
+        .navigationTitle(Text("Select Surah", comment: "Sura is a noun, but can be translated in Urdu and Arabic and in some other languages as well."))
         .searchable(text: $searchText)
     }
 }

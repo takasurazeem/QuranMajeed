@@ -12,7 +12,7 @@ import QuranKit
 struct SelectedSurahView: View {
     @ObservedObject var viewModel: QuizView.ViewModel
     var body: some View {
-        Section("Selected Surah") {
+        Section(header: Text("Selected Surah")) {
             NavigationLink(value: viewModel.suras) {
                 VStack {
                     SuraNameView(for: viewModel.selectedSurah)
