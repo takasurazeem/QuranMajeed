@@ -66,8 +66,8 @@
 		F9D60D332A77E01300701635 /* PDFGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D322A77E01300701635 /* PDFGenerator.swift */; };
 		F9D60D362A7852F400701635 /* PDFDocument+Transferable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D352A7852F400701635 /* PDFDocument+Transferable.swift */; };
 		F9D60D392A78534B00701635 /* PDFKitView+UIViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D382A78534B00701635 /* PDFKitView+UIViewRepresentable.swift */; };
+		F9D90A4F2ACD850000CD8FD4 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F9D90A4E2ACD850000CD8FD4 /* Localizable.xcstrings */; };
 		F9F11E0C2AC4D66800100507 /* FlexibleViewContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F11E0B2AC4D66800100507 /* FlexibleViewContainerViewModel.swift */; };
-		F9F11E0E2AC4D6A200100507 /* FlexibleViewContainerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F11E0D2AC4D6A200100507 /* FlexibleViewContainerSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,8 +94,9 @@
 		F918394C2AB7B69900E4D45B /* SuraNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuraNameView.swift; sourceTree = "<group>"; };
 		F91839612AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingAnalyticsLibrary.swift; sourceTree = "<group>"; };
 		F91839652AB7D98D00E4D45B /* VerseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseListView.swift; sourceTree = "<group>"; };
+		F936509C2AE1FB3C007773CE /* GenericDataSource */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GenericDataSource; path = ../../../../Documents/GitHub/GenericDataSource; sourceTree = "<group>"; };
 		F94C11C32AB2F962004BAD10 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
-		F950FAD82AB4BA0000CB45B5 /* QuranMajeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuranMajeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F950FAD82AB4BA0000CB45B5 /* Al-TanzeelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Al-TanzeelTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F950FAE12AB4BA6400CB45B5 /* QuranMajeedTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuranMajeedTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		F950FAE22AB4BA6400CB45B5 /* SurasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurasTests.swift; sourceTree = "<group>"; };
 		F952CFC82A90273C0039478F /* Quran_ur.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Quran_ur.json; sourceTree = "<group>"; };
@@ -103,8 +104,6 @@
 		F952CFCB2A90425D0039478F /* Jameel Noori Nastaleeq Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jameel Noori Nastaleeq Regular.ttf"; sourceTree = "<group>"; };
 		F952CFD12A96D6BA0039478F /* String+size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+size.swift"; sourceTree = "<group>"; };
 		F952CFD32A96D6E50039478F /* NSAttributedString+size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+size.swift"; sourceTree = "<group>"; };
-		F96002A82ABA48C7008C16D5 /* GenericDataSource */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GenericDataSource; path = ../../../../Documents/GitHub/GenericDataSource; sourceTree = "<group>"; };
-		F96002A92ABA4FD0008C16D5 /* quran-ios */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "quran-ios"; path = "../../../../Documents/GitHub/quran-ios"; sourceTree = "<group>"; };
 		F96447792AB454F200DB5412 /* QuranRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranRepository.swift; sourceTree = "<group>"; };
 		F964477B2AB4561900DB5412 /* MainQuranRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQuranRepository.swift; sourceTree = "<group>"; };
 		F964477E2AB457AE00DB5412 /* QuranService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranService.swift; sourceTree = "<group>"; };
@@ -119,7 +118,7 @@
 		F992EBA62AB3CC1A00649632 /* ScheherazadeNew-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScheherazadeNew-SemiBold.ttf"; sourceTree = "<group>"; };
 		F992EBA72AB3CC1A00649632 /* ScheherazadeNew-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScheherazadeNew-Bold.ttf"; sourceTree = "<group>"; };
 		F992EBA82AB3CC1A00649632 /* ScheherazadeNew-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScheherazadeNew-Medium.ttf"; sourceTree = "<group>"; };
-		F9D60CFD2A76C69D00701635 /* QuranMajeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuranMajeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9D60CFD2A76C69D00701635 /* Al-Tanzeel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Al-Tanzeel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D60D002A76C69D00701635 /* QuranQuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranQuizApp.swift; sourceTree = "<group>"; };
 		F9D60D042A76C69E00701635 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9D60D072A76C69E00701635 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -135,8 +134,8 @@
 		F9D60D322A77E01300701635 /* PDFGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFGenerator.swift; sourceTree = "<group>"; };
 		F9D60D352A7852F400701635 /* PDFDocument+Transferable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFDocument+Transferable.swift"; sourceTree = "<group>"; };
 		F9D60D382A78534B00701635 /* PDFKitView+UIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFKitView+UIViewRepresentable.swift"; sourceTree = "<group>"; };
+		F9D90A4E2ACD850000CD8FD4 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F9F11E0B2AC4D66800100507 /* FlexibleViewContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleViewContainerViewModel.swift; sourceTree = "<group>"; };
-		F9F11E0D2AC4D6A200100507 /* FlexibleViewContainerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleViewContainerSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,8 +312,8 @@
 		F9D60CFE2A76C69D00701635 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F9D60CFD2A76C69D00701635 /* QuranMajeed.app */,
-				F950FAD82AB4BA0000CB45B5 /* QuranMajeedTests.xctest */,
+				F9D60CFD2A76C69D00701635 /* Al-Tanzeel.app */,
+				F950FAD82AB4BA0000CB45B5 /* Al-TanzeelTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -322,8 +321,7 @@
 		F9D60CFF2A76C69D00701635 /* QuranMajeed */ = {
 			isa = PBXGroup;
 			children = (
-				F96002A92ABA4FD0008C16D5 /* quran-ios */,
-				F96002A82ABA48C7008C16D5 /* GenericDataSource */,
+				F936509C2AE1FB3C007773CE /* GenericDataSource */,
 				F9A105312AB31BD2008FA0DE /* QuranMajeed */,
 				F9D60D0E2A76C6AC00701635 /* Quiz */,
 				F9D60D372A78531600701635 /* UIViewRepresentable */,
@@ -335,6 +333,7 @@
 				F9D60D242A76C6EF00701635 /* fonts */,
 				F9D60D042A76C69E00701635 /* Assets.xcassets */,
 				F9D60D062A76C69E00701635 /* Preview Content */,
+				F9D90A4E2ACD850000CD8FD4 /* Localizable.xcstrings */,
 			);
 			path = QuranMajeed;
 			sourceTree = "<group>";
@@ -471,7 +470,6 @@
 			children = (
 				F91766492AC3A3DC00792D2F /* _FlexibleView.swift */,
 				F91766482AC3A3DC00792D2F /* FlexibleViewContainer.swift */,
-				F9F11E0D2AC4D6A200100507 /* FlexibleViewContainerSettings.swift */,
 				F91766472AC3A3DC00792D2F /* FlexibleView.swift */,
 				F917664A2AC3A3DC00792D2F /* SizeReader.swift */,
 			);
@@ -489,9 +487,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F950FAD72AB4BA0000CB45B5 /* QuranMajeedTests */ = {
+		F950FAD72AB4BA0000CB45B5 /* Al-TanzeelTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F950FADE2AB4BA0000CB45B5 /* Build configuration list for PBXNativeTarget "QuranMajeedTests" */;
+			buildConfigurationList = F950FADE2AB4BA0000CB45B5 /* Build configuration list for PBXNativeTarget "Al-TanzeelTests" */;
 			buildPhases = (
 				F950FAD42AB4BA0000CB45B5 /* Sources */,
 				F950FAD52AB4BA0000CB45B5 /* Frameworks */,
@@ -502,14 +500,14 @@
 			dependencies = (
 				F950FADD2AB4BA0000CB45B5 /* PBXTargetDependency */,
 			);
-			name = QuranMajeedTests;
+			name = "Al-TanzeelTests";
 			productName = QuranMajeedTests;
-			productReference = F950FAD82AB4BA0000CB45B5 /* QuranMajeedTests.xctest */;
+			productReference = F950FAD82AB4BA0000CB45B5 /* Al-TanzeelTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F9D60CFC2A76C69D00701635 /* QuranMajeed */ = {
+		F9D60CFC2A76C69D00701635 /* Al-Tanzeel */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F9D60D0B2A76C69E00701635 /* Build configuration list for PBXNativeTarget "QuranMajeed" */;
+			buildConfigurationList = F9D60D0B2A76C69E00701635 /* Build configuration list for PBXNativeTarget "Al-Tanzeel" */;
 			buildPhases = (
 				F9D60CF92A76C69D00701635 /* Sources */,
 				F9D60CFA2A76C69D00701635 /* Frameworks */,
@@ -519,7 +517,7 @@
 			);
 			dependencies = (
 			);
-			name = QuranMajeed;
+			name = "Al-Tanzeel";
 			packageProductDependencies = (
 				763539CF2AB7943600CC27FD /* QuranKit */,
 				763539D42AB7975500CC27FD /* ReadingService */,
@@ -534,7 +532,7 @@
 				F918395E2AB7CDA700E4D45B /* AppStructureFeature */,
 			);
 			productName = QuranQuiz;
-			productReference = F9D60CFD2A76C69D00701635 /* QuranMajeed.app */;
+			productReference = F9D60CFD2A76C69D00701635 /* Al-Tanzeel.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -546,6 +544,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
+				ORGANIZATIONNAME = Islam;
 				TargetAttributes = {
 					F950FAD72AB4BA0000CB45B5 = {
 						CreatedOnToolsVersion = 15.0;
@@ -557,13 +556,16 @@
 					};
 				};
 			};
-			buildConfigurationList = F9D60CF82A76C69D00701635 /* Build configuration list for PBXProject "QuranMajeed" */;
+			buildConfigurationList = F9D60CF82A76C69D00701635 /* Build configuration list for PBXProject "Al-Tanzeel" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ar,
+				ur,
+				"ur-Arab-PK",
 			);
 			mainGroup = F9D60CF42A76C69D00701635;
 			packageReferences = (
@@ -573,8 +575,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F9D60CFC2A76C69D00701635 /* QuranMajeed */,
-				F950FAD72AB4BA0000CB45B5 /* QuranMajeedTests */,
+				F9D60CFC2A76C69D00701635 /* Al-Tanzeel */,
+				F950FAD72AB4BA0000CB45B5 /* Al-TanzeelTests */,
 			);
 		};
 /* End PBXProject section */
@@ -603,6 +605,7 @@
 				F94C11C12AB2986D004BAD10 /* Jameel Noori Nastaleeq Regular.ttf in Resources */,
 				F992EBA92AB3CC1A00649632 /* ScheherazadeNew-Regular.ttf in Resources */,
 				F952CFC92A90273C0039478F /* Quran_ur.json in Resources */,
+				F9D90A4F2ACD850000CD8FD4 /* Localizable.xcstrings in Resources */,
 				F9D60D052A76C69E00701635 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -637,7 +640,6 @@
 				F952CFD42A96D6E50039478F /* NSAttributedString+size.swift in Sources */,
 				F96447852AB466CC00DB5412 /* QuranProvider.swift in Sources */,
 				F9D60D152A76C6AC00701635 /* QuizViewModel.swift in Sources */,
-				F9F11E0E2AC4D6A200100507 /* FlexibleViewContainerSettings.swift in Sources */,
 				F9D60D332A77E01300701635 /* PDFGenerator.swift in Sources */,
 				F9D60D172A76C6AC00701635 /* QuizView.swift in Sources */,
 				F91839622AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift in Sources */,
@@ -666,7 +668,7 @@
 /* Begin PBXTargetDependency section */
 		F950FADD2AB4BA0000CB45B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F9D60CFC2A76C69D00701635 /* QuranMajeed */;
+			target = F9D60CFC2A76C69D00701635 /* Al-Tanzeel */;
 			targetProxy = F950FADC2AB4BA0000CB45B5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -692,7 +694,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuranMajeed.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/QuranMajeed";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Al-Tanzeel.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Al-Tanzeel";
 			};
 			name = Debug;
 		};
@@ -714,7 +716,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "QuranMajeedTests/QuranMajeedTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuranMajeed.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/QuranMajeed";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Al-Tanzeel.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Al-Tanzeel";
 			};
 			name = Release;
 		};
@@ -723,6 +725,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -770,7 +773,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -785,6 +788,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -826,7 +830,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -844,7 +848,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"QuranMajeed/Preview Content\"";
-				DEVELOPMENT_TEAM = E2D87XL9X7;
+				DEVELOPMENT_TEAM = 95B9YTC3G2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QuranMajeed/Info.plist;
@@ -874,7 +878,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"QuranMajeed/Preview Content\"";
-				DEVELOPMENT_TEAM = E2D87XL9X7;
+				DEVELOPMENT_TEAM = 95B9YTC3G2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QuranMajeed/Info.plist;
@@ -899,7 +903,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F950FADE2AB4BA0000CB45B5 /* Build configuration list for PBXNativeTarget "QuranMajeedTests" */ = {
+		F950FADE2AB4BA0000CB45B5 /* Build configuration list for PBXNativeTarget "Al-TanzeelTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F950FADF2AB4BA0000CB45B5 /* Debug */,
@@ -908,7 +912,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F9D60CF82A76C69D00701635 /* Build configuration list for PBXProject "QuranMajeed" */ = {
+		F9D60CF82A76C69D00701635 /* Build configuration list for PBXProject "Al-Tanzeel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F9D60D092A76C69E00701635 /* Debug */,
@@ -917,7 +921,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F9D60D0B2A76C69E00701635 /* Build configuration list for PBXNativeTarget "QuranMajeed" */ = {
+		F9D60D0B2A76C69E00701635 /* Build configuration list for PBXNativeTarget "Al-Tanzeel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F9D60D0C2A76C69E00701635 /* Debug */,

@@ -6,6 +6,8 @@
 //
 
 import PDFKit
+import Foundation
+import SwiftUI
 
 class PDFGenerator {
     init(
@@ -237,11 +239,11 @@ class PDFGenerator {
     let theOpeningText = "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ"
     let rightHeadingText = "امن ترجمةالقرآن کلاس"
     let leftHeadingText = "جامع مسجد امن واپڈا ٹاؤن گوجراںوالہ"
-    let belowOpeningText = "سلسلہ وار ٹیسٹ"
-    let studentNameText = "نام طالب علم:"
+    let belowOpeningText = NSLocalizedString("Weekly Test", comment: "Middle heading")
+    let studentNameText = NSLocalizedString("Name: ____________________", comment: "") // "نام طالب علم:"
     let nameUnderScores = Array(repeating: "_", count: 20).reduce("", +)
-    let dateText = "بتاریخ:"
-    let translateFollowingAyahsText = "درج زیل آیات ترجمہ لکھیں:"
+    let dateText = NSLocalizedString("Date:", comment: "")
+    let translateFollowingAyahsText  = NSLocalizedString("Translate the following verses", comment: "")
     
     // MARK: - MetaData
     let pdfMetaData: [CFString: String]
@@ -350,33 +352,28 @@ extension PDFGenerator {
             ),
             withAttributes: nameFieldAttributes
         )
-        nameUnderScores.draw(
-            at: CGPoint(
-                x: pageWidth - studentNameTextWidth - (nameUnderScores.width(usingFont: .boldSystemFont(ofSize: 14)) * 1.10),
-                y: studentNameRowYPos
-            ),
-            withAttributes: nameFieldAttributes
-        )
-        dateText.draw(
-            at: CGPoint(
-                x: dateTextXPos,
-                y: studentNameRowYPos
-            ),
-            withAttributes: nameFieldAttributes
-        )
     }
-    
+    /*
+     "\(dateText) \(date)".draw(
+         at: CGPoint(
+             x: dateTextXPos,
+             y: studentNameRowYPos
+         ),
+         withAttributes: nameFieldAttributes
+     )
+     */
     private func drawDateField() {
-        let dateFieldAttributes = [
-            NSAttributedString.Key.font: nameAndDateTextFont,
-            NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue
-        ] as [NSAttributedString.Key : Any]
-        date.draw(
+        let fullText = "\(dateText) \(date)"
+        let dateRange = (fullText as NSString).range(of: date)
+        let attributedString = NSMutableAttributedString(string: fullText)
+        attributedString.addAttribute(.font, value: nameAndDateTextFont, range: NSMakeRange(0, attributedString.length))
+        attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: dateRange)
+
+        attributedString.draw(
             at: CGPoint(
                 x: 15,
                 y: studentNameRowYPos
-            ),
-            withAttributes: dateFieldAttributes
+            )
         )
     }
     
