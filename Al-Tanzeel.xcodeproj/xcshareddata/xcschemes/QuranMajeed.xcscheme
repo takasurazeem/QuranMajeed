@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F9D60CFC2A76C69D00701635"
-               BuildableName = "QuranMajeed.app"
-               BlueprintName = "QuranMajeed"
-               ReferencedContainer = "container:QuranMajeed.xcodeproj">
+               BuildableName = "Al-Tanzeel.app"
+               BlueprintName = "Al-Tanzeel"
+               ReferencedContainer = "container:Al-Tanzeel.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,9 +35,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F950FAD72AB4BA0000CB45B5"
-               BuildableName = "QuranMajeedTests.xctest"
-               BlueprintName = "QuranMajeedTests"
-               ReferencedContainer = "container:QuranMajeed.xcodeproj">
+               BuildableName = "Al-TanzeelTests.xctest"
+               BlueprintName = "Al-TanzeelTests"
+               ReferencedContainer = "container:Al-Tanzeel.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F9D60CFC2A76C69D00701635"
-            BuildableName = "QuranMajeed.app"
-            BlueprintName = "QuranMajeed"
-            ReferencedContainer = "container:QuranMajeed.xcodeproj">
+            BuildableName = "Al-Tanzeel.app"
+            BlueprintName = "Al-Tanzeel"
+            ReferencedContainer = "container:Al-Tanzeel.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -74,9 +74,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F9D60CFC2A76C69D00701635"
-            BuildableName = "QuranMajeed.app"
-            BlueprintName = "QuranMajeed"
-            ReferencedContainer = "container:QuranMajeed.xcodeproj">
+            BuildableName = "Al-Tanzeel.app"
+            BlueprintName = "Al-Tanzeel"
+            ReferencedContainer = "container:Al-Tanzeel.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
