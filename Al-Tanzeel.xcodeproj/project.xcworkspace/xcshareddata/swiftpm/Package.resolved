@@ -66,7 +66,7 @@
       },
       {
         "package": "WhatsNewKit",
-        "repositoryURL": "https://github.com/SvenTiigi/WhatsNewKit.git",
+        "repositoryURL": "https://github.com/SvenTiigi/WhatsNewKit",
         "state": {
           "branch": null,
           "revision": "92a9d6f5f6754aba0df972514fd7686f1de03bcc",
