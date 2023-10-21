@@ -28,7 +28,7 @@ struct SelectTranslationVersesView: View {
                     Spacer(minLength: AppStyle.Spacing.space16)
                     ChevronView()
                 }
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: AppStyle.Spacing.space4) {
                     Divider()
                         .background(Color.accentColor)
                     Text(
