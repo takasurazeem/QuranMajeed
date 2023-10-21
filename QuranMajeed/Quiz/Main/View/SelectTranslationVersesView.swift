@@ -17,8 +17,17 @@ struct SelectTranslationVersesView: View {
                 selectedVerses: $viewModel.selectedVersesForTranslation
             )
         } label: {
-            
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("Selected verse")
+                        .font(.caption)
+                    Text(viewModel.selectedVerse.text)
+                }
+                Spacer(minLength: AppStyle.Spacing.space16)
+                ChevronView()
+            }
         }
+        .roundedCornersView()
         /*DisclosureGroup(
             "Select verses for translation",
             isExpanded: $viewModel.expandSelectVersesForTranslationSection
@@ -55,5 +64,26 @@ struct SelectTranslationVersesView: View {
             }
         }
          */
+    }
+}
+
+#Preview {
+    QuizView(
+        viewModel: QuizView.ViewModel(
+            theQuranRepository: try! AppDependencyContainer
+                .shared
+                .theQuranDependencyContainer
+                .makeQuranRepository()
+        )
+    )
+}
+
+struct ChevronView: View {
+    @Environment(\.layoutDirection) var layoutDirection
+    var body: some View {
+        Image(systemName: "chevron.\( layoutDirection == .rightToLeft ? "left" : "right")")
+//            .resizable()
+//            .frame(width: 24, height: 24)
+            .foregroundStyle(Color.accentColor)
     }
 }

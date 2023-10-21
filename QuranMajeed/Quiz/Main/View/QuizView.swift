@@ -14,12 +14,12 @@ struct QuizView: View {
     @StateObject var viewModel: ViewModel
     var body: some View {
         NavigationStack {
-            VStack {
-                    SelectedSurahView(viewModel: viewModel)
-                // Select verses for translation
-//                SelectTranslationVersesView(viewModel: viewModel)
-//                SelectVersesForWordsMeaningView(viewModel: viewModel)
-                Spacer()
+            ScrollView {
+                SelectedSurahView(viewModel: viewModel)
+                // MARK: - Select verses for translation
+                SelectTranslationVersesView(viewModel: viewModel)
+                // MARK: Select Verses For Words Meaning
+                // SelectVersesForWordsMeaningView(viewModel: viewModel)
             }
             .padding(.horizontal, AppStyle.Spacing.space16)
             .navigationTitle("Prepare Quiz")
@@ -43,7 +43,7 @@ struct QuizView: View {
                                     verses: viewModel.quizVerses,
                                     words: viewModel.wordsForWordsMeaning
                                 )
-                                .generateQuiz()) {
+                                    .generateQuiz()) {
                                     ShareLink(item: document, preview: SharePreview("PDF"))
                                 }
                             }
@@ -60,9 +60,9 @@ struct QuizView: View {
                 }
                 
                 // MARK: - Left toolbar
-//                    ToolbarItem(placement: .topBarLeading) {
-//                        print("Top left")
-//                    }
+                //                    ToolbarItem(placement: .topBarLeading) {
+                //                        print("Top left")
+                //                    }
             }
             .task {
                 await viewModel.start()
@@ -98,7 +98,7 @@ struct PulseEffect<S: Shape>: ViewModifier {
             .easeIn(duration: 1)
             .repeatCount(8, autoreverses: false)
     }
-
+    
     func body(content: Content) -> some View {
         content
             .background(
@@ -109,12 +109,12 @@ struct PulseEffect<S: Shape>: ViewModifier {
                         .opacity(self.isOn ? 0 : 1)
                     shape
                         .stroke(Color.accentColor)
-            })
+                })
             .onAppear {
                 withAnimation(self.animation) {
                     self.isOn = true
                 }
-        }
+            }
     }
 }
 

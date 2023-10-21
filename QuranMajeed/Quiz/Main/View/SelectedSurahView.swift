@@ -21,11 +21,7 @@ struct SelectedSurahView: View {
                     SuraNameView(for: viewModel.selectedSurah)
                 }
                 Spacer(minLength: AppStyle.Spacing.space16)
-                Image(systemName: "chevron.right.circle")
-                    .resizable()
-                    .frame(width: 24, height: 24)
-                    .foregroundStyle(Color.accentColor)
-                
+                ChevronView()
             }
         }
         .navigationDestination(for: [Sura].self) { suras in
@@ -34,9 +30,7 @@ struct SelectedSurahView: View {
                 selectedSura: $viewModel.selectedSurah
             )
         }
-        .padding(AppStyle.Spacing.space16)
-        .background(Color.gray.opacity(0.18))
-        .clipShape(RoundedRectangle(cornerRadius: 8.0, style: .continuous))
+        .roundedCornersView()
     }
 }
 
@@ -49,4 +43,20 @@ struct SelectedSurahView: View {
                 .makeQuranRepository()
         )
     )
+}
+
+struct  RoundedCornersModifier: ViewModifier {
+    
+    func body(content: Content) -> some View {
+        content
+            .padding(AppStyle.Spacing.space16)
+            .background(Color.gray.opacity(0.18))
+            .clipShape(RoundedRectangle(cornerRadius: 8.0, style: .continuous))
+    }
+}
+
+extension View {
+    func roundedCornersView() -> some View {
+        modifier(RoundedCornersModifier())
+    }
 }

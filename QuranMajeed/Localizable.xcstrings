@@ -188,6 +188,9 @@
         }
       }
     },
+    "Selected verse" : {
+
+    },
     "Selected verses for translation" : {
       "extractionState" : "stale",
       "localizations" : {
