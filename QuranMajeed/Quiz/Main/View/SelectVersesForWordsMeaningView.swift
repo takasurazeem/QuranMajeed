@@ -39,27 +39,6 @@ struct SelectVersesForWordsMeaningView: View {
             }
         }
         .roundedCornersView()
-
-        /*
-        DisclosureGroup(
-            "Select verses for words meaning",
-            isExpanded: $viewModel.expandSelectVersesForWordsMeaningSection
-        ) {
-            NavigationLink {
-                VerseListView(
-                    allVerses: viewModel.versesOfSelectedSura,
-                    selectedVerses: $viewModel.selectedVersesForWordsMeaning
-                )
-            } label: {
-                HStack {
-                    Spacer()
-                    Text(viewModel.selectedVerse.text)
-                    Spacer()
-                }
-            }
-            .deleteDisabled(true)
-        }
-        */
     }
 }
 

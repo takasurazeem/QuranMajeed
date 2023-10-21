@@ -32,6 +32,8 @@
 		F91839622AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91839612AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift */; };
 		F91839662AB7D98D00E4D45B /* VerseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91839652AB7D98D00E4D45B /* VerseListView.swift */; };
 		F94514C82AE461330042F169 /* WordsMeaningsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94514C72AE461330042F169 /* WordsMeaningsDetailsView.swift */; };
+		F94514CC2AE466550042F169 /* RoundedCornersModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94514CB2AE466550042F169 /* RoundedCornersModifier.swift */; };
+		F94514CF2AE4668A0042F169 /* PulseEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94514CE2AE4668A0042F169 /* PulseEffect.swift */; };
 		F94C11BB2AB2986D004BAD10 /* pdms-saleem-quranfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D252A76C6EF00701635 /* pdms-saleem-quranfont.ttf */; };
 		F94C11BC2AB2986D004BAD10 /* NotoNastaliqUrdu-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F952CFCA2A903FFB0039478F /* NotoNastaliqUrdu-VariableFont_wght.ttf */; };
 		F94C11BD2AB2986D004BAD10 /* diwani-bent.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D262A76C6EF00701635 /* diwani-bent.ttf */; };
@@ -97,6 +99,8 @@
 		F91839612AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingAnalyticsLibrary.swift; sourceTree = "<group>"; };
 		F91839652AB7D98D00E4D45B /* VerseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseListView.swift; sourceTree = "<group>"; };
 		F94514C72AE461330042F169 /* WordsMeaningsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsMeaningsDetailsView.swift; sourceTree = "<group>"; };
+		F94514CB2AE466550042F169 /* RoundedCornersModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersModifier.swift; sourceTree = "<group>"; };
+		F94514CE2AE4668A0042F169 /* PulseEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseEffect.swift; sourceTree = "<group>"; };
 		F94C11C32AB2F962004BAD10 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
 		F950FAD82AB4BA0000CB45B5 /* Al-TanzeelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Al-TanzeelTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F950FAE12AB4BA6400CB45B5 /* QuranMajeedTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuranMajeedTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -212,6 +216,30 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		F94514C92AE466300042F169 /* AppStyle */ = {
+			isa = PBXGroup;
+			children = (
+				F9A359322AE40E13002E8641 /* AppStyle.swift */,
+			);
+			path = AppStyle;
+			sourceTree = "<group>";
+		};
+		F94514CA2AE466410042F169 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				F94514CB2AE466550042F169 /* RoundedCornersModifier.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		F94514CD2AE466840042F169 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				F94514CE2AE4668A0042F169 /* PulseEffect.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		F950FAD92AB4BA0000CB45B5 /* QuranMajeedTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,7 +333,9 @@
 		F9A359312AE40DFF002E8641 /* Style */ = {
 			isa = PBXGroup;
 			children = (
-				F9A359322AE40E13002E8641 /* AppStyle.swift */,
+				F94514CD2AE466840042F169 /* Animations */,
+				F94514CA2AE466410042F169 /* ViewModifiers */,
+				F94514C92AE466300042F169 /* AppStyle */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -649,6 +679,7 @@
 				F9D60D362A7852F400701635 /* PDFDocument+Transferable.swift in Sources */,
 				F9D60D1A2A76C6CA00701635 /* Bundle+Decode.swift in Sources */,
 				F918394D2AB7B69900E4D45B /* SuraNameView.swift in Sources */,
+				F94514CF2AE4668A0042F169 /* PulseEffect.swift in Sources */,
 				F952CFD42A96D6E50039478F /* NSAttributedString+size.swift in Sources */,
 				F96447852AB466CC00DB5412 /* QuranProvider.swift in Sources */,
 				F9D60D152A76C6AC00701635 /* QuizViewModel.swift in Sources */,
@@ -658,6 +689,7 @@
 				F91839622AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift in Sources */,
 				F9D60D012A76C69D00701635 /* QuranQuizApp.swift in Sources */,
 				F98C231B2ABE2C8E00FED70E /* UrduTranslation.swift in Sources */,
+				F94514CC2AE466550042F169 /* RoundedCornersModifier.swift in Sources */,
 				F917664D2AC3A3DC00792D2F /* _FlexibleView.swift in Sources */,
 				F917664B2AC3A3DC00792D2F /* FlexibleView.swift in Sources */,
 				F9D60D162A76C6AC00701635 /* Verse.swift in Sources */,
