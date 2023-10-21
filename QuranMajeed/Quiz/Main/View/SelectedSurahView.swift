@@ -36,12 +36,8 @@ struct SelectedSurahView: View {
                 .foregroundStyle(Color.accentColor)
         }
         .padding(AppStyle.Spacing.space16)
-//        .padding(.horizontal ,AppStyle.Spacing.space16)
-//        .padding(.vertical ,AppStyle.Spacing.space8)
-//        .border(.red)
         .background(Color.gray.opacity(0.18))
         .clipShape(RoundedRectangle(cornerRadius: 8.0, style: .continuous))
-//        .border(.red)
     }
 }
 
