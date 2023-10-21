@@ -19,7 +19,7 @@ struct QuizView: View {
                 // MARK: - Select verses for translation
                 SelectTranslationVersesView(viewModel: viewModel)
                 // MARK: Select Verses For Words Meaning
-                // SelectVersesForWordsMeaningView(viewModel: viewModel)
+                SelectVersesForWordsMeaningView(viewModel: viewModel)
             }
             .padding(.horizontal, AppStyle.Spacing.space16)
             .navigationTitle("Prepare Quiz")
@@ -72,17 +72,15 @@ struct QuizView: View {
 }
 
 
-struct QuizView_Previews: PreviewProvider {
-    static var previews: some View {
-        QuizView(
-            viewModel: QuizView.ViewModel(
-                theQuranRepository: try! AppDependencyContainer
-                    .shared
-                    .theQuranDependencyContainer
-                    .makeQuranRepository()
-            )
+#Preview {
+    QuizView(
+        viewModel: QuizView.ViewModel(
+            theQuranRepository: try! AppDependencyContainer
+                .shared
+                .theQuranDependencyContainer
+                .makeQuranRepository()
         )
-    }
+    )
 }
 
 
