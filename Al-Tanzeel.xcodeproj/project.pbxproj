@@ -137,7 +137,6 @@
 		F9D60D382A78534B00701635 /* PDFKitView+UIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFKitView+UIViewRepresentable.swift"; sourceTree = "<group>"; };
 		F9D90A4E2ACD850000CD8FD4 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F9F11E0B2AC4D66800100507 /* FlexibleViewContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleViewContainerViewModel.swift; sourceTree = "<group>"; };
-		F9F250162AE200BA00D2CCD4 /* GenericDataSource */ = {isa = PBXFileReference; lastKnownFileType = text; name = GenericDataSource; path = Packges/GenericDataSource; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,7 +331,6 @@
 			isa = PBXGroup;
 			children = (
 				F9A359312AE40DFF002E8641 /* Style */,
-				F9F250162AE200BA00D2CCD4 /* GenericDataSource */,
 				F9A105312AB31BD2008FA0DE /* QuranMajeed */,
 				F9D60D0E2A76C6AC00701635 /* Quiz */,
 				F9D60D372A78531600701635 /* UIViewRepresentable */,
@@ -949,8 +947,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/quran/quran-ios";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = revision;
+				revision = 3954626c8a2f209913aa9da8f60417cf99bce154;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

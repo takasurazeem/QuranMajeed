@@ -212,6 +212,7 @@
       }
     },
     "Selected verses for words meaning" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ur" : {
           "stringUnit" : {
@@ -262,6 +263,9 @@
           }
         }
       }
+    },
+    "Words selected from verses: %lld" : {
+
     }
   },
   "version" : "1.0"
