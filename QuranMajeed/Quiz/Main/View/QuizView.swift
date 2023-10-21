@@ -14,40 +14,55 @@ struct QuizView: View {
     @StateObject var viewModel: ViewModel
     var body: some View {
         NavigationStack {
-            VStack {
-                List {
-                    SelectedSurahView(viewModel: viewModel)
-                    SelectTranslationVersesView(viewModel: viewModel)
-                    SelectVersesForWordsMeaningView(viewModel: viewModel)
-                }
-                .navigationTitle("Prepare Quiz")
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink("PDF Preview") {
-                            PDFKitView(
-                                documentData: PDFGenerator(
+            ScrollView {
+                SelectedSurahView(viewModel: viewModel)
+                // MARK: - Select verses for translation
+                SelectTranslationVersesView(viewModel: viewModel)
+                // MARK: Select Verses For Words Meaning
+                SelectVersesForWordsMeaningView(viewModel: viewModel)
+            }
+            .padding(.horizontal, AppStyle.Spacing.space16)
+            .navigationTitle("Prepare Quiz")
+            .toolbar {
+                // MARK: - Right toolbar
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink {
+                        PDFKitView(
+                            documentData: PDFGenerator(
+                                verses: viewModel.quizVerses,
+                                words: viewModel.wordsForWordsMeaning
+                            )
+                            .generateQuiz()
+                        )
+                        .navigationTitle("PDF Preview")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .toolbar {
+                            // FIXME: - Not a good place to put it here. Move to a file of its own.
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                if let document = PDFDocument(data: PDFGenerator(
                                     verses: viewModel.quizVerses,
                                     words: viewModel.wordsForWordsMeaning
                                 )
-                                .generateQuiz()
-                            )
-                            .navigationTitle("PDF Preview")
-                            .navigationBarTitleDisplayMode(.inline)
-                            .toolbar {
-                                // FIXME: - Not a good place to put it here. Move to a file of its own.
-                                ToolbarItem(placement: .navigationBarTrailing) {
-                                    if let document = PDFDocument(data: PDFGenerator(
-                                        verses: viewModel.quizVerses,
-                                        words: viewModel.wordsForWordsMeaning
-                                    )
                                     .generateQuiz()) {
-                                        ShareLink(item: document, preview: SharePreview("PDF"))
-                                    }
+                                    ShareLink(item: document, preview: SharePreview("PDF"))
                                 }
                             }
                         }
+                    } label: {
+                        if #available(iOS 17, *), !viewModel.selectedVersesForTranslation.isEmpty {
+                            Image(systemName: "doc.viewfinder")
+                                .symbolEffect(.pulse)
+                        } else {
+                            Image(systemName: "doc.viewfinder")
+                                .pulse(RoundedRectangle(cornerRadius: 4))
+                        }
                     }
                 }
+                
+                // MARK: - Left toolbar
+                //                    ToolbarItem(placement: .topBarLeading) {
+                //                        print("Top left")
+                //                    }
             }
             .task {
                 await viewModel.start()
@@ -57,15 +72,13 @@ struct QuizView: View {
 }
 
 
-struct QuizView_Previews: PreviewProvider {
-    static var previews: some View {
-        QuizView(
-            viewModel: QuizView.ViewModel(
-                theQuranRepository: try! AppDependencyContainer
-                    .shared
-                    .theQuranDependencyContainer
-                    .makeQuranRepository()
-            )
+#Preview {
+    QuizView(
+        viewModel: QuizView.ViewModel(
+            theQuranRepository: try! AppDependencyContainer
+                .shared
+                .theQuranDependencyContainer
+                .makeQuranRepository()
         )
-    }
+    )
 }

@@ -11,19 +11,36 @@ import QuranKit
 /// Use the ``QuizView`` for the preview
 struct SelectedSurahView: View {
     @ObservedObject var viewModel: QuizView.ViewModel
+    
     var body: some View {
-        Section(header: Text("Selected Surah")) {
-            NavigationLink(value: viewModel.suras) {
-                VStack {
+        NavigationLink(value: viewModel.suras) {
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("Selected Surah")
+                        .font(.caption)
                     SuraNameView(for: viewModel.selectedSurah)
                 }
-            }
-            .navigationDestination(for: [Sura].self) { suras in
-                SuraListView(
-                    suras: suras,
-                    selectedSura: $viewModel.selectedSurah
-                )
+                Spacer(minLength: AppStyle.Spacing.space16)
+                ChevronView()
             }
         }
+        .navigationDestination(for: [Sura].self) { suras in
+            SuraListView(
+                suras: suras,
+                selectedSura: $viewModel.selectedSurah
+            )
+        }
+        .roundedCornersView()
     }
+}
+
+#Preview {
+    QuizView(
+        viewModel: QuizView.ViewModel(
+            theQuranRepository: try! AppDependencyContainer
+                .shared
+                .theQuranDependencyContainer
+                .makeQuranRepository()
+        )
+    )
 }
