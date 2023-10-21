@@ -17,14 +17,28 @@ struct SelectTranslationVersesView: View {
                 selectedVerses: $viewModel.selectedVersesForTranslation
             )
         } label: {
-            HStack {
-                VStack(alignment: .leading) {
-                    Text("Selected verse")
-                        .font(.caption)
-                    Text(viewModel.selectedVerse.text)
+            VStack(alignment: .leading) {
+                HStack {
+                    VStack(alignment: .leading, spacing: AppStyle.Spacing.space12) {
+                        Text("Select verse for translation")
+                            .font(.caption)
+                        Text(viewModel.selectedVerse.text)
+                            .font(.callout)
+                    }
+                    Spacer(minLength: AppStyle.Spacing.space16)
+                    ChevronView()
                 }
-                Spacer(minLength: AppStyle.Spacing.space16)
-                ChevronView()
+                VStack(alignment: .leading) {
+                    Divider()
+                        .background(Color.accentColor)
+                    Text(
+                        viewModel.selectedVersesForTranslation.isEmpty ? "Please tap on the row to select veress" : "Verses selected for translation: \(viewModel.selectedVersesForTranslation.count)"
+                    )
+                    .font(.footnote)
+                    .foregroundStyle(Color.accentColor.opacity(0.9))
+                    .padding(.top, AppStyle.Spacing.space4)
+                }
+                .padding(.top, AppStyle.Spacing.space8)
             }
         }
         .roundedCornersView()
