@@ -52,9 +52,11 @@ struct QuizView: View {
                         if #available(iOS 17, *), !viewModel.selectedVersesForTranslation.isEmpty {
                             Image(systemName: "doc.viewfinder")
                                 .symbolEffect(.pulse)
-                        } else {
+                        } else if !viewModel.selectedVersesForTranslation.isEmpty {
                             Image(systemName: "doc.viewfinder")
                                 .pulse(RoundedRectangle(cornerRadius: 4))
+                        } else {
+                            Image(systemName: "doc.viewfinder")
                         }
                     }
                 }
