@@ -140,6 +140,7 @@
       }
     },
     "Select verses for translation" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ur" : {
           "stringUnit" : {
@@ -188,6 +189,7 @@
       }
     },
     "Selected verses for translation" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ur" : {
           "stringUnit" : {

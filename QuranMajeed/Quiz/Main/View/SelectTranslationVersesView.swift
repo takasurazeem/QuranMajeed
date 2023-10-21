@@ -11,7 +11,15 @@ import SwiftUI
 struct SelectTranslationVersesView: View {
     @ObservedObject var viewModel: QuizView.ViewModel
     var body: some View {
-        DisclosureGroup(
+        NavigationLink {
+            VerseListView(
+                allVerses: viewModel.versesOfSelectedSura,
+                selectedVerses: $viewModel.selectedVersesForTranslation
+            )
+        } label: {
+            
+        }
+        /*DisclosureGroup(
             "Select verses for translation",
             isExpanded: $viewModel.expandSelectVersesForTranslationSection
         ) {
@@ -46,5 +54,6 @@ struct SelectTranslationVersesView: View {
                 }
             }
         }
+         */
     }
 }

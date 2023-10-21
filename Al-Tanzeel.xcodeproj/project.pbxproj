@@ -55,6 +55,7 @@
 		F992EBAA2AB3CC1A00649632 /* ScheherazadeNew-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F992EBA62AB3CC1A00649632 /* ScheherazadeNew-SemiBold.ttf */; };
 		F992EBAB2AB3CC1A00649632 /* ScheherazadeNew-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F992EBA72AB3CC1A00649632 /* ScheherazadeNew-Bold.ttf */; };
 		F992EBAC2AB3CC1A00649632 /* ScheherazadeNew-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F992EBA82AB3CC1A00649632 /* ScheherazadeNew-Medium.ttf */; };
+		F9A359332AE40E13002E8641 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A359322AE40E13002E8641 /* AppStyle.swift */; };
 		F9D60D012A76C69D00701635 /* QuranQuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D60D002A76C69D00701635 /* QuranQuizApp.swift */; };
 		F9D60D052A76C69E00701635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D042A76C69E00701635 /* Assets.xcassets */; };
 		F9D60D082A76C69E00701635 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D072A76C69E00701635 /* Preview Assets.xcassets */; };
@@ -117,6 +118,7 @@
 		F992EBA62AB3CC1A00649632 /* ScheherazadeNew-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScheherazadeNew-SemiBold.ttf"; sourceTree = "<group>"; };
 		F992EBA72AB3CC1A00649632 /* ScheherazadeNew-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScheherazadeNew-Bold.ttf"; sourceTree = "<group>"; };
 		F992EBA82AB3CC1A00649632 /* ScheherazadeNew-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ScheherazadeNew-Medium.ttf"; sourceTree = "<group>"; };
+		F9A359322AE40E13002E8641 /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		F9D60CFD2A76C69D00701635 /* Al-Tanzeel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Al-Tanzeel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D60D002A76C69D00701635 /* QuranQuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranQuizApp.swift; sourceTree = "<group>"; };
 		F9D60D042A76C69E00701635 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -299,6 +301,14 @@
 			path = QuranMajeed;
 			sourceTree = "<group>";
 		};
+		F9A359312AE40DFF002E8641 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				F9A359322AE40E13002E8641 /* AppStyle.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
 		F9D60CF42A76C69D00701635 = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +331,7 @@
 		F9D60CFF2A76C69D00701635 /* QuranMajeed */ = {
 			isa = PBXGroup;
 			children = (
+				F9A359312AE40DFF002E8641 /* Style */,
 				F9F250162AE200BA00D2CCD4 /* GenericDataSource */,
 				F9A105312AB31BD2008FA0DE /* QuranMajeed */,
 				F9D60D0E2A76C6AC00701635 /* Quiz */,
@@ -640,6 +651,7 @@
 				F952CFD42A96D6E50039478F /* NSAttributedString+size.swift in Sources */,
 				F96447852AB466CC00DB5412 /* QuranProvider.swift in Sources */,
 				F9D60D152A76C6AC00701635 /* QuizViewModel.swift in Sources */,
+				F9A359332AE40E13002E8641 /* AppStyle.swift in Sources */,
 				F9D60D332A77E01300701635 /* PDFGenerator.swift in Sources */,
 				F9D60D172A76C6AC00701635 /* QuizView.swift in Sources */,
 				F91839622AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift in Sources */,
