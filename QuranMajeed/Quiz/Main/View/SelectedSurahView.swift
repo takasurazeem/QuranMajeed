@@ -13,27 +13,26 @@ struct SelectedSurahView: View {
     @ObservedObject var viewModel: QuizView.ViewModel
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text("Selected Surah")
-                    .font(.caption)
-                NavigationLink(value: viewModel.suras) {
-                    VStack {
-                        SuraNameView(for: viewModel.selectedSurah)
-                    }
+        NavigationLink(value: viewModel.suras) {
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("Selected Surah")
+                        .font(.caption)
+                    SuraNameView(for: viewModel.selectedSurah)
                 }
-                .navigationDestination(for: [Sura].self) { suras in
-                    SuraListView(
-                        suras: suras,
-                        selectedSura: $viewModel.selectedSurah
-                    )
-                }
+                Spacer(minLength: AppStyle.Spacing.space16)
+                Image(systemName: "chevron.right.circle")
+                    .resizable()
+                    .frame(width: 24, height: 24)
+                    .foregroundStyle(Color.accentColor)
+                
             }
-            Spacer(minLength: AppStyle.Spacing.space16)
-            Image(systemName: "chevron.right.circle")
-                .resizable()
-                .frame(width: 28, height: 28)
-                .foregroundStyle(Color.accentColor)
+        }
+        .navigationDestination(for: [Sura].self) { suras in
+            SuraListView(
+                suras: suras,
+                selectedSura: $viewModel.selectedSurah
+            )
         }
         .padding(AppStyle.Spacing.space16)
         .background(Color.gray.opacity(0.18))
