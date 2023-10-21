@@ -34,6 +34,7 @@
 		F94514C82AE461330042F169 /* WordsMeaningsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94514C72AE461330042F169 /* WordsMeaningsDetailsView.swift */; };
 		F94514CC2AE466550042F169 /* RoundedCornersModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94514CB2AE466550042F169 /* RoundedCornersModifier.swift */; };
 		F94514CF2AE4668A0042F169 /* PulseEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94514CE2AE4668A0042F169 /* PulseEffect.swift */; };
+		F94514D22AE46A930042F169 /* WhatToTest.en-US.txt in Resources */ = {isa = PBXBuildFile; fileRef = F94514D12AE46A930042F169 /* WhatToTest.en-US.txt */; };
 		F94C11BB2AB2986D004BAD10 /* pdms-saleem-quranfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D252A76C6EF00701635 /* pdms-saleem-quranfont.ttf */; };
 		F94C11BC2AB2986D004BAD10 /* NotoNastaliqUrdu-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F952CFCA2A903FFB0039478F /* NotoNastaliqUrdu-VariableFont_wght.ttf */; };
 		F94C11BD2AB2986D004BAD10 /* diwani-bent.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D262A76C6EF00701635 /* diwani-bent.ttf */; };
@@ -101,6 +102,7 @@
 		F94514C72AE461330042F169 /* WordsMeaningsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsMeaningsDetailsView.swift; sourceTree = "<group>"; };
 		F94514CB2AE466550042F169 /* RoundedCornersModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersModifier.swift; sourceTree = "<group>"; };
 		F94514CE2AE4668A0042F169 /* PulseEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseEffect.swift; sourceTree = "<group>"; };
+		F94514D12AE46A930042F169 /* WhatToTest.en-US.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "WhatToTest.en-US.txt"; sourceTree = "<group>"; };
 		F94C11C32AB2F962004BAD10 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
 		F950FAD82AB4BA0000CB45B5 /* Al-TanzeelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Al-TanzeelTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F950FAE12AB4BA6400CB45B5 /* QuranMajeedTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuranMajeedTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -240,6 +242,14 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
+		F94514D02AE46A410042F169 /* TestFlight */ = {
+			isa = PBXGroup;
+			children = (
+				F94514D12AE46A930042F169 /* WhatToTest.en-US.txt */,
+			);
+			path = TestFlight;
+			sourceTree = "<group>";
+		};
 		F950FAD92AB4BA0000CB45B5 /* QuranMajeedTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,6 +372,7 @@
 		F9D60CFF2A76C69D00701635 /* QuranMajeed */ = {
 			isa = PBXGroup;
 			children = (
+				F94514D02AE46A410042F169 /* TestFlight */,
 				F9A359312AE40DFF002E8641 /* Style */,
 				F9A105312AB31BD2008FA0DE /* QuranMajeed */,
 				F9D60D0E2A76C6AC00701635 /* Quiz */,
@@ -646,6 +657,7 @@
 				F94C11C22AB2986D004BAD10 /* UthmanTN1Ver10.otf in Resources */,
 				F94C11C12AB2986D004BAD10 /* Jameel Noori Nastaleeq Regular.ttf in Resources */,
 				F992EBA92AB3CC1A00649632 /* ScheherazadeNew-Regular.ttf in Resources */,
+				F94514D22AE46A930042F169 /* WhatToTest.en-US.txt in Resources */,
 				F952CFC92A90273C0039478F /* Quran_ur.json in Resources */,
 				F9D90A4F2ACD850000CD8FD4 /* Localizable.xcstrings in Resources */,
 				F9D60D052A76C69E00701635 /* Assets.xcassets in Resources */,
