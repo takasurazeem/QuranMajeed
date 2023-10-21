@@ -353,6 +353,7 @@
 		F9D60CF42A76C69D00701635 = {
 			isa = PBXGroup;
 			children = (
+				F94514D02AE46A410042F169 /* TestFlight */,
 				F9D60CFF2A76C69D00701635 /* QuranMajeed */,
 				F950FAD92AB4BA0000CB45B5 /* QuranMajeedTests */,
 				F9D60CFE2A76C69D00701635 /* Products */,
@@ -372,7 +373,6 @@
 		F9D60CFF2A76C69D00701635 /* QuranMajeed */ = {
 			isa = PBXGroup;
 			children = (
-				F94514D02AE46A410042F169 /* TestFlight */,
 				F9A359312AE40DFF002E8641 /* Style */,
 				F9A105312AB31BD2008FA0DE /* QuranMajeed */,
 				F9D60D0E2A76C6AC00701635 /* Quiz */,
