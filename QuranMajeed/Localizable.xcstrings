@@ -109,6 +109,9 @@
     "Please tap on the row to select veress" : {
 
     },
+    "Please tap on the row to select verses for words meanings." : {
+
+    },
     "Please tap on the row to select words meanings" : {
 
     },
@@ -127,6 +130,9 @@
           }
         }
       }
+    },
+    "Select ayas for words meaning" : {
+
     },
     "Select Surah" : {
       "comment" : "Sura is a noun, but can be translated in Urdu and Arabic and in some other languages as well.",
@@ -238,6 +244,9 @@
         }
       }
     },
+    "Tap words to select them." : {
+
+    },
     "Translate the following verses" : {
       "localizations" : {
         "ur" : {
@@ -257,6 +266,9 @@
     "Verses selected for translation: %lld" : {
 
     },
+    "Verses selected for words meaning: %lld" : {
+
+    },
     "Weekly Test" : {
       "comment" : "Middle heading",
       "localizations" : {
@@ -274,7 +286,7 @@
         }
       }
     },
-    "Words selected from verses: %lld" : {
+    "Words selected for words meaning %lld" : {
 
     }
   },
