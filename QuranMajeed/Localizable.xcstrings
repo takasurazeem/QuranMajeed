@@ -109,6 +109,9 @@
     "Please tap on the row to select veress" : {
 
     },
+    "Please tap on the row to select words meanings" : {
+
+    },
     "Prepare Quiz" : {
       "localizations" : {
         "ur" : {
@@ -163,6 +166,7 @@
       }
     },
     "Select verses for words meaning" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ur" : {
           "stringUnit" : {
@@ -177,6 +181,12 @@
           }
         }
       }
+    },
+    "Select words meaning" : {
+
+    },
+    "Select Words Meaning" : {
+
     },
     "Selected Surah" : {
       "localizations" : {

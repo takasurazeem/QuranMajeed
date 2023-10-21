@@ -11,6 +11,36 @@ import SwiftUI
 struct SelectVersesForWordsMeaningView: View {
     @ObservedObject var viewModel: QuizView.ViewModel
     var body: some View {
+        NavigationLink {
+            WordsMeaningsDetailsView(viewModel: viewModel)
+                .padding(AppStyle.Spacing.space16)
+        } label: {
+            VStack(alignment: .leading) {
+                HStack {
+                    VStack(alignment: .leading, spacing: AppStyle.Spacing.space12) {
+                        Text("Select words meaning")
+                            .font(.caption)
+                    }
+                    Spacer(minLength: AppStyle.Spacing.space16)
+                    ChevronView()
+                }
+                VStack(alignment: .leading, spacing: AppStyle.Spacing.space4) {
+                    Divider()
+                        .background(Color.accentColor)
+                    Text(
+                        viewModel.selectedVersesForWordsMeaning.isEmpty ? 
+                        "Please tap on the row to select words meanings" : "Words selected for words meaning \(viewModel.wordsForWordsMeaning.filter{$0.isSelected}.count)"
+                    )
+                    .font(.footnote)
+                    .foregroundStyle(Color.accentColor.opacity(0.9))
+                    .padding(.top, AppStyle.Spacing.space4)
+                }
+                .padding(.top, AppStyle.Spacing.space8)
+            }
+        }
+        .roundedCornersView()
+
+        /*
         DisclosureGroup(
             "Select verses for words meaning",
             isExpanded: $viewModel.expandSelectVersesForWordsMeaningSection
@@ -28,29 +58,18 @@ struct SelectVersesForWordsMeaningView: View {
                 }
             }
             .deleteDisabled(true)
-            if !viewModel.selectedVersesForWordsMeaning.isEmpty {
-                DisclosureGroup(
-                    "Selected verses for words meaning",
-                    isExpanded: $viewModel.expandSelectedVersesForWordsMeaningSection
-                ) {
-                    ForEach(viewModel.selectedVersesForWordsMeaning) { verse in
-                        HStack {
-                            Text(("\(verse.ayaNumber)"))
-                            Text(verse.text)
-                                .font(Font.custom("ScheherazadeNew-Bold", size: 24.0))
-                                .frame(maxWidth: .infinity, alignment: .trailing)
-                                .multilineTextAlignment(.trailing)
-                        }
-                    }
-                    .onDelete(perform: viewModel.deleteWordsMeaningVerse(at:))
-                }
-                FlexibleViewContainer(
-                    viewModel: FlexibleViewContainer.ViewModel(
-                        originalItems: $viewModel.wordsForWordsMeaning
-                    )
-                )
-            }
         }
-        .roundedCornersView()
+        */
     }
+}
+
+#Preview {
+    QuizView(
+        viewModel: QuizView.ViewModel(
+            theQuranRepository: try! AppDependencyContainer
+                .shared
+                .theQuranDependencyContainer
+                .makeQuranRepository()
+        )
+    )
 }
