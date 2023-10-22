@@ -4,18 +4,6 @@
 <dict>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
-	<key>UIAppFonts</key>
-	<array>
-		<string>UthmanTN1Ver10.otf</string>
-		<string>pdms-saleem-quranfont.ttf</string>
-		<string>diwani-bent.ttf</string>
-		<string>NotoNastaliqUrdu-VariableFont_wght.ttf</string>
-		<string>Jameel Noori Nastaleeq Regular.ttf</string>
-		<string>ScheherazadeNew-Regular.ttf</string>
-		<string>ScheherazadeNew-Bold.ttf</string>
-		<string>ScheherazadeNew-SemiBold.ttf</string>
-		<string>ScheherazadeNew-Medium.ttf</string>
-	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

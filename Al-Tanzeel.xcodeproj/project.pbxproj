@@ -35,6 +35,7 @@
 		F94514CC2AE466550042F169 /* RoundedCornersModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94514CB2AE466550042F169 /* RoundedCornersModifier.swift */; };
 		F94514CF2AE4668A0042F169 /* PulseEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94514CE2AE4668A0042F169 /* PulseEffect.swift */; };
 		F94514D22AE46A930042F169 /* WhatToTest.en-US.txt in Resources */ = {isa = PBXBuildFile; fileRef = F94514D12AE46A930042F169 /* WhatToTest.en-US.txt */; };
+		F948F1A72AE4A530004679ED /* FontBlaster in Frameworks */ = {isa = PBXBuildFile; productRef = F948F1A62AE4A530004679ED /* FontBlaster */; };
 		F94C11BB2AB2986D004BAD10 /* pdms-saleem-quranfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D252A76C6EF00701635 /* pdms-saleem-quranfont.ttf */; };
 		F94C11BC2AB2986D004BAD10 /* NotoNastaliqUrdu-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F952CFCA2A903FFB0039478F /* NotoNastaliqUrdu-VariableFont_wght.ttf */; };
 		F94C11BD2AB2986D004BAD10 /* diwani-bent.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D262A76C6EF00701635 /* diwani-bent.ttf */; };
@@ -170,6 +171,7 @@
 				F918395D2AB7CB6300E4D45B /* CoreDataPersistenceTestSupport in Frameworks */,
 				F91839532AB7C86500E4D45B /* Analytics in Frameworks */,
 				763539D72AB7998A00CC27FD /* Localization in Frameworks */,
+				F948F1A72AE4A530004679ED /* FontBlaster in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +585,7 @@
 				F918395A2AB7CB6300E4D45B /* CoreDataPersistence */,
 				F918395C2AB7CB6300E4D45B /* CoreDataPersistenceTestSupport */,
 				F918395E2AB7CDA700E4D45B /* AppStructureFeature */,
+				F948F1A62AE4A530004679ED /* FontBlaster */,
 			);
 			productName = QuranQuiz;
 			productReference = F9D60CFD2A76C69D00701635 /* Al-Tanzeel.app */;
@@ -623,6 +626,7 @@
 			mainGroup = F9D60CF42A76C69D00701635;
 			packageReferences = (
 				763539CE2AB7943600CC27FD /* XCRemoteSwiftPackageReference "quran-ios" */,
+				F948F1A52AE4A530004679ED /* XCRemoteSwiftPackageReference "FontBlaster" */,
 			);
 			productRefGroup = F9D60CFE2A76C69D00701635 /* Products */;
 			projectDirPath = "";
@@ -999,6 +1003,14 @@
 				revision = 3954626c8a2f209913aa9da8f60417cf99bce154;
 			};
 		};
+		F948F1A52AE4A530004679ED /* XCRemoteSwiftPackageReference "FontBlaster" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ArtSabintsev/FontBlaster";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1056,6 +1068,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 763539CE2AB7943600CC27FD /* XCRemoteSwiftPackageReference "quran-ios" */;
 			productName = AppStructureFeature;
+		};
+		F948F1A62AE4A530004679ED /* FontBlaster */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F948F1A52AE4A530004679ED /* XCRemoteSwiftPackageReference "FontBlaster" */;
+			productName = FontBlaster;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
