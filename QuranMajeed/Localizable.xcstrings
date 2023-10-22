@@ -23,6 +23,9 @@
         }
       }
     },
+    "Arabic" : {
+
+    },
     "Ayah Selection" : {
       "comment" : "Ayah is a noun, but can be translated in Urdu and Arabic and in some other languages as well.",
       "localizations" : {
@@ -67,6 +70,9 @@
           }
         }
       }
+    },
+    "English" : {
+
     },
     "Name: ____________________" : {
       "comment" : "Name of the student",
@@ -261,6 +267,9 @@
           }
         }
       }
+    },
+    "Urdu" : {
+
     },
     "Weekly Test" : {
       "comment" : "Middle heading",

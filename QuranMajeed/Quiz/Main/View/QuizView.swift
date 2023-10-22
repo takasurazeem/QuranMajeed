@@ -12,64 +12,47 @@ import PDFKit
 
 struct QuizView: View {
     @StateObject var viewModel: ViewModel
+    
+    @State private var locale: Locale?
+    @State private var layoutDirection: LayoutDirection?
+    
+    @Environment(\.layoutDirection) private var appLayoutDirection
+    @Environment(\.locale) private var appLocale
+    
     var body: some View {
         NavigationStack {
-            ScrollView {
-                SelectedSurahView(viewModel: viewModel)
-                // MARK: - Select verses for translation
-                SelectTranslationVersesView(viewModel: viewModel)
-                // MARK: Select Verses For Words Meaning
-                SelectVersesForWordsMeaningView(viewModel: viewModel)
-            }
-            .padding(.horizontal, AppStyle.Spacing.space16)
-            .navigationTitle("Prepare Quiz")
+            QuizPreparationViewSteps(viewModel: viewModel)
             .toolbar {
-                // MARK: - Right toolbar
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink {
-                        PDFKitView(
-                            documentData: PDFGenerator(
-                                verses: viewModel.quizVerses,
-                                words: viewModel.wordsForWordsMeaning
-                            )
-                            .generateQuiz()
-                        )
-                        .navigationTitle("PDF Preview")
-                        .navigationBarTitleDisplayMode(.inline)
-                        .toolbar {
-                            // FIXME: - Not a good place to put it here. Move to a file of its own.
-                            ToolbarItem(placement: .navigationBarTrailing) {
-                                if let document = PDFDocument(data: PDFGenerator(
-                                    verses: viewModel.quizVerses,
-                                    words: viewModel.wordsForWordsMeaning
-                                )
-                                    .generateQuiz()) {
-                                    ShareLink(item: document, preview: SharePreview("PDF"))
-                                }
-                            }
+                ToolbarItemGroup(placement: .navigation) {
+                    // MARK: - Right toolbar
+                    PDFPreviewView(viewModel: viewModel)
+                    Spacer()
+                    Menu {
+                        Button("English") {
+                            locale = Locale(identifier: "en_US")
+                            layoutDirection = .leftToRight
+                        }
+                        Button("Urdu") {
+                            locale = Locale(identifier: "ur_Arab_PK")
+                            layoutDirection = .rightToLeft
+                        }
+                        Button("Arabic") {
+                            locale = Locale(identifier: "ar_SA")
+                            layoutDirection = .rightToLeft
                         }
                     } label: {
-                        if #available(iOS 17, *), !viewModel.selectedVersesForTranslation.isEmpty {
-                            Image(systemName: "doc.viewfinder")
-                                .symbolEffect(.pulse)
-                        } else if !viewModel.selectedVersesForTranslation.isEmpty {
-                            Image(systemName: "doc.viewfinder")
-                                .pulse(RoundedRectangle(cornerRadius: 4))
-                        } else {
-                            Image(systemName: "doc.viewfinder")
-                        }
+                        Image(systemName: "globe")
                     }
                 }
-                
-                // MARK: - Left toolbar
-                //                    ToolbarItem(placement: .topBarLeading) {
-                //                        print("Top left")
-                //                    }
             }
             .task {
+                print(appLocale.identifier)
                 await viewModel.start()
             }
         }
+        .environment(\.locale, locale ?? appLocale)
+        .environment(\.layoutDirection, layoutDirection ?? appLayoutDirection)
+        .animation(.easeInOut, value: locale)
     }
 }
 

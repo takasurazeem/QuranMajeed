@@ -36,6 +36,8 @@
 		F94514CF2AE4668A0042F169 /* PulseEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94514CE2AE4668A0042F169 /* PulseEffect.swift */; };
 		F94514D22AE46A930042F169 /* WhatToTest.en-US.txt in Resources */ = {isa = PBXBuildFile; fileRef = F94514D12AE46A930042F169 /* WhatToTest.en-US.txt */; };
 		F948F1A72AE4A530004679ED /* FontBlaster in Frameworks */ = {isa = PBXBuildFile; productRef = F948F1A62AE4A530004679ED /* FontBlaster */; };
+		F948F1A92AE5A97A004679ED /* PDFPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F948F1A82AE5A97A004679ED /* PDFPreviewView.swift */; };
+		F948F1AB2AE5A9F8004679ED /* QuizPreparationViewSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = F948F1AA2AE5A9F8004679ED /* QuizPreparationViewSteps.swift */; };
 		F94C11BB2AB2986D004BAD10 /* pdms-saleem-quranfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D252A76C6EF00701635 /* pdms-saleem-quranfont.ttf */; };
 		F94C11BC2AB2986D004BAD10 /* NotoNastaliqUrdu-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F952CFCA2A903FFB0039478F /* NotoNastaliqUrdu-VariableFont_wght.ttf */; };
 		F94C11BD2AB2986D004BAD10 /* diwani-bent.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9D60D262A76C6EF00701635 /* diwani-bent.ttf */; };
@@ -104,6 +106,8 @@
 		F94514CB2AE466550042F169 /* RoundedCornersModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersModifier.swift; sourceTree = "<group>"; };
 		F94514CE2AE4668A0042F169 /* PulseEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseEffect.swift; sourceTree = "<group>"; };
 		F94514D12AE46A930042F169 /* WhatToTest.en-US.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "WhatToTest.en-US.txt"; sourceTree = "<group>"; };
+		F948F1A82AE5A97A004679ED /* PDFPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFPreviewView.swift; sourceTree = "<group>"; };
+		F948F1AA2AE5A9F8004679ED /* QuizPreparationViewSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPreparationViewSteps.swift; sourceTree = "<group>"; };
 		F94C11C32AB2F962004BAD10 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
 		F950FAD82AB4BA0000CB45B5 /* Al-TanzeelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Al-TanzeelTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F950FAE12AB4BA6400CB45B5 /* QuranMajeedTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuranMajeedTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -355,6 +359,7 @@
 		F9D60CF42A76C69D00701635 = {
 			isa = PBXGroup;
 			children = (
+				F948F1A82AE5A97A004679ED /* PDFPreviewView.swift */,
 				F94514D02AE46A410042F169 /* TestFlight */,
 				F9D60CFF2A76C69D00701635 /* QuranMajeed */,
 				F950FAD92AB4BA0000CB45B5 /* QuranMajeedTests */,
@@ -439,6 +444,7 @@
 				F968AC782AC0F3690086F841 /* SelectTranslationVersesView.swift */,
 				F94514C72AE461330042F169 /* WordsMeaningsDetailsView.swift */,
 				F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */,
+				F948F1AA2AE5A9F8004679ED /* QuizPreparationViewSteps.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -701,6 +707,7 @@
 				F9A359332AE40E13002E8641 /* AppStyle.swift in Sources */,
 				F9D60D332A77E01300701635 /* PDFGenerator.swift in Sources */,
 				F9D60D172A76C6AC00701635 /* QuizView.swift in Sources */,
+				F948F1AB2AE5A9F8004679ED /* QuizPreparationViewSteps.swift in Sources */,
 				F91839622AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift in Sources */,
 				F9D60D012A76C69D00701635 /* QuranQuizApp.swift in Sources */,
 				F98C231B2ABE2C8E00FED70E /* UrduTranslation.swift in Sources */,
@@ -712,6 +719,7 @@
 				F91839492AB7AF2800E4D45B /* Sura+localizedName.swift in Sources */,
 				F94514C82AE461330042F169 /* WordsMeaningsDetailsView.swift in Sources */,
 				F917664C2AC3A3DC00792D2F /* FlexibleViewContainer.swift in Sources */,
+				F948F1A92AE5A97A004679ED /* PDFPreviewView.swift in Sources */,
 				F91766432AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift in Sources */,
 				76C1F8DB2AC2421900085DA2 /* QuizVerse.swift in Sources */,
 				F94C11C42AB2F962004BAD10 /* AppDependencyContainer.swift in Sources */,
