@@ -40,6 +40,17 @@
         }
       }
     },
+    "Back" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "پچھلی سکرین"
+          }
+        }
+      }
+    },
     "Date:" : {
       "comment" : "The date text, not the today's date.",
       "localizations" : {
@@ -107,13 +118,34 @@
       }
     },
     "Please tap on the row to select verses for words meanings." : {
-
+      "localizations" : {
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفاظ معنی کے لیے آیات کو منتخب کرنے کے لیے براہ کرم قطار پر ٹچ کریں۔"
+          }
+        }
+      }
     },
     "Please tap on the row to select verses." : {
-
+      "localizations" : {
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "آیات کو منتخب کرنے کے لیے براہ کرم قطار پر ٹچ کریں۔"
+          }
+        }
+      }
     },
-    "Please tap on the row to select words meanings." : {
-
+    "Please tap on the row to select words for words meanings." : {
+      "localizations" : {
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفاظ معنی کے لیے الفاظ منتخب کرنے کے لیے براہ کرم قطار پر ٹچ کریں۔"
+          }
+        }
+      }
     },
     "Prepare Quiz" : {
       "localizations" : {
@@ -131,8 +163,15 @@
         }
       }
     },
-    "Select ayas for words meaning." : {
-
+    "Select ayahs for words meaning." : {
+      "localizations" : {
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفاظ معنی کے لیے آیات کا انتخاب کریں۔"
+          }
+        }
+      }
     },
     "Select Surah" : {
       "comment" : "Sura is a noun, but can be translated in Urdu and Arabic and in some other languages as well.",
@@ -152,13 +191,34 @@
       }
     },
     "Select verses for translation." : {
-
+      "localizations" : {
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ترجمہ کے لیے آیات کا انتخاب کریں۔"
+          }
+        }
+      }
     },
     "Select Words" : {
-
+      "localizations" : {
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفاظ منتخب کریں"
+          }
+        }
+      }
     },
     "Select words meaning." : {
-
+      "localizations" : {
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفاظ معنی منتخب کریں۔"
+          }
+        }
+      }
     },
     "Selected Surah" : {
       "localizations" : {
@@ -177,7 +237,14 @@
       }
     },
     "Tap words to select them." : {
-
+      "localizations" : {
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفاظ کو منتخب کرنے کے لیے انہیں ٹچ کریں۔"
+          }
+        }
+      }
     },
     "Translate the following verses" : {
       "localizations" : {
@@ -194,12 +261,6 @@
           }
         }
       }
-    },
-    "Verses selected for translation: %lld." : {
-
-    },
-    "Verses selected for words meaning: %lld." : {
-
     },
     "Weekly Test" : {
       "comment" : "Middle heading",
@@ -218,8 +279,125 @@
         }
       }
     },
-    "Words selected for words meaning %lld." : {
-
+    "You selected %lld verses for translation." : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "You selected %lld verse for translation."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "You selected %lld verses for translation."
+                }
+              }
+            }
+          }
+        },
+        "ur-Arab-PK" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "آپ نے ترجمہ کے لیے %lld آیت کا انتخاب کیا۔"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "آپ نے ترجمہ کے لیے %lld آیات کا انتخاب کیا۔"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "You selected %lld verses for words meaning." : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "You selected %lld verse for words meaning."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "You selected %lld verses for words meaning."
+                }
+              }
+            }
+          }
+        },
+        "ur-Arab-PK" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "آپ نے الفاظ معنی کے لیے %lld آیت کا انتخاب کیا۔"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "آپ نے الفاظ معنی کے لیے %lld آیات کا انتخاب کیا۔"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "You selected %lld words for words meaning." : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "You selected %lld word for words meaning."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "You selected %lld words for words meaning."
+                }
+              }
+            }
+          }
+        },
+        "ur-Arab-PK" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "آپ نے الفاظ معنی کے لیے %lld لفظ کا انتخاب کیا۔"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "آپ نے الفاظ معنی کے لیے %lld الفاظ کا انتخاب کیا۔"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

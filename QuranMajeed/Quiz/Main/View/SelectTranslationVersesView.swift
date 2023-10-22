@@ -10,6 +10,10 @@ import SwiftUI
 /// Use the ``QuizView`` for the preview
 struct SelectTranslationVersesView: View {
     @ObservedObject var viewModel: QuizView.ViewModel
+    var rowFooterText: LocalizedStringKey {
+        viewModel.selectedVersesForTranslation.isEmpty ?
+        "Please tap on the row to select verses." : "You selected \(viewModel.selectedVersesForTranslation.count) verses for translation."
+    }
     var body: some View {
         NavigationLink {
             VerseListView(
@@ -31,9 +35,7 @@ struct SelectTranslationVersesView: View {
                 VStack(alignment: .leading, spacing: AppStyle.Spacing.space4) {
                     Divider()
                         .background(Color.accentColor)
-                    Text(
-                        viewModel.selectedVersesForTranslation.isEmpty ? "Please tap on the row to select verses." : "Verses selected for translation: \(viewModel.selectedVersesForTranslation.count)."
-                    )
+                    Text(rowFooterText)
                     .font(.footnote)
                     .foregroundStyle(Color.accentColor.opacity(0.9))
                     .padding(.top, AppStyle.Spacing.space4)
