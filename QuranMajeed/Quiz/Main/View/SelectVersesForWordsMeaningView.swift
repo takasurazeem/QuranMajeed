@@ -33,9 +33,10 @@ struct SelectVersesForWordsMeaningView: View {
                     Divider()
                         .background(Color.accentColor)
                     Text(rowFooterText)
-                    .font(.footnote)
-                    .foregroundStyle(Color.accentColor.opacity(0.9))
-                    .padding(.top, AppStyle.Spacing.space4)
+                        .multilineTextAlignment(.leading)
+                        .font(.footnote)
+                        .foregroundStyle(Color.accentColor.opacity(0.9))
+                        .padding(.top, AppStyle.Spacing.space4)
                 }
                 .padding(.top, AppStyle.Spacing.space8)
             }
