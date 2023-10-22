@@ -39,7 +39,7 @@ struct _FlexibleView<Data: Collection, Content: View>: View where Data.Element: 
             if remainingWidth - (elementSize.width + spacing) >= 0 {
                 rows[currentRow].append(element)
             } else {
-                currentRow = currentRow + 1
+                currentRow += 1
                 rows.append([element])
                 remainingWidth = availableWidth
             }
