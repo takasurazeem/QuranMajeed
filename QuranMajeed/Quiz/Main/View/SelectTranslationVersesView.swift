@@ -20,7 +20,7 @@ struct SelectTranslationVersesView: View {
             VStack(alignment: .leading) {
                 HStack {
                     VStack(alignment: .leading, spacing: AppStyle.Spacing.space12) {
-                        Text("Select verse for translation")
+                        Text("Select verses for translation.")
                             .font(.caption)
                         Text(viewModel.selectedVerse.text)
                             .font(.callout)
@@ -32,7 +32,7 @@ struct SelectTranslationVersesView: View {
                     Divider()
                         .background(Color.accentColor)
                     Text(
-                        viewModel.selectedVersesForTranslation.isEmpty ? "Please tap on the row to select veress" : "Verses selected for translation: \(viewModel.selectedVersesForTranslation.count)"
+                        viewModel.selectedVersesForTranslation.isEmpty ? "Please tap on the row to select veress." : "Verses selected for translation: \(viewModel.selectedVersesForTranslation.count)."
                     )
                     .font(.footnote)
                     .foregroundStyle(Color.accentColor.opacity(0.9))

@@ -21,7 +21,7 @@ struct WordsMeaningsDetailsView: View {
                 VStack(alignment: .leading) {
                     HStack {
                         VStack(alignment: .leading, spacing: AppStyle.Spacing.space12) {
-                            Text("Select ayas for words meaning")
+                            Text("Select ayas for words meaning.")
                                 .font(.caption)
                         }
                         Spacer(minLength: AppStyle.Spacing.space16)
@@ -31,7 +31,7 @@ struct WordsMeaningsDetailsView: View {
                         Divider()
                             .background(Color.accentColor)
                         Text(
-                            viewModel.selectedVersesForWordsMeaning.isEmpty ? "Please tap on the row to select verses for words meanings." : "Verses selected for words meaning: \(viewModel.selectedVersesForWordsMeaning.count)"
+                            viewModel.selectedVersesForWordsMeaning.isEmpty ? "Please tap on the row to select verses for words meanings." : "Verses selected for words meaning: \(viewModel.selectedVersesForWordsMeaning.count)."
                         )
                         .multilineTextAlignment(.leading)
                         .font(.footnote)
@@ -55,7 +55,7 @@ struct WordsMeaningsDetailsView: View {
                 .padding(.top, AppStyle.Spacing.space8)
             }
         }
-        .navigationTitle("Select Words Meaning")
+        .navigationTitle("Select Words")
     }
 }
 

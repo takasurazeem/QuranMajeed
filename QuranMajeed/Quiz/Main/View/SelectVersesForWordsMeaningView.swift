@@ -18,7 +18,7 @@ struct SelectVersesForWordsMeaningView: View {
             VStack(alignment: .leading) {
                 HStack {
                     VStack(alignment: .leading, spacing: AppStyle.Spacing.space12) {
-                        Text("Select words meaning")
+                        Text("Select words meaning.")
                             .font(.caption)
                     }
                     Spacer(minLength: AppStyle.Spacing.space16)
@@ -29,7 +29,7 @@ struct SelectVersesForWordsMeaningView: View {
                         .background(Color.accentColor)
                     Text(
                         viewModel.selectedVersesForWordsMeaning.isEmpty ? 
-                        "Please tap on the row to select words meanings" : "Words selected for words meaning \(viewModel.wordsForWordsMeaning.filter{$0.isSelected}.count)"
+                        "Please tap on the row to select words meanings." : "Words selected for words meaning \(viewModel.wordsForWordsMeaning.filter{$0.isSelected}.count)."
                     )
                     .font(.footnote)
                     .foregroundStyle(Color.accentColor.opacity(0.9))
