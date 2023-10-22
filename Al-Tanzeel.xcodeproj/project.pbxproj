@@ -359,7 +359,6 @@
 		F9D60CF42A76C69D00701635 = {
 			isa = PBXGroup;
 			children = (
-				F948F1A82AE5A97A004679ED /* PDFPreviewView.swift */,
 				F94514D02AE46A410042F169 /* TestFlight */,
 				F9D60CFF2A76C69D00701635 /* QuranMajeed */,
 				F950FAD92AB4BA0000CB45B5 /* QuranMajeedTests */,
@@ -437,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				F9D60D142A76C6AC00701635 /* QuizView.swift */,
+				F948F1A82AE5A97A004679ED /* PDFPreviewView.swift */,
 				F918394A2AB7B10E00E4D45B /* SuraListView.swift */,
 				F918394C2AB7B69900E4D45B /* SuraNameView.swift */,
 				F91839652AB7D98D00E4D45B /* VerseListView.swift */,
