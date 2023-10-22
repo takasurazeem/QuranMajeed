@@ -106,13 +106,13 @@
         }
       }
     },
-    "Please tap on the row to select veress" : {
-
-    },
     "Please tap on the row to select verses for words meanings." : {
 
     },
-    "Please tap on the row to select words meanings" : {
+    "Please tap on the row to select verses." : {
+
+    },
+    "Please tap on the row to select words meanings." : {
 
     },
     "Prepare Quiz" : {
@@ -131,7 +131,7 @@
         }
       }
     },
-    "Select ayas for words meaning" : {
+    "Select ayas for words meaning." : {
 
     },
     "Select Surah" : {
@@ -151,47 +151,13 @@
         }
       }
     },
-    "Select verse for translation" : {
+    "Select verses for translation." : {
 
     },
-    "Select verses for translation" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ترجمہ کے لیے آیات کا انتخاب کریں۔"
-          }
-        },
-        "ur-Arab-PK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ترجمہ کے لیے آیات کا انتخاب کریں۔"
-          }
-        }
-      }
-    },
-    "Select verses for words meaning" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "الفاظ کے معنی کے لیے آیات کا انتخاب کریں۔"
-          }
-        },
-        "ur-Arab-PK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "الفاظ کے معنی کے لیے آیات کا انتخاب کریں۔"
-          }
-        }
-      }
-    },
-    "Select words meaning" : {
+    "Select Words" : {
 
     },
-    "Select Words Meaning" : {
+    "Select words meaning." : {
 
     },
     "Selected Surah" : {
@@ -206,40 +172,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "منتخب سورة"
-          }
-        }
-      }
-    },
-    "Selected verses for translation" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ترجمہ کے لیے منتخب آیات۔"
-          }
-        },
-        "ur-Arab-PK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ترجمہ کے لیے منتخب آیات۔"
-          }
-        }
-      }
-    },
-    "Selected verses for words meaning" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "الفاظ کے معنی کے لیے منتخب آیات۔"
-          }
-        },
-        "ur-Arab-PK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "الفاظ کے معنی کے لیے منتخب آیات۔"
           }
         }
       }
@@ -263,10 +195,10 @@
         }
       }
     },
-    "Verses selected for translation: %lld" : {
+    "Verses selected for translation: %lld." : {
 
     },
-    "Verses selected for words meaning: %lld" : {
+    "Verses selected for words meaning: %lld." : {
 
     },
     "Weekly Test" : {
@@ -286,7 +218,7 @@
         }
       }
     },
-    "Words selected for words meaning %lld" : {
+    "Words selected for words meaning %lld." : {
 
     }
   },
