@@ -44,7 +44,7 @@ struct _FlexibleView<Data: Collection, Content: View>: View where Data.Element: 
                 remainingWidth = availableWidth
             }
             
-            remainingWidth = remainingWidth - (elementSize.width + spacing)
+            remainingWidth -= (elementSize.width + spacing)
         }
         
         return rows

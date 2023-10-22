@@ -15,7 +15,6 @@ import LastPagePersistence
 import NotePersistence
 import PageBookmarkPersistence
 import ReadingService
-import Analytics
 import Logging
 import VLogging
 
