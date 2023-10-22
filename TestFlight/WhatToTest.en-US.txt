@@ -1,2 +1,3 @@
+- Ability to change language by tapping the globe icon.
 - User interface improvements الحمدالله
 جزاك الله خیراً
