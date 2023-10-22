@@ -79,4 +79,3 @@ private enum Constant {
     static let databasesURL = FileManager.documentsURL
         .appendingPathComponent("databases", isDirectory: true)
 }
-

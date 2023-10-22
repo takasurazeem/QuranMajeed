@@ -366,7 +366,7 @@ extension PDFGenerator {
         let fullText = "\(dateText) \(date)"
         let dateRange = (fullText as NSString).range(of: date)
         let attributedString = NSMutableAttributedString(string: fullText)
-        attributedString.addAttribute(.font, value: nameAndDateTextFont, range: NSMakeRange(0, attributedString.length))
+        attributedString.addAttribute(.font, value: nameAndDateTextFont, range: NSRange(location: 0, length: attributedString.length))
         attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: dateRange)
 
         attributedString.draw(
