@@ -46,7 +46,6 @@ struct QuizView: View {
                 }
             }
             .task {
-                print(appLocale.identifier)
                 await viewModel.start()
             }
         }
