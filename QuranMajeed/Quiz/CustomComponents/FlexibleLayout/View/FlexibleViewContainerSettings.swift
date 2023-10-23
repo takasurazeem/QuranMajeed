@@ -54,4 +54,3 @@ struct FlexibleViewContainerSettings: View {
         .padding()
     }
 }
-
