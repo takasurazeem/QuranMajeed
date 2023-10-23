@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		760FEDDD2AE6420B00EEFDFB /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760FEDDC2AE6420B00EEFDFB /* Memory.swift */; };
 		763539D02AB7943600CC27FD /* QuranKit in Frameworks */ = {isa = PBXBuildFile; productRef = 763539CF2AB7943600CC27FD /* QuranKit */; };
 		763539D52AB7975500CC27FD /* ReadingService in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D42AB7975500CC27FD /* ReadingService */; };
 		763539D72AB7998A00CC27FD /* Localization in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D62AB7998A00CC27FD /* Localization */; };
@@ -89,6 +90,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		760FEDDC2AE6420B00EEFDFB /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		76C1F8DA2AC2421900085DA2 /* QuizVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVerse.swift; sourceTree = "<group>"; };
 		76C1F8DC2AC2444B00085DA2 /* WordForWordsMeaning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordForWordsMeaning.swift; sourceTree = "<group>"; };
 		F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVersesForWordsMeaningView.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				F91839612AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift */,
+				760FEDDC2AE6420B00EEFDFB /* Memory.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -712,6 +715,7 @@
 				F9D60D012A76C69D00701635 /* QuranQuizApp.swift in Sources */,
 				F98C231B2ABE2C8E00FED70E /* UrduTranslation.swift in Sources */,
 				F94514CC2AE466550042F169 /* RoundedCornersModifier.swift in Sources */,
+				760FEDDD2AE6420B00EEFDFB /* Memory.swift in Sources */,
 				F917664D2AC3A3DC00792D2F /* _FlexibleView.swift in Sources */,
 				F917664B2AC3A3DC00792D2F /* FlexibleView.swift in Sources */,
 				F9D60D162A76C6AC00701635 /* Verse.swift in Sources */,
