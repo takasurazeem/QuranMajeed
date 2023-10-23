@@ -66,10 +66,11 @@ fileprivate struct ContentPreview: View {
                 selectedVerses: .constant([])
             )
             .task {
-                let repo = try! AppDependencyContainer
+                guard let repo = try? AppDependencyContainer
                     .shared
                     .theQuranDependencyContainer
                     .makeQuranRepository()
+                else { return }
                 if let verses = try? await repo.getTranslatedVerses(verses: repo.getFirstSura().verses).verses {
                     self.allVerses = verses.enumerated().map { Verse(ayaNumber: $0 + 1, text: $1.arabicText, translation: "") }
                 }

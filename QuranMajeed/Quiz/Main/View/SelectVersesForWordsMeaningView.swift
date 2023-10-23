@@ -46,12 +46,5 @@ struct SelectVersesForWordsMeaningView: View {
 }
 
 #Preview {
-    QuizView(
-        viewModel: QuizView.ViewModel(
-            theQuranRepository: try! AppDependencyContainer
-                .shared
-                .theQuranDependencyContainer
-                .makeQuranRepository()
-        )
-    )
+    ApplicationMainView()
 }

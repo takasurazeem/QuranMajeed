@@ -48,22 +48,5 @@ struct SelectTranslationVersesView: View {
 }
 
 #Preview {
-    QuizView(
-        viewModel: QuizView.ViewModel(
-            theQuranRepository: try! AppDependencyContainer
-                .shared
-                .theQuranDependencyContainer
-                .makeQuranRepository()
-        )
-    )
-}
-
-struct ChevronView: View {
-    @Environment(\.layoutDirection) var layoutDirection
-    var body: some View {
-        Image(systemName: "chevron.\( layoutDirection == .rightToLeft ? "left" : "right")")
-//            .resizable()
-//            .frame(width: 24, height: 24)
-            .foregroundStyle(Color.accentColor)
-    }
+    ApplicationMainView()
 }

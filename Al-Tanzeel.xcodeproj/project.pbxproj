@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		760FEDDD2AE6420B00EEFDFB /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760FEDDC2AE6420B00EEFDFB /* Memory.swift */; };
+		760FEDDF2AE644B900EEFDFB /* ApplicationMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760FEDDE2AE644B900EEFDFB /* ApplicationMainView.swift */; };
+		760FEDE22AE6469000EEFDFB /* ChevronView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760FEDE12AE6469000EEFDFB /* ChevronView.swift */; };
 		763539D02AB7943600CC27FD /* QuranKit in Frameworks */ = {isa = PBXBuildFile; productRef = 763539CF2AB7943600CC27FD /* QuranKit */; };
 		763539D52AB7975500CC27FD /* ReadingService in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D42AB7975500CC27FD /* ReadingService */; };
 		763539D72AB7998A00CC27FD /* Localization in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D62AB7998A00CC27FD /* Localization */; };
@@ -91,6 +93,8 @@
 
 /* Begin PBXFileReference section */
 		760FEDDC2AE6420B00EEFDFB /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
+		760FEDDE2AE644B900EEFDFB /* ApplicationMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationMainView.swift; sourceTree = "<group>"; };
+		760FEDE12AE6469000EEFDFB /* ChevronView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChevronView.swift; sourceTree = "<group>"; };
 		76C1F8DA2AC2421900085DA2 /* QuizVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVerse.swift; sourceTree = "<group>"; };
 		76C1F8DC2AC2444B00085DA2 /* WordForWordsMeaning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordForWordsMeaning.swift; sourceTree = "<group>"; };
 		F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVersesForWordsMeaningView.swift; sourceTree = "<group>"; };
@@ -184,6 +188,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		760FEDE02AE6468500EEFDFB /* Chevron */ = {
+			isa = PBXGroup;
+			children = (
+				760FEDE12AE6469000EEFDFB /* ChevronView.swift */,
+			);
+			path = Chevron;
+			sourceTree = "<group>";
+		};
 		763539D12AB7954000CC27FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +206,7 @@
 		76C1F8D22AC2291000085DA2 /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
+				760FEDE02AE6468500EEFDFB /* Chevron */,
 				F91766462AC3A3CD00792D2F /* FlexibleLayout */,
 			);
 			path = CustomComponents;
@@ -391,6 +404,7 @@
 				F9D60D2B2A76C6FE00701635 /* Info.plist */,
 				F94C11C32AB2F962004BAD10 /* AppDependencyContainer.swift */,
 				F9D60D002A76C69D00701635 /* QuranQuizApp.swift */,
+				760FEDDE2AE644B900EEFDFB /* ApplicationMainView.swift */,
 				F9D60D242A76C6EF00701635 /* fonts */,
 				F9D60D042A76C69E00701635 /* Assets.xcassets */,
 				F9D60D062A76C69E00701635 /* Preview Content */,
@@ -698,6 +712,7 @@
 				F952CFD22A96D6BA0039478F /* String+size.swift in Sources */,
 				F917664E2AC3A3DC00792D2F /* SizeReader.swift in Sources */,
 				F968AC792AC0F3690086F841 /* SelectTranslationVersesView.swift in Sources */,
+				760FEDDF2AE644B900EEFDFB /* ApplicationMainView.swift in Sources */,
 				F964477C2AB4561900DB5412 /* MainQuranRepository.swift in Sources */,
 				F968AC772AC0F25C0086F841 /* SelectedSurahView.swift in Sources */,
 				F9D60D362A7852F400701635 /* PDFDocument+Transferable.swift in Sources */,
@@ -722,6 +737,7 @@
 				76C1F8DD2AC2444B00085DA2 /* WordForWordsMeaning.swift in Sources */,
 				F91839492AB7AF2800E4D45B /* Sura+localizedName.swift in Sources */,
 				F94514C82AE461330042F169 /* WordsMeaningsDetailsView.swift in Sources */,
+				760FEDE22AE6469000EEFDFB /* ChevronView.swift in Sources */,
 				F917664C2AC3A3DC00792D2F /* FlexibleViewContainer.swift in Sources */,
 				F948F1A92AE5A97A004679ED /* PDFPreviewView.swift in Sources */,
 				F91766432AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift in Sources */,

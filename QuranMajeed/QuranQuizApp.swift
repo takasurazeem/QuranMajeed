@@ -21,14 +21,7 @@ struct QuranMajeedApp: App {
     
     var body: some Scene {
         WindowGroup {
-            QuizView(
-                viewModel: QuizView.ViewModel(
-                    theQuranRepository: try! AppDependencyContainer
-                        .shared
-                        .theQuranDependencyContainer
-                        .makeQuranRepository()
-                )
-            )
+            ApplicationMainView()
 #if DEBUG
             .overlay(alignment: .bottomLeading) {
                 Text(memoryUsage)
