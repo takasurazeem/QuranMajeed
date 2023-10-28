@@ -16,10 +16,8 @@ struct SelectTranslationVersesView: View {
     }
     var body: some View {
         NavigationLink {
-            VerseListView(
-                allVerses: viewModel.versesOfSelectedSura,
-                selectedVerses: $viewModel.selectedVersesForTranslation
-            )
+            VersesSelectionDetailsView(viewModel: viewModel)
+                .padding(AppStyle.Spacing.space16)
         } label: {
             VStack(alignment: .leading) {
                 HStack {
