@@ -25,7 +25,7 @@ struct WordsMeaningsDetailsView: View {
                 VStack(alignment: .leading) {
                     HStack {
                         VStack(alignment: .leading, spacing: AppStyle.Spacing.space12) {
-                            Text("Select ayahs for words meaning.")
+                            Text("Select verses for words meaning.")
                                 .font(.caption)
                         }
                         Spacer(minLength: AppStyle.Spacing.space16)

@@ -24,21 +24,11 @@
       }
     },
     "Arabic" : {
-
-    },
-    "Ayah Selection" : {
-      "comment" : "Ayah is a noun, but can be translated in Urdu and Arabic and in some other languages as well.",
       "localizations" : {
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "آیت کا انتخاب"
-          }
-        },
         "ur-Arab-PK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "منتخب سورة"
+            "value" : "عربی"
           }
         }
       }
@@ -72,7 +62,14 @@
       }
     },
     "English" : {
-
+      "localizations" : {
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انگریزی"
+          }
+        }
+      }
     },
     "Name: ____________________" : {
       "comment" : "Name of the student",
@@ -169,16 +166,6 @@
         }
       }
     },
-    "Select ayahs for words meaning." : {
-      "localizations" : {
-        "ur-Arab-PK" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "الفاظ معنی کے لیے آیات کا انتخاب کریں۔"
-          }
-        }
-      }
-    },
     "Select Surah" : {
       "comment" : "Sura is a noun, but can be translated in Urdu and Arabic and in some other languages as well.",
       "localizations" : {
@@ -202,6 +189,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ترجمہ کے لیے آیات کا انتخاب کریں۔"
+          }
+        }
+      }
+    },
+    "Select verses for words meaning." : {
+      "localizations" : {
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفاظ معنی کے لیے آیات کا انتخاب کریں۔"
           }
         }
       }
@@ -243,7 +240,14 @@
       }
     },
     "Sorry, something went wrong." : {
-
+      "localizations" : {
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ہم معذرت خواہ ہیں کہ ایپ چل نہیں سکی، برائے مہربانی ایپ بند کر ک دوبارہ کوشش کریں۔ جزاك الله خیراً "
+          }
+        }
+      }
     },
     "Tap words to select them." : {
       "localizations" : {
@@ -272,7 +276,25 @@
       }
     },
     "Urdu" : {
-
+      "localizations" : {
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اردو"
+          }
+        }
+      }
+    },
+    "Verses Selection" : {
+      "comment" : "Verse is a noun, but can be translated in Urdu and Arabic and in some other languages as well.",
+      "localizations" : {
+        "ur-Arab-PK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "آیات کا انتخاب"
+          }
+        }
+      }
     },
     "Weekly Test" : {
       "comment" : "Middle heading",

@@ -26,8 +26,6 @@ struct SelectTranslationVersesView: View {
                     VStack(alignment: .leading, spacing: AppStyle.Spacing.space12) {
                         Text("Select verses for translation.")
                             .font(.caption)
-                        Text(viewModel.selectedVerse.text)
-                            .font(.callout)
                     }
                     Spacer(minLength: AppStyle.Spacing.space16)
                     ChevronView()

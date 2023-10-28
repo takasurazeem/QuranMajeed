@@ -36,7 +36,7 @@ struct VerseListView: View {
                     .multilineTextAlignment(.trailing)
             }
         }
-        .navigationTitle(Text("Ayah Selection", comment: "Ayah is a noun, but can be translated in Urdu and Arabic and in some other languages as well."))
+        .navigationTitle(Text("Verses Selection", comment: "Verse is a noun, but can be translated in Urdu and Arabic and in some other languages as well."))
         .environment(\.editMode, .constant(.active))
         .onAppear {
             selection = Set(selectedVerses)
