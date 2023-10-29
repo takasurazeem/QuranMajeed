@@ -17,7 +17,7 @@ struct SelectTranslationVersesView: View {
     var body: some View {
         NavigationLink {
             VersesSelectionDetailsView(viewModel: viewModel)
-                .padding(AppStyle.Spacing.space16)
+//                .padding(AppStyle.Spacing.space16)
         } label: {
             VStack(alignment: .leading) {
                 HStack {
@@ -25,8 +25,8 @@ struct SelectTranslationVersesView: View {
                         Text("Select verses for translation.")
                             .font(.caption)
                     }
-                    Spacer(minLength: AppStyle.Spacing.space16)
-                    ChevronView()
+//                    Spacer(minLength: AppStyle.Spacing.space16)
+//                    ChevronView()
                 }
                 VStack(alignment: .leading, spacing: AppStyle.Spacing.space4) {
                     Divider()

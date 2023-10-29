@@ -20,8 +20,8 @@ struct SelectedSurahView: View {
                         .font(.caption)
                     SuraNameView(for: viewModel.selectedSurah)
                 }
-                Spacer(minLength: AppStyle.Spacing.space16)
-                ChevronView()
+//                Spacer(minLength: AppStyle.Spacing.space16)
+//                ChevronView()
             }
         }
         .navigationDestination(for: [Sura].self) { suras in

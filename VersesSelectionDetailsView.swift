@@ -15,7 +15,7 @@ struct VersesSelectionDetailsView: View {
     }
     
     var body: some View {
-        ScrollView {
+        List {
             NavigationLink {
                 VerseListView(
                     allVerses: viewModel.versesOfSelectedSura,
@@ -28,42 +28,43 @@ struct VersesSelectionDetailsView: View {
                             Text("Please tap on the row to select verses.")
                                 .font(.caption)
                         }
-                        Spacer(minLength: AppStyle.Spacing.space16)
-                        ChevronView()
+//                        Spacer(minLength: AppStyle.Spacing.space16)
+//                        ChevronView()
                     }
                     .padding(.top, AppStyle.Spacing.space8)
                 }
             }
             .roundedCornersView()
             if !viewModel.selectedVersesForTranslation.isEmpty {
-                VStack(alignment: .leading) {
-                    Text(selectedVersesForTranslationText)
-                        .multilineTextAlignment(.leading)
-                        .font(.footnote)
-                        .foregroundStyle(Color.accentColor.opacity(0.9))
-                    VStack(alignment: .leading) {
+//                VStack(alignment: .leading) {
+//                    Text(selectedVersesForTranslationText)
+//                        .multilineTextAlignment(.leading)
+//                        .font(.footnote)
+//                        .foregroundStyle(Color.accentColor.opacity(0.9))
+//                    List {
                         ForEach(viewModel.selectedVersesForTranslation) { verse in
                             VStack(spacing: AppStyle.Spacing.space12) {
                                 HStack {
                                     Text(verse.text)
                                         .multilineTextAlignment(.leading)
                                         .frame(maxWidth: .infinity, alignment: .leading)
-                                        .padding(.vertical, AppStyle.Spacing.space4)
-                                        .padding(.horizontal, AppStyle.Spacing.space8)
+//                                        .padding(.vertical, AppStyle.Spacing.space4)
+//                                        .padding(.horizontal, AppStyle.Spacing.space8)
                                     Spacer()
                                 }
-                                Divider()
+//                                Divider()
                             }
                         }
                         .onDelete(perform: viewModel.deleteTranslationVerse(at:))
-                    }
-                    .background(Color.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 8.0, style: .continuous))
-                }
+//                    }
+//                    .background(Color.white)
+//                    .clipShape(RoundedRectangle(cornerRadius: 8.0, style: .continuous))
+//                }
                 .roundedCornersView()
                 .padding(.top, AppStyle.Spacing.space8)
             }
         }
+//        .listStyle(.plain)
         .navigationTitle("Select Words")
     }
 }
