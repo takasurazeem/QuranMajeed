@@ -11,24 +11,14 @@ import SwiftUI
 struct QuizPreparationViewSteps: View {
     @ObservedObject var viewModel: QuizView.ViewModel
     var body: some View {
-        List {
-            Group {
-                SelectedSurahView(viewModel: viewModel)
-                // MARK: - Select verses for translation
-                SelectTranslationVersesView(viewModel: viewModel)
-                // MARK: Select Verses For Words Meaning
-                SelectVersesForWordsMeaningView(viewModel: viewModel)
-            }
-            .listRowBackground(Color.clear)
-            .listRowSeparator(.hidden)
-            .foregroundColor(.accentColor)
+        ScrollView {
+            SelectedSurahView(viewModel: viewModel)
+            // MARK: - Select verses for translation
+            SelectTranslationVersesView(viewModel: viewModel)
+            // MARK: Select Verses For Words Meaning
+            SelectVersesForWordsMeaningView(viewModel: viewModel)
         }
-        .onAppear {
-            UITableViewCell.appearance().selectionStyle = .none
-        }
-        .buttonStyle(PlainButtonStyle())
-        .listRowSpacing(0)
-        .listStyle(.plain)
+        .padding(.horizontal, AppStyle.Spacing.space16)
         .navigationTitle("Prepare Quiz")
     }
 }
