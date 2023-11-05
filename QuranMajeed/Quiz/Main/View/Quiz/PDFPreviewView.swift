@@ -23,7 +23,6 @@ struct PDFPreviewView: View {
             .navigationTitle("PDF Preview")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                // FIXME: - Not a good place to put it here. Move to a file of its own.
                 ToolbarItem(placement: .navigationBarTrailing) {
                     if let document = PDFDocument(data: PDFGenerator(
                         verses: viewModel.quizVerses,
@@ -49,12 +48,5 @@ struct PDFPreviewView: View {
 }
 
 #Preview {
-    QuizView(
-        viewModel: QuizView.ViewModel(
-            theQuranRepository: try! AppDependencyContainer
-                .shared
-                .theQuranDependencyContainer
-                .makeQuranRepository()
-        )
-    )
+    ApplicationMainView()
 }

@@ -12,19 +12,35 @@ import FontBlaster
 struct QuranMajeedApp: App {
     
     init() {
-        FontBlaster.blast() // Defaults to Bundle.main if no arguments are passed
+        FontBlaster.blast()
+#if DEBUG
+        memoryUsage = Memory.formattedMemoryFootprint()
+#endif
+            
     }
     
     var body: some Scene {
         WindowGroup {
-            QuizView(
-                viewModel: QuizView.ViewModel(
-                    theQuranRepository: try! AppDependencyContainer
-                        .shared
-                        .theQuranDependencyContainer
-                        .makeQuranRepository()
-                )
-            )
+            ApplicationMainView()
+#if DEBUG
+            .overlay(alignment: .bottomLeading) {
+                Text(memoryUsage)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding(.horizontal)
+                    .font(.footnote)
+                    .opacity(0.8)
+            }
+#endif
+            .onReceive(timer) { _ in
+#if DEBUG
+                memoryUsage = Memory.formattedMemoryFootprint()
+#else
+                timer.upstream.connect().cancel()
+#endif
+            }
         }
     }
+    
+    @State private var memoryUsage = ""
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 }

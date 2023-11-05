@@ -44,7 +44,10 @@ class PDFGenerator {
         let data = renderer.pdfData { (context) in
             // 5
             context.beginPage()
-            
+            addBorder(
+                context: context,
+                pageRect: pageRect
+            )
             drawQuizHeaders()
             var yPosForNextTask = drawVerses(context)
             drawWordsMeanings(
@@ -54,6 +57,55 @@ class PDFGenerator {
         }
         
         return data
+    }
+    
+    private func addBorder(
+        context: UIGraphicsPDFRendererContext,
+        pageRect: CGRect  // Assuming pageRect is passed to the function
+    ) {
+        // Set the line width and color for the border
+        context.cgContext.setLineWidth(8.0)  // Adjust the border width as needed
+        context.cgContext.setStrokeColor(UIColor.black.cgColor)  // Adjust the border color
+        
+        // Define a custom pattern for the border (e.g., a dashed pattern)
+        let customPattern: [CGFloat] = [8, 4, 2, 4, 2, 4]  // Adjust the values for your custom pattern
+        
+        // Set the line dash pattern with a custom pattern
+        context.cgContext.setLineDash(phase: 0, lengths: customPattern)
+        
+        // Calculate the border rectangle based on the page size (assuming pageRect is provided)
+        let borderRect = CGRect(x: 0, y: 0, width: pageRect.width, height: pageRect.height)
+        
+        // Draw a border around the entire page with the custom pattern
+        context.cgContext.addRect(borderRect)
+        context.cgContext.strokePath()
+    }
+    
+    private func addFancyBorder(
+        context: UIGraphicsPDFRendererContext,
+        pageRect: CGRect
+    ) {
+        // Set a thicker line width for a bold border
+        context.cgContext.setLineWidth(4.0)
+        
+        // Create a custom pattern with varying dash lengths
+        let customPattern: [CGFloat] = [12, 8, 4, 8, 4, 12]
+        
+        // Set the line dash pattern with the custom pattern
+        context.cgContext.setLineDash(phase: 0, lengths: customPattern)
+        
+        context.cgContext.setStrokeColor(UIColor.black.cgColor)
+        
+        // Draw a custom shape, such as a rounded rectangle, for the border
+        let cornerRadius: CGFloat = 8.0
+        let borderPath = UIBezierPath(roundedRect: pageRect, byRoundingCorners: .allCorners, cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+        context.cgContext.addPath(borderPath.cgPath)
+        
+        // Draw a shadow for a 3D effect
+        context.cgContext.setShadow(offset: CGSize(width: 3, height: 3), blur: 5.0)
+        
+        // Stroke the border
+        context.cgContext.strokePath()
     }
     
     func drawWordsMeanings(
@@ -79,6 +131,10 @@ class PDFGenerator {
             let wordTextHeight = attributedVerseText.height(containerWidth: xOffset)
             if yPos + wordTextHeight > pageRectMaxY - 5 {
                 context.beginPage()
+                addBorder(
+                    context: context,
+                    pageRect: pageRect
+                )
                 yPos = 5
             }
             let wordTextRect = CGRect(
@@ -168,6 +224,10 @@ class PDFGenerator {
         let pageRectMaxY = pageRect.maxY
         if verseTextMaxY > pageRectMaxY - 5 {
             context.beginPage()
+            addBorder(
+                context: context,
+                pageRect: pageRect
+            )
             textPos = 5
         }
         verseTextRect = CGRect(
@@ -185,6 +245,10 @@ class PDFGenerator {
         for number in 1...numberOfLines {
             if yOffSet > pageRect.maxY - 5 {
                 context.beginPage()
+                addBorder(
+                    context: context,
+                    pageRect: pageRect
+                )
                 yOffSet = lineHeight
             }
             if number > 1 {

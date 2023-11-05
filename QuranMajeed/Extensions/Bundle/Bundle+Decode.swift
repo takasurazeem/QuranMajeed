@@ -3,7 +3,7 @@
 //  Quran
 //
 //  Created by Takasur Azeem on 30/07/2023.
-//  Copyright © 2023 Takasur Azeem. All rights reserved.
+//  Copyright © 2023 Islam. All rights reserved.
 //
 
 import Foundation

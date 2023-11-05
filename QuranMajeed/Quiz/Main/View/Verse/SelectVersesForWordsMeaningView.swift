@@ -18,7 +18,7 @@ struct SelectVersesForWordsMeaningView: View {
     var body: some View {
         NavigationLink {
             WordsMeaningsDetailsView(viewModel: viewModel)
-                .padding(AppStyle.Spacing.space16)
+                .padding(.vertical, AppStyle.Spacing.space16)
         } label: {
             VStack(alignment: .leading) {
                 HStack {
@@ -26,8 +26,6 @@ struct SelectVersesForWordsMeaningView: View {
                         Text("Select words meaning.")
                             .font(.caption)
                     }
-                    Spacer(minLength: AppStyle.Spacing.space16)
-                    ChevronView()
                 }
                 VStack(alignment: .leading, spacing: AppStyle.Spacing.space4) {
                     Divider()
@@ -41,17 +39,9 @@ struct SelectVersesForWordsMeaningView: View {
                 .padding(.top, AppStyle.Spacing.space8)
             }
         }
-        .roundedCornersView()
     }
 }
 
 #Preview {
-    QuizView(
-        viewModel: QuizView.ViewModel(
-            theQuranRepository: try! AppDependencyContainer
-                .shared
-                .theQuranDependencyContainer
-                .makeQuranRepository()
-        )
-    )
+    ApplicationMainView()
 }

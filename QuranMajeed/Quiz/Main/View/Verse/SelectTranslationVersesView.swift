@@ -16,21 +16,15 @@ struct SelectTranslationVersesView: View {
     }
     var body: some View {
         NavigationLink {
-            VerseListView(
-                allVerses: viewModel.versesOfSelectedSura,
-                selectedVerses: $viewModel.selectedVersesForTranslation
-            )
+            VersesSelectionDetailsView(viewModel: viewModel)
+                .padding(.vertical, AppStyle.Spacing.space16)
         } label: {
             VStack(alignment: .leading) {
                 HStack {
                     VStack(alignment: .leading, spacing: AppStyle.Spacing.space12) {
                         Text("Select verses for translation.")
                             .font(.caption)
-                        Text(viewModel.selectedVerse.text)
-                            .font(.callout)
                     }
-                    Spacer(minLength: AppStyle.Spacing.space16)
-                    ChevronView()
                 }
                 VStack(alignment: .leading, spacing: AppStyle.Spacing.space4) {
                     Divider()
@@ -43,27 +37,9 @@ struct SelectTranslationVersesView: View {
                 .padding(.top, AppStyle.Spacing.space8)
             }
         }
-        .roundedCornersView()
     }
 }
 
 #Preview {
-    QuizView(
-        viewModel: QuizView.ViewModel(
-            theQuranRepository: try! AppDependencyContainer
-                .shared
-                .theQuranDependencyContainer
-                .makeQuranRepository()
-        )
-    )
-}
-
-struct ChevronView: View {
-    @Environment(\.layoutDirection) var layoutDirection
-    var body: some View {
-        Image(systemName: "chevron.\( layoutDirection == .rightToLeft ? "left" : "right")")
-//            .resizable()
-//            .frame(width: 24, height: 24)
-            .foregroundStyle(Color.accentColor)
-    }
+    ApplicationMainView()
 }

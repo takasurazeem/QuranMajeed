@@ -20,8 +20,6 @@ struct SelectedSurahView: View {
                         .font(.caption)
                     SuraNameView(for: viewModel.selectedSurah)
                 }
-                Spacer(minLength: AppStyle.Spacing.space16)
-                ChevronView()
             }
         }
         .navigationDestination(for: [Sura].self) { suras in
@@ -30,17 +28,9 @@ struct SelectedSurahView: View {
                 selectedSura: $viewModel.selectedSurah
             )
         }
-        .roundedCornersView()
     }
 }
 
 #Preview {
-    QuizView(
-        viewModel: QuizView.ViewModel(
-            theQuranRepository: try! AppDependencyContainer
-                .shared
-                .theQuranDependencyContainer
-                .makeQuranRepository()
-        )
-    )
+    ApplicationMainView()
 }

@@ -3,7 +3,7 @@
 //  Quran
 //
 //  Created by Takasur Azeem on 30/07/2023.
-//  Copyright © 2023 Takasur Azeem. All rights reserved.
+//  Copyright © 2023 Islam. All rights reserved.
 //
 
 import QuranKit
@@ -18,6 +18,8 @@ struct QuizView: View {
     
     @Environment(\.layoutDirection) private var appLayoutDirection
     @Environment(\.locale) private var appLocale
+    @Environment(\.colorScheme) private var colorScheme
+    @AppStorage("darkMode") private var darkMode = false
     
     var body: some View {
         NavigationStack {
@@ -26,7 +28,6 @@ struct QuizView: View {
                 ToolbarItemGroup(placement: .navigation) {
                     // MARK: - Right toolbar
                     PDFPreviewView(viewModel: viewModel)
-                    Spacer()
                     Menu {
                         Button("English") {
                             locale = Locale(identifier: "en_US")
@@ -43,27 +44,26 @@ struct QuizView: View {
                     } label: {
                         Image(systemName: "globe")
                     }
+                    Button {
+                        darkMode.toggle()
+                    } label: {
+                        Image(systemName: colorScheme == .dark ? "moon.circle.fill" : "moon.circle")
+
+                    }
                 }
             }
             .task {
-                print(appLocale.identifier)
                 await viewModel.start()
             }
         }
         .environment(\.locale, locale ?? appLocale)
         .environment(\.layoutDirection, layoutDirection ?? appLayoutDirection)
         .animation(.easeInOut, value: locale)
+        .environment(\.colorScheme, darkMode ? .dark : .light)
     }
 }
 
 
 #Preview {
-    QuizView(
-        viewModel: QuizView.ViewModel(
-            theQuranRepository: try! AppDependencyContainer
-                .shared
-                .theQuranDependencyContainer
-                .makeQuranRepository()
-        )
-    )
+    ApplicationMainView()
 }
