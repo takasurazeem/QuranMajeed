@@ -36,29 +36,23 @@ struct VersesSelectionDetailsView: View {
             }
             Section {
                 if !viewModel.selectedVersesForTranslation.isEmpty {
-                    VStack(alignment: .leading) {
-                        Text(selectedVersesForTranslationText)
-                            .multilineTextAlignment(.leading)
-                            .font(.footnote)
-                            .foregroundStyle(Color.accentColor.opacity(0.9))
-                        VStack(alignment: .leading) {
-                            ForEach(viewModel.selectedVersesForTranslation.indices, id:\.self) { index in
-                                VStack(spacing: AppStyle.Spacing.space12) {
-                                    HStack {
-                                        Text(viewModel.selectedVersesForTranslation[index].text)
-                                            .multilineTextAlignment(.leading)
-                                            .frame(maxWidth: .infinity, alignment: .leading)
-                                            .padding(.vertical, AppStyle.Spacing.space4)
-                                            .padding(.horizontal, AppStyle.Spacing.space8)
-                                    }
-                                    Divider()
-                                }
+                    Text(selectedVersesForTranslationText)
+                        .multilineTextAlignment(.leading)
+                        .font(.footnote)
+                        .foregroundStyle(Color.accentColor.opacity(0.9))
+                    ForEach(viewModel.selectedVersesForTranslation, id:\.self) { verse in
+                        VStack(spacing: AppStyle.Spacing.space12) {
+                            HStack {
+                                Text(verse.text)
+                                    .multilineTextAlignment(.leading)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding(.vertical, AppStyle.Spacing.space4)
+                                    .padding(.horizontal, AppStyle.Spacing.space8)
                             }
-                            .onDelete(perform: viewModel.deleteTranslationVerse(at:))
                         }
-                        .background(Color.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 8.0, style: .continuous))
+                        
                     }
+                    .onDelete(perform: viewModel.deleteTranslationVerse(at:))
                     .padding(.top, AppStyle.Spacing.space8)
                 }
             }

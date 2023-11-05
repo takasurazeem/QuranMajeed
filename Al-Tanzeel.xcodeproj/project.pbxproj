@@ -228,9 +228,9 @@
 		7679910A2AF7975E001C7349 /* Verse */ = {
 			isa = PBXGroup;
 			children = (
+				F968AC782AC0F3690086F841 /* SelectTranslationVersesView.swift */,
 				F96458E62AED7C880052B30F /* VersesSelectionDetailsView.swift */,
 				F91839652AB7D98D00E4D45B /* VerseListView.swift */,
-				F968AC782AC0F3690086F841 /* SelectTranslationVersesView.swift */,
 				F94514C72AE461330042F169 /* WordsMeaningsDetailsView.swift */,
 				F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */,
 			);
