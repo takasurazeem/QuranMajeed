@@ -93,6 +93,7 @@ struct QuizView: View {
                             await viewModel.start()
                         }
                 }
+                .navigationViewStyle(StackNavigationViewStyle())
             }
         }
         .environment(\.locale, locale ?? appLocale)
