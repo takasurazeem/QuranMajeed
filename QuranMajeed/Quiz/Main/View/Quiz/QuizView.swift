@@ -56,9 +56,6 @@ struct QuizView: View {
                 await viewModel.start()
             }
         }
-        .onAppear {
-            darkMode = colorScheme == .dark
-        }
         .environment(\.locale, locale ?? appLocale)
         .environment(\.layoutDirection, layoutDirection ?? appLayoutDirection)
         .animation(.easeInOut, value: locale)
