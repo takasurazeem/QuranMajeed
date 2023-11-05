@@ -228,6 +228,7 @@
 		7679910A2AF7975E001C7349 /* Verse */ = {
 			isa = PBXGroup;
 			children = (
+				F96458E62AED7C880052B30F /* VersesSelectionDetailsView.swift */,
 				F91839652AB7D98D00E4D45B /* VerseListView.swift */,
 				F968AC782AC0F3690086F841 /* SelectTranslationVersesView.swift */,
 				F94514C72AE461330042F169 /* WordsMeaningsDetailsView.swift */,
@@ -408,7 +409,6 @@
 		F9D60CF42A76C69D00701635 = {
 			isa = PBXGroup;
 			children = (
-				F96458E62AED7C880052B30F /* VersesSelectionDetailsView.swift */,
 				F94514D02AE46A410042F169 /* TestFlight */,
 				F9D60CFF2A76C69D00701635 /* QuranMajeed */,
 				F950FAD92AB4BA0000CB45B5 /* QuranMajeedTests */,
