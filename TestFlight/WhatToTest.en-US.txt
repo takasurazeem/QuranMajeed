@@ -1,4 +1,8 @@
 - Translation of the App in Urdu.
-- Ability to change language by tapping the globe icon.
 - User interface improvements الحمدالله
+- Ability to change language by tapping the globe icon.
+
+#Known Bugs:
+- UI does not look good in light mode.
+
 جزاك الله خیراً
