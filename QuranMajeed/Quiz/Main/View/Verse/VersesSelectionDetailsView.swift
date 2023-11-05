@@ -40,19 +40,24 @@ struct VersesSelectionDetailsView: View {
                         .multilineTextAlignment(.leading)
                         .font(.footnote)
                         .foregroundStyle(Color.accentColor.opacity(0.9))
-                    ForEach(viewModel.selectedVersesForTranslation, id:\.self) { verse in
+                    ForEach(viewModel.selectedVersesForTranslation.indices, id:\.self) { index in
                         VStack(spacing: AppStyle.Spacing.space12) {
                             HStack {
-                                Text(verse.text)
+                                Text(viewModel.selectedVersesForTranslation[index].text)
                                     .multilineTextAlignment(.leading)
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .padding(.vertical, AppStyle.Spacing.space4)
                                     .padding(.horizontal, AppStyle.Spacing.space8)
                             }
                         }
-                        
+                        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                            Button {
+                                viewModel.deleteTranslationVerse(at: IndexSet(integer: index))
+                            } label: {
+                                Image(systemName: "book.closed")
+                            }
+                        }
                     }
-                    .onDelete(perform: viewModel.deleteTranslationVerse(at:))
                     .padding(.top, AppStyle.Spacing.space8)
                 }
             }
