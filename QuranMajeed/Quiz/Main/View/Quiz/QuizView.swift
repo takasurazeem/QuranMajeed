@@ -18,6 +18,8 @@ struct QuizView: View {
     
     @Environment(\.layoutDirection) private var appLayoutDirection
     @Environment(\.locale) private var appLocale
+    @Environment(\.colorScheme) private var colorScheme
+    @AppStorage("darkMode") private var darkMode = false
     
     var body: some View {
         NavigationStack {
@@ -26,7 +28,6 @@ struct QuizView: View {
                 ToolbarItemGroup(placement: .navigation) {
                     // MARK: - Right toolbar
                     PDFPreviewView(viewModel: viewModel)
-                    Spacer()
                     Menu {
                         Button("English") {
                             locale = Locale(identifier: "en_US")
@@ -43,15 +44,25 @@ struct QuizView: View {
                     } label: {
                         Image(systemName: "globe")
                     }
+                    Button {
+                        darkMode.toggle()
+                    } label: {
+                        Image(systemName: colorScheme == .dark ? "moon.circle.fill" : "moon.circle")
+
+                    }
                 }
             }
             .task {
                 await viewModel.start()
             }
         }
+        .onAppear {
+            darkMode = colorScheme == .dark
+        }
         .environment(\.locale, locale ?? appLocale)
         .environment(\.layoutDirection, layoutDirection ?? appLayoutDirection)
         .animation(.easeInOut, value: locale)
+        .environment(\.colorScheme, darkMode ? .dark : .light)
     }
 }
 

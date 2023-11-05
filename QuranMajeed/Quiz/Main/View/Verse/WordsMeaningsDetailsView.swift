@@ -15,46 +15,50 @@ struct WordsMeaningsDetailsView: View {
     }
     
     var body: some View {
-        ScrollView {
-            NavigationLink {
-                VerseListView(
-                    allVerses: viewModel.versesOfSelectedSura,
-                    selectedVerses: $viewModel.selectedVersesForWordsMeaning
-                )
-            } label: {
-                VStack(alignment: .leading) {
-                    HStack {
-                        VStack(alignment: .leading, spacing: AppStyle.Spacing.space12) {
-                            Text("Select verses for words meaning.")
-                                .font(.caption)
+        List {
+            Section {
+                NavigationLink {
+                    VerseListView(
+                        allVerses: viewModel.versesOfSelectedSura,
+                        selectedVerses: $viewModel.selectedVersesForWordsMeaning
+                    )
+                } label: {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            VStack(alignment: .leading, spacing: AppStyle.Spacing.space12) {
+                                Text("Select verses for words meaning.")
+                                    .font(.caption)
+                            }
+    //                        Spacer(minLength: AppStyle.Spacing.space16)
+    //                        ChevronView()
                         }
-                        Spacer(minLength: AppStyle.Spacing.space16)
-                        ChevronView()
+                        VStack(alignment: .leading, spacing: AppStyle.Spacing.space4) {
+                            Divider()
+                                .background(Color.accentColor)
+                            Text(rowFooterText)
+                            .multilineTextAlignment(.leading)
+                            .font(.footnote)
+                            .foregroundStyle(Color.accentColor.opacity(0.9))
+                            .padding(.top, AppStyle.Spacing.space4)
+                        }
+                        .padding(.top, AppStyle.Spacing.space8)
                     }
-                    VStack(alignment: .leading, spacing: AppStyle.Spacing.space4) {
-                        Divider()
-                            .background(Color.accentColor)
-                        Text(rowFooterText)
-                        .multilineTextAlignment(.leading)
-                        .font(.footnote)
-                        .foregroundStyle(Color.accentColor.opacity(0.9))
-                        .padding(.top, AppStyle.Spacing.space4)
+                }
+            }
+//            .roundedCornersView()
+            Section {
+                if !viewModel.selectedVersesForWordsMeaning.isEmpty {
+                    VStack(alignment: .leading, spacing: AppStyle.Spacing.space8) {
+                        Text("Tap words to select them.")
+                            .font(.subheadline)
+                        FlexibleViewContainer(
+                            viewModel: FlexibleViewContainer.ViewModel(
+                                originalItems: $viewModel.wordsForWordsMeaning
+                            )
+                        )
                     }
                     .padding(.top, AppStyle.Spacing.space8)
                 }
-            }
-            .roundedCornersView()
-            if !viewModel.selectedVersesForWordsMeaning.isEmpty {
-                VStack(alignment: .leading, spacing: AppStyle.Spacing.space8) {
-                    Text("Tap words to select them.")
-                        .font(.subheadline)
-                    FlexibleViewContainer(
-                        viewModel: FlexibleViewContainer.ViewModel(
-                            originalItems: $viewModel.wordsForWordsMeaning
-                        )
-                    )
-                }
-                .padding(.top, AppStyle.Spacing.space8)
             }
         }
         .navigationTitle("Select Words")
