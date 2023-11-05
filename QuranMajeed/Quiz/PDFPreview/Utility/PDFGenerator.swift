@@ -44,7 +44,7 @@ class PDFGenerator {
         let data = renderer.pdfData { (context) in
             // 5
             context.beginPage()
-            addFancyBorder(
+            addBorder(
                 context: context,
                 pageRect: pageRect
             )
