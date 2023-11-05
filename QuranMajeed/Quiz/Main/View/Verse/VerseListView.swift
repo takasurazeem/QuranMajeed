@@ -50,6 +50,7 @@ struct VerseListView: View {
     }
 }
 
+@available(iOS 16.0, *)
 struct VerseListView_Previews: PreviewProvider {
     static var previews: some View {
         ContentPreview()
@@ -57,6 +58,7 @@ struct VerseListView_Previews: PreviewProvider {
     }
 }
 
+@available(iOS 16.0, *)
 fileprivate struct ContentPreview: View {
     @State var allVerses: [Verse] = []
     var body: some View {

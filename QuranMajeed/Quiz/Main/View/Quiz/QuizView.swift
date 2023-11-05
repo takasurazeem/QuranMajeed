@@ -19,41 +19,80 @@ struct QuizView: View {
     @Environment(\.layoutDirection) private var appLayoutDirection
     @Environment(\.locale) private var appLocale
     @Environment(\.colorScheme) private var colorScheme
-    @AppStorage("darkMode") private var darkMode = false
+    @AppStorage("darkMode") private var darkMode = true
     
     var body: some View {
-        NavigationStack {
-            QuizPreparationViewSteps(viewModel: viewModel)
-            .toolbar {
-                ToolbarItemGroup(placement: .navigation) {
-                    // MARK: - Right toolbar
-                    PDFPreviewView(viewModel: viewModel)
-                    Menu {
-                        Button("English") {
-                            locale = Locale(identifier: "en_US")
-                            layoutDirection = .leftToRight
+        Group {
+            if #available(iOS 16.0, *) {
+                NavigationStack {
+                    QuizPreparationViewSteps(viewModel: viewModel)
+                        .toolbar {
+                            ToolbarItemGroup(placement: .navigation) {
+                                // MARK: - Right toolbar
+                                PDFPreviewView(viewModel: viewModel)
+                                Menu {
+                                    Button("English") {
+                                        locale = Locale(identifier: "en_US")
+                                        layoutDirection = .leftToRight
+                                    }
+                                    Button("Urdu") {
+                                        locale = Locale(identifier: "ur_Arab_PK")
+                                        layoutDirection = .rightToLeft
+                                    }
+                                    Button("Arabic") {
+                                        locale = Locale(identifier: "ar_SA")
+                                        layoutDirection = .rightToLeft
+                                    }
+                                } label: {
+                                    Image(systemName: "globe")
+                                }
+                                Button {
+                                    darkMode.toggle()
+                                } label: {
+                                    Image(systemName: colorScheme == .dark ? "moon.circle.fill" : "moon.circle")
+                                    
+                                }
+                            }
                         }
-                        Button("Urdu") {
-                            locale = Locale(identifier: "ur_Arab_PK")
-                            layoutDirection = .rightToLeft
+                        .task {
+                            await viewModel.start()
                         }
-                        Button("Arabic") {
-                            locale = Locale(identifier: "ar_SA")
-                            layoutDirection = .rightToLeft
-                        }
-                    } label: {
-                        Image(systemName: "globe")
-                    }
-                    Button {
-                        darkMode.toggle()
-                    } label: {
-                        Image(systemName: colorScheme == .dark ? "moon.circle.fill" : "moon.circle")
-
-                    }
                 }
-            }
-            .task {
-                await viewModel.start()
+            } else {
+                NavigationView {
+                    QuizPreparationViewSteps(viewModel: viewModel)
+                        .toolbar {
+                            ToolbarItemGroup(placement: .navigation) {
+                                // MARK: - Right toolbar
+                                PDFPreviewView(viewModel: viewModel)
+                                Menu {
+                                    Button("English") {
+                                        locale = Locale(identifier: "en_US")
+                                        layoutDirection = .leftToRight
+                                    }
+                                    Button("Urdu") {
+                                        locale = Locale(identifier: "ur_Arab_PK")
+                                        layoutDirection = .rightToLeft
+                                    }
+                                    Button("Arabic") {
+                                        locale = Locale(identifier: "ar_SA")
+                                        layoutDirection = .rightToLeft
+                                    }
+                                } label: {
+                                    Image(systemName: "globe")
+                                }
+                                Button {
+                                    darkMode.toggle()
+                                } label: {
+                                    Image(systemName: colorScheme == .dark ? "moon.circle.fill" : "moon.circle")
+                                    
+                                }
+                            }
+                        }
+                        .task {
+                            await viewModel.start()
+                        }
+                }
             }
         }
         .environment(\.locale, locale ?? appLocale)

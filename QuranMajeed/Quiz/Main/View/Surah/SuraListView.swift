@@ -36,6 +36,7 @@ struct SuraListView: View {
     }
 }
 
+@available(iOS 16.0, *)
 struct SuraListView_Previews: PreviewProvider {
     static let suras = Quran.hafsMadani1440.suras
     static var previews: some View {

@@ -71,6 +71,9 @@
         }
       }
     },
+    "iOS 16 only feature" : {
+
+    },
     "Name: ____________________" : {
       "comment" : "Name of the student",
       "localizations" : {
@@ -87,6 +90,9 @@
           }
         }
       }
+    },
+    "Ok" : {
+
     },
     "PDF" : {
       "localizations" : {

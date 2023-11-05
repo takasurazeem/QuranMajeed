@@ -20,6 +20,7 @@ struct QuizPDFPreview: View {
     }
 }
 
+@available(iOS 16.0, *)
 struct QuizPDFPreview_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {

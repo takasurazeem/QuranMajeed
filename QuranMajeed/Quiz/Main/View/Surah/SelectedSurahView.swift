@@ -13,7 +13,12 @@ struct SelectedSurahView: View {
     @ObservedObject var viewModel: QuizView.ViewModel
     
     var body: some View {
-        NavigationLink(value: viewModel.suras) {
+        NavigationLink {
+            SuraListView(
+                suras: viewModel.suras,
+                selectedSura: $viewModel.selectedSurah
+            )
+        } label: {
             HStack {
                 VStack(alignment: .leading) {
                     Text("Selected Surah")
@@ -21,12 +26,6 @@ struct SelectedSurahView: View {
                     SuraNameView(for: viewModel.selectedSurah)
                 }
             }
-        }
-        .navigationDestination(for: [Sura].self) { suras in
-            SuraListView(
-                suras: suras,
-                selectedSura: $viewModel.selectedSurah
-            )
         }
     }
 }

@@ -9,6 +9,7 @@ import PDFKit
 import SwiftUI
 
 extension PDFDocument: Transferable {
+    @available(iOS 16.0, *)
     public static var transferRepresentation: some TransferRepresentation {
         DataRepresentation(contentType: .pdf) { pdf in
                 if let data = pdf.dataRepresentation() {
