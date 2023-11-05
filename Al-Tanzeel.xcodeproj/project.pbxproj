@@ -205,6 +205,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		767991082AF79723001C7349 /* Surah */ = {
+			isa = PBXGroup;
+			children = (
+				F968AC762AC0F25C0086F841 /* SelectedSurahView.swift */,
+				F918394A2AB7B10E00E4D45B /* SuraListView.swift */,
+				F918394C2AB7B69900E4D45B /* SuraNameView.swift */,
+			);
+			path = Surah;
+			sourceTree = "<group>";
+		};
+		767991092AF79746001C7349 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				F948F1AA2AE5A9F8004679ED /* QuizPreparationViewSteps.swift */,
+				F9D60D142A76C6AC00701635 /* QuizView.swift */,
+				F948F1A82AE5A97A004679ED /* PDFPreviewView.swift */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
+		7679910A2AF7975E001C7349 /* Verse */ = {
+			isa = PBXGroup;
+			children = (
+				F91839652AB7D98D00E4D45B /* VerseListView.swift */,
+				F968AC782AC0F3690086F841 /* SelectTranslationVersesView.swift */,
+				F94514C72AE461330042F169 /* WordsMeaningsDetailsView.swift */,
+				F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */,
+			);
+			path = Verse;
+			sourceTree = "<group>";
+		};
 		76C1F8D22AC2291000085DA2 /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -455,16 +486,9 @@
 		F9D60D132A76C6AC00701635 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F9D60D142A76C6AC00701635 /* QuizView.swift */,
-				F948F1A82AE5A97A004679ED /* PDFPreviewView.swift */,
-				F918394A2AB7B10E00E4D45B /* SuraListView.swift */,
-				F918394C2AB7B69900E4D45B /* SuraNameView.swift */,
-				F91839652AB7D98D00E4D45B /* VerseListView.swift */,
-				F968AC762AC0F25C0086F841 /* SelectedSurahView.swift */,
-				F968AC782AC0F3690086F841 /* SelectTranslationVersesView.swift */,
-				F94514C72AE461330042F169 /* WordsMeaningsDetailsView.swift */,
-				F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */,
-				F948F1AA2AE5A9F8004679ED /* QuizPreparationViewSteps.swift */,
+				767991092AF79746001C7349 /* Quiz */,
+				767991082AF79723001C7349 /* Surah */,
+				7679910A2AF7975E001C7349 /* Verse */,
 			);
 			path = View;
 			sourceTree = "<group>";
