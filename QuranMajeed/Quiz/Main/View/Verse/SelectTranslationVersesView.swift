@@ -25,8 +25,6 @@ struct SelectTranslationVersesView: View {
                         Text("Select verses for translation.")
                             .font(.caption)
                     }
-//                    Spacer(minLength: AppStyle.Spacing.space16)
-//                    ChevronView()
                 }
                 VStack(alignment: .leading, spacing: AppStyle.Spacing.space4) {
                     Divider()
@@ -39,7 +37,6 @@ struct SelectTranslationVersesView: View {
                 .padding(.top, AppStyle.Spacing.space8)
             }
         }
-//        .roundedCornersView()
     }
 }
 

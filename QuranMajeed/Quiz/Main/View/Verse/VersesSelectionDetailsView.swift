@@ -29,14 +29,11 @@ struct VersesSelectionDetailsView: View {
                                 Text("Please tap on the row to select verses.")
                                     .font(.caption)
                             }
-//                            Spacer(minLength: AppStyle.Spacing.space16)
-//                            ChevronView()
                         }
                     }
                     .padding(.vertical, AppStyle.Spacing.space16)
                 }
             }
-//            .roundedCornersView()
             Section {
                 if !viewModel.selectedVersesForTranslation.isEmpty {
                     VStack(alignment: .leading) {
@@ -62,7 +59,6 @@ struct VersesSelectionDetailsView: View {
                         .background(Color.white)
                         .clipShape(RoundedRectangle(cornerRadius: 8.0, style: .continuous))
                     }
-//                    .roundedCornersView()
                     .padding(.top, AppStyle.Spacing.space8)
                 }
             }

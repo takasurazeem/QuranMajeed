@@ -26,8 +26,6 @@ struct SelectVersesForWordsMeaningView: View {
                         Text("Select words meaning.")
                             .font(.caption)
                     }
-//                    Spacer(minLength: AppStyle.Spacing.space16)
-//                    ChevronView()
                 }
                 VStack(alignment: .leading, spacing: AppStyle.Spacing.space4) {
                     Divider()
@@ -41,7 +39,6 @@ struct SelectVersesForWordsMeaningView: View {
                 .padding(.top, AppStyle.Spacing.space8)
             }
         }
-//        .roundedCornersView()
     }
 }
 
