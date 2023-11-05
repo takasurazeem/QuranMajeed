@@ -1,3 +1,4 @@
+- This experimental build is only for iOS 15.
 - Translation of the App in Urdu.
 - User interface improvements الحمدالله
 - Ability to change language by tapping the globe icon.
