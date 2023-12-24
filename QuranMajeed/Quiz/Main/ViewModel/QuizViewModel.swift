@@ -92,7 +92,8 @@ extension QuizView {
                             )
                     }
                 }
-                wordsForWordsMeaning = Array(words).sorted()
+                wordsForWordsMeaning.append(contentsOf: (Array(words).sorted()))
+                wordsForWordsMeaning = wordsForWordsMeaning.uniqueWords
             }
         }
         @Published var wordsForWordsMeaning: [WordForWordsMeaning] = []
@@ -113,5 +114,11 @@ extension Array where Element == Verse {
         self.map {
             QuizVerse(verse: $0, selectedSuraNumber: selectedSuraNumber)
         }
+    }
+}
+
+extension [WordForWordsMeaning] {
+    var uniqueWords: Self {
+        Array(Set<WordForWordsMeaning>(self)).sorted()
     }
 }
