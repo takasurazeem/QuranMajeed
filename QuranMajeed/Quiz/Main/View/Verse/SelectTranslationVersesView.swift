@@ -19,6 +19,8 @@ struct SelectTranslationVersesView: View {
             VersesSelectionDetailsView(viewModel: viewModel)
                 .padding(.vertical, AppStyle.Spacing.space16)
         } label: {
+            // Add select surah view
+            SuraNameView(viewModel: viewModel)
             VStack(alignment: .leading) {
                 HStack {
                     VStack(alignment: .leading, spacing: AppStyle.Spacing.space12) {
