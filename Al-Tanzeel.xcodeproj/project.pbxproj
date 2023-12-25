@@ -14,6 +14,8 @@
 		7620AA5C2B386DC9007FD04D /* MemoryDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7620AA5B2B386DC9007FD04D /* MemoryDatastore.swift */; };
 		7620AA5E2B386DE2007FD04D /* FileDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7620AA5D2B386DE2007FD04D /* FileDatastore.swift */; };
 		7620AA602B386ED6007FD04D /* TwoLevelDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7620AA5F2B386ED6007FD04D /* TwoLevelDatastore.swift */; };
+		7620AA652B395C9E007FD04D /* AppDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7620AA642B395C9E007FD04D /* AppDashboardView.swift */; };
+		7620AA692B395DB8007FD04D /* AppNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7620AA682B395DB8007FD04D /* AppNavigationView.swift */; };
 		763539D02AB7943600CC27FD /* QuranKit in Frameworks */ = {isa = PBXBuildFile; productRef = 763539CF2AB7943600CC27FD /* QuranKit */; };
 		763539D52AB7975500CC27FD /* ReadingService in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D42AB7975500CC27FD /* ReadingService */; };
 		763539D72AB7998A00CC27FD /* Localization in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D62AB7998A00CC27FD /* Localization */; };
@@ -104,6 +106,8 @@
 		7620AA5B2B386DC9007FD04D /* MemoryDatastore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryDatastore.swift; sourceTree = "<group>"; };
 		7620AA5D2B386DE2007FD04D /* FileDatastore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDatastore.swift; sourceTree = "<group>"; };
 		7620AA5F2B386ED6007FD04D /* TwoLevelDatastore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoLevelDatastore.swift; sourceTree = "<group>"; };
+		7620AA642B395C9E007FD04D /* AppDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDashboardView.swift; sourceTree = "<group>"; };
+		7620AA682B395DB8007FD04D /* AppNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationView.swift; sourceTree = "<group>"; };
 		76C1F8DA2AC2421900085DA2 /* QuizVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVerse.swift; sourceTree = "<group>"; };
 		76C1F8DC2AC2444B00085DA2 /* WordForWordsMeaning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordForWordsMeaning.swift; sourceTree = "<group>"; };
 		F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVersesForWordsMeaningView.swift; sourceTree = "<group>"; };
@@ -215,6 +219,47 @@
 				7620AA5F2B386ED6007FD04D /* TwoLevelDatastore.swift */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		7620AA612B395C15007FD04D /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				7620AA662B395CC0007FD04D /* Components */,
+				7620AA622B395C8D007FD04D /* AppDashboard */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		7620AA622B395C8D007FD04D /* AppDashboard */ = {
+			isa = PBXGroup;
+			children = (
+				7620AA632B395C93007FD04D /* View */,
+			);
+			path = AppDashboard;
+			sourceTree = "<group>";
+		};
+		7620AA632B395C93007FD04D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7620AA642B395C9E007FD04D /* AppDashboardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7620AA662B395CC0007FD04D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7620AA672B395CCB007FD04D /* NavigationView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		7620AA672B395CCB007FD04D /* NavigationView */ = {
+			isa = PBXGroup;
+			children = (
+				7620AA682B395DB8007FD04D /* AppNavigationView.swift */,
+			);
+			path = NavigationView;
 			sourceTree = "<group>";
 		};
 		763539D12AB7954000CC27FD /* Frameworks */ = {
@@ -402,6 +447,7 @@
 				F96447772AB4545D00DB5412 /* Repository */,
 				F964477D2AB4579F00DB5412 /* Service */,
 				F96447822AB4668A00DB5412 /* Provider */,
+				7620AA612B395C15007FD04D /* Modules */,
 			);
 			path = Quran;
 			sourceTree = "<group>";
@@ -772,9 +818,11 @@
 				F96447852AB466CC00DB5412 /* QuranProvider.swift in Sources */,
 				F9D60D152A76C6AC00701635 /* QuizViewModel.swift in Sources */,
 				F9A359332AE40E13002E8641 /* AppStyle.swift in Sources */,
+				7620AA692B395DB8007FD04D /* AppNavigationView.swift in Sources */,
 				F9D60D332A77E01300701635 /* PDFGenerator.swift in Sources */,
 				F9D60D172A76C6AC00701635 /* QuizView.swift in Sources */,
 				F948F1AB2AE5A9F8004679ED /* QuizPreparationViewSteps.swift in Sources */,
+				7620AA652B395C9E007FD04D /* AppDashboardView.swift in Sources */,
 				7620AA5C2B386DC9007FD04D /* MemoryDatastore.swift in Sources */,
 				F91839622AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift in Sources */,
 				F9D60D012A76C69D00701635 /* QuranQuizApp.swift in Sources */,
