@@ -13,3 +13,5 @@ This app will help you create a Quiz for your students if you teach the Quran. T
     <td><img src="screenshots/lightmode/lightmode-3.png" width=100% height=100%></td>
   </tr>
 </table>
+
+This project is tested with Browserstack.
