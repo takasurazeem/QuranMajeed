@@ -637,6 +637,7 @@
 				F9D60CF92A76C69D00701635 /* Sources */,
 				F9D60CFA2A76C69D00701635 /* Frameworks */,
 				F9D60CFB2A76C69D00701635 /* Resources */,
+				F928BBB72B7ED59F00B5AD1F /* WhatToTest */,
 			);
 			buildRules = (
 			);
@@ -738,6 +739,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F928BBB72B7ED59F00B5AD1F /* WhatToTest */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = WhatToTest;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/zsh\n# ci_post_xcodebuild.sh\n\nif [[ -d \"$CI_APP_STORE_SIGNED_APP_PATH\" ]]; then\n  TESTFLIGHT_DIR_PATH=../TestFlight\n  mkdir -p \"$TESTFLIGHT_DIR_PATH\"\n  git fetch --deepen 3 && git log -3 --pretty=format:\"%s\" >! \"$TESTFLIGHT_DIR_PATH/WhatToTest.en-US.txt\"\n  \n  # Move to the directory where the file is located\n  cd \"$TESTFLIGHT_DIR_PATH\" || exit\n  \n  # Prepend the desired text followed by two empty lines to the file\n  {\n    printf \"*ﺍﻟﺴَّـــــــﻼَﻡُ ﻋَﻠَﻴــْــﻜُﻢ ﻭَﺭَﺣْﻤَﺔُ ﺍﻟﻠﻪِ ﻭَﺑَﺮَﻛـَـﺎﺗُﻪ.*\\n\\n\"\n    cat WhatToTest.en-US.txt\n    printf \"\\n\\nجزاك الله خيراً\\n\"\n  } > temp && mv temp WhatToTest.en-US.txt\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F950FAD42AB4BA0000CB45B5 /* Sources */ = {
