@@ -1,9 +1,1 @@
-- Fixes the issue where words' meanings were getting removed as soon as you change Surah and select new verses for words' meanings. This will fix that ان شاء اللہ تَعَالٰی الحمدالله 
-- Translation of the App in Urdu.
-- User interface improvements الحمدالله
-- Ability to change language by tapping the globe icon.
 
-#Known Bugs:
-- UI does not look good in light mode.
-
-جزاك الله خیراً

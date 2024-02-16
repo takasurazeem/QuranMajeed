@@ -23,6 +23,12 @@
         }
       }
     },
+    "🎓" : {
+
+    },
+    "🕌" : {
+
+    },
     "Arabic" : {
       "localizations" : {
         "ur-Arab-PK" : {
@@ -166,6 +172,9 @@
         }
       }
     },
+    "Quiz Settings" : {
+
+    },
     "Select Surah" : {
       "comment" : "Sura is a noun, but can be translated in Urdu and Arabic and in some other languages as well.",
       "localizations" : {
@@ -252,6 +261,12 @@
         }
       }
     },
+    "Tap here to set the class name" : {
+
+    },
+    "Tap here to set the Masjid name" : {
+
+    },
     "Tap words to select them." : {
       "localizations" : {
         "ur-Arab-PK" : {
@@ -261,6 +276,9 @@
           }
         }
       }
+    },
+    "Top Header" : {
+
     },
     "Translate the following verses" : {
       "localizations" : {
