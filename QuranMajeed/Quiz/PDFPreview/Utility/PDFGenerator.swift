@@ -12,10 +12,12 @@ import SwiftUI
 class PDFGenerator {
     init(
         verses: [QuizVerse],
-        words: [WordForWordsMeaning]
+        words: [WordForWordsMeaning],
+        preferences: QuizPreferences
     ) {
         self.verses = verses
         self.words = words.filter { $0.isSelected }
+        self.preferences = preferences
         
         // 1
         pdfMetaData = [
@@ -301,8 +303,6 @@ class PDFGenerator {
     
     // MARK: - Texts
     let theOpeningText = "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ"
-    let rightHeadingText = "امن ترجمةالقرآن کلاس"
-    let leftHeadingText = "جامع مسجد امن واپڈا ٹاؤن گوجراںوالہ"
     let belowOpeningText = NSLocalizedString("Weekly Test", comment: "Middle heading")
     let studentNameText = NSLocalizedString("Name: ____________________", comment: "") // "نام طالب علم:"
     let nameUnderScores = Array(repeating: "_", count: 20).reduce("", +)
@@ -323,6 +323,7 @@ class PDFGenerator {
     // MARK: - Dependencies
     private let verses: [QuizVerse]
     private let words: [WordForWordsMeaning]
+    private let preferences: QuizPreferences
 }
 
 extension PDFGenerator {
@@ -371,8 +372,8 @@ extension PDFGenerator {
     }
     
     private func drawRightHeadingText() {
-        let rightHeadingTextWidth = rightHeadingText.width(usingFont: leftRightHeadingsFont)
-        rightHeadingText.draw(
+        let rightHeadingTextWidth = preferences.quizHeader.topRightText.width(usingFont: leftRightHeadingsFont)
+        preferences.quizHeader.topRightText.draw(
             at: CGPoint(
                 x: pageWidth - rightHeadingTextWidth - (rightHeadingTextWidth * 0.1),
                 y: 5
@@ -382,7 +383,7 @@ extension PDFGenerator {
     }
     
     private func drawLeftHeadingText() {
-        leftHeadingText.draw(
+        preferences.quizHeader.topLeftText.draw(
             at: CGPoint(
                 x: 10,
                 y: 5

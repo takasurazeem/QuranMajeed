@@ -26,7 +26,8 @@ struct QuizPDFPreview_Previews: PreviewProvider {
             QuizPDFPreview(
                 documentData: PDFGenerator(
                     verses: [], 
-                    words: []
+                    words: [], 
+                    preferences: QuizPreferences(quizHeader: QuizPreferences.QuizHeader(topRightText: "Aman Masjid Translation class", topLeftText: "Aman Masjid"))
                 )
                 .generateQuiz()
             )

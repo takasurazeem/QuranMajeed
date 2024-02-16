@@ -12,7 +12,7 @@ import PDFKit
 
 struct QuizView: View {
     @StateObject var viewModel: ViewModel
-    
+    @State private var isShowingSettingsPage: Bool = false
     @State private var locale: Locale?
     @State private var layoutDirection: LayoutDirection?
     
@@ -48,7 +48,11 @@ struct QuizView: View {
                         darkMode.toggle()
                     } label: {
                         Image(systemName: colorScheme == .dark ? "moon.circle.fill" : "moon.circle")
-
+                    }
+                    Button {
+                        isShowingSettingsPage = true
+                    } label: {
+                        Image(systemName: "gearshape.circle")
                     }
                 }
             }
@@ -60,6 +64,12 @@ struct QuizView: View {
         .environment(\.layoutDirection, layoutDirection ?? appLayoutDirection)
         .animation(.easeInOut, value: locale)
         .environment(\.colorScheme, darkMode ? .dark : .light)
+        .sheet(isPresented: $isShowingSettingsPage) {
+            NavigationStack {
+                QuizSettingsView()
+                    .navigationTitle("Quiz Settings")
+            }
+        }
     }
 }
 

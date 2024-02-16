@@ -10,6 +10,7 @@ import Foundation
 import PDFKit
 import QuranKit
 import ReadingService
+import SwiftUI
 
 extension QuizView {
     class ViewModel: ObservableObject {

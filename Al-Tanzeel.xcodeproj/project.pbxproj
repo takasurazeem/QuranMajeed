@@ -38,6 +38,8 @@
 		F918395F2AB7CDA700E4D45B /* AppStructureFeature in Frameworks */ = {isa = PBXBuildFile; productRef = F918395E2AB7CDA700E4D45B /* AppStructureFeature */; };
 		F91839622AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91839612AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift */; };
 		F91839662AB7D98D00E4D45B /* VerseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91839652AB7D98D00E4D45B /* VerseListView.swift */; };
+		F928BBBA2B7EDA9000B5AD1F /* QuizSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F928BBB92B7EDA9000B5AD1F /* QuizSettingsView.swift */; };
+		F928BBBC2B7EE2AD00B5AD1F /* QuizPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = F928BBBB2B7EE2AD00B5AD1F /* QuizPreferences.swift */; };
 		F94514C82AE461330042F169 /* WordsMeaningsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94514C72AE461330042F169 /* WordsMeaningsDetailsView.swift */; };
 		F94514CC2AE466550042F169 /* RoundedCornersModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94514CB2AE466550042F169 /* RoundedCornersModifier.swift */; };
 		F94514CF2AE4668A0042F169 /* PulseEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94514CE2AE4668A0042F169 /* PulseEffect.swift */; };
@@ -117,6 +119,8 @@
 		F918394C2AB7B69900E4D45B /* SuraNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuraNameView.swift; sourceTree = "<group>"; };
 		F91839612AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingAnalyticsLibrary.swift; sourceTree = "<group>"; };
 		F91839652AB7D98D00E4D45B /* VerseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseListView.swift; sourceTree = "<group>"; };
+		F928BBB92B7EDA9000B5AD1F /* QuizSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSettingsView.swift; sourceTree = "<group>"; };
+		F928BBBB2B7EE2AD00B5AD1F /* QuizPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPreferences.swift; sourceTree = "<group>"; };
 		F94514C72AE461330042F169 /* WordsMeaningsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsMeaningsDetailsView.swift; sourceTree = "<group>"; };
 		F94514CB2AE466550042F169 /* RoundedCornersModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersModifier.swift; sourceTree = "<group>"; };
 		F94514CE2AE4668A0042F169 /* PulseEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseEffect.swift; sourceTree = "<group>"; };
@@ -291,6 +295,15 @@
 				760FEDDC2AE6420B00EEFDFB /* Memory.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F928BBB82B7EDA8000B5AD1F /* QuizSettings */ = {
+			isa = PBXGroup;
+			children = (
+				F928BBB92B7EDA9000B5AD1F /* QuizSettingsView.swift */,
+				F928BBBB2B7EE2AD00B5AD1F /* QuizPreferences.swift */,
+			);
+			path = QuizSettings;
 			sourceTree = "<group>";
 		};
 		F94514C92AE466300042F169 /* AppStyle */ = {
@@ -478,6 +491,7 @@
 		F9D60D0E2A76C6AC00701635 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				F928BBB82B7EDA8000B5AD1F /* QuizSettings */,
 				76C1F8D22AC2291000085DA2 /* CustomComponents */,
 				F9D60D2C2A77DD7E00701635 /* PDFPreview */,
 				F9D60D3B2A78550700701635 /* Main */,
@@ -637,6 +651,7 @@
 				F9D60CF92A76C69D00701635 /* Sources */,
 				F9D60CFA2A76C69D00701635 /* Frameworks */,
 				F9D60CFB2A76C69D00701635 /* Resources */,
+				F928BBB72B7ED59F00B5AD1F /* WhatToTest */,
 			);
 			buildRules = (
 			);
@@ -739,6 +754,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F928BBB72B7ED59F00B5AD1F /* WhatToTest */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = WhatToTest;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/zsh\n# ci_post_xcodebuild.sh\n\nif [[ -d \"$CI_APP_STORE_SIGNED_APP_PATH\" ]]; then\n  TESTFLIGHT_DIR_PATH=../TestFlight\n  mkdir -p \"$TESTFLIGHT_DIR_PATH\"\n  git fetch --deepen 3 && git log -3 --pretty=format:\"%s\" >! \"$TESTFLIGHT_DIR_PATH/WhatToTest.en-US.txt\"\n  \n  # Move to the directory where the file is located\n  cd \"$TESTFLIGHT_DIR_PATH\" || exit\n  \n  # Prepend the desired text followed by two empty lines to the file\n  {\n    printf \"*ﺍﻟﺴَّـــــــﻼَﻡُ ﻋَﻠَﻴــْــﻜُﻢ ﻭَﺭَﺣْﻤَﺔُ ﺍﻟﻠﻪِ ﻭَﺑَﺮَﻛـَـﺎﺗُﻪ.*\\n\\n\"\n    cat WhatToTest.en-US.txt\n    printf \"\\n\\nجزاك الله خيراً\\n\"\n  } > temp && mv temp WhatToTest.en-US.txt\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F950FAD42AB4BA0000CB45B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -776,6 +812,8 @@
 				F9D60D172A76C6AC00701635 /* QuizView.swift in Sources */,
 				F948F1AB2AE5A9F8004679ED /* QuizPreparationViewSteps.swift in Sources */,
 				7620AA5C2B386DC9007FD04D /* MemoryDatastore.swift in Sources */,
+				F928BBBC2B7EE2AD00B5AD1F /* QuizPreferences.swift in Sources */,
+				F928BBBA2B7EDA9000B5AD1F /* QuizSettingsView.swift in Sources */,
 				F91839622AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift in Sources */,
 				F9D60D012A76C69D00701635 /* QuranQuizApp.swift in Sources */,
 				F98C231B2ABE2C8E00FED70E /* UrduTranslation.swift in Sources */,
