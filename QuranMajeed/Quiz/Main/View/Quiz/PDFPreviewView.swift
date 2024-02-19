@@ -14,17 +14,17 @@ struct PDFPreviewView: View {
     @AppStorage("MasjidName") private var masjidName: String = ""
     @AppStorage("ClassName") private var className: String = ""
     @ObservedObject var viewModel: QuizView.ViewModel
-    
+
     // Fix in the morning ان شاء اللہ تَعَالٰی , this needs to be passed from the previous screen.
-//    @State private var quizDate = Date.now
-    
+    //    @State private var quizDate = Date.now
+
     var body: some View {
         NavigationLink {
             VStack {
-//                DatePicker(selection: $quizDate, in: Date.now..., displayedComponents: .date) {
-//                    Text("Select a date")
-//                }
-//                .padding()
+                //                DatePicker(selection: $quizDate, in: Date.now..., displayedComponents: .date) {
+                //                    Text("Select a date")
+                //                }
+                //                .padding()
                 PDFKitView(
                     documentData: PDFGenerator(
                         verses: viewModel.quizVerses,
@@ -33,8 +33,8 @@ struct PDFPreviewView: View {
                             quizHeader: QuizPreferences.QuizHeader(
                                 topRightText: className,
                                 topLeftText: masjidName
-                            )//,
-//                            quizDate: quizDate
+                            )// ,
+                            //                            quizDate: quizDate
                         )
                     )
                     .generateQuiz()
@@ -48,7 +48,7 @@ struct PDFPreviewView: View {
                             words: viewModel.wordsForWordsMeaning,
                             preferences: QuizPreferences(quizHeader: QuizPreferences.QuizHeader(topRightText: className, topLeftText: masjidName))
                         )
-                            .generateQuiz()) {
+                        .generateQuiz()) {
                             ShareLink(item: document, preview: SharePreview("PDF"))
                         }
                     }

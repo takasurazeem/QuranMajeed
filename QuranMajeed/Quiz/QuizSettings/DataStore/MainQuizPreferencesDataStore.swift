@@ -17,11 +17,11 @@ class MainQuizPreferencesDataStore: QuizPreferencesDataStore {
     func save(quizPreferences: QuizPreferences) {
         dataStore.save(quizPreferences, forKey: storageKey)
     }
-    
+
     func get() -> QuizPreferences? {
         dataStore.get(forKey: storageKey)
     }
-    
+
     // MARK: - Properties
     private let dataStore: any SyncDatastore
     private let storageKey = "quizPreferences"

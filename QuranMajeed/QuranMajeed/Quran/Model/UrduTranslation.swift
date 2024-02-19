@@ -17,7 +17,7 @@ struct UrduTranslatedSuras: Decodable, Hashable {
     static func == (lhs: UrduTranslatedSuras, rhs: UrduTranslatedSuras) -> Bool {
         lhs.id == rhs.id
     }
-    
+
     let id: Int
     let name: String
     let translation: String

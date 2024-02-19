@@ -11,14 +11,14 @@ struct QuranDataDependencyContainer {
     init(providerForQuran: QuranProvider) {
         self.providerForQuran = providerForQuran
     }
-    
+
     func makeQuranRepository() throws -> QuranRepository {
         try MainQuranRepository(quranService: try makeQuranService())
     }
-    
+
     private func makeQuranService() throws -> QuranService {
         MainQuranService(providerForQuran: providerForQuran)
     }
-    
+
     private let providerForQuran: QuranProvider
 }

@@ -13,7 +13,7 @@ struct ApplicationMainView: View {
         if  let repo = try? AppDependencyContainer
                 .shared
                 .theQuranDependencyContainer
-            .makeQuranRepository() {
+                .makeQuranRepository() {
             QuizView(
                 viewModel: QuizView.ViewModel(
                     theQuranRepository: repo,

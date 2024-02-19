@@ -10,11 +10,11 @@ import QuranKit
 
 struct SuraNameView: View {
     let sura: Sura
-    
+
     init(for sura: Sura) {
         self.sura = sura
     }
-    
+
     var body: some View {
         VStack {
             Text(sura.localizedName(withNumber: true, language: .arabic))

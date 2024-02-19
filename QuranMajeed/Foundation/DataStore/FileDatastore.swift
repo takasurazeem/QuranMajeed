@@ -12,16 +12,16 @@ import Foundation
 class FileDatastore: SyncDatastore {
     private let fileManager = FileManager.default
     private let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-    
+
     /// Additional property indicating the purpose of the file data store.
     var purpose: String
-    
+
     /// Initializes a `FileDatastore` with a specific purpose.
     /// - Parameter purpose: The purpose or context for the file data store.
     init(purpose: String) {
         self.purpose = purpose
     }
-    
+
     func save<T: Codable>(_ data: T, forKey key: String) {
         let fileURL = getFileURL(forKey: key)
         do {
@@ -31,7 +31,7 @@ class FileDatastore: SyncDatastore {
             print("Error saving data to file: \(error.localizedDescription)")
         }
     }
-    
+
     func get<T: Codable>(forKey key: String) -> T? {
         let fileURL = getFileURL(forKey: key)
         do {
@@ -42,12 +42,12 @@ class FileDatastore: SyncDatastore {
             return nil
         }
     }
-    
+
     func delete(forKey key: String) {
         let fileURL = getFileURL(forKey: key)
         try? fileManager.removeItem(at: fileURL)
     }
-    
+
     func flush() {
         do {
             let files = try fileManager.contentsOfDirectory(at: documentsDirectory, includingPropertiesForKeys: nil, options: [])
@@ -58,7 +58,7 @@ class FileDatastore: SyncDatastore {
             print("Error flushing files: \(error.localizedDescription)")
         }
     }
-    
+
     private func getFileURL(forKey key: String) -> URL {
         return documentsDirectory.appendingPathComponent("\(key)_\(purpose).json")
     }

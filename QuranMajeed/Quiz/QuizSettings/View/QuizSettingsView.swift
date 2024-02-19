@@ -13,7 +13,7 @@ struct QuizSettingsView: View {
     @AppStorage("ClassName") private var className: String = ""
     private let masjidNameLabel: String = "Masjid Name"
     private let classNameLabel: String = "Class Name"
-    
+
     var body: some View {
         List {
             Section("Top Header") {
@@ -57,7 +57,7 @@ struct QuizSettingsView: View {
                                 .frame(minWidth: 32)
                             Text(classNameLabel)
                         }
-                        
+
                         if !className.isEmpty {
                             Text(className)
                                 .font(.footnote)

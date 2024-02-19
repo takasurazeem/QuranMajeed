@@ -31,16 +31,16 @@ class Memory: NSObject {
         guard
             kr == KERN_SUCCESS,
             count >= TASK_VM_INFO_REV1_COUNT
-            else { return nil }
-        
+        else { return nil }
+
         let usedBytes = Float(info.phys_footprint)
         return usedBytes
     }
-    
+
     class func formattedMemoryFootprint() -> String {
         let usedBytes: UInt64? = UInt64(self.memoryFootprint() ?? 0)
         let usedMB = Double(usedBytes ?? 0) / 1024 / 1024
         let usedMBAsString: String = "\(String(format: "%.2f", usedMB)) MB"
         return usedMBAsString
-     }
+    }
 }

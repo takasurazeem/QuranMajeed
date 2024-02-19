@@ -62,5 +62,5 @@ class MemoryDatastore: SyncDatastore {
     private var data: [String: Codable]
     private let lock = OSAllocatedUnfairLock()
     private let logger = Logger(subsystem: "QuranMajeed", category: "MemoryDatastore")
-    private var observer: NSObjectProtocol? = nil
+    private var observer: NSObjectProtocol?
 }

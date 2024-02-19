@@ -15,11 +15,11 @@ class MainQuizPreferencesRepository: QuizPreferencesRepository {
     }
 
     func save(quizPreferences: QuizPreferences) {
-        
+
     }
     func get() -> QuizPreferences? {
         fatalError()
     }
-    
+
     private let dataStore: SyncDatastore
 }

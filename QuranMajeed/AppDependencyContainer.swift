@@ -22,9 +22,9 @@ class AppDependencyContainer: AppDependencies {
     private init() {
         self.theQuranProvider = MainQuranProvider()
     }
-    
+
     static let shared = AppDependencyContainer()
-    
+
     lazy var theQuranDependencyContainer: QuranDataDependencyContainer = {
         QuranDataDependencyContainer(providerForQuran: theQuranProvider)
     }()
@@ -32,7 +32,7 @@ class AppDependencyContainer: AppDependencies {
     lazy var quizPreferenncesDependencyContainer: QuizPreferencesDependencyContainer = {
         QuizPreferencesDependencyContainer(dataStore: FileDatastore(purpose: "quizPreferences"))
     }()
-    
+
     let readingResources = ReadingResourcesService()
     let analytics: AnalyticsLibrary = LoggingAnalyticsLibrary()
 
@@ -68,7 +68,7 @@ class AppDependencyContainer: AppDependencies {
         }
         return stack
     }()
-    
+
     private let theQuranProvider: QuranProvider
 }
 

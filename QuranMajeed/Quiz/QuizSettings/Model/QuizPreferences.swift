@@ -13,7 +13,7 @@ struct QuizPreferences: Codable {
         var topRightText: String
         var topLeftText: String
     }
-    
+
     var quizHeader: QuizHeader
     var quizDate = Date.now
 }

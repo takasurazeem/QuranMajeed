@@ -4,7 +4,7 @@ import SwiftUI
 
 struct FlexibleViewContainer: View {
     @ObservedObject var viewModel: ViewModel
-    
+
     var body: some View {
         ScrollView {
             FlexibleView(
@@ -26,7 +26,7 @@ struct FlexibleViewContainer: View {
             }
             .padding(.horizontal, viewModel.padding)
         }
-//        .overlay(FlexibleViewContainerSettings(model: viewModel), alignment: .bottom)
+        //        .overlay(FlexibleViewContainerSettings(model: viewModel), alignment: .bottom)
     }
 }
 

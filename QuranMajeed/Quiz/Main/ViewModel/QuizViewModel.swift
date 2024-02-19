@@ -14,7 +14,7 @@ import SwiftUI
 
 extension QuizView {
     class ViewModel: ObservableObject {
-        
+
         init(
             theQuranRepository: QuranRepository,
             quizPreferencesRepository: QuizPreferencesRepository
@@ -26,13 +26,13 @@ extension QuizView {
             selectedSurah = theQuranRepository.getFirstSura()
             urduQuran = theQuranRepository.getQuranTranslations()
         }
-        
+
         func start() async {
             async let suras: () = loadSuras()
             async let firstVerse: () = loadVersesOfFirstSurah()
             _ = await [suras, firstVerse]
         }
-        
+
         @MainActor private func loadVersesOfFirstSurah() async {
             do {
                 let translatedVerses = try await theQuranRepository.getTranslatedVerses(verses: selectedSurah.verses)
@@ -51,7 +51,7 @@ extension QuizView {
                 // TODO: Show error if it occurs
             }
         }
-        
+
         @MainActor private func loadSuras() async {
             let readings = readingPreferences.$reading
                 .prepend(readingPreferences.reading)
@@ -69,9 +69,9 @@ extension QuizView {
         func deleteWordsMeaningVerse(at offsets: IndexSet) {
             selectedVersesForWordsMeaning.remove(atOffsets: offsets)
         }
-        
+
         private let theQuranRepository: QuranRepository
-        
+
         @Published var expandSelectedVersesForTranslationSection = false
         @Published var expandSelectedVersesForWordsMeaningSection = false
         @Published var expandSelectVersesForTranslationSection = true

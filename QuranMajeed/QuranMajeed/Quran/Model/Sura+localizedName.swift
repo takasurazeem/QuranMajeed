@@ -25,4 +25,3 @@ extension Sura {
         return suraName
     }
 }
-

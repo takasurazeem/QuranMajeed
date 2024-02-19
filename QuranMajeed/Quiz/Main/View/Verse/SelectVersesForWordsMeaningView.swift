@@ -12,9 +12,9 @@ struct SelectVersesForWordsMeaningView: View {
     @ObservedObject var viewModel: QuizView.ViewModel
     var rowFooterText: LocalizedStringKey {
         viewModel.selectedVersesForWordsMeaning.isEmpty ?
-        "Please tap on the row to select words for words meanings." : "You selected \(viewModel.wordsForWordsMeaning.filter{$0.isSelected}.count) words for words meaning."
+            "Please tap on the row to select words for words meanings." : "You selected \(viewModel.wordsForWordsMeaning.filter {$0.isSelected}.count) words for words meaning."
     }
-    
+
     var body: some View {
         NavigationLink {
             WordsMeaningsDetailsView(viewModel: viewModel)

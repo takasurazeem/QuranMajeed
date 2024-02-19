@@ -10,7 +10,7 @@ import XCTest
 @testable import QuranTextKit
 
 final class SurasTests: XCTestCase {
-    
+
     override func setUpWithError() throws {
         XCTAssertNotNil(sut)
     }

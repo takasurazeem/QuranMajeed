@@ -13,11 +13,11 @@ struct MainQuranProvider: QuranProvider {
     func getQuranKit() -> Quran {
         Quran.hafsMadani1440
     }
-    
+
     func getQuranTextDataService() -> QuranTextDataService {
         AppDependencyContainer.shared.textDataService()
     }
-    
+
     func getQuranTranslationProviderName() -> String {
         "Quran_ur.json"
     }

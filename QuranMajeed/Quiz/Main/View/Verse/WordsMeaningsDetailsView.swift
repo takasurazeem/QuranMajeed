@@ -13,7 +13,7 @@ struct WordsMeaningsDetailsView: View {
     var rowFooterText: LocalizedStringKey {
         viewModel.selectedVersesForWordsMeaning.isEmpty ? "Please tap on the row to select verses for words meanings." : "You selected \(viewModel.selectedVersesForWordsMeaning.count) verses for words meaning."
     }
-    
+
     var body: some View {
         List {
             Section {
@@ -34,10 +34,10 @@ struct WordsMeaningsDetailsView: View {
                             Divider()
                                 .background(Color.accentColor)
                             Text(rowFooterText)
-                            .multilineTextAlignment(.leading)
-                            .font(.footnote)
-                            .foregroundStyle(Color.accentColor.opacity(0.9))
-                            .padding(.top, AppStyle.Spacing.space4)
+                                .multilineTextAlignment(.leading)
+                                .font(.footnote)
+                                .foregroundStyle(Color.accentColor.opacity(0.9))
+                                .padding(.top, AppStyle.Spacing.space4)
                         }
                         .padding(.top, AppStyle.Spacing.space8)
                     }

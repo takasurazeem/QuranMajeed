@@ -15,7 +15,7 @@ class QuizPreferencesDependencyContainer {
     ) {
         self.dataStore = dataStore
     }
-    
+
     func makePreferencesRepository() -> QuizPreferencesRepository {
         MainQuizPreferencesRepository(dataStore: dataStore)
     }
