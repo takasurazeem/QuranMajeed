@@ -16,9 +16,11 @@ extension QuizView {
     class ViewModel: ObservableObject {
         
         init(
-            theQuranRepository: QuranRepository
+            theQuranRepository: QuranRepository,
+            quizPreferencesRepository: QuizPreferencesRepository
         ) {
             self.theQuranRepository = theQuranRepository
+            self.quizPreferencesRepository = quizPreferencesRepository
             selectedAyahNumber = 1
             selectedVerse = Verse(ayaNumber: 1, text: "", translation: "")
             selectedSurah = theQuranRepository.getFirstSura()
@@ -107,6 +109,7 @@ extension QuizView {
         private(set) var quizVerses: [QuizVerse] = []
         private let readingPreferences = ReadingPreferences.shared
         private let urduQuran: [UrduTranslatedSuras]
+        private let quizPreferencesRepository: QuizPreferencesRepository
     }
 }
 

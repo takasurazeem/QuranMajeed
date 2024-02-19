@@ -9,7 +9,7 @@
 import Foundation
 
 /// A file-based data store that conforms to the `Datastore` protocol and supports Codable data.
-class FileDatastore<T: Codable>: Datastore {
+class FileDatastore: SyncDatastore {
     private let fileManager = FileManager.default
     private let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     
@@ -22,7 +22,7 @@ class FileDatastore<T: Codable>: Datastore {
         self.purpose = purpose
     }
     
-    func save(_ data: T, forKey key: String) {
+    func save<T: Codable>(_ data: T, forKey key: String) {
         let fileURL = getFileURL(forKey: key)
         do {
             let encodedData = try JSONEncoder().encode(data)
@@ -32,7 +32,7 @@ class FileDatastore<T: Codable>: Datastore {
         }
     }
     
-    func load(forKey key: String) -> T? {
+    func get<T: Codable>(forKey key: String) -> T? {
         let fileURL = getFileURL(forKey: key)
         do {
             let data = try Data(contentsOf: fileURL)

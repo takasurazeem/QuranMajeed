@@ -28,6 +28,10 @@ class AppDependencyContainer: AppDependencies {
     lazy var theQuranDependencyContainer: QuranDataDependencyContainer = {
         QuranDataDependencyContainer(providerForQuran: theQuranProvider)
     }()
+
+    lazy var quizPreferenncesDependencyContainer: QuizPreferencesDependencyContainer = {
+        QuizPreferencesDependencyContainer(dataStore: FileDatastore(purpose: "quizPreferences"))
+    }()
     
     let readingResources = ReadingResourcesService()
     let analytics: AnalyticsLibrary = LoggingAnalyticsLibrary()

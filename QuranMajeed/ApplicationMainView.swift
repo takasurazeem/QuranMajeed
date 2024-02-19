@@ -16,7 +16,11 @@ struct ApplicationMainView: View {
             .makeQuranRepository() {
             QuizView(
                 viewModel: QuizView.ViewModel(
-                    theQuranRepository: repo
+                    theQuranRepository: repo,
+                    quizPreferencesRepository: AppDependencyContainer
+                        .shared
+                        .quizPreferenncesDependencyContainer
+                        .makePreferencesRepository()
                 )
             )
         } else {

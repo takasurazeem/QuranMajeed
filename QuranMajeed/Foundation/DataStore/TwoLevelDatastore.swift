@@ -9,9 +9,9 @@
 import Foundation
 
 /// A two-level data store implementing both primary and secondary data stores.
-class TwoLevelDatastore<T: Codable>: Datastore {
-    private let memoryDatastore: MemoryDatastore<T>
-    private let fileDatastore: FileDatastore<T>
+class TwoLevelDatastore: SyncDatastore {
+    private let memoryDatastore: MemoryDatastore
+    private let fileDatastore: FileDatastore
     
     /// Initializes a `TwoLevelDatastore` with a specific purpose.
     /// - Parameter purpose: The purpose or context for the secondary data store.
@@ -22,7 +22,7 @@ class TwoLevelDatastore<T: Codable>: Datastore {
     
     // MARK: - Implementation of Datastore methods
     
-    func save(_ data: T, forKey key: String) {
+    func save<T: Codable>(_ data: T, forKey key: String) {
         // Save to memory data store
         memoryDatastore.save(data, forKey: key)
         
@@ -30,13 +30,14 @@ class TwoLevelDatastore<T: Codable>: Datastore {
         fileDatastore.save(data, forKey: key)
     }
     
-    func load(forKey key: String) -> T? {
+    func get<T: Codable>(forKey key: String) -> T? {
         // Try to load from memory data store first
-        if let loadedData = memoryDatastore.load(forKey: key) {
+        let loadedData: T? = memoryDatastore.get(forKey: key)
+        if let loadedData {
             return loadedData
         } else {
             // If not found in memory, try to load from file data store
-            return fileDatastore.load(forKey: key)
+            return fileDatastore.get(forKey: key)
         }
     }
     

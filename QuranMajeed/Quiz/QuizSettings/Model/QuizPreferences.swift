@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct QuizPreferences {
-    struct QuizHeader {
+struct QuizPreferences: Codable {
+    struct QuizHeader: Codable {
         var topRightText: String
         var topLeftText: String
     }
