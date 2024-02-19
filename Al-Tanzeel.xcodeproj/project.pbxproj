@@ -23,6 +23,7 @@
 		76B257062B82BECD00D89AC5 /* MainQuizPreferencesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B257052B82BECD00D89AC5 /* MainQuizPreferencesDataStore.swift */; };
 		76B257092B82C6B700D89AC5 /* MainQuizPreferencesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B257082B82C6B700D89AC5 /* MainQuizPreferencesRepository.swift */; };
 		76B2570B2B82CF8A00D89AC5 /* QuizPreferencesDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B2570A2B82CF8A00D89AC5 /* QuizPreferencesDependencyContainer.swift */; };
+		76B2570E2B82D2ED00D89AC5 /* QuizSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B2570D2B82D2ED00D89AC5 /* QuizSettingsViewModel.swift */; };
 		76C1F8DB2AC2421900085DA2 /* QuizVerse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1F8DA2AC2421900085DA2 /* QuizVerse.swift */; };
 		76C1F8DD2AC2444B00085DA2 /* WordForWordsMeaning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1F8DC2AC2444B00085DA2 /* WordForWordsMeaning.swift */; };
 		F91766432AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */; };
@@ -116,6 +117,7 @@
 		76B257052B82BECD00D89AC5 /* MainQuizPreferencesDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQuizPreferencesDataStore.swift; sourceTree = "<group>"; };
 		76B257082B82C6B700D89AC5 /* MainQuizPreferencesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQuizPreferencesRepository.swift; sourceTree = "<group>"; };
 		76B2570A2B82CF8A00D89AC5 /* QuizPreferencesDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPreferencesDependencyContainer.swift; sourceTree = "<group>"; };
+		76B2570D2B82D2ED00D89AC5 /* QuizSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSettingsViewModel.swift; sourceTree = "<group>"; };
 		76C1F8DA2AC2421900085DA2 /* QuizVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVerse.swift; sourceTree = "<group>"; };
 		76C1F8DC2AC2444B00085DA2 /* WordForWordsMeaning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordForWordsMeaning.swift; sourceTree = "<group>"; };
 		F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVersesForWordsMeaningView.swift; sourceTree = "<group>"; };
@@ -312,6 +314,14 @@
 			path = DataStore;
 			sourceTree = "<group>";
 		};
+		76B2570C2B82D2E000D89AC5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				76B2570D2B82D2ED00D89AC5 /* QuizSettingsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		76C1F8D22AC2291000085DA2 /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +362,7 @@
 		F928BBB82B7EDA8000B5AD1F /* QuizSettings */ = {
 			isa = PBXGroup;
 			children = (
+				76B2570C2B82D2E000D89AC5 /* ViewModel */,
 				76B256FE2B82BCEF00D89AC5 /* View */,
 				76B256FD2B82BCDE00D89AC5 /* DataStore */,
 				76B256FC2B82BCD800D89AC5 /* Model */,
@@ -846,6 +857,7 @@
 				F9F11E0C2AC4D66800100507 /* FlexibleViewContainerViewModel.swift in Sources */,
 				F96447892AB467A000DB5412 /* QuranDataDependencyContainer.swift in Sources */,
 				F9D60D2F2A77DD9600701635 /* QuizPDFPreview.swift in Sources */,
+				76B2570E2B82D2ED00D89AC5 /* QuizSettingsViewModel.swift in Sources */,
 				F91839662AB7D98D00E4D45B /* VerseListView.swift in Sources */,
 				F952CFD22A96D6BA0039478F /* String+size.swift in Sources */,
 				F917664E2AC3A3DC00792D2F /* SizeReader.swift in Sources */,
