@@ -11,7 +11,7 @@ import Foundation
 class QuizPreferencesDependencyContainer {
 
     init(
-        dataStore: SyncDatastore
+        dataStore: QuizPreferencesDataStore
     ) {
         self.dataStore = dataStore
     }
@@ -20,5 +20,5 @@ class QuizPreferencesDependencyContainer {
         MainQuizPreferencesRepository(dataStore: dataStore)
     }
 
-    private let dataStore: SyncDatastore
+    private let dataStore: QuizPreferencesDataStore
 }

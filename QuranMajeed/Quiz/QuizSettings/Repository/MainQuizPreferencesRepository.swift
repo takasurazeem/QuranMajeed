@@ -10,16 +10,17 @@ import Foundation
 
 class MainQuizPreferencesRepository: QuizPreferencesRepository {
 
-    init(dataStore: SyncDatastore) {
+    init(dataStore: QuizPreferencesDataStore) {
         self.dataStore = dataStore
     }
 
     func save(quizPreferences: QuizPreferences) {
-
+        dataStore.save(quizPreferences: quizPreferences)
     }
+    
     func get() -> QuizPreferences? {
-        fatalError()
+        dataStore.get()
     }
 
-    private let dataStore: SyncDatastore
+    private let dataStore: QuizPreferencesDataStore
 }

@@ -9,67 +9,58 @@
 import SwiftUI
 
 struct QuizSettingsView: View {
-    @AppStorage("MasjidName") private var masjidName: String = ""
-    @AppStorage("ClassName") private var className: String = ""
     private let masjidNameLabel: String = "Masjid Name"
     private let classNameLabel: String = "Class Name"
-
+    @State private var showingAddClassSheet = false
+    @StateObject private var viewModel: ViewModel
+    
+    init(viewModel: ViewModel) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+    }
+    
     var body: some View {
-        List {
-            Section("Top Header") {
-                NavigationLink {
-                    VStack {
-                        TextField(masjidNameLabel, text: $masjidName)
-                            .padding()
-                        Spacer()
-                    }
-                    .navigationTitle(masjidNameLabel)
-                } label: {
-                    VStack {
-                        HStack {
-                            Text("🕌")
-                                .frame(minWidth: 32)
-                            Text(masjidNameLabel)
-                        }
-                        if !masjidName.isEmpty {
-                            Text(masjidName)
-                                .font(.footnote)
-                                .foregroundColor(.gray)
-                        } else {
-                            Text("Tap here to set the Masjid name")
-                                .font(.footnote)
-                                .foregroundColor(.gray)
+        VStack {
+            if !viewModel.classes.isEmpty {
+                List {
+                    Section("Classes") {
+                        ForEach(viewModel.classes) { quizClass in
+                            HStack {
+                                Text(quizClass.masjidName)
+                                Spacer()
+                                Text(quizClass.className)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding(.horizontal)
                         }
                     }
                 }
-
-                NavigationLink {
-                    VStack {
-                        TextField(classNameLabel, text: $className)
-                            .padding()
-                        Spacer()
+            } else {
+                Text("Tap here or on the plus icon to add classes.")
+                    .font(.callout)
+                    .onTapGesture {
+                        showingAddClassSheet = true
                     }
-                    .navigationTitle(classNameLabel)
+            }
+        }
+        .toolbar {
+            ToolbarItemGroup {
+                Button {
+                    showingAddClassSheet = true
                 } label: {
-                    VStack {
-                        HStack {
-                            Text("🎓")
-                                .frame(minWidth: 32)
-                            Text(classNameLabel)
-                        }
-
-                        if !className.isEmpty {
-                            Text(className)
-                                .font(.footnote)
-                                .foregroundColor(.gray)
-                        } else {
-                            Text("Tap here to set the class name")
-                                .font(.footnote)
-                                .foregroundColor(.gray)
-                        }
-                    }
+                    Image(systemName: "pencil.tip.crop.circle.badge.plus")
                 }
-
+            }
+        }
+        .sheet(isPresented: $showingAddClassSheet) {
+            NavigationStack {
+                AddClassView(
+                    masjidName: "",
+                    className: "",
+                    buttonTitle: "Save",
+                    viewModel: viewModel,
+                    dismiss: $showingAddClassSheet
+                )
+                .navigationTitle("Class Details")
             }
         }
     }
@@ -77,7 +68,11 @@ struct QuizSettingsView: View {
 
 #Preview {
     NavigationStack {
-        QuizSettingsView()
-            .navigationTitle("Quiz Settings")
+        QuizSettingsView(
+            viewModel: QuizSettingsView.ViewModel(
+                quizPreferencesRepository: AppDependencyContainer.shared.quizPreferenncesDependencyContainer.makePreferencesRepository()
+            )
+        )
+        .navigationTitle("Quiz Settings")
     }
 }

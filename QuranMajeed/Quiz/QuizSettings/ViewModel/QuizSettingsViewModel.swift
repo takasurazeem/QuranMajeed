@@ -10,11 +10,39 @@ import SwiftUI
 
 extension QuizSettingsView {
 
-    class QuizSettingsViewModel: ObservableObject {
+    @MainActor class ViewModel: ObservableObject {
 
-        init() { }
+        init(
+            quizPreferencesRepository: QuizPreferencesRepository
+        ) {
+            self.quizPreferencesRepository = quizPreferencesRepository
+            
+            // Load classes
+            self.classes = quizPreferencesRepository.get()?.classList ?? []
+         }
 
-        @AppStorage("MasjidName") private var masjidName: String = ""
-        @AppStorage("ClassName") private var className: String = ""
+        func savePreferences() {
+            var preferences = quizPreferencesRepository.get() ?? .init(classList: [])
+            preferences.classList = classes
+            quizPreferencesRepository.save(quizPreferences: preferences)
+        }
+        
+        func addClass(
+            className: String,
+            masjidName: String
+        ) {
+            let newClass = QuizPreferences.QuizClass(
+                className: className,
+                masjidName: masjidName,
+                isSelected: classes.isEmpty ? true : false
+            )
+            if !classes.contains(newClass) {
+                classes.append(newClass)
+            }
+            savePreferences()
+        }
+
+        private let quizPreferencesRepository: QuizPreferencesRepository
+        @Published var classes: [QuizPreferences.QuizClass] = []
     }
 }

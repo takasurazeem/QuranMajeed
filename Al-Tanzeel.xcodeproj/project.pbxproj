@@ -24,6 +24,9 @@
 		76B257092B82C6B700D89AC5 /* MainQuizPreferencesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B257082B82C6B700D89AC5 /* MainQuizPreferencesRepository.swift */; };
 		76B2570B2B82CF8A00D89AC5 /* QuizPreferencesDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B2570A2B82CF8A00D89AC5 /* QuizPreferencesDependencyContainer.swift */; };
 		76B2570E2B82D2ED00D89AC5 /* QuizSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B2570D2B82D2ED00D89AC5 /* QuizSettingsViewModel.swift */; };
+		76B257102B83063D00D89AC5 /* QuizHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B2570F2B83063D00D89AC5 /* QuizHeader.swift */; };
+		76B257122B83066600D89AC5 /* QuizClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B257112B83066600D89AC5 /* QuizClass.swift */; };
+		76B257142B83109800D89AC5 /* AddClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B257132B83109800D89AC5 /* AddClassView.swift */; };
 		76C1F8DB2AC2421900085DA2 /* QuizVerse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1F8DA2AC2421900085DA2 /* QuizVerse.swift */; };
 		76C1F8DD2AC2444B00085DA2 /* WordForWordsMeaning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1F8DC2AC2444B00085DA2 /* WordForWordsMeaning.swift */; };
 		F91766432AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */; };
@@ -118,6 +121,9 @@
 		76B257082B82C6B700D89AC5 /* MainQuizPreferencesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQuizPreferencesRepository.swift; sourceTree = "<group>"; };
 		76B2570A2B82CF8A00D89AC5 /* QuizPreferencesDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPreferencesDependencyContainer.swift; sourceTree = "<group>"; };
 		76B2570D2B82D2ED00D89AC5 /* QuizSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSettingsViewModel.swift; sourceTree = "<group>"; };
+		76B2570F2B83063D00D89AC5 /* QuizHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizHeader.swift; sourceTree = "<group>"; };
+		76B257112B83066600D89AC5 /* QuizClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizClass.swift; sourceTree = "<group>"; };
+		76B257132B83109800D89AC5 /* AddClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClassView.swift; sourceTree = "<group>"; };
 		76C1F8DA2AC2421900085DA2 /* QuizVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVerse.swift; sourceTree = "<group>"; };
 		76C1F8DC2AC2444B00085DA2 /* WordForWordsMeaning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordForWordsMeaning.swift; sourceTree = "<group>"; };
 		F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVersesForWordsMeaningView.swift; sourceTree = "<group>"; };
@@ -282,6 +288,8 @@
 			isa = PBXGroup;
 			children = (
 				F928BBBB2B7EE2AD00B5AD1F /* QuizPreferences.swift */,
+				76B2570F2B83063D00D89AC5 /* QuizHeader.swift */,
+				76B257112B83066600D89AC5 /* QuizClass.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				F928BBB92B7EDA9000B5AD1F /* QuizSettingsView.swift */,
+				76B257132B83109800D89AC5 /* AddClassView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -823,6 +832,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		F928BBB72B7ED59F00B5AD1F /* WhatToTest */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -875,14 +885,17 @@
 				F94514CF2AE4668A0042F169 /* PulseEffect.swift in Sources */,
 				F952CFD42A96D6E50039478F /* NSAttributedString+size.swift in Sources */,
 				F96447852AB466CC00DB5412 /* QuranProvider.swift in Sources */,
+				76B257102B83063D00D89AC5 /* QuizHeader.swift in Sources */,
 				F9D60D152A76C6AC00701635 /* QuizViewModel.swift in Sources */,
 				F9A359332AE40E13002E8641 /* AppStyle.swift in Sources */,
 				F9D60D332A77E01300701635 /* PDFGenerator.swift in Sources */,
 				F9D60D172A76C6AC00701635 /* QuizView.swift in Sources */,
+				76B257122B83066600D89AC5 /* QuizClass.swift in Sources */,
 				F948F1AB2AE5A9F8004679ED /* QuizPreparationViewSteps.swift in Sources */,
 				7620AA5C2B386DC9007FD04D /* MemoryDatastore.swift in Sources */,
 				F928BBBC2B7EE2AD00B5AD1F /* QuizPreferences.swift in Sources */,
 				F928BBBA2B7EDA9000B5AD1F /* QuizSettingsView.swift in Sources */,
+				76B257142B83109800D89AC5 /* AddClassView.swift in Sources */,
 				F91839622AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift in Sources */,
 				F9D60D012A76C69D00701635 /* QuranQuizApp.swift in Sources */,
 				F98C231B2ABE2C8E00FED70E /* UrduTranslation.swift in Sources */,

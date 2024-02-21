@@ -66,8 +66,12 @@ struct QuizView: View {
         .environment(\.colorScheme, darkMode ? .dark : .light)
         .sheet(isPresented: $isShowingSettingsPage) {
             NavigationStack {
-                QuizSettingsView()
-                    .navigationTitle("Quiz Settings")
+                QuizSettingsView(
+                    viewModel: QuizSettingsView.ViewModel(
+                        quizPreferencesRepository: AppDependencyContainer.shared.quizPreferenncesDependencyContainer.makePreferencesRepository()
+                    )
+                )
+                .navigationTitle("Quiz Settings")
             }
         }
     }

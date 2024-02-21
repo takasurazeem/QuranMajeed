@@ -12,12 +12,12 @@ import SwiftUI
 class PDFGenerator {
     init(
         verses: [QuizVerse],
-        words: [WordForWordsMeaning],
-        preferences: QuizPreferences
+        words: [WordForWordsMeaning]//,
+//        preferences: QuizPreferences
     ) {
         self.verses = verses
         self.words = words.filter { $0.isSelected }
-        self.preferences = preferences
+//        self.preferences = preferences
 
         // 1
         pdfMetaData = [
@@ -320,7 +320,7 @@ class PDFGenerator {
     // MARK: - Dependencies
     private let verses: [QuizVerse]
     private let words: [WordForWordsMeaning]
-    private let preferences: QuizPreferences
+//    private let preferences: QuizPreferences
 }
 
 extension PDFGenerator {
@@ -367,8 +367,9 @@ extension PDFGenerator {
     }
 
     private func drawRightHeadingText() {
-        let rightHeadingTextWidth = preferences.quizHeader.topRightText.width(usingFont: leftRightHeadingsFont)
-        preferences.quizHeader.topRightText.draw(
+        let rightHeadingTextWidth = 0.0 //preferences.quizHeader.topRightText.width(usingFont: leftRightHeadingsFont)
+//        preferences.quizHeader.topRightText
+        "".draw(
             at: CGPoint(
                 x: pageWidth - rightHeadingTextWidth - (rightHeadingTextWidth * 0.1),
                 y: 5
@@ -378,7 +379,8 @@ extension PDFGenerator {
     }
 
     private func drawLeftHeadingText() {
-        preferences.quizHeader.topLeftText.draw(
+//        preferences.quizHeader.topLeftText
+            "".draw(
             at: CGPoint(
                 x: 10,
                 y: 5

@@ -28,14 +28,7 @@ struct PDFPreviewView: View {
                 PDFKitView(
                     documentData: PDFGenerator(
                         verses: viewModel.quizVerses,
-                        words: viewModel.wordsForWordsMeaning,
-                        preferences: QuizPreferences(
-                            quizHeader: QuizPreferences.QuizHeader(
-                                topRightText: className,
-                                topLeftText: masjidName
-                            )// ,
-                            //                            quizDate: quizDate
-                        )
+                        words: viewModel.wordsForWordsMeaning
                     )
                     .generateQuiz()
                 )
@@ -45,8 +38,7 @@ struct PDFPreviewView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         if let document = PDFDocument(data: PDFGenerator(
                             verses: viewModel.quizVerses,
-                            words: viewModel.wordsForWordsMeaning,
-                            preferences: QuizPreferences(quizHeader: QuizPreferences.QuizHeader(topRightText: className, topLeftText: masjidName))
+                            words: viewModel.wordsForWordsMeaning
                         )
                         .generateQuiz()) {
                             ShareLink(item: document, preview: SharePreview("PDF"))

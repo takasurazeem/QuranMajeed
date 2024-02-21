@@ -30,7 +30,13 @@ class AppDependencyContainer: AppDependencies {
     }()
 
     lazy var quizPreferenncesDependencyContainer: QuizPreferencesDependencyContainer = {
-        QuizPreferencesDependencyContainer(dataStore: FileDatastore(purpose: "quizPreferences"))
+        QuizPreferencesDependencyContainer(
+            dataStore: MainQuizPreferencesDataStore(
+                dataStore: FileDatastore(
+                    purpose: "quizPreferences"
+                )
+            )
+        )
     }()
 
     let readingResources = ReadingResourcesService()

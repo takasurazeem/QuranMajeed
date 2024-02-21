@@ -9,11 +9,6 @@
 import Foundation
 
 struct QuizPreferences: Codable {
-    struct QuizHeader: Codable {
-        var topRightText: String
-        var topLeftText: String
-    }
-
-    var quizHeader: QuizHeader
-    var quizDate = Date.now
+    var classList: [QuizClass]
+    var selectedClass: QuizClass?
 }

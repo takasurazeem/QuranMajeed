@@ -23,10 +23,10 @@
         }
       }
     },
-    "🎓" : {
+    "🎓 Class Name" : {
 
     },
-    "🕌" : {
+    "🕌 Masjid Name" : {
 
     },
     "Arabic" : {
@@ -49,6 +49,12 @@
           }
         }
       }
+    },
+    "Class Details" : {
+
+    },
+    "Classes" : {
+
     },
     "Date:" : {
       "comment" : "The date text, not the today's date.",
@@ -261,10 +267,7 @@
         }
       }
     },
-    "Tap here to set the class name" : {
-
-    },
-    "Tap here to set the Masjid name" : {
+    "Tap here or on the plus icon to add classes." : {
 
     },
     "Tap words to select them." : {
@@ -276,9 +279,6 @@
           }
         }
       }
-    },
-    "Top Header" : {
-
     },
     "Translate the following verses" : {
       "localizations" : {
