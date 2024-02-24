@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/* THE FILE REFERENCE IS REMOVED TO KEEP DIRECTORY CLEAN */
 struct FlexibleViewContainerSettings: View {
     @ObservedObject var viewModel: FlexibleViewContainer.ViewModel
     let alignmentName: [String] = ["leading", "center", "trailing"]

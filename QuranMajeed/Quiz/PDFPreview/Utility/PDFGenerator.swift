@@ -6,14 +6,18 @@
 //
 
 import PDFKit
+import Foundation
+import SwiftUI
 
 class PDFGenerator {
     init(
         verses: [QuizVerse],
-        words: [WordForWordsMeaning]
+        words: [WordForWordsMeaning],
+        preferences: QuizPreferences
     ) {
         self.verses = verses
-        self.words = words
+        self.words = words.filter { $0.isSelected }
+        self.preferences = preferences
         
         // 1
         pdfMetaData = [
@@ -42,7 +46,10 @@ class PDFGenerator {
         let data = renderer.pdfData { (context) in
             // 5
             context.beginPage()
-            
+            addBorder(
+                context: context,
+                pageRect: pageRect
+            )
             drawQuizHeaders()
             var yPosForNextTask = drawVerses(context)
             drawWordsMeanings(
@@ -52,6 +59,55 @@ class PDFGenerator {
         }
         
         return data
+    }
+    
+    private func addBorder(
+        context: UIGraphicsPDFRendererContext,
+        pageRect: CGRect  // Assuming pageRect is passed to the function
+    ) {
+        // Set the line width and color for the border
+        context.cgContext.setLineWidth(8.0)  // Adjust the border width as needed
+        context.cgContext.setStrokeColor(UIColor.black.cgColor)  // Adjust the border color
+        
+        // Define a custom pattern for the border (e.g., a dashed pattern)
+        let customPattern: [CGFloat] = [8, 4, 2, 4, 2, 4]  // Adjust the values for your custom pattern
+        
+        // Set the line dash pattern with a custom pattern
+        context.cgContext.setLineDash(phase: 0, lengths: customPattern)
+        
+        // Calculate the border rectangle based on the page size (assuming pageRect is provided)
+        let borderRect = CGRect(x: 0, y: 0, width: pageRect.width, height: pageRect.height)
+        
+        // Draw a border around the entire page with the custom pattern
+        context.cgContext.addRect(borderRect)
+        context.cgContext.strokePath()
+    }
+    
+    private func addFancyBorder(
+        context: UIGraphicsPDFRendererContext,
+        pageRect: CGRect
+    ) {
+        // Set a thicker line width for a bold border
+        context.cgContext.setLineWidth(4.0)
+        
+        // Create a custom pattern with varying dash lengths
+        let customPattern: [CGFloat] = [12, 8, 4, 8, 4, 12]
+        
+        // Set the line dash pattern with the custom pattern
+        context.cgContext.setLineDash(phase: 0, lengths: customPattern)
+        
+        context.cgContext.setStrokeColor(UIColor.black.cgColor)
+        
+        // Draw a custom shape, such as a rounded rectangle, for the border
+        let cornerRadius: CGFloat = 8.0
+        let borderPath = UIBezierPath(roundedRect: pageRect, byRoundingCorners: .allCorners, cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+        context.cgContext.addPath(borderPath.cgPath)
+        
+        // Draw a shadow for a 3D effect
+        context.cgContext.setShadow(offset: CGSize(width: 3, height: 3), blur: 5.0)
+        
+        // Stroke the border
+        context.cgContext.strokePath()
     }
     
     func drawWordsMeanings(
@@ -77,6 +133,10 @@ class PDFGenerator {
             let wordTextHeight = attributedVerseText.height(containerWidth: xOffset)
             if yPos + wordTextHeight > pageRectMaxY - 5 {
                 context.beginPage()
+                addBorder(
+                    context: context,
+                    pageRect: pageRect
+                )
                 yPos = 5
             }
             let wordTextRect = CGRect(
@@ -161,11 +221,15 @@ class PDFGenerator {
             height: translationTextHeight
         )
  */
-        let numberOfLines = attributedTranslationText.numberOfLines(with: pageRect.width)
+        let numberOfLines = attributedTranslationText.numberOfLines(forWidth: width - 10)
         let verseTextMaxY = verseTextRect.maxY
         let pageRectMaxY = pageRect.maxY
         if verseTextMaxY > pageRectMaxY - 5 {
             context.beginPage()
+            addBorder(
+                context: context,
+                pageRect: pageRect
+            )
             textPos = 5
         }
         verseTextRect = CGRect(
@@ -183,6 +247,10 @@ class PDFGenerator {
         for number in 1...numberOfLines {
             if yOffSet > pageRect.maxY - 5 {
                 context.beginPage()
+                addBorder(
+                    context: context,
+                    pageRect: pageRect
+                )
                 yOffSet = lineHeight
             }
             if number > 1 {
@@ -235,13 +303,11 @@ class PDFGenerator {
     
     // MARK: - Texts
     let theOpeningText = "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ"
-    let rightHeadingText = "امن ترجمةالقرآن کلاس"
-    let leftHeadingText = "جامع مسجد امن واپڈا ٹاؤن گوجراںوالہ"
-    let belowOpeningText = "سلسلہ وار ٹیسٹ"
-    let studentNameText = "نام طالب علم:"
+    let belowOpeningText = NSLocalizedString("Weekly Test", comment: "Middle heading")
+    let studentNameText = NSLocalizedString("Name: ____________________", comment: "") // "نام طالب علم:"
     let nameUnderScores = Array(repeating: "_", count: 20).reduce("", +)
-    let dateText = "بتاریخ:"
-    let translateFollowingAyahsText = "درج زیل آیات ترجمہ لکھیں:"
+    let dateText = NSLocalizedString("Date:", comment: "")
+    let translateFollowingAyahsText  = NSLocalizedString("Translate the following verses", comment: "")
     
     // MARK: - MetaData
     let pdfMetaData: [CFString: String]
@@ -257,6 +323,7 @@ class PDFGenerator {
     // MARK: - Dependencies
     private let verses: [QuizVerse]
     private let words: [WordForWordsMeaning]
+    private let preferences: QuizPreferences
 }
 
 extension PDFGenerator {
@@ -265,7 +332,7 @@ extension PDFGenerator {
     private func makeTranslationTextAttributes(_ paragraphStyle: NSMutableParagraphStyle) -> [NSAttributedString.Key : Any] {
         return [
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
-            NSAttributedString.Key.font: leftRightHeadingsFont.withSize(11.0),
+            NSAttributedString.Key.font: leftRightHeadingsFont.withSize(16.0),
             NSAttributedString.Key.writingDirection: [NSWritingDirection.rightToLeft.rawValue],
             NSAttributedString.Key.languageIdentifier: "ur_PK"
         ] as [NSAttributedString.Key : Any]
@@ -305,8 +372,8 @@ extension PDFGenerator {
     }
     
     private func drawRightHeadingText() {
-        let rightHeadingTextWidth = rightHeadingText.width(usingFont: leftRightHeadingsFont)
-        rightHeadingText.draw(
+        let rightHeadingTextWidth = preferences.quizHeader.topRightText.width(usingFont: leftRightHeadingsFont)
+        preferences.quizHeader.topRightText.draw(
             at: CGPoint(
                 x: pageWidth - rightHeadingTextWidth - (rightHeadingTextWidth * 0.1),
                 y: 5
@@ -316,7 +383,7 @@ extension PDFGenerator {
     }
     
     private func drawLeftHeadingText() {
-        leftHeadingText.draw(
+        preferences.quizHeader.topLeftText.draw(
             at: CGPoint(
                 x: 10,
                 y: 5
@@ -350,33 +417,28 @@ extension PDFGenerator {
             ),
             withAttributes: nameFieldAttributes
         )
-        nameUnderScores.draw(
-            at: CGPoint(
-                x: pageWidth - studentNameTextWidth - (nameUnderScores.width(usingFont: .boldSystemFont(ofSize: 14)) * 1.10),
-                y: studentNameRowYPos
-            ),
-            withAttributes: nameFieldAttributes
-        )
-        dateText.draw(
-            at: CGPoint(
-                x: dateTextXPos,
-                y: studentNameRowYPos
-            ),
-            withAttributes: nameFieldAttributes
-        )
     }
-    
+    /*
+     "\(dateText) \(date)".draw(
+         at: CGPoint(
+             x: dateTextXPos,
+             y: studentNameRowYPos
+         ),
+         withAttributes: nameFieldAttributes
+     )
+     */
     private func drawDateField() {
-        let dateFieldAttributes = [
-            NSAttributedString.Key.font: nameAndDateTextFont,
-            NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue
-        ] as [NSAttributedString.Key : Any]
-        date.draw(
+        let fullText = "\(dateText) \(date)"
+        let dateRange = (fullText as NSString).range(of: date)
+        let attributedString = NSMutableAttributedString(string: fullText)
+        attributedString.addAttribute(.font, value: nameAndDateTextFont, range: NSRange(location: 0, length: attributedString.length))
+        attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: dateRange)
+
+        attributedString.draw(
             at: CGPoint(
                 x: 15,
                 y: studentNameRowYPos
-            ),
-            withAttributes: dateFieldAttributes
+            )
         )
     }
     

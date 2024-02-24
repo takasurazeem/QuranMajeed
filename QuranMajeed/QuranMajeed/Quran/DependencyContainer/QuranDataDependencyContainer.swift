@@ -17,7 +17,7 @@ struct QuranDataDependencyContainer {
     }
     
     private func makeQuranService() throws -> QuranService {
-        try MainQuranService(providerForQuran: providerForQuran)
+        MainQuranService(providerForQuran: providerForQuran)
     }
     
     private let providerForQuran: QuranProvider

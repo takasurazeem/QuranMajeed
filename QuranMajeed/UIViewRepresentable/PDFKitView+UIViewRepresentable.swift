@@ -8,25 +8,8 @@
 import PDFKit
 import SwiftUI
 
-// TODO: - Set custom border
-//class BorderAnnotation: PDFBorder {
-//    override func draw(in rect: CGRect) {
-//        super.draw(in: rect)
-//        style = .dashed
-//    }
-//}
-//
-//class MainPDFViewDelegate: NSObject, PDFDocumentDelegate {
-//
-//    func `class`(forAnnotationType annotationType: String) -> AnyClass {
-//        BorderAnnotation.self
-//    }
-//}
-
-
 struct PDFKitView: UIViewRepresentable {
     public var documentData: Data?
-//    let documentDelegate = MainPDFViewDelegate()
     
     func makeUIView(context: UIViewRepresentableContext<PDFKitView>) -> PDFView {
         // Creating a new PDFVIew and adding a document to it
@@ -50,11 +33,8 @@ struct PDFKitView: UIViewRepresentable {
             border.style = .dashed
             border.lineWidth = 3
             
-//            annotation.border = border
             let lastPage = document.page(at: document.pageCount - 1)
             lastPage?.addAnnotation(annotation)
-            // TODO: - Set custom border
-//            document.delegate = documentDelegate
             pdfView.autoScales = true
         }
 

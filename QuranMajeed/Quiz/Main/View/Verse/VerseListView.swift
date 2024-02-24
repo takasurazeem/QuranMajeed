@@ -36,7 +36,7 @@ struct VerseListView: View {
                     .multilineTextAlignment(.trailing)
             }
         }
-        .navigationTitle("Ayah Selection")
+        .navigationTitle(Text("Verses Selection", comment: "Verse is a noun, but can be translated in Urdu and Arabic and in some other languages as well."))
         .environment(\.editMode, .constant(.active))
         .onAppear {
             selection = Set(selectedVerses)
@@ -53,6 +53,7 @@ struct VerseListView: View {
 struct VerseListView_Previews: PreviewProvider {
     static var previews: some View {
         ContentPreview()
+            .environment(\.locale, .init(identifier: "ur"))
     }
 }
 
@@ -65,10 +66,11 @@ fileprivate struct ContentPreview: View {
                 selectedVerses: .constant([])
             )
             .task {
-                let repo = try! AppDependencyContainer
+                guard let repo = try? AppDependencyContainer
                     .shared
                     .theQuranDependencyContainer
                     .makeQuranRepository()
+                else { return }
                 if let verses = try? await repo.getTranslatedVerses(verses: repo.getFirstSura().verses).verses {
                     self.allVerses = verses.enumerated().map { Verse(ayaNumber: $0 + 1, text: $1.arabicText, translation: "") }
                 }

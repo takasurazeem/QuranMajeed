@@ -3,13 +3,14 @@
 //  Quran
 //
 //  Created by Takasur Azeem on 30/07/2023.
-//  Copyright © 2023 Takasur Azeem. All rights reserved.
+//  Copyright © 2023 Islam. All rights reserved.
 //
 
 import Foundation
 import PDFKit
 import QuranKit
 import ReadingService
+import SwiftUI
 
 extension QuizView {
     class ViewModel: ObservableObject {
@@ -92,7 +93,8 @@ extension QuizView {
                             )
                     }
                 }
-                wordsForWordsMeaning = Array(words).sorted()
+                wordsForWordsMeaning.append(contentsOf: (Array(words).sorted()))
+                wordsForWordsMeaning = wordsForWordsMeaning.uniqueWords
             }
         }
         @Published var wordsForWordsMeaning: [WordForWordsMeaning] = []
@@ -113,5 +115,11 @@ extension Array where Element == Verse {
         self.map {
             QuizVerse(verse: $0, selectedSuraNumber: selectedSuraNumber)
         }
+    }
+}
+
+extension [WordForWordsMeaning] {
+    var uniqueWords: Self {
+        Array(Set<WordForWordsMeaning>(self)).sorted()
     }
 }
