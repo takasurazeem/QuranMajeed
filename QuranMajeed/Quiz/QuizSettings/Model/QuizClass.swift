@@ -22,8 +22,7 @@ extension QuizPreferences {
         
         static func == (lhs: QuizPreferences.QuizClass, rhs: QuizPreferences.QuizClass) -> Bool {
             (rhs.className == lhs.className) &&
-            (rhs.masjidName == lhs.masjidName) &&
-            (rhs.isSelected) == lhs.isSelected
+            (rhs.masjidName == lhs.masjidName)
         }
     }
 }
