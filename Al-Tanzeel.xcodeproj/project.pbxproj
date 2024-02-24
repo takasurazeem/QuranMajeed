@@ -47,7 +47,7 @@
 		F918395F2AB7CDA700E4D45B /* AppStructureFeature in Frameworks */ = {isa = PBXBuildFile; productRef = F918395E2AB7CDA700E4D45B /* AppStructureFeature */; };
 		F91839622AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91839612AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift */; };
 		F91839662AB7D98D00E4D45B /* VerseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91839652AB7D98D00E4D45B /* VerseListView.swift */; };
-		F928BBBA2B7EDA9000B5AD1F /* QuizSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F928BBB92B7EDA9000B5AD1F /* QuizSettingsView.swift */; };
+		F928BBBA2B7EDA9000B5AD1F /* QuizClassSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F928BBB92B7EDA9000B5AD1F /* QuizClassSettingsView.swift */; };
 		F928BBBC2B7EE2AD00B5AD1F /* QuizPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = F928BBBB2B7EE2AD00B5AD1F /* QuizPreferences.swift */; };
 		F94514C82AE461330042F169 /* WordsMeaningsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94514C72AE461330042F169 /* WordsMeaningsDetailsView.swift */; };
 		F94514CC2AE466550042F169 /* RoundedCornersModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94514CB2AE466550042F169 /* RoundedCornersModifier.swift */; };
@@ -137,7 +137,7 @@
 		F918394C2AB7B69900E4D45B /* SuraNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuraNameView.swift; sourceTree = "<group>"; };
 		F91839612AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingAnalyticsLibrary.swift; sourceTree = "<group>"; };
 		F91839652AB7D98D00E4D45B /* VerseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseListView.swift; sourceTree = "<group>"; };
-		F928BBB92B7EDA9000B5AD1F /* QuizSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSettingsView.swift; sourceTree = "<group>"; };
+		F928BBB92B7EDA9000B5AD1F /* QuizClassSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizClassSettingsView.swift; sourceTree = "<group>"; };
 		F928BBBB2B7EE2AD00B5AD1F /* QuizPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPreferences.swift; sourceTree = "<group>"; };
 		F94514C72AE461330042F169 /* WordsMeaningsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsMeaningsDetailsView.swift; sourceTree = "<group>"; };
 		F94514CB2AE466550042F169 /* RoundedCornersModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersModifier.swift; sourceTree = "<group>"; };
@@ -275,6 +275,15 @@
 			path = Verse;
 			sourceTree = "<group>";
 		};
+		7688CF542B8A80C90060567A /* QuizClassesSettings */ = {
+			isa = PBXGroup;
+			children = (
+				F928BBB92B7EDA9000B5AD1F /* QuizClassSettingsView.swift */,
+				76B257132B83109800D89AC5 /* AddClassView.swift */,
+			);
+			path = QuizClassesSettings;
+			sourceTree = "<group>";
+		};
 		76B256FB2B82BCD100D89AC5 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,8 +315,7 @@
 		76B256FE2B82BCEF00D89AC5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F928BBB92B7EDA9000B5AD1F /* QuizSettingsView.swift */,
-				76B257132B83109800D89AC5 /* AddClassView.swift */,
+				7688CF542B8A80C90060567A /* QuizClassesSettings */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -894,7 +902,7 @@
 				F948F1AB2AE5A9F8004679ED /* QuizPreparationViewSteps.swift in Sources */,
 				7620AA5C2B386DC9007FD04D /* MemoryDatastore.swift in Sources */,
 				F928BBBC2B7EE2AD00B5AD1F /* QuizPreferences.swift in Sources */,
-				F928BBBA2B7EDA9000B5AD1F /* QuizSettingsView.swift in Sources */,
+				F928BBBA2B7EDA9000B5AD1F /* QuizClassSettingsView.swift in Sources */,
 				76B257142B83109800D89AC5 /* AddClassView.swift in Sources */,
 				F91839622AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift in Sources */,
 				F9D60D012A76C69D00701635 /* QuranQuizApp.swift in Sources */,

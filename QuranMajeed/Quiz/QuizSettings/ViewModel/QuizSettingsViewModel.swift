@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-extension QuizSettingsView {
+extension QuizClassSettingsView {
 
     @MainActor class ViewModel: ObservableObject {
 

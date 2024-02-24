@@ -13,13 +13,13 @@ struct AddClassView: View {
     @State var masjidName: String = ""
     @State var className: String = ""
     private let buttonTitle: String
-    @ObservedObject var viewModel: QuizSettingsView.ViewModel
+    @ObservedObject var viewModel: QuizClassSettingsView.ViewModel
     
     init(
         masjidName: String,
         className: String,
         buttonTitle: String,
-        viewModel: QuizSettingsView.ViewModel,
+        viewModel: QuizClassSettingsView.ViewModel,
         dismiss: Binding<Bool>
     ) {
         self.masjidName = masjidName
@@ -54,7 +54,7 @@ struct AddClassView: View {
         masjidName: "",
         className: "",
         buttonTitle: "Save",
-        viewModel: QuizSettingsView.ViewModel(
+        viewModel: QuizClassSettingsView.ViewModel(
             quizPreferencesRepository: AppDependencyContainer.shared.quizPreferenncesDependencyContainer.makePreferencesRepository()
         ), 
         dismiss: .constant(false)

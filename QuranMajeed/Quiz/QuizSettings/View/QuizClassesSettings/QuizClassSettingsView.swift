@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct QuizSettingsView: View {
+struct QuizClassSettingsView: View {
     private let masjidNameLabel: String = "Masjid Name"
     private let classNameLabel: String = "Class Name"
     @State private var showingAddClassSheet = false
@@ -35,7 +35,7 @@ struct QuizSettingsView: View {
                     }
                 }
             } else {
-                Text("Tap here or on the plus icon to add classes.")
+                Text("Tap here or on the plus icon to add class.")
                     .font(.callout)
                     .onTapGesture {
                         showingAddClassSheet = true
@@ -68,11 +68,11 @@ struct QuizSettingsView: View {
 
 #Preview {
     NavigationStack {
-        QuizSettingsView(
-            viewModel: QuizSettingsView.ViewModel(
+        QuizClassSettingsView(
+            viewModel: QuizClassSettingsView.ViewModel(
                 quizPreferencesRepository: AppDependencyContainer.shared.quizPreferenncesDependencyContainer.makePreferencesRepository()
             )
         )
-        .navigationTitle("Quiz Settings")
+        .navigationTitle("Classes")
     }
 }
