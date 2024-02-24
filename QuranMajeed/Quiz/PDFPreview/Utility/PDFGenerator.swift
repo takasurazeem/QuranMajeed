@@ -212,15 +212,15 @@ class PDFGenerator {
             width: width,
             height: verseTextHeight
         )
-        /*
-         let translationTextRect = CGRect(
-         x: 10,
-         y: verseTextRect.maxY + 10,
-         width: width,
-         height: translationTextHeight
-         )
-         */
-        let numberOfLines = attributedTranslationText.numberOfLines(with: pageRect.width)
+/*
+        let translationTextRect = CGRect(
+            x: 10,
+            y: verseTextRect.maxY + 10,
+            width: width,
+            height: translationTextHeight
+        )
+ */
+        let numberOfLines = attributedTranslationText.numberOfLines(forWidth: width - 10)
         let verseTextMaxY = verseTextRect.maxY
         let pageRectMaxY = pageRect.maxY
         if verseTextMaxY > pageRectMaxY - 5 {
@@ -328,7 +328,7 @@ extension PDFGenerator {
     private func makeTranslationTextAttributes(_ paragraphStyle: NSMutableParagraphStyle) -> [NSAttributedString.Key: Any] {
         return [
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
-            NSAttributedString.Key.font: leftRightHeadingsFont.withSize(15.0),
+            NSAttributedString.Key.font: leftRightHeadingsFont.withSize(16.0),
             NSAttributedString.Key.writingDirection: [NSWritingDirection.rightToLeft.rawValue],
             NSAttributedString.Key.languageIdentifier: "ur_PK"
         ] as [NSAttributedString.Key: Any]
