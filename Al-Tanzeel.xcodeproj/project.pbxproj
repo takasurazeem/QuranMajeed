@@ -284,6 +284,18 @@
 			path = QuizClassesSettings;
 			sourceTree = "<group>";
 		};
+		768A89F22B8AF7C80026A9AC /* QuizClassSettings */ = {
+			isa = PBXGroup;
+			children = (
+				76B2570C2B82D2E000D89AC5 /* ViewModel */,
+				76B256FE2B82BCEF00D89AC5 /* View */,
+				76B256FD2B82BCDE00D89AC5 /* DataStore */,
+				76B256FC2B82BCD800D89AC5 /* Model */,
+				76B256FB2B82BCD100D89AC5 /* Repository */,
+			);
+			path = QuizClassSettings;
+			sourceTree = "<group>";
+		};
 		76B256FB2B82BCD100D89AC5 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,11 +391,7 @@
 		F928BBB82B7EDA8000B5AD1F /* QuizSettings */ = {
 			isa = PBXGroup;
 			children = (
-				76B2570C2B82D2E000D89AC5 /* ViewModel */,
-				76B256FE2B82BCEF00D89AC5 /* View */,
-				76B256FD2B82BCDE00D89AC5 /* DataStore */,
-				76B256FC2B82BCD800D89AC5 /* Model */,
-				76B256FB2B82BCD100D89AC5 /* Repository */,
+				768A89F22B8AF7C80026A9AC /* QuizClassSettings */,
 				76B2570A2B82CF8A00D89AC5 /* QuizPreferencesDependencyContainer.swift */,
 			);
 			path = QuizSettings;
