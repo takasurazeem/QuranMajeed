@@ -178,9 +178,6 @@
         }
       }
     },
-    "Quiz Settings" : {
-
-    },
     "Select Surah" : {
       "comment" : "Sura is a noun, but can be translated in Urdu and Arabic and in some other languages as well.",
       "localizations" : {
@@ -267,7 +264,7 @@
         }
       }
     },
-    "Tap here or on the plus icon to add classes." : {
+    "Tap here or on the plus icon to add class." : {
 
     },
     "Tap words to select them." : {
