@@ -35,32 +35,36 @@ struct QuizClassSettingsView: View {
                     }
                 }
             } else {
-                Text("Tap here or on the plus icon to add class.")
-                    .font(.callout)
-                    .onTapGesture {
-                        showingAddClassSheet = true
-                    }
+                NavigationLink {
+                    AddClassView(
+                        masjidName: "",
+                        className: "",
+                        buttonTitle: "Save",
+                        viewModel: viewModel,
+                        dismiss: $showingAddClassSheet
+                    )
+                    .navigationTitle("Class Details")
+                } label: {
+                    Text("Tap here or on the plus icon to add class.")
+                        .font(.callout)
+                        .foregroundStyle(Color(.black))
+                }
             }
         }
         .toolbar {
             ToolbarItemGroup {
-                Button {
-                    showingAddClassSheet = true
+                NavigationLink {
+                    AddClassView(
+                        masjidName: "",
+                        className: "",
+                        buttonTitle: "Save",
+                        viewModel: viewModel,
+                        dismiss: $showingAddClassSheet
+                    )
+                    .navigationTitle("Class Details")
                 } label: {
                     Image(systemName: "pencil.tip.crop.circle.badge.plus")
                 }
-            }
-        }
-        .sheet(isPresented: $showingAddClassSheet) {
-            NavigationStack {
-                AddClassView(
-                    masjidName: "",
-                    className: "",
-                    buttonTitle: "Save",
-                    viewModel: viewModel,
-                    dismiss: $showingAddClassSheet
-                )
-                .navigationTitle("Class Details")
             }
         }
     }

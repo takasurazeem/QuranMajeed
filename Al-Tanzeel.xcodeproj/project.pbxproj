@@ -18,6 +18,7 @@
 		763539D52AB7975500CC27FD /* ReadingService in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D42AB7975500CC27FD /* ReadingService */; };
 		763539D72AB7998A00CC27FD /* Localization in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D62AB7998A00CC27FD /* Localization */; };
 		763539D92AB799E500CC27FD /* QuranTextKit in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D82AB799E500CC27FD /* QuranTextKit */; };
+		768A89F52B8AF8360026A9AC /* MainSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768A89F42B8AF8360026A9AC /* MainSettingsView.swift */; };
 		76B257002B82BD0A00D89AC5 /* QuizPreferencesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B256FF2B82BD0A00D89AC5 /* QuizPreferencesRepository.swift */; };
 		76B257042B82BEA500D89AC5 /* QuizPreferencesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B257032B82BEA500D89AC5 /* QuizPreferencesDataStore.swift */; };
 		76B257062B82BECD00D89AC5 /* MainQuizPreferencesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B257052B82BECD00D89AC5 /* MainQuizPreferencesDataStore.swift */; };
@@ -115,6 +116,7 @@
 		7620AA5B2B386DC9007FD04D /* MemoryDatastore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryDatastore.swift; sourceTree = "<group>"; };
 		7620AA5D2B386DE2007FD04D /* FileDatastore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDatastore.swift; sourceTree = "<group>"; };
 		7620AA5F2B386ED6007FD04D /* TwoLevelDatastore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoLevelDatastore.swift; sourceTree = "<group>"; };
+		768A89F42B8AF8360026A9AC /* MainSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingsView.swift; sourceTree = "<group>"; };
 		76B256FF2B82BD0A00D89AC5 /* QuizPreferencesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPreferencesRepository.swift; sourceTree = "<group>"; };
 		76B257032B82BEA500D89AC5 /* QuizPreferencesDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizPreferencesDataStore.swift; sourceTree = "<group>"; };
 		76B257052B82BECD00D89AC5 /* MainQuizPreferencesDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQuizPreferencesDataStore.swift; sourceTree = "<group>"; };
@@ -296,6 +298,22 @@
 			path = QuizClassSettings;
 			sourceTree = "<group>";
 		};
+		768A89F32B8AF8280026A9AC /* MainSettings */ = {
+			isa = PBXGroup;
+			children = (
+				768A89F62B8AF83B0026A9AC /* View */,
+			);
+			path = MainSettings;
+			sourceTree = "<group>";
+		};
+		768A89F62B8AF83B0026A9AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				768A89F42B8AF8360026A9AC /* MainSettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		76B256FB2B82BCD100D89AC5 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -391,6 +409,7 @@
 		F928BBB82B7EDA8000B5AD1F /* QuizSettings */ = {
 			isa = PBXGroup;
 			children = (
+				768A89F32B8AF8280026A9AC /* MainSettings */,
 				768A89F22B8AF7C80026A9AC /* QuizClassSettings */,
 				76B2570A2B82CF8A00D89AC5 /* QuizPreferencesDependencyContainer.swift */,
 			);
@@ -889,6 +908,7 @@
 				F917664E2AC3A3DC00792D2F /* SizeReader.swift in Sources */,
 				76B257042B82BEA500D89AC5 /* QuizPreferencesDataStore.swift in Sources */,
 				F968AC792AC0F3690086F841 /* SelectTranslationVersesView.swift in Sources */,
+				768A89F52B8AF8360026A9AC /* MainSettingsView.swift in Sources */,
 				760FEDDF2AE644B900EEFDFB /* ApplicationMainView.swift in Sources */,
 				F964477C2AB4561900DB5412 /* MainQuranRepository.swift in Sources */,
 				7620AA5A2B386DAA007FD04D /* SyncDatastore.swift in Sources */,
