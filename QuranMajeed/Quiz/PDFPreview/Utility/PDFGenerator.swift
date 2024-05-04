@@ -282,7 +282,7 @@ class PDFGenerator {
         drawContext.saveGState()
         // 3
         drawContext.setLineWidth(1.0)
-        
+        drawContext.setLineDash(phase: 0, lengths: [])
         // 4
         drawContext.move(to: CGPoint(x: 5, y: yOffset))
         drawContext.addLine(to: CGPoint(x: pageRect.width - 5, y: yOffset))
