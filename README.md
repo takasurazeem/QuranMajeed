@@ -15,3 +15,4 @@ This app will help you create a Quiz for your students if you teach the Quran. T
 </table>
 
 This project is NOT tested with Browserstack.
+
