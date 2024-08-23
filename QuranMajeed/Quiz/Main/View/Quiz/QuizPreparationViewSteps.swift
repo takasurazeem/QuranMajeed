@@ -13,6 +13,23 @@ struct QuizPreparationViewSteps: View {
     var body: some View {
         List {
             Section {
+                // Date picker with date only, do not let select past date and not more than 7 days in advance
+                DatePicker(
+                    "Quiz Date",
+                    selection: $viewModel.quizDate,
+                    in: Date()...Date().addingTimeInterval(
+                        7 * 24 * 60 * 60
+                    ),
+                    displayedComponents: .date
+                )
+                .environment(
+                    \.calendar,
+                     Calendar(
+                        identifier: .islamicUmmAlQura
+                     )
+                )
+            }
+            Section {
                 SelectedSurahView(viewModel: viewModel)
             }
             // MARK: - Select verses for translation

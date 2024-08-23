@@ -16,7 +16,6 @@ struct ChevronView: View {
     }
 }
 
-
 #Preview {
     ChevronView()
 }

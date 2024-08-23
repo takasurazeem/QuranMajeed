@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct  RoundedCornersModifier: ViewModifier {
-    
+
     func body(content: Content) -> some View {
         content
             .padding(AppStyle.Spacing.space16)

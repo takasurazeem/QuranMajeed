@@ -25,16 +25,16 @@ extension NSAttributedString {
                                      context: nil)
         return ceil(rect.size.width)
     }
-    
+
     // https://stackoverflow.com/a/42305854/3077444
     @available(*, deprecated)
     func numberOfLines(with width: CGFloat) -> Int {
         let path = UIBezierPath(rect: CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT)))
-        let frameSetterRef : CTFramesetter = CTFramesetterCreateWithAttributedString(self as CFAttributedString)
+        let frameSetterRef: CTFramesetter = CTFramesetterCreateWithAttributedString(self as CFAttributedString)
         let frameRef: CTFrame = CTFramesetterCreateFrame(frameSetterRef, CFRangeMake(0, 0), path.cgPath, nil)
-        
+
         let linesNS: NSArray  = CTFrameGetLines(frameRef)
-        
+
         guard let lines = linesNS as? [CTLine] else { return 0 }
         return lines.count
     }

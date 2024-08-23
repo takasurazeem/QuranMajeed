@@ -25,7 +25,7 @@ extension String {
         let fontAttributes = [NSAttributedString.Key.font: font]
         return self.size(withAttributes: fontAttributes)
     }
-    
+
     func size(font: UIFont, width: CGFloat) -> CGSize {
         let attrString = NSAttributedString(
             string: self,

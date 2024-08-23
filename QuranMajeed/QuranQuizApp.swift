@@ -10,37 +10,37 @@ import FontBlaster
 
 @main
 struct QuranMajeedApp: App {
-    
+
     init() {
         FontBlaster.blast()
-#if DEBUG
+        #if DEBUG
         memoryUsage = Memory.formattedMemoryFootprint()
-#endif
-            
+        #endif
+
     }
-    
+
     var body: some Scene {
         WindowGroup {
             ApplicationMainView()
-#if DEBUG
-            .overlay(alignment: .bottomLeading) {
+                #if DEBUG
+                .overlay(alignment: .bottomLeading) {
                 Text(memoryUsage)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(.horizontal)
-                    .font(.footnote)
-                    .opacity(0.8)
-            }
-#endif
-            .onReceive(timer) { _ in
-#if DEBUG
-                memoryUsage = Memory.formattedMemoryFootprint()
-#else
-                timer.upstream.connect().cancel()
-#endif
-            }
+                .frame(maxWidth: .infinity, alignment: .center)
+                .padding(.horizontal)
+                .font(.footnote)
+                .opacity(0.8)
+                }
+                #endif
+                .onReceive(timer) { _ in
+                    #if DEBUG
+                    memoryUsage = Memory.formattedMemoryFootprint()
+                    #else
+                    timer.upstream.connect().cancel()
+                    #endif
+                }
         }
     }
-    
+
     @State private var memoryUsage = ""
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 }

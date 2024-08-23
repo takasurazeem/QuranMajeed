@@ -10,7 +10,7 @@ import SwiftUI
 
 struct PDFKitView: UIViewRepresentable {
     public var documentData: Data?
-    
+
     func makeUIView(context: UIViewRepresentableContext<PDFKitView>) -> PDFView {
         // Creating a new PDFVIew and adding a document to it
         let pdfView = PDFView()
@@ -28,11 +28,11 @@ struct PDFKitView: UIViewRepresentable {
                 forType: .square,
                 withProperties: nil
             )
-            
+
             let border = PDFBorder()
             border.style = .dashed
             border.lineWidth = 3
-            
+
             let lastPage = document.page(at: document.pageCount - 1)
             lastPage?.addAnnotation(annotation)
             pdfView.autoScales = true
@@ -40,7 +40,7 @@ struct PDFKitView: UIViewRepresentable {
 
         return pdfView
     }
-    
+
     func updateUIView(_ uiView: PDFView, context: UIViewRepresentableContext<PDFKitView>) {
         // TODO
     }

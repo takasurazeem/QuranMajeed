@@ -9,20 +9,20 @@
 import Foundation
 
 /// A file-based data store that conforms to the `Datastore` protocol and supports Codable data.
-class FileDatastore<T: Codable>: Datastore {
+class FileDatastore: SyncDatastore {
     private let fileManager = FileManager.default
     private let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-    
+
     /// Additional property indicating the purpose of the file data store.
     var purpose: String
-    
+
     /// Initializes a `FileDatastore` with a specific purpose.
     /// - Parameter purpose: The purpose or context for the file data store.
     init(purpose: String) {
         self.purpose = purpose
     }
-    
-    func save(_ data: T, forKey key: String) {
+
+    func save<T: Codable>(_ data: T, forKey key: String) {
         let fileURL = getFileURL(forKey: key)
         do {
             let encodedData = try JSONEncoder().encode(data)
@@ -31,8 +31,8 @@ class FileDatastore<T: Codable>: Datastore {
             print("Error saving data to file: \(error.localizedDescription)")
         }
     }
-    
-    func load(forKey key: String) -> T? {
+
+    func get<T: Codable>(forKey key: String) -> T? {
         let fileURL = getFileURL(forKey: key)
         do {
             let data = try Data(contentsOf: fileURL)
@@ -42,12 +42,12 @@ class FileDatastore<T: Codable>: Datastore {
             return nil
         }
     }
-    
+
     func delete(forKey key: String) {
         let fileURL = getFileURL(forKey: key)
         try? fileManager.removeItem(at: fileURL)
     }
-    
+
     func flush() {
         do {
             let files = try fileManager.contentsOfDirectory(at: documentsDirectory, includingPropertiesForKeys: nil, options: [])
@@ -58,7 +58,7 @@ class FileDatastore<T: Codable>: Datastore {
             print("Error flushing files: \(error.localizedDescription)")
         }
     }
-    
+
     private func getFileURL(forKey key: String) -> URL {
         return documentsDirectory.appendingPathComponent("\(key)_\(purpose).json")
     }

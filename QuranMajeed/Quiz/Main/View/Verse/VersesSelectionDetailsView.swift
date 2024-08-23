@@ -13,7 +13,7 @@ struct VersesSelectionDetailsView: View {
     var selectedVersesForTranslationText: LocalizedStringKey {
         "You selected \(viewModel.selectedVersesForTranslation.count) verses for translation."
     }
-    
+
     var body: some View {
         List {
             Section {
@@ -40,7 +40,7 @@ struct VersesSelectionDetailsView: View {
                         .multilineTextAlignment(.leading)
                         .font(.footnote)
                         .foregroundStyle(Color.accentColor.opacity(0.9))
-                    ForEach(viewModel.selectedVersesForTranslation.indices, id:\.self) { index in
+                    ForEach(viewModel.selectedVersesForTranslation.indices, id: \.self) { index in
                         VStack(spacing: AppStyle.Spacing.space12) {
                             HStack {
                                 Text(viewModel.selectedVersesForTranslation[index].text)

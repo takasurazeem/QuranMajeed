@@ -11,10 +11,10 @@ struct VerseListView: View {
     @Environment(\.editMode) private var editMode
     @State private var searchText = ""
     @State private var selection = Set<Verse>()
-    
+
     var allVerses: [Verse] = []
     @Binding var selectedVerses: [Verse]
-    
+
     private var searchResults: [Verse] {
         if searchText.isEmpty {
             return allVerses
@@ -22,7 +22,7 @@ struct VerseListView: View {
         return allVerses
             .filter { "\($0.ayaNumber)".contains(searchText) }
     }
-    
+
     var body: some View {
         List(
             searchResults,
@@ -57,7 +57,7 @@ struct VerseListView_Previews: PreviewProvider {
     }
 }
 
-fileprivate struct ContentPreview: View {
+private struct ContentPreview: View {
     @State var allVerses: [Verse] = []
     var body: some View {
         NavigationStack {
@@ -67,9 +67,9 @@ fileprivate struct ContentPreview: View {
             )
             .task {
                 guard let repo = try? AppDependencyContainer
-                    .shared
-                    .theQuranDependencyContainer
-                    .makeQuranRepository()
+                        .shared
+                        .theQuranDependencyContainer
+                        .makeQuranRepository()
                 else { return }
                 if let verses = try? await repo.getTranslatedVerses(verses: repo.getFirstSura().verses).verses {
                     self.allVerses = verses.enumerated().map { Verse(ayaNumber: $0 + 1, text: $1.arabicText, translation: "") }

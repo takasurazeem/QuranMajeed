@@ -19,7 +19,7 @@ struct PulseEffect<S: Shape>: ViewModifier {
             .easeIn(duration: 1)
             .repeatCount(8, autoreverses: false)
     }
-    
+
     func body(content: Content) -> some View {
         content
             .background(
@@ -40,7 +40,7 @@ struct PulseEffect<S: Shape>: ViewModifier {
 }
 
 public extension View {
-    func pulse<S: Shape>(_ shape: S) -> some View  {
+    func pulse<S: Shape>(_ shape: S) -> some View {
         self.modifier(PulseEffect(shape: shape))
     }
 }
