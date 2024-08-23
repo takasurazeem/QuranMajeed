@@ -10,5 +10,5 @@ import Foundation
 
 protocol QuizPreferencesRepository {
     func save(quizPreferences: QuizPreferences)
-    func get() -> QuizPreferences?
+    func get() -> QuizPreferences
 }

@@ -12,13 +12,14 @@ import SwiftUI
 class PDFGenerator {
     init(
         verses: [QuizVerse],
-        words: [WordForWordsMeaning]//,
-//        preferences: QuizPreferences
+        words: [WordForWordsMeaning],
+        preferences: QuizPreferences,
+        quizDate: Date
     ) {
         self.verses = verses
         self.words = words.filter { $0.isSelected }
-//        self.preferences = preferences
-
+        self.preferences = preferences
+        self.quizDate = quizDate
         // 1
         pdfMetaData = [
             kCGPDFContextCreator: "Quiz Builder",
@@ -320,7 +321,8 @@ class PDFGenerator {
     // MARK: - Dependencies
     private let verses: [QuizVerse]
     private let words: [WordForWordsMeaning]
-//    private let preferences: QuizPreferences
+    private let preferences: QuizPreferences
+    let quizDate: Date
 }
 
 extension PDFGenerator {
@@ -448,9 +450,11 @@ extension PDFGenerator {
     }
 
     var date: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        let formattedDate = dateFormatter.string(from: Date())
-        return formattedDate
+        // return formatted islamic date with calendar identifier: .islamicUmmAlQura and locale: ur_Arab_PK
+        let formatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .islamicUmmAlQura)
+        formatter.locale = Locale(identifier: "ur_Arab_PK")
+        formatter.dateStyle = .medium
+        return formatter.string(from: quizDate)
     }
 }

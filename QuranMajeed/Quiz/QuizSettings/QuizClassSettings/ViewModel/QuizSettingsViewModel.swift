@@ -18,11 +18,11 @@ extension QuizClassSettingsView {
             self.quizPreferencesRepository = quizPreferencesRepository
             
             // Load classes
-            self.classes = quizPreferencesRepository.get()?.classList ?? []
+            self.classes = quizPreferencesRepository.get().classList
          }
 
         func savePreferences() {
-            var preferences = quizPreferencesRepository.get() ?? .init(classList: [])
+            var preferences = quizPreferencesRepository.get()
             preferences.classList = classes
             quizPreferencesRepository.save(quizPreferences: preferences)
         }

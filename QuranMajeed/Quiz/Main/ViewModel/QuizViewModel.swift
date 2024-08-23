@@ -25,6 +25,9 @@ extension QuizView {
             selectedVerse = Verse(ayaNumber: 1, text: "", translation: "")
             selectedSurah = theQuranRepository.getFirstSura()
             urduQuran = theQuranRepository.getQuranTranslations()
+            
+            // set quizDate to the current date
+            quizDate = Date()
         }
 
         func start() async {
@@ -71,7 +74,8 @@ extension QuizView {
         }
 
         private let theQuranRepository: QuranRepository
-
+        
+        @Published var quizDate: Date = .now
         @Published var expandSelectedVersesForTranslationSection = false
         @Published var expandSelectedVersesForWordsMeaningSection = false
         @Published var expandSelectVersesForTranslationSection = true
@@ -109,7 +113,7 @@ extension QuizView {
         private(set) var quizVerses: [QuizVerse] = []
         private let readingPreferences = ReadingPreferences.shared
         private let urduQuran: [UrduTranslatedSuras]
-        private let quizPreferencesRepository: QuizPreferencesRepository
+        let quizPreferencesRepository: QuizPreferencesRepository
     }
 }
 

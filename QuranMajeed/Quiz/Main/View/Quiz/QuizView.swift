@@ -11,7 +11,7 @@ import SwiftUI
 import PDFKit
 
 struct QuizView: View {
-    @StateObject var viewModel: ViewModel
+    @ObservedObject private var viewModel: ViewModel
     @State private var isShowingSettingsPage: Bool = false
     @State private var locale: Locale?
     @State private var layoutDirection: LayoutDirection?
@@ -20,7 +20,17 @@ struct QuizView: View {
     @Environment(\.locale) private var appLocale
     @Environment(\.colorScheme) private var colorScheme
     @AppStorage("darkMode") private var darkMode = false
-
+    
+    init(
+        viewModel: ViewModel,
+        isShowingSettingsPage: Bool = false,
+        locale: Locale? = nil
+    ) {
+        self.viewModel = viewModel
+        self.isShowingSettingsPage = isShowingSettingsPage
+        self.locale = locale
+    }
+    
     var body: some View {
         NavigationStack {
             QuizPreparationViewSteps(viewModel: viewModel)

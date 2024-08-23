@@ -26,7 +26,9 @@ struct QuizPDFPreview_Previews: PreviewProvider {
             QuizPDFPreview(
                 documentData: PDFGenerator(
                     verses: [],
-                    words: []
+                    words: [], 
+                    preferences: QuizPreferences(classList: []),
+                    quizDate: .now
                 )
                 .generateQuiz()
             )

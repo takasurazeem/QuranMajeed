@@ -18,8 +18,8 @@ class MainQuizPreferencesRepository: QuizPreferencesRepository {
         dataStore.save(quizPreferences: quizPreferences)
     }
     
-    func get() -> QuizPreferences? {
-        dataStore.get()
+    func get() -> QuizPreferences {
+        dataStore.get() ?? .init(classList: [], selectedClass: nil)
     }
 
     private let dataStore: QuizPreferencesDataStore

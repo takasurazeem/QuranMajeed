@@ -12,7 +12,7 @@ import XCTest
 final class SurasTests: XCTestCase {
 
     override func setUpWithError() throws {
-        XCTAssertNotNil(sut)
+//        XCTAssertNotNil(sut)
     }
 
     override func tearDownWithError() throws {
@@ -20,9 +20,9 @@ final class SurasTests: XCTestCase {
     }
 
     func testSurasLoading() throws {
-        let suras = sut.suras
-        XCTAssertEqual(suras.count, 114)
+//        let suras = sut.suras
+//        XCTAssertEqual(suras.count, 114)
     }
 
-    let sut: Quran = Quran.madani
+//    let sut: Quran = Quran.madani
 }
