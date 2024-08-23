@@ -13,14 +13,14 @@ struct SuraListView: View {
     @Binding var selectedSura: Sura
     @State private var searchText = ""
     @Environment(\.presentationMode) var presentationMode
-    
+
     var searchResults: [Sura] {
         if searchText.isEmpty {
             return suras
         }
         return suras.filter { $0.localizedName(withNumber: true, language: .english).contains(searchText) || $0.localizedName(withNumber: true, language: .arabic).contains(searchText) }
     }
-    
+
     var body: some View {
         List(searchResults) { sura in
             VStack {

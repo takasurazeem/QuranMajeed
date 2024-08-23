@@ -12,7 +12,7 @@ struct SelectTranslationVersesView: View {
     @ObservedObject var viewModel: QuizView.ViewModel
     var rowFooterText: LocalizedStringKey {
         viewModel.selectedVersesForTranslation.isEmpty ?
-        "Please tap on the row to select verses." : "You selected \(viewModel.selectedVersesForTranslation.count) verses for translation."
+            "Please tap on the row to select verses." : "You selected \(viewModel.selectedVersesForTranslation.count) verses for translation."
     }
     var body: some View {
         NavigationLink {
@@ -30,9 +30,9 @@ struct SelectTranslationVersesView: View {
                     Divider()
                         .background(Color.accentColor)
                     Text(rowFooterText)
-                    .font(.footnote)
-                    .foregroundStyle(Color.accentColor.opacity(0.9))
-                    .padding(.top, AppStyle.Spacing.space4)
+                        .font(.footnote)
+                        .foregroundStyle(Color.accentColor.opacity(0.9))
+                        .padding(.top, AppStyle.Spacing.space4)
                 }
                 .padding(.top, AppStyle.Spacing.space8)
             }

@@ -12,7 +12,7 @@ struct FlexibleView<Data: Collection, Content: View>: View where Data.Element: H
     // The initial width should not be `0`, otherwise all items will be layouted in one row,
     // and the actual layout width may exceed the value we desired.
     @State private var availableWidth: CGFloat = 10
-    
+
     var body: some View {
         ZStack(alignment: Alignment(horizontal: alignment, vertical: .center)) {
             Color.clear
@@ -20,7 +20,7 @@ struct FlexibleView<Data: Collection, Content: View>: View where Data.Element: H
                 .readSize { size in
                     availableWidth = size.width
                 }
-            
+
             _FlexibleView(
                 availableWidth: availableWidth,
                 data: data,

@@ -14,23 +14,28 @@ import SwiftUI
 
 extension QuizView {
     class ViewModel: ObservableObject {
-        
+
         init(
-            theQuranRepository: QuranRepository
+            theQuranRepository: QuranRepository,
+            quizPreferencesRepository: QuizPreferencesRepository
         ) {
             self.theQuranRepository = theQuranRepository
+            self.quizPreferencesRepository = quizPreferencesRepository
             selectedAyahNumber = 1
             selectedVerse = Verse(ayaNumber: 1, text: "", translation: "")
             selectedSurah = theQuranRepository.getFirstSura()
             urduQuran = theQuranRepository.getQuranTranslations()
+            
+            // set quizDate to the current date
+            quizDate = Date()
         }
-        
+
         func start() async {
             async let suras: () = loadSuras()
             async let firstVerse: () = loadVersesOfFirstSurah()
             _ = await [suras, firstVerse]
         }
-        
+
         @MainActor private func loadVersesOfFirstSurah() async {
             do {
                 let translatedVerses = try await theQuranRepository.getTranslatedVerses(verses: selectedSurah.verses)
@@ -49,7 +54,7 @@ extension QuizView {
                 // TODO: Show error if it occurs
             }
         }
-        
+
         @MainActor private func loadSuras() async {
             let readings = readingPreferences.$reading
                 .prepend(readingPreferences.reading)
@@ -67,9 +72,10 @@ extension QuizView {
         func deleteWordsMeaningVerse(at offsets: IndexSet) {
             selectedVersesForWordsMeaning.remove(atOffsets: offsets)
         }
-        
+
         private let theQuranRepository: QuranRepository
         
+        @Published var quizDate: Date = .now
         @Published var expandSelectedVersesForTranslationSection = false
         @Published var expandSelectedVersesForWordsMeaningSection = false
         @Published var expandSelectVersesForTranslationSection = true
@@ -107,6 +113,7 @@ extension QuizView {
         private(set) var quizVerses: [QuizVerse] = []
         private let readingPreferences = ReadingPreferences.shared
         private let urduQuran: [UrduTranslatedSuras]
+        let quizPreferencesRepository: QuizPreferencesRepository
     }
 }
 

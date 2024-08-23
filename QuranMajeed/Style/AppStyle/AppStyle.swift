@@ -9,7 +9,7 @@
 import Foundation
 
 enum AppStyle {
-    
+
     enum Spacing {
         static let space4: CGFloat = 4.0
         static let space8: CGFloat = 8.0
@@ -18,6 +18,5 @@ enum AppStyle {
         static let space24: CGFloat = 24.0
         static let space32: CGFloat = 32.0
     }
-    
-    
+
 }

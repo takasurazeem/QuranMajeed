@@ -11,7 +11,7 @@ import QuranKit
 /// Use the ``QuizView`` for the preview
 struct SelectedSurahView: View {
     @ObservedObject var viewModel: QuizView.ViewModel
-    
+
     var body: some View {
         NavigationLink(value: viewModel.suras) {
             HStack {

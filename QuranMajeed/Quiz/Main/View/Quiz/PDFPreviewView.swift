@@ -13,29 +13,27 @@ struct PDFPreviewView: View {
     // FIXME: This entire implementation is a concept for a quick requirement as there's one more Masjid الحمدالله that is going to benefit fromt this. We will surely enhance this implementation with the best of the world. ان شاء اللہ تَعَالٰی
     @AppStorage("MasjidName") private var masjidName: String = ""
     @AppStorage("ClassName") private var className: String = ""
-    @ObservedObject var viewModel: QuizView.ViewModel
+    @ObservedObject private var viewModel: QuizView.ViewModel
     
-    // Fix in the morning ان شاء اللہ تَعَالٰی , this needs to be passed from the previous screen.
-//    @State private var quizDate = Date.now
+    init(
+        masjidName: String = "",
+        className: String = "",
+        viewModel: QuizView.ViewModel
+    ) {
+        self.masjidName = masjidName
+        self.className = className
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         NavigationLink {
             VStack {
-//                DatePicker(selection: $quizDate, in: Date.now..., displayedComponents: .date) {
-//                    Text("Select a date")
-//                }
-//                .padding()
                 PDFKitView(
                     documentData: PDFGenerator(
                         verses: viewModel.quizVerses,
                         words: viewModel.wordsForWordsMeaning,
-                        preferences: QuizPreferences(
-                            quizHeader: QuizPreferences.QuizHeader(
-                                topRightText: className,
-                                topLeftText: masjidName
-                            )//,
-//                            quizDate: quizDate
-                        )
+                        preferences: viewModel.quizPreferencesRepository.get(),
+                        quizDate: viewModel.quizDate
                     )
                     .generateQuiz()
                 )
@@ -43,12 +41,15 @@ struct PDFPreviewView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        if let document = PDFDocument(data: PDFGenerator(
-                            verses: viewModel.quizVerses,
-                            words: viewModel.wordsForWordsMeaning,
-                            preferences: QuizPreferences(quizHeader: QuizPreferences.QuizHeader(topRightText: className, topLeftText: masjidName))
-                        )
-                            .generateQuiz()) {
+                        if let document = PDFDocument(
+                            data: PDFGenerator(
+                                verses: viewModel.quizVerses,
+                                words: viewModel.wordsForWordsMeaning,
+                                preferences: viewModel.quizPreferencesRepository.get(),
+                                quizDate: viewModel.quizDate
+                            )
+                            .generateQuiz()
+                        ) {
                             ShareLink(item: document, preview: SharePreview("PDF"))
                         }
                     }

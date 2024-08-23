@@ -13,7 +13,7 @@ struct Verse: Codable, Identifiable, Hashable, Comparable {
     static func < (lhs: Verse, rhs: Verse) -> Bool {
         lhs.ayaNumber < rhs.ayaNumber
     }
-    
+
     var id: Int { ayaNumber }
     var ayaNumber: Int
     var text: String

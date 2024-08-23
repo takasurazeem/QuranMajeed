@@ -13,35 +13,36 @@ class PDFGenerator {
     init(
         verses: [QuizVerse],
         words: [WordForWordsMeaning],
-        preferences: QuizPreferences
+        preferences: QuizPreferences,
+        quizDate: Date
     ) {
         self.verses = verses
         self.words = words.filter { $0.isSelected }
         self.preferences = preferences
-        
+        self.quizDate = quizDate
         // 1
         pdfMetaData = [
-         kCGPDFContextCreator: "Quiz Builder",
-         kCGPDFContextAuthor: "takasurazeem@gmail.com"
-       ]
+            kCGPDFContextCreator: "Quiz Builder",
+            kCGPDFContextAuthor: "takasurazeem@gmail.com"
+        ]
         format = UIGraphicsPDFRendererFormat()
         // 2
         pageWidth   = 595.2
         pageHeight  = 841.0
         pageRect    = CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight)
-        
+
         // 3
         renderer = UIGraphicsPDFRenderer(bounds: pageRect, format: format)
         rightAndLeftHeadingTextAttributes = [
             NSAttributedString.Key.font: leftRightHeadingsFont
         ]
     }
-    
+
     /// This method uses the injected QuizVerses to generate the quiz and calls internal methods
     /// - Returns: Data that can be used by `PDFKitView`
     func generateQuiz() -> Data {
         format.documentInfo = pdfMetaData as [String: Any]
-        
+
         // 4
         let data = renderer.pdfData { (context) in
             // 5
@@ -57,10 +58,10 @@ class PDFGenerator {
                 yPos: &yPosForNextTask
             )
         }
-        
+
         return data
     }
-    
+
     private func addBorder(
         context: UIGraphicsPDFRendererContext,
         pageRect: CGRect  // Assuming pageRect is passed to the function
@@ -68,48 +69,48 @@ class PDFGenerator {
         // Set the line width and color for the border
         context.cgContext.setLineWidth(8.0)  // Adjust the border width as needed
         context.cgContext.setStrokeColor(UIColor.black.cgColor)  // Adjust the border color
-        
+
         // Define a custom pattern for the border (e.g., a dashed pattern)
         let customPattern: [CGFloat] = [8, 4, 2, 4, 2, 4]  // Adjust the values for your custom pattern
-        
+
         // Set the line dash pattern with a custom pattern
         context.cgContext.setLineDash(phase: 0, lengths: customPattern)
-        
+
         // Calculate the border rectangle based on the page size (assuming pageRect is provided)
         let borderRect = CGRect(x: 0, y: 0, width: pageRect.width, height: pageRect.height)
-        
+
         // Draw a border around the entire page with the custom pattern
         context.cgContext.addRect(borderRect)
         context.cgContext.strokePath()
     }
-    
+
     private func addFancyBorder(
         context: UIGraphicsPDFRendererContext,
         pageRect: CGRect
     ) {
         // Set a thicker line width for a bold border
         context.cgContext.setLineWidth(4.0)
-        
+
         // Create a custom pattern with varying dash lengths
         let customPattern: [CGFloat] = [12, 8, 4, 8, 4, 12]
-        
+
         // Set the line dash pattern with the custom pattern
         context.cgContext.setLineDash(phase: 0, lengths: customPattern)
-        
+
         context.cgContext.setStrokeColor(UIColor.black.cgColor)
-        
+
         // Draw a custom shape, such as a rounded rectangle, for the border
         let cornerRadius: CGFloat = 8.0
         let borderPath = UIBezierPath(roundedRect: pageRect, byRoundingCorners: .allCorners, cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
         context.cgContext.addPath(borderPath.cgPath)
-        
+
         // Draw a shadow for a 3D effect
         context.cgContext.setShadow(offset: CGSize(width: 3, height: 3), blur: 5.0)
-        
+
         // Stroke the border
         context.cgContext.strokePath()
     }
-    
+
     func drawWordsMeanings(
         context: UIGraphicsPDFRendererContext,
         yPos: inout CGFloat
@@ -153,8 +154,7 @@ class PDFGenerator {
             }
         }
     }
-    
-    
+
     /// This method takes context and draw verses in that context
     /// - Parameter context: ``UIGraphicsPDFRendererContext``
     /// - Returns: yPos for the next task
@@ -172,7 +172,7 @@ class PDFGenerator {
         }
         return yPos
     }
-    
+
     /// This method adds verse and empty horizontal lines required to write answer for that verse.
     /// - Parameters:
     ///   - context: This context is passed down to `drawLineBreak` method as  context.cgContext
@@ -197,16 +197,16 @@ class PDFGenerator {
             attributes: verseTextAttributes
         )
         let translationTextAttributes = makeTranslationTextAttributes(paragraphStyle)
-        // FIXME: - 
+        // FIXME: -
         let attributedTranslationText = NSAttributedString(
             string: verse.translatedText,
             attributes: translationTextAttributes
         )
-        // I think I will move the above properties to a better place ان شاء اللہ تَعَالٰی 
+        // I think I will move the above properties to a better place ان شاء اللہ تَعَالٰی
         // 3
         let width = pageRect.width - 20
         let verseTextHeight = attributedVerseText.height(containerWidth: width)
-//        let translationTextHeight = attributedTranslationText.height(containerWidth: width)
+        //        let translationTextHeight = attributedTranslationText.height(containerWidth: width)
         var verseTextRect = CGRect(
             x: 10,
             y: textPos,
@@ -241,7 +241,7 @@ class PDFGenerator {
         attributedVerseText.draw(in: verseTextRect)
         // The text is drawn now, space the text from text's y + line's height
         textPos = verseTextRect.maxY
-//        attributedTranslationText.draw(in: translationTextRect)
+        //        attributedTranslationText.draw(in: translationTextRect)
         let lineHeight = 35.0
         var yOffSet = textPos + lineHeight
         for number in 1...numberOfLines {
@@ -262,11 +262,10 @@ class PDFGenerator {
                 yOffset: yOffSet
             )
         }
-        
+
         return yOffSet + 8
     }
 
-    
     /// This method draws in a horizontal rule
     /// - Parameters:
     ///   - drawContext: Context in which you draw
@@ -289,7 +288,7 @@ class PDFGenerator {
         drawContext.strokePath()
         drawContext.restoreGState()
     }
-    
+
     // TODO: - Use AppStorage, some of these will be set from a settings menu for more flexibility in future ان شاء اللہ تَعَالٰی
     // MARK: - Fonts
     let theOpeningFont = UIFont(name: "_PDMS_Saleem_QuranFont", size: 20) ?? .boldSystemFont(ofSize: 64)
@@ -297,10 +296,10 @@ class PDFGenerator {
     let leftRightHeadingsFont = UIFont(name: "NotoNastaliqUrdu", size: 10) ?? .boldSystemFont(ofSize: 64)
     let belowOpeningTextFont = UIFont(name: "DiwaniBent", size: 20) ?? .boldSystemFont(ofSize: 64)
     let nameAndDateTextFont = UIFont(name: "NotoNastaliqUrdu", size: 14) ?? .boldSystemFont(ofSize: 64)
-    
+
     // MARK: - Shared Attributes
-    let rightAndLeftHeadingTextAttributes: [NSAttributedString.Key : UIFont]
-    
+    let rightAndLeftHeadingTextAttributes: [NSAttributedString.Key: UIFont]
+
     // MARK: - Texts
     let theOpeningText = "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ"
     let belowOpeningText = NSLocalizedString("Weekly Test", comment: "Middle heading")
@@ -308,7 +307,7 @@ class PDFGenerator {
     let nameUnderScores = Array(repeating: "_", count: 20).reduce("", +)
     let dateText = NSLocalizedString("Date:", comment: "")
     let translateFollowingAyahsText  = NSLocalizedString("Translate the following verses", comment: "")
-    
+
     // MARK: - MetaData
     let pdfMetaData: [CFString: String]
     let renderer: UIGraphicsPDFRenderer
@@ -318,36 +317,34 @@ class PDFGenerator {
     let pageWidth: Double
     let pageHeight: Double
     let pageRect: CGRect
-    
-    
+
     // MARK: - Dependencies
     private let verses: [QuizVerse]
     private let words: [WordForWordsMeaning]
     private let preferences: QuizPreferences
+    let quizDate: Date
 }
 
 extension PDFGenerator {
-    
-    
-    private func makeTranslationTextAttributes(_ paragraphStyle: NSMutableParagraphStyle) -> [NSAttributedString.Key : Any] {
+
+    private func makeTranslationTextAttributes(_ paragraphStyle: NSMutableParagraphStyle) -> [NSAttributedString.Key: Any] {
         return [
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: leftRightHeadingsFont.withSize(16.0),
             NSAttributedString.Key.writingDirection: [NSWritingDirection.rightToLeft.rawValue],
             NSAttributedString.Key.languageIdentifier: "ur_PK"
-        ] as [NSAttributedString.Key : Any]
+        ] as [NSAttributedString.Key: Any]
     }
-    
-    private func makeVerseTextAttributes(_ paragraphStyle: NSMutableParagraphStyle, _ textFont: UIFont) -> [NSAttributedString.Key : Any] {
+
+    private func makeVerseTextAttributes(_ paragraphStyle: NSMutableParagraphStyle, _ textFont: UIFont) -> [NSAttributedString.Key: Any] {
         return [
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
             NSAttributedString.Key.font: textFont.withSize(18),
             NSAttributedString.Key.writingDirection: [NSWritingDirection.rightToLeft.rawValue],
             NSAttributedString.Key.languageIdentifier: "ar_SA"
-        ] as [NSAttributedString.Key : Any]
+        ] as [NSAttributedString.Key: Any]
     }
-    
-    
+
     private func drawQuizHeaders() {
         // 6
         drawOpening()
@@ -357,7 +354,7 @@ extension PDFGenerator {
         drawStudentNameField()
         drawDateField()
     }
-    
+
     private func drawOpening() {
         let openingAttributes = [
             NSAttributedString.Key.font: theOpeningFont
@@ -370,10 +367,11 @@ extension PDFGenerator {
             withAttributes: openingAttributes
         )
     }
-    
+
     private func drawRightHeadingText() {
-        let rightHeadingTextWidth = preferences.quizHeader.topRightText.width(usingFont: leftRightHeadingsFont)
-        preferences.quizHeader.topRightText.draw(
+        let rightHeadingTextWidth = 0.0 //preferences.quizHeader.topRightText.width(usingFont: leftRightHeadingsFont)
+//        preferences.quizHeader.topRightText
+        "".draw(
             at: CGPoint(
                 x: pageWidth - rightHeadingTextWidth - (rightHeadingTextWidth * 0.1),
                 y: 5
@@ -381,9 +379,10 @@ extension PDFGenerator {
             withAttributes: rightAndLeftHeadingTextAttributes
         )
     }
-    
+
     private func drawLeftHeadingText() {
-        preferences.quizHeader.topLeftText.draw(
+//        preferences.quizHeader.topLeftText
+            "".draw(
             at: CGPoint(
                 x: 10,
                 y: 5
@@ -391,7 +390,7 @@ extension PDFGenerator {
             withAttributes: rightAndLeftHeadingTextAttributes
         )
     }
-    
+
     private func drawBelowOpeningText() {
         let belowOpeningTextAttributes = [
             NSAttributedString.Key.font: belowOpeningTextFont
@@ -404,7 +403,7 @@ extension PDFGenerator {
             withAttributes: belowOpeningTextAttributes
         )
     }
-    
+
     private func drawStudentNameField() {
         let nameFieldAttributes = [
             NSAttributedString.Key.font: nameAndDateTextFont
@@ -420,11 +419,11 @@ extension PDFGenerator {
     }
     /*
      "\(dateText) \(date)".draw(
-         at: CGPoint(
-             x: dateTextXPos,
-             y: studentNameRowYPos
-         ),
-         withAttributes: nameFieldAttributes
+     at: CGPoint(
+     x: dateTextXPos,
+     y: studentNameRowYPos
+     ),
+     withAttributes: nameFieldAttributes
      )
      */
     private func drawDateField() {
@@ -441,20 +440,21 @@ extension PDFGenerator {
             )
         )
     }
-    
+
     var studentNameRowYPos: CGFloat {
         belowOpeningText.heightOfString(usingFont: belowOpeningTextFont) + theOpeningText.heightOfString(usingFont: theOpeningFont)
     }
-    
+
     var dateTextXPos: CGFloat {
         date.width(usingFont: nameAndDateTextFont) + 20
     }
-    
+
     var date: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        let formattedDate = dateFormatter.string(from: Date())
-        return formattedDate
+        // return formatted islamic date with calendar identifier: .islamicUmmAlQura and locale: ur_Arab_PK
+        let formatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .islamicUmmAlQura)
+        formatter.locale = Locale(identifier: "ur_Arab_PK")
+        formatter.dateStyle = .medium
+        return formatter.string(from: quizDate)
     }
 }
-

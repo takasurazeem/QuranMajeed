@@ -11,23 +11,23 @@ import SwiftUI
 struct FlexibleViewContainerSettings: View {
     @ObservedObject var viewModel: FlexibleViewContainer.ViewModel
     let alignmentName: [String] = ["leading", "center", "trailing"]
-    
+
     var body: some View {
         VStack {
             Stepper(value: $viewModel.wordCount, in: 0...viewModel.originalItems.count) {
                 Text("\(viewModel.wordCount) words")
             }
-            
+
             HStack {
                 Text("Padding")
                 Slider(value: $viewModel.padding, in: 0...60) { Text("") }
             }
-            
+
             HStack {
                 Text("Spacing")
                 Slider(value: $viewModel.spacing, in: 0...40) { Text("") }
             }
-            
+
             HStack {
                 Text("Alignment")
                 Picker("Choose alignment", selection: $viewModel.alignmentIndex) {
@@ -37,7 +37,7 @@ struct FlexibleViewContainerSettings: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
             }
-            
+
             Button {
                 viewModel.originalItems.shuffle()
             } label: {
