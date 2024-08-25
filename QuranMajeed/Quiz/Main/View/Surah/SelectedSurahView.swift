@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import QuranKit
 
 /// Use the ``QuizView`` for the preview
 struct SelectedSurahView: View {
@@ -21,12 +20,6 @@ struct SelectedSurahView: View {
                     SuraNameView(for: viewModel.selectedSurah)
                 }
             }
-        }
-        .navigationDestination(for: [Sura].self) { suras in
-            SuraListView(
-                suras: suras,
-                selectedSura: $viewModel.selectedSurah
-            )
         }
     }
 }
