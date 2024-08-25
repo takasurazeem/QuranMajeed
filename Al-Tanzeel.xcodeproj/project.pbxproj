@@ -14,10 +14,6 @@
 		7620AA5C2B386DC9007FD04D /* MemoryDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7620AA5B2B386DC9007FD04D /* MemoryDatastore.swift */; };
 		7620AA5E2B386DE2007FD04D /* FileDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7620AA5D2B386DE2007FD04D /* FileDatastore.swift */; };
 		7620AA602B386ED6007FD04D /* TwoLevelDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7620AA5F2B386ED6007FD04D /* TwoLevelDatastore.swift */; };
-		763539D02AB7943600CC27FD /* QuranKit in Frameworks */ = {isa = PBXBuildFile; productRef = 763539CF2AB7943600CC27FD /* QuranKit */; };
-		763539D52AB7975500CC27FD /* ReadingService in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D42AB7975500CC27FD /* ReadingService */; };
-		763539D72AB7998A00CC27FD /* Localization in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D62AB7998A00CC27FD /* Localization */; };
-		763539D92AB799E500CC27FD /* QuranTextKit in Frameworks */ = {isa = PBXBuildFile; productRef = 763539D82AB799E500CC27FD /* QuranTextKit */; };
 		768A89F52B8AF8360026A9AC /* MainSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768A89F42B8AF8360026A9AC /* MainSettingsView.swift */; };
 		76B257002B82BD0A00D89AC5 /* QuizPreferencesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B256FF2B82BD0A00D89AC5 /* QuizPreferencesRepository.swift */; };
 		76B257042B82BEA500D89AC5 /* QuizPreferencesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B257032B82BEA500D89AC5 /* QuizPreferencesDataStore.swift */; };
@@ -39,15 +35,11 @@
 		F91839492AB7AF2800E4D45B /* Sura+localizedName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91839482AB7AF2800E4D45B /* Sura+localizedName.swift */; };
 		F918394B2AB7B10E00E4D45B /* SuraListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F918394A2AB7B10E00E4D45B /* SuraListView.swift */; };
 		F918394D2AB7B69900E4D45B /* SuraNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F918394C2AB7B69900E4D45B /* SuraNameView.swift */; };
-		F91839532AB7C86500E4D45B /* Analytics in Frameworks */ = {isa = PBXBuildFile; productRef = F91839522AB7C86500E4D45B /* Analytics */; };
-		F91839552AB7C90000E4D45B /* LastPagePersistence in Frameworks */ = {isa = PBXBuildFile; productRef = F91839542AB7C90000E4D45B /* LastPagePersistence */; };
-		F91839572AB7C90000E4D45B /* NotePersistence in Frameworks */ = {isa = PBXBuildFile; productRef = F91839562AB7C90000E4D45B /* NotePersistence */; };
-		F91839592AB7CB6300E4D45B /* CoreDataModel in Frameworks */ = {isa = PBXBuildFile; productRef = F91839582AB7CB6300E4D45B /* CoreDataModel */; };
-		F918395B2AB7CB6300E4D45B /* CoreDataPersistence in Frameworks */ = {isa = PBXBuildFile; productRef = F918395A2AB7CB6300E4D45B /* CoreDataPersistence */; };
-		F918395D2AB7CB6300E4D45B /* CoreDataPersistenceTestSupport in Frameworks */ = {isa = PBXBuildFile; productRef = F918395C2AB7CB6300E4D45B /* CoreDataPersistenceTestSupport */; };
-		F918395F2AB7CDA700E4D45B /* AppStructureFeature in Frameworks */ = {isa = PBXBuildFile; productRef = F918395E2AB7CDA700E4D45B /* AppStructureFeature */; };
 		F91839622AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91839612AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift */; };
 		F91839662AB7D98D00E4D45B /* VerseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91839652AB7D98D00E4D45B /* VerseListView.swift */; };
+		F926470D2C7BCB410005C8BD /* AppDependencies in Frameworks */ = {isa = PBXBuildFile; productRef = F926470C2C7BCB410005C8BD /* AppDependencies */; };
+		F926470F2C7BCB410005C8BD /* Localization in Frameworks */ = {isa = PBXBuildFile; productRef = F926470E2C7BCB410005C8BD /* Localization */; };
+		F92647112C7BCB410005C8BD /* QuranKit in Frameworks */ = {isa = PBXBuildFile; productRef = F92647102C7BCB410005C8BD /* QuranKit */; };
 		F928BBBA2B7EDA9000B5AD1F /* QuizClassSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F928BBB92B7EDA9000B5AD1F /* QuizClassSettingsView.swift */; };
 		F928BBBC2B7EE2AD00B5AD1F /* QuizPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = F928BBBB2B7EE2AD00B5AD1F /* QuizPreferences.swift */; };
 		F94514C82AE461330042F169 /* WordsMeaningsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94514C72AE461330042F169 /* WordsMeaningsDetailsView.swift */; };
@@ -204,18 +196,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				763539D92AB799E500CC27FD /* QuranTextKit in Frameworks */,
-				F91839592AB7CB6300E4D45B /* CoreDataModel in Frameworks */,
-				F91839572AB7C90000E4D45B /* NotePersistence in Frameworks */,
-				F918395F2AB7CDA700E4D45B /* AppStructureFeature in Frameworks */,
-				F91839552AB7C90000E4D45B /* LastPagePersistence in Frameworks */,
-				763539D02AB7943600CC27FD /* QuranKit in Frameworks */,
-				F918395B2AB7CB6300E4D45B /* CoreDataPersistence in Frameworks */,
-				763539D52AB7975500CC27FD /* ReadingService in Frameworks */,
-				F918395D2AB7CB6300E4D45B /* CoreDataPersistenceTestSupport in Frameworks */,
-				F91839532AB7C86500E4D45B /* Analytics in Frameworks */,
-				763539D72AB7998A00CC27FD /* Localization in Frameworks */,
 				F948F1A72AE4A530004679ED /* FontBlaster in Frameworks */,
+				F926470D2C7BCB410005C8BD /* AppDependencies in Frameworks */,
+				F926470F2C7BCB410005C8BD /* Localization in Frameworks */,
+				F92647112C7BCB410005C8BD /* QuranKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -769,18 +753,10 @@
 			);
 			name = "Al-Tanzeel";
 			packageProductDependencies = (
-				763539CF2AB7943600CC27FD /* QuranKit */,
-				763539D42AB7975500CC27FD /* ReadingService */,
-				763539D62AB7998A00CC27FD /* Localization */,
-				763539D82AB799E500CC27FD /* QuranTextKit */,
-				F91839522AB7C86500E4D45B /* Analytics */,
-				F91839542AB7C90000E4D45B /* LastPagePersistence */,
-				F91839562AB7C90000E4D45B /* NotePersistence */,
-				F91839582AB7CB6300E4D45B /* CoreDataModel */,
-				F918395A2AB7CB6300E4D45B /* CoreDataPersistence */,
-				F918395C2AB7CB6300E4D45B /* CoreDataPersistenceTestSupport */,
-				F918395E2AB7CDA700E4D45B /* AppStructureFeature */,
 				F948F1A62AE4A530004679ED /* FontBlaster */,
+				F926470C2C7BCB410005C8BD /* AppDependencies */,
+				F926470E2C7BCB410005C8BD /* Localization */,
+				F92647102C7BCB410005C8BD /* QuranKit */,
 			);
 			productName = QuranQuiz;
 			productReference = F9D60CFD2A76C69D00701635 /* Al-Tanzeel.app */;
@@ -819,8 +795,8 @@
 			);
 			mainGroup = F9D60CF42A76C69D00701635;
 			packageReferences = (
-				763539CE2AB7943600CC27FD /* XCRemoteSwiftPackageReference "quran-ios" */,
 				F948F1A52AE4A530004679ED /* XCRemoteSwiftPackageReference "FontBlaster" */,
+				F926470B2C7BCB410005C8BD /* XCRemoteSwiftPackageReference "quran-ios" */,
 			);
 			productRefGroup = F9D60CFE2A76C69D00701635 /* Products */;
 			projectDirPath = "";
@@ -1235,12 +1211,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		763539CE2AB7943600CC27FD /* XCRemoteSwiftPackageReference "quran-ios" */ = {
+		F926470B2C7BCB410005C8BD /* XCRemoteSwiftPackageReference "quran-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/quran/quran-ios";
+			repositoryURL = "https://github.com/takasurazeem/quran-ios.git";
 			requirement = {
-				kind = revision;
-				revision = 3954626c8a2f209913aa9da8f60417cf99bce154;
+				branch = main;
+				kind = branch;
 			};
 		};
 		F948F1A52AE4A530004679ED /* XCRemoteSwiftPackageReference "FontBlaster" */ = {
@@ -1254,60 +1230,20 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		763539CF2AB7943600CC27FD /* QuranKit */ = {
+		F926470C2C7BCB410005C8BD /* AppDependencies */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 763539CE2AB7943600CC27FD /* XCRemoteSwiftPackageReference "quran-ios" */;
-			productName = QuranKit;
+			package = F926470B2C7BCB410005C8BD /* XCRemoteSwiftPackageReference "quran-ios" */;
+			productName = AppDependencies;
 		};
-		763539D42AB7975500CC27FD /* ReadingService */ = {
+		F926470E2C7BCB410005C8BD /* Localization */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 763539CE2AB7943600CC27FD /* XCRemoteSwiftPackageReference "quran-ios" */;
-			productName = ReadingService;
-		};
-		763539D62AB7998A00CC27FD /* Localization */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 763539CE2AB7943600CC27FD /* XCRemoteSwiftPackageReference "quran-ios" */;
+			package = F926470B2C7BCB410005C8BD /* XCRemoteSwiftPackageReference "quran-ios" */;
 			productName = Localization;
 		};
-		763539D82AB799E500CC27FD /* QuranTextKit */ = {
+		F92647102C7BCB410005C8BD /* QuranKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 763539CE2AB7943600CC27FD /* XCRemoteSwiftPackageReference "quran-ios" */;
-			productName = QuranTextKit;
-		};
-		F91839522AB7C86500E4D45B /* Analytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 763539CE2AB7943600CC27FD /* XCRemoteSwiftPackageReference "quran-ios" */;
-			productName = Analytics;
-		};
-		F91839542AB7C90000E4D45B /* LastPagePersistence */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 763539CE2AB7943600CC27FD /* XCRemoteSwiftPackageReference "quran-ios" */;
-			productName = LastPagePersistence;
-		};
-		F91839562AB7C90000E4D45B /* NotePersistence */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 763539CE2AB7943600CC27FD /* XCRemoteSwiftPackageReference "quran-ios" */;
-			productName = NotePersistence;
-		};
-		F91839582AB7CB6300E4D45B /* CoreDataModel */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 763539CE2AB7943600CC27FD /* XCRemoteSwiftPackageReference "quran-ios" */;
-			productName = CoreDataModel;
-		};
-		F918395A2AB7CB6300E4D45B /* CoreDataPersistence */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 763539CE2AB7943600CC27FD /* XCRemoteSwiftPackageReference "quran-ios" */;
-			productName = CoreDataPersistence;
-		};
-		F918395C2AB7CB6300E4D45B /* CoreDataPersistenceTestSupport */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 763539CE2AB7943600CC27FD /* XCRemoteSwiftPackageReference "quran-ios" */;
-			productName = CoreDataPersistenceTestSupport;
-		};
-		F918395E2AB7CDA700E4D45B /* AppStructureFeature */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 763539CE2AB7943600CC27FD /* XCRemoteSwiftPackageReference "quran-ios" */;
-			productName = AppStructureFeature;
+			package = F926470B2C7BCB410005C8BD /* XCRemoteSwiftPackageReference "quran-ios" */;
+			productName = QuranKit;
 		};
 		F948F1A62AE4A530004679ED /* FontBlaster */ = {
 			isa = XCSwiftPackageProductDependency;
