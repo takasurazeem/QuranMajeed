@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import QuranKit
 
 struct QuizPreparationViewSteps: View {
     @ObservedObject var viewModel: QuizView.ViewModel
@@ -40,6 +41,12 @@ struct QuizPreparationViewSteps: View {
             Section {
                 SelectVersesForWordsMeaningView(viewModel: viewModel)
             }
+        }
+        .navigationDestination(for: [Sura].self) { suras in
+            SuraListView(
+                suras: suras,
+                selectedSura: $viewModel.selectedSurah
+            )
         }
         .navigationTitle("Prepare Quiz")
     }

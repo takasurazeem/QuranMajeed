@@ -19,8 +19,16 @@ import Logging
 import VLogging
 
 class AppDependencyContainer: AppDependencies {
+    var logsDirectory: URL { FileManager.documentsURL.appendingPathComponent("logs") }
+
+    var databasesDirectory: URL { Constant.databasesURL }
+
+    private(set) lazy var readingResources = ReadingResourcesService(downloader: downloadManager, remoteResources: remoteResources)
+
+    var remoteResources: (any ReadingService.ReadingRemoteResources)?
+
     private init() {
-        self.theQuranProvider = MainQuranProvider()
+        self.theQuranProvider = MainQuranProvider()   
     }
 
     static let shared = AppDependencyContainer()
@@ -39,7 +47,6 @@ class AppDependencyContainer: AppDependencies {
         )
     }()
 
-    let readingResources = ReadingResourcesService()
     let analytics: AnalyticsLibrary = LoggingAnalyticsLibrary()
 
     private(set) lazy var lastPagePersistence: LastPagePersistence = CoreDataLastPagePersistence(stack: coreDataStack)
