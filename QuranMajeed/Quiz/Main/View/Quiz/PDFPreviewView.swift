@@ -29,12 +29,7 @@ struct PDFPreviewView: View {
         NavigationLink {
             VStack {
                 PDFKitView(
-                    documentData: PDFGenerator(
-                        verses: viewModel.quizVerses,
-                        words: viewModel.wordsForWordsMeaning,
-                        preferences: viewModel.quizPreferencesRepository.get(),
-                        quizDate: viewModel.quizDate
-                    )
+                    documentData: viewModel.pdfGenerator
                     .generateQuiz()
                 )
                 .navigationTitle("PDF Preview")
@@ -42,12 +37,7 @@ struct PDFPreviewView: View {
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         if let document = PDFDocument(
-                            data: PDFGenerator(
-                                verses: viewModel.quizVerses,
-                                words: viewModel.wordsForWordsMeaning,
-                                preferences: viewModel.quizPreferencesRepository.get(),
-                                quizDate: viewModel.quizDate
-                            )
+                            data: viewModel.pdfGenerator
                             .generateQuiz()
                         ) {
                             ShareLink(item: document, preview: SharePreview("PDF"))

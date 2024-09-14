@@ -26,6 +26,12 @@
 		76B257142B83109800D89AC5 /* AddClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B257132B83109800D89AC5 /* AddClassView.swift */; };
 		76C1F8DB2AC2421900085DA2 /* QuizVerse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1F8DA2AC2421900085DA2 /* QuizVerse.swift */; };
 		76C1F8DD2AC2444B00085DA2 /* WordForWordsMeaning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1F8DC2AC2444B00085DA2 /* WordForWordsMeaning.swift */; };
+		F910F36D2C95AF3F009F06CB /* NumberOfLinesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F910F36C2C95AF3F009F06CB /* NumberOfLinesProvider.swift */; };
+		F910F36F2C95AF4C009F06CB /* MainNumberOfLinesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F910F36E2C95AF4C009F06CB /* MainNumberOfLinesProvider.swift */; };
+		F910F3722C95AF6A009F06CB /* AttributedTranslationTextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F910F3712C95AF6A009F06CB /* AttributedTranslationTextProvider.swift */; };
+		F910F3742C95AF96009F06CB /* MainAttributedTranslationTextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F910F3732C95AF96009F06CB /* MainAttributedTranslationTextProvider.swift */; };
+		F910F3772C95BBCB009F06CB /* PageSizeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F910F3762C95BBCB009F06CB /* PageSizeProvider.swift */; };
+		F910F3792C95BC01009F06CB /* A4PageSizeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F910F3782C95BC01009F06CB /* A4PageSizeProvider.swift */; };
 		F91766432AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */; };
 		F917664B2AC3A3DC00792D2F /* FlexibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91766472AC3A3DC00792D2F /* FlexibleView.swift */; };
 		F917664C2AC3A3DC00792D2F /* FlexibleViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91766482AC3A3DC00792D2F /* FlexibleViewContainer.swift */; };
@@ -120,6 +126,12 @@
 		76B257132B83109800D89AC5 /* AddClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClassView.swift; sourceTree = "<group>"; };
 		76C1F8DA2AC2421900085DA2 /* QuizVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVerse.swift; sourceTree = "<group>"; };
 		76C1F8DC2AC2444B00085DA2 /* WordForWordsMeaning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordForWordsMeaning.swift; sourceTree = "<group>"; };
+		F910F36C2C95AF3F009F06CB /* NumberOfLinesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfLinesProvider.swift; sourceTree = "<group>"; };
+		F910F36E2C95AF4C009F06CB /* MainNumberOfLinesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNumberOfLinesProvider.swift; sourceTree = "<group>"; };
+		F910F3712C95AF6A009F06CB /* AttributedTranslationTextProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedTranslationTextProvider.swift; sourceTree = "<group>"; };
+		F910F3732C95AF96009F06CB /* MainAttributedTranslationTextProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAttributedTranslationTextProvider.swift; sourceTree = "<group>"; };
+		F910F3762C95BBCB009F06CB /* PageSizeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageSizeProvider.swift; sourceTree = "<group>"; };
+		F910F3782C95BC01009F06CB /* A4PageSizeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A4PageSizeProvider.swift; sourceTree = "<group>"; };
 		F91766422AC0FF2800792D2F /* SelectVersesForWordsMeaningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVersesForWordsMeaningView.swift; sourceTree = "<group>"; };
 		F91766472AC3A3DC00792D2F /* FlexibleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleView.swift; sourceTree = "<group>"; };
 		F91766482AC3A3DC00792D2F /* FlexibleViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleViewContainer.swift; sourceTree = "<group>"; };
@@ -360,6 +372,43 @@
 				F91766462AC3A3CD00792D2F /* FlexibleLayout */,
 			);
 			path = CustomComponents;
+			sourceTree = "<group>";
+		};
+		F910F36A2C95AF30009F06CB /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				F910F3752C95BBBB009F06CB /* PageSizeProvider */,
+				F910F3702C95AF63009F06CB /* AttributedTranslationTextProvider */,
+				F910F36B2C95AF39009F06CB /* NumberOfLinesProvider */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		F910F36B2C95AF39009F06CB /* NumberOfLinesProvider */ = {
+			isa = PBXGroup;
+			children = (
+				F910F36E2C95AF4C009F06CB /* MainNumberOfLinesProvider.swift */,
+				F910F36C2C95AF3F009F06CB /* NumberOfLinesProvider.swift */,
+			);
+			path = NumberOfLinesProvider;
+			sourceTree = "<group>";
+		};
+		F910F3702C95AF63009F06CB /* AttributedTranslationTextProvider */ = {
+			isa = PBXGroup;
+			children = (
+				F910F3732C95AF96009F06CB /* MainAttributedTranslationTextProvider.swift */,
+				F910F3712C95AF6A009F06CB /* AttributedTranslationTextProvider.swift */,
+			);
+			path = AttributedTranslationTextProvider;
+			sourceTree = "<group>";
+		};
+		F910F3752C95BBBB009F06CB /* PageSizeProvider */ = {
+			isa = PBXGroup;
+			children = (
+				F910F3762C95BBCB009F06CB /* PageSizeProvider.swift */,
+				F910F3782C95BC01009F06CB /* A4PageSizeProvider.swift */,
+			);
+			path = PageSizeProvider;
 			sourceTree = "<group>";
 		};
 		F91766462AC3A3CD00792D2F /* FlexibleLayout */ = {
@@ -658,6 +707,7 @@
 		F9D60D2C2A77DD7E00701635 /* PDFPreview */ = {
 			isa = PBXGroup;
 			children = (
+				F910F36A2C95AF30009F06CB /* Providers */,
 				F9D60D342A77E01900701635 /* Utility */,
 				F9D60D2D2A77DD8900701635 /* View */,
 			);
@@ -889,7 +939,9 @@
 				F964477C2AB4561900DB5412 /* MainQuranRepository.swift in Sources */,
 				7620AA5A2B386DAA007FD04D /* SyncDatastore.swift in Sources */,
 				F968AC772AC0F25C0086F841 /* SelectedSurahView.swift in Sources */,
+				F910F3792C95BC01009F06CB /* A4PageSizeProvider.swift in Sources */,
 				F9D60D362A7852F400701635 /* PDFDocument+Transferable.swift in Sources */,
+				F910F36D2C95AF3F009F06CB /* NumberOfLinesProvider.swift in Sources */,
 				F9D60D1A2A76C6CA00701635 /* Bundle+Decode.swift in Sources */,
 				76B257002B82BD0A00D89AC5 /* QuizPreferencesRepository.swift in Sources */,
 				F918394D2AB7B69900E4D45B /* SuraNameView.swift in Sources */,
@@ -909,6 +961,7 @@
 				F928BBBA2B7EDA9000B5AD1F /* QuizClassSettingsView.swift in Sources */,
 				76B257142B83109800D89AC5 /* AddClassView.swift in Sources */,
 				F91839622AB7D0BA00E4D45B /* LoggingAnalyticsLibrary.swift in Sources */,
+				F910F36F2C95AF4C009F06CB /* MainNumberOfLinesProvider.swift in Sources */,
 				F9D60D012A76C69D00701635 /* QuranQuizApp.swift in Sources */,
 				F98C231B2ABE2C8E00FED70E /* UrduTranslation.swift in Sources */,
 				F94514CC2AE466550042F169 /* RoundedCornersModifier.swift in Sources */,
@@ -917,11 +970,13 @@
 				F917664B2AC3A3DC00792D2F /* FlexibleView.swift in Sources */,
 				F9D60D162A76C6AC00701635 /* Verse.swift in Sources */,
 				76B2570B2B82CF8A00D89AC5 /* QuizPreferencesDependencyContainer.swift in Sources */,
+				F910F3722C95AF6A009F06CB /* AttributedTranslationTextProvider.swift in Sources */,
 				76C1F8DD2AC2444B00085DA2 /* WordForWordsMeaning.swift in Sources */,
 				76B257092B82C6B700D89AC5 /* MainQuizPreferencesRepository.swift in Sources */,
 				F91839492AB7AF2800E4D45B /* Sura+localizedName.swift in Sources */,
 				F94514C82AE461330042F169 /* WordsMeaningsDetailsView.swift in Sources */,
 				760FEDE22AE6469000EEFDFB /* ChevronView.swift in Sources */,
+				F910F3772C95BBCB009F06CB /* PageSizeProvider.swift in Sources */,
 				76B257062B82BECD00D89AC5 /* MainQuizPreferencesDataStore.swift in Sources */,
 				F917664C2AC3A3DC00792D2F /* FlexibleViewContainer.swift in Sources */,
 				F948F1A92AE5A97A004679ED /* PDFPreviewView.swift in Sources */,
@@ -934,6 +989,7 @@
 				F918394B2AB7B10E00E4D45B /* SuraListView.swift in Sources */,
 				F9D60D392A78534B00701635 /* PDFKitView+UIViewRepresentable.swift in Sources */,
 				F964477F2AB457AE00DB5412 /* QuranService.swift in Sources */,
+				F910F3742C95AF96009F06CB /* MainAttributedTranslationTextProvider.swift in Sources */,
 				F96447812AB457B400DB5412 /* MainQuranService.swift in Sources */,
 				F964477A2AB454F200DB5412 /* QuranRepository.swift in Sources */,
 			);
