@@ -25,9 +25,17 @@ struct QuizPDFPreview_Previews: PreviewProvider {
         NavigationStack {
             QuizPDFPreview(
                 documentData: PDFGenerator(
+                    numberOfLinesProvider: MainNumberOfLinesProvider(
+                        translationTextAttributesProvider: MainAttributedTranslationTextProvider(),
+                        pageSizeProvider: A4PageSizeProvider()
+                    ),
+                    pageSizeProvider: A4PageSizeProvider(),
+                    attributedTranslationTextProvider: MainAttributedTranslationTextProvider(),
                     verses: [],
-                    words: [], 
-                    preferences: QuizPreferences(classList: []),
+                    words: [],
+                    preferences: QuizPreferences(
+                        classList: []
+                    ),
                     quizDate: .now
                 )
                 .generateQuiz()

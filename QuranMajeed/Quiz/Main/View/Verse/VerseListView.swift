@@ -72,7 +72,7 @@ private struct ContentPreview: View {
                         .makeQuranRepository()
                 else { return }
                 if let verses = try? await repo.getTranslatedVerses(verses: repo.getFirstSura().verses).verses {
-                    self.allVerses = verses.enumerated().map { Verse(ayaNumber: $0 + 1, text: $1.arabicText, translation: "") }
+                    self.allVerses = verses.enumerated().map { Verse(ayaNumber: $0 + 1, text: $1.arabicText, translation: "", numberOfLinesForTranslation: 1) }
                 }
             }
         }

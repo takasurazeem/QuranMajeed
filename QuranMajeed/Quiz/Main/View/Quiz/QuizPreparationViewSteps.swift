@@ -18,7 +18,7 @@ struct QuizPreparationViewSteps: View {
                 DatePicker(
                     "Quiz Date",
                     selection: $viewModel.quizDate,
-                    in: Date()...Date().addingTimeInterval(
+                    in: Date().addingTimeInterval(-2 * 24 * 60 * 60)...Date().addingTimeInterval(
                         7 * 24 * 60 * 60
                     ),
                     displayedComponents: .date

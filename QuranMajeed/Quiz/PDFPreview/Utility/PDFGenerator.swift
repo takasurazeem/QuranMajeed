@@ -11,11 +11,17 @@ import SwiftUI
 
 class PDFGenerator {
     init(
+        numberOfLinesProvider: NumberOfLinesProvider,
+        pageSizeProvider: PageSizeProvider,
+        attributedTranslationTextProvider: AttributedTranslationTextProvider,
         verses: [QuizVerse],
         words: [WordForWordsMeaning],
         preferences: QuizPreferences,
         quizDate: Date
     ) {
+        self.numberOfLinesProvider = numberOfLinesProvider
+        self.pageSizeProvider = pageSizeProvider
+        self.attributedTranslationTextProvider = attributedTranslationTextProvider
         self.verses = verses
         self.words = words.filter { $0.isSelected }
         self.preferences = preferences
@@ -27,9 +33,9 @@ class PDFGenerator {
         ]
         format = UIGraphicsPDFRendererFormat()
         // 2
-        pageWidth   = 595.2
-        pageHeight  = 841.0
-        pageRect    = CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight)
+        pageWidth   = pageSizeProvider.pageWidth
+        pageHeight  = pageSizeProvider.pageHeight
+        pageRect    = pageSizeProvider.pageRect
 
         // 3
         renderer = UIGraphicsPDFRenderer(bounds: pageRect, format: format)
@@ -196,12 +202,8 @@ class PDFGenerator {
             string: " ✤\t" + verse.text + "  ❍",
             attributes: verseTextAttributes
         )
-        let translationTextAttributes = makeTranslationTextAttributes(paragraphStyle)
         // FIXME: -
-        let attributedTranslationText = NSAttributedString(
-            string: verse.translatedText,
-            attributes: translationTextAttributes
-        )
+        let attributedTranslationText = attributedTranslationTextProvider.makeAttributedTranslationText(for: verse.translatedText)
         // I think I will move the above properties to a better place ان شاء اللہ تَعَالٰی
         // 3
         let width = pageRect.width - 20
@@ -221,7 +223,7 @@ class PDFGenerator {
             height: translationTextHeight
         )
  */
-        let numberOfLines = attributedTranslationText.numberOfLines(forWidth: width - 10)
+        let numberOfLines = verse.numberOfLinesForTranslation
         let verseTextMaxY = verseTextRect.maxY
         let pageRectMaxY = pageRect.maxY
         if verseTextMaxY > pageRectMaxY - 5 {
@@ -288,14 +290,18 @@ class PDFGenerator {
         drawContext.strokePath()
         drawContext.restoreGState()
     }
-
+    
+    private let numberOfLinesProvider: NumberOfLinesProvider
+    private let pageSizeProvider: PageSizeProvider
+    private let attributedTranslationTextProvider: AttributedTranslationTextProvider
+    
     // TODO: - Use AppStorage, some of these will be set from a settings menu for more flexibility in future ان شاء اللہ تَعَالٰی
     // MARK: - Fonts
-    let theOpeningFont = UIFont(name: "_PDMS_Saleem_QuranFont", size: 20) ?? .boldSystemFont(ofSize: 64)
-    let verseFont = UIFont(name: "ScheherazadeNew-Bold", size: 20) ?? .boldSystemFont(ofSize: 64)
-    let leftRightHeadingsFont = UIFont(name: "NotoNastaliqUrdu", size: 10) ?? .boldSystemFont(ofSize: 64)
-    let belowOpeningTextFont = UIFont(name: "DiwaniBent", size: 20) ?? .boldSystemFont(ofSize: 64)
-    let nameAndDateTextFont = UIFont(name: "NotoNastaliqUrdu", size: 14) ?? .boldSystemFont(ofSize: 64)
+    let theOpeningFont = AppStyle.PDF.theOpeningFont
+    let verseFont = AppStyle.PDF.verseFont
+    let leftRightHeadingsFont = AppStyle.PDF.leftRightHeadingsFont
+    let belowOpeningTextFont = AppStyle.PDF.belowOpeningTextFont
+    let nameAndDateTextFont = AppStyle.PDF.nameAndDateTextFont
 
     // MARK: - Shared Attributes
     let rightAndLeftHeadingTextAttributes: [NSAttributedString.Key: UIFont]

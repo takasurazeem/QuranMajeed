@@ -18,4 +18,5 @@ struct Verse: Codable, Identifiable, Hashable, Comparable {
     var ayaNumber: Int
     var text: String
     let translation: String
+    var numberOfLinesForTranslation: Int
 }

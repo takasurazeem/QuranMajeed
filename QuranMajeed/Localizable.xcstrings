@@ -103,6 +103,9 @@
         }
       }
     },
+    "Number of lines: %lld" : {
+
+    },
     "PDF" : {
       "localizations" : {
         "ur" : {
@@ -181,7 +184,7 @@
         }
       }
     },
-    "Select Quiz Date" : {
+    "Quiz Date" : {
 
     },
     "Select Surah" : {

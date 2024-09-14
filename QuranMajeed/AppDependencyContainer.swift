@@ -47,6 +47,21 @@ class AppDependencyContainer: AppDependencies {
         )
     }()
 
+    lazy var attributedTranslationTextProvider: AttributedTranslationTextProvider = {
+        return MainAttributedTranslationTextProvider()
+    }()
+
+    lazy var a4PageSizeProvider: PageSizeProvider = {
+        return A4PageSizeProvider()
+    }()
+    
+    lazy var numberOfLinesProvider: NumberOfLinesProvider = {
+        return MainNumberOfLinesProvider(
+            translationTextAttributesProvider: attributedTranslationTextProvider,
+            pageSizeProvider: a4PageSizeProvider
+        )
+    }()
+    
     let analytics: AnalyticsLibrary = LoggingAnalyticsLibrary()
 
     private(set) lazy var lastPagePersistence: LastPagePersistence = CoreDataLastPagePersistence(stack: coreDataStack)
