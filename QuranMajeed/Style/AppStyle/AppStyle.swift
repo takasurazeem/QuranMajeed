@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum AppStyle {
 
@@ -17,6 +18,28 @@ enum AppStyle {
         static let space12: CGFloat = 12.0
         static let space24: CGFloat = 24.0
         static let space32: CGFloat = 32.0
+    }
+    
+    enum PDF {
+        static var theOpeningFont: UIFont {
+            UIFont(name: "_PDMS_Saleem_QuranFont", size: 20) ?? .boldSystemFont(ofSize: 64)
+        }
+        
+        static var verseFont: UIFont {
+            UIFont(name: "ScheherazadeNew-Bold", size: 20) ?? .boldSystemFont(ofSize: 64)
+        }
+        
+        static var leftRightHeadingsFont: UIFont {
+            UIFont(name: "NotoNastaliqUrdu", size: 10) ?? .boldSystemFont(ofSize: 64)
+        }
+        
+        static var belowOpeningTextFont: UIFont {
+            UIFont(name: "DiwaniBent", size: 20) ?? .boldSystemFont(ofSize: 64)
+        }
+        
+        static var nameAndDateTextFont: UIFont {
+            UIFont(name: "NotoNastaliqUrdu", size: 14) ?? .boldSystemFont(ofSize: 64)
+        }
     }
 
 }

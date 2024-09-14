@@ -103,6 +103,9 @@
         }
       }
     },
+    "Number of lines: %lld" : {
+
+    },
     "PDF" : {
       "localizations" : {
         "ur" : {

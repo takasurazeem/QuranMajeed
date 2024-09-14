@@ -49,6 +49,11 @@ struct VersesSelectionDetailsView: View {
                                     .padding(.vertical, AppStyle.Spacing.space4)
                                     .padding(.horizontal, AppStyle.Spacing.space8)
                             }
+                            Stepper(
+                                "Number of lines: \(viewModel.selectedVersesForTranslation[index].numberOfLinesForTranslation)",
+                                value: $viewModel.selectedVersesForTranslation[index].numberOfLinesForTranslation,
+                                in: 1...100
+                            )
                         }
                         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                             Button {

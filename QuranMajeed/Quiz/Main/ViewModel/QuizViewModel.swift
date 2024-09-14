@@ -14,28 +14,34 @@ import SwiftUI
 
 extension QuizView {
     class ViewModel: ObservableObject {
-
+        
         init(
             theQuranRepository: QuranRepository,
-            quizPreferencesRepository: QuizPreferencesRepository
+            quizPreferencesRepository: QuizPreferencesRepository,
+            pageSizeProvider: PageSizeProvider,
+            attributedTranslationTextProvider: AttributedTranslationTextProvider,
+            numberOfLinesProvider: NumberOfLinesProvider
         ) {
+            self.numberOfLinesProvider = numberOfLinesProvider
+            self.pageSizeProvider = pageSizeProvider
+            self.attributedTranslationTextProvider = attributedTranslationTextProvider
             self.theQuranRepository = theQuranRepository
             self.quizPreferencesRepository = quizPreferencesRepository
             selectedAyahNumber = 1
-            selectedVerse = Verse(ayaNumber: 1, text: "", translation: "")
+            selectedVerse = Verse(ayaNumber: 1, text: "", translation: "", numberOfLinesForTranslation: 1)
             selectedSurah = theQuranRepository.getFirstSura()
             urduQuran = theQuranRepository.getQuranTranslations()
             
             // set quizDate to the current date
             quizDate = Date()
         }
-
+        
         func start() async {
             async let suras: () = loadSuras()
             async let firstVerse: () = loadVersesOfFirstSurah()
             _ = await [suras, firstVerse]
         }
-
+        
         @MainActor private func loadVersesOfFirstSurah() async {
             do {
                 let translatedVerses = try await theQuranRepository.getTranslatedVerses(verses: selectedSurah.verses)
@@ -44,7 +50,15 @@ extension QuizView {
                     .enumerated()
                     .map { (id, verse) in
                         let translation = urduQuran.first { $0.id == selectedSurah.suraNumber }?.verses.first { $0.id == id + 1 }?.translation ?? ""
-                        let verse = Verse(ayaNumber: id + 1, text: verse.arabicText, translation: translation)
+                        let verse = Verse(
+                            ayaNumber: id + 1,
+                            text: verse.arabicText,
+                            translation: translation,
+                            numberOfLinesForTranslation: numberOfLinesProvider.numberOfLines(
+                                for: translation,
+                                horizontalPadding: 10
+                            )
+                        )
                         return verse
                     }
                 if let verse = versesOfSelectedSura.first {
@@ -113,14 +127,31 @@ extension QuizView {
         private(set) var quizVerses: [QuizVerse] = []
         private let readingPreferences = ReadingPreferences.shared
         private let urduQuran: [UrduTranslatedSuras]
-        let quizPreferencesRepository: QuizPreferencesRepository
+        private let quizPreferencesRepository: QuizPreferencesRepository
+        private let pageSizeProvider: PageSizeProvider
+        private let numberOfLinesProvider: NumberOfLinesProvider
+        private let attributedTranslationTextProvider: AttributedTranslationTextProvider
+        var pdfGenerator: PDFGenerator {
+            PDFGenerator(
+                numberOfLinesProvider: numberOfLinesProvider,
+                pageSizeProvider: pageSizeProvider,
+                attributedTranslationTextProvider: attributedTranslationTextProvider,
+                verses: quizVerses,
+                words: wordsForWordsMeaning,
+                preferences: quizPreferencesRepository.get(),
+                quizDate: quizDate
+            )
+        }
     }
 }
 
 extension Array where Element == Verse {
     func asQuizVerses(selectedSuraNumber: Int) -> [QuizVerse] {
         self.map {
-            QuizVerse(verse: $0, selectedSuraNumber: selectedSuraNumber)
+            QuizVerse(
+                verse: $0,
+                selectedSuraNumber: selectedSuraNumber
+            )
         }
     }
 }

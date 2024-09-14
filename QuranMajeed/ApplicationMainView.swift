@@ -20,7 +20,17 @@ struct ApplicationMainView: View {
                     quizPreferencesRepository: AppDependencyContainer
                         .shared
                         .quizPreferenncesDependencyContainer
-                        .makePreferencesRepository()
+                        .makePreferencesRepository(),
+                    pageSizeProvider: AppDependencyContainer
+                        .shared
+                        .a4PageSizeProvider,
+                    attributedTranslationTextProvider: AppDependencyContainer
+                        .shared
+                        .attributedTranslationTextProvider,
+                    numberOfLinesProvider: AppDependencyContainer
+                        .shared
+                        .numberOfLinesProvider
+                        
                 )
             )
         } else {
